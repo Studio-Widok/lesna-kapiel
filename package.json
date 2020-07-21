@@ -1,0 +1,15 @@
+{
+  "name": "lesna-kapiel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2.0"
+  }
+}
