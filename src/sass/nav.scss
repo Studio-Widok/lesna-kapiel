@@ -9,6 +9,11 @@
   color: #fff;
   z-index: 21;
 
+  @media (max-width: 1200px) {
+    right: 3em;
+    left: 3em;
+  }
+
   .nav-link {
     padding: 0 1em;
     cursor: pointer;
@@ -96,6 +101,10 @@
     justify-content: space-between;
     padding: 3em 6em;
 
+    @media (max-width: 1200px) {
+      padding: 3em;
+    }
+
     #nav-o-links {
       text-align: center;
       display: flex;
@@ -131,12 +140,14 @@
         min-width: 18%;
         flex-shrink: 0;
         flex-grow: 1;
+        padding: 0 0.5em;
 
         &.empty {
           min-width: 0;
           width: 30%;
           flex-shrink: 1;
           flex-grow: 0;
+          padding: 0;
         }
 
         &.social {
