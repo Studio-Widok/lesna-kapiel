@@ -6,6 +6,29 @@ function viewport_meta() {?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /><?php }
   add_filter('wp_head', 'viewport_meta');
 
+  // cleanup wordpress - start
+  add_filter('intermediate_image_sizes', function ($sizes) {
+    return array_filter($sizes, function ($val) {
+      return $val !== 'medium_large';
+    });
+  });
+  add_action('init', function () {
+    wp_deregister_script('wp-embed');
+    remove_image_size('1536x1536');
+    remove_image_size('2048x2048');
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+  });
+  add_action('wp_print_styles', function () {
+    wp_dequeue_style('wp-block-library');
+  }, 100);
+  // cleanup wordpress - end
+
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
     wp_enqueue_style('style', $url . '../style.css', 1.0);
@@ -52,5 +75,5 @@ function viewport_meta() {?>
     }
 
     include $__file;
-  return $__data;
+    return $__data;
 }
