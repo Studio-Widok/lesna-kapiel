@@ -1,25 +1,18 @@
-const $ = jQuery;
-// ver 1.7
+// ver 1.8
 if (typeof f3 == "undefined") {
   f3 = {
-    s: 0,
     h: 0,
     w: 0,
-    scrollCheck: function () {
-      f3.s = window.scrollY;
-    },
     sizeCheck: function () {
       f3.h = $(window).height();
       f3.w = $(window).width();
-      f3.scrollCheck();
       window.dispatchEvent(new CustomEvent("layoutChange"));
       window.dispatchEvent(new CustomEvent("afterLayoutChange"));
     }
   };
-  $(window).scroll(throttle(16, f3.scrollCheck));
-  $(window).resize(throttle(100, f3.sizeCheck));
-  $(window).load(f3.sizeCheck);
-  $(document).ready(f3.sizeCheck);
+  $(window).on('resize', throttle(100, f3.sizeCheck));
+  $(window).on('load', f3.sizeCheck);
+  $(document).on('ready', f3.sizeCheck);
 
   // throttle
   function throttle(ms, callback) {
@@ -45,3 +38,7 @@ if (typeof f3 == "undefined") {
     };
   }
 }
+
+$('#burger').on('click', () => {
+  $('#nav').toggleClass('opened');
+});

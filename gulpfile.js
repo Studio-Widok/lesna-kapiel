@@ -14,13 +14,18 @@ gulp.task('sass', function () {
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(sourcemaps.write('./', {
       includeContent: false,
-      sourceRoot: '../sass'
+      sourceRoot: '../../src/sass'
     }))
     .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('uglify', function () {
   return gulp.src('./src/js/*.js')
+    .pipe(sourcemaps.init())
     .pipe(terser())
+    .pipe(sourcemaps.write('./', {
+      includeContent: false,
+      sourceRoot: '../../src/js'
+    }))
     .pipe(gulp.dest('./dist/js'));
 });

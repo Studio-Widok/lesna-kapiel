@@ -98,7 +98,7 @@
       padding-left: 3em !important;
       padding-right: 3em !important;
 
-      @media (max-width: 750px) {
+      @media (max-width: 768) {
         padding-left: 2em !important;
         padding-right: 2em !important;
       }
@@ -108,7 +108,7 @@
       padding-left: 1.5em !important;
       padding-right: 1.5em !important;
 
-      @media (max-width: 750px) {
+      @media (max-width: 768) {
         padding-left: 1em !important;
         padding-right: 1em !important;
       }
@@ -119,11 +119,11 @@
 @include mobile-basic(1200);
 @include mobile-basic(1050);
 @include mobile-basic(900);
-@include mobile-basic(750);
+@include mobile-basic(768);
 @include mobile-basic(600);
 @include mobile-basic(450);
 
-@media (max-width: 750px) {
+@media (max-width: 768) {
   body {
     font-size: 0.9em;
   }
