@@ -1,3 +1,6 @@
+<?php
+  $nav_img = get_field('nav_image', 2);
+?>
 <nav id="nav">
   <div id="nav-links">
     <div class="nav-link">
@@ -18,7 +21,8 @@
     <div></div>
     <div></div>
   </div>
-  <div id="nav-overlay">
+  <div id="nav-overlay"
+    style="background-image: url('<?=$nav_img['sizes']['large']?>');">
     <div class=""></div>
     <div class=""></div>
     <div id="nav-o-links">
