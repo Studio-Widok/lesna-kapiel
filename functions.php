@@ -33,9 +33,7 @@ function viewport_meta() {?>
     $url = get_template_directory_uri() . '/dist/';
     wp_enqueue_style('style', $url . '../style.css', 1.0);
     wp_enqueue_style('base', $url . 'css/base.css', array('style'), 1.0);
-
-    wp_enqueue_script('cash', $url . 'js/cash.min.js', array(), 1.0, true);
-    wp_enqueue_script('f3', $url . 'js/f3.js', array('cash'), 1.0, true);
+    wp_enqueue_script('bundle', $url . 'js/bundle.js', array(), 1.0, true);
   });
 
   // dev - start

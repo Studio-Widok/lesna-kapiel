@@ -1,3 +1,8 @@
+const $ = require('./cash.min.js');
+const nav = require('./nav.js');
+
+nav();
+
 // ver 1.8
 if (typeof f3 == "undefined") {
   f3 = {
@@ -38,7 +43,3 @@ if (typeof f3 == "undefined") {
     };
   }
 }
-
-$('#burger').on('click', () => {
-  $('#nav').toggleClass('opened');
-});
