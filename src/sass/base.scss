@@ -36,6 +36,11 @@ body {
   font-family: "GT America", sans-serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .clear {
   clear: both;
 }
@@ -244,6 +249,11 @@ p {
   position: relative;
   max-width: 90em;
   margin: 0 auto;
+}
+
+.handwrite {
+  font-family: serif;
+  font-size: 3em;
 }
 
 @import "nav.scss";

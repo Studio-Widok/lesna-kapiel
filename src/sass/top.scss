@@ -45,4 +45,16 @@
       margin-left: -0.2em;
     }
   }
+
+  #top-title {
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+      padding-left: $letter-spacing;
+    }
+  }
 }

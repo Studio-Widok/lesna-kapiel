@@ -124,10 +124,14 @@
       background-color: $color-beige;
       border: 1px solid #fff;
       padding: 1.7em 4em;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
       transition: 0.3s;
       cursor: pointer;
+
+      span {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+        padding-left: $letter-spacing;
+      }
 
       &:hover {
         color: $color-beige;
