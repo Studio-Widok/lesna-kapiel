@@ -15,6 +15,7 @@
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
+  <?php get_part('contact-images');?>
 </div>
 
 <?php get_footer();?>

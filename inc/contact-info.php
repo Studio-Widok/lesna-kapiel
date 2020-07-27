@@ -9,13 +9,8 @@
     </div>
     <div class="col2 column-outer flex flex-justify-end flex-align-center">
       <div class="column-inner">@lesnakapiel</div>
-      <div class="column-inner social">
-        <div class="social-icon">
-          <?php include __DIR__ . '/../media/instagram.svg';?>
-        </div>
-        <div class="social-icon">
-          <?php include __DIR__ . '/../media/facebook.svg';?>
-        </div>
+      <div class="column-inner">
+        <?php get_part('social-links');?>
       </div>
     </div>
   </div>

@@ -154,8 +154,8 @@
           padding: 0;
         }
 
-        &.social {
-          text-align: right;
+        .social {
+          justify-content: flex-end;
         }
       }
     }

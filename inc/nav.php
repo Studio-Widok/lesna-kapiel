@@ -26,9 +26,13 @@
     <div class=""></div>
     <div class=""></div>
     <div id="nav-o-links">
+      <a href="<?=get_the_permalink(2)?>" class="nav-link">
+        <span class="uppercase">strona główna</span>
+      </a>
       <div class="nav-link"><span class="uppercase">nasza idea</span></div>
       <div class="nav-link"><span class="uppercase">villa</span></div>
-      <div class="nav-link"><span class="uppercase">domki nad stawem</span>
+      <div class="nav-link">
+        <span class="uppercase">domki nad stawem</span>
       </div>
       <div class="nav-link"><span class="uppercase">relaks i spa</span></div>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
@@ -41,7 +45,9 @@
       <div class="nav-foot-col">kontakt@lesnakapiel.com</div>
       <div class="nav-foot-col empty"></div>
       <div class="nav-foot-col">ul. Karpacka 1, Karpaty</div>
-      <div class="nav-foot-col social">Ea, eaque</div>
+      <div class="nav-foot-col">
+        <?php get_part('social-links');?>
+      </div>
     </div>
   </div>
 </nav>
