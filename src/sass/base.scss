@@ -34,6 +34,8 @@ body {
   margin: 0;
   background-color: #555;
   font-family: "GT America", sans-serif;
+  color: #fff;
+  font-weight: 200;
 }
 
 a {
@@ -74,7 +76,7 @@ h4,
 h5,
 h6,
 p {
-  font-weight: 400;
+  font-weight: 200;
   margin: 0;
   padding: 0.33em 0;
 }
@@ -253,9 +255,19 @@ p {
 
 .handwrite {
   font-family: serif;
-  font-size: 3em;
+  font-size: 5em;
+}
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  padding-left: $letter-spacing;
+}
+
+.bg-dark {
+  background-color: #1d3429;
 }
 
 @import "nav.scss";
 @import "top.scss";
+@import "contact.scss";
 @import "_mobile.scss";

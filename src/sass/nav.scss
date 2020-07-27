@@ -6,7 +6,6 @@
   top: 3em;
   right: 6em;
   left: 6em;
-  color: #fff;
   z-index: 21;
   font-size: 1.2em;
 
@@ -23,8 +22,6 @@
     span {
       position: relative;
       padding-bottom: 0.5em;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
       font-weight: 200;
 
       &:after {
