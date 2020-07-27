@@ -6,7 +6,6 @@
   top: 3em;
   right: 6em;
   left: 6em;
-  color: #fff;
   z-index: 21;
   font-size: 1.2em;
 
@@ -23,8 +22,6 @@
     span {
       position: relative;
       padding-bottom: 0.5em;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
       font-weight: 200;
 
       &:after {
@@ -124,10 +121,14 @@
       background-color: $color-beige;
       border: 1px solid #fff;
       padding: 1.7em 4em;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
       transition: 0.3s;
       cursor: pointer;
+
+      span {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+        padding-left: $letter-spacing;
+      }
 
       &:hover {
         color: $color-beige;
@@ -153,8 +154,8 @@
           padding: 0;
         }
 
-        &.social {
-          text-align: right;
+        .social {
+          justify-content: flex-end;
         }
       }
     }

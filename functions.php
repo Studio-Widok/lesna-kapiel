@@ -29,6 +29,16 @@ function viewport_meta() {?>
   }, 100);
   // cleanup wordpress - end
 
+  // custom post types
+  add_action('init', function () {
+    register_post_type('apartment', array(
+      'public'      => true,
+      'label'       => 'Apartamenty',
+      'has_archive' => false,
+      'supports'    => array('title'),
+    ));
+  });
+
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
     wp_enqueue_style('style', $url . '../style.css', 1.0);

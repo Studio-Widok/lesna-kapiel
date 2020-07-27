@@ -4,17 +4,17 @@
 <nav id="nav">
   <div id="nav-links">
     <div class="nav-link">
-      <span>villa</span>
+      <span class="uppercase">villa</span>
     </div>
     <div class="nav-link">
-      <span>domki nad stawem</span>
+      <span class="uppercase">domki nad stawem</span>
     </div>
     <div class="nav-link">
-      <span>spa</span>
+      <span class="uppercase">spa</span>
     </div>
-    <div class="nav-link">
-      <span>kontakt</span>
-    </div>
+    <a class="nav-link" href="<?=get_the_permalink(25)?>">
+      <span class="uppercase"><?=get_the_title(25)?></span>
+    </a>
   </div>
   <div id="burger">
     <div></div>
@@ -26,21 +26,28 @@
     <div class=""></div>
     <div class=""></div>
     <div id="nav-o-links">
-      <div class="nav-link"><span>nasza idea</span></div>
-      <div class="nav-link"><span>villa</span></div>
-      <div class="nav-link"><span>domki nad stawem</span></div>
-      <div class="nav-link"><span>relaks i spa</span></div>
-      <div class="nav-link"><span>restauracja</span></div>
-      <div class="nav-link"><span>atrakcje</span></div>
-      <div class="nav-link"><span>kontakt</span></div>
+      <a href="<?=get_the_permalink(2)?>" class="nav-link">
+        <span class="uppercase">strona główna</span>
+      </a>
+      <div class="nav-link"><span class="uppercase">nasza idea</span></div>
+      <div class="nav-link"><span class="uppercase">villa</span></div>
+      <div class="nav-link">
+        <span class="uppercase">domki nad stawem</span>
+      </div>
+      <div class="nav-link"><span class="uppercase">relaks i spa</span></div>
+      <div class="nav-link"><span class="uppercase">restauracja</span></div>
+      <div class="nav-link"><span class="uppercase">atrakcje</span></div>
+      <div class="nav-link"><span class="uppercase">kontakt</span></div>
     </div>
-    <div id="nav-book">rezerwuj</div>
+    <div id="nav-book"><span>rezerwuj</span></div>
     <div id="nav-foot">
       <div class="nav-foot-col">+48 897 978 857</div>
       <div class="nav-foot-col">kontakt@lesnakapiel.com</div>
       <div class="nav-foot-col empty"></div>
       <div class="nav-foot-col">ul. Karpacka 1, Karpaty</div>
-      <div class="nav-foot-col social">Ea, eaque</div>
+      <div class="nav-foot-col">
+        <?php get_part('social-links');?>
+      </div>
     </div>
   </div>
 </nav>

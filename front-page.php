@@ -4,7 +4,9 @@ $section_image = get_field('section_image');
   get_header();
 
   get_part('nav');
-  get_part('top');
+  get_part('top', array(
+    'show_logo' => true,
+  ));
 ?>
 
 <div class="green-wrapper">
