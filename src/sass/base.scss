@@ -1,5 +1,7 @@
 $letter-spacing: 0.15em;
 $color-beige: #af9e70;
+$dark-green: #1E352A;
+$white-grey: #78857F;
 
 @font-face {
   font-family: "GT America";
@@ -272,7 +274,29 @@ p {
   background-color: #1d3429;
 }
 
+//adding to the base
+
+.green-wrapper {
+background-color: $dark-green;
+}
+
+button {
+  letter-spacing: $letter-spacing; 
+  padding-left: $letter-spacing;
+  background-color: unset;
+  color: #fff;
+  padding: 1em;
+  transition: 0.3s all ease-in-out;
+  text-transform: uppercase;
+  border: 1px #fff solid;
+}
+
+button:hover {
+  background-color: $color-beige;
+}
+
 @import "nav.scss";
 @import "top.scss";
 @import "contact.scss";
 @import "_mobile.scss";
+@import "2-col.scss";

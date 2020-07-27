@@ -1,0 +1,74 @@
+.col-2-no-pic {
+  color: #fff;
+  p {
+    font-weight: 200;
+  }
+
+  .big-title {
+    font-size: 10em;
+    position: relative;
+    text-align: right;
+    right: 23%;
+    color: $white-grey;
+    top: -1.7em;
+  }
+
+  .big-title.column {
+    padding: 0 3rem;
+  }
+}
+
+.col-2-with-pic {
+  color: #fff;
+  .image-wrapper{
+    width: 100%;
+    height: 100%;
+      .image{
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+  }
+  .pic-right {
+    p {
+      font-weight: 200;
+    }
+
+    .big-title {
+      font-size: 10em;
+      position: relative;
+      text-align: right;
+      left:1em;
+    }
+    
+    .text{
+        max-width: 30em;
+    }
+
+    .big-title.column {
+      padding: 0 3rem;
+    }
+  }
+
+  .pic-left {
+    p {
+      font-weight: 200;
+    }
+
+    .big-title {
+      font-size: 10em;
+      position: relative;
+      text-align: left;
+      right:1em;
+    }
+    
+    .text{
+        max-width: 30em;
+    }
+
+    .big-title.column {
+      padding: 0 3rem;
+    }
+  }
+}
