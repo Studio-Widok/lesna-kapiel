@@ -1,1 +1,1 @@
-<?php $url = 'http://widok.studio/lesnakapiel_2';
+<?php $url = 'http://widok.studio/lesnakapiel';

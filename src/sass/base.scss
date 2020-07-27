@@ -1,7 +1,7 @@
 $letter-spacing: 0.15em;
 $color-beige: #af9e70;
-$dark-green: #1E352A;
-$white-grey: #78857F;
+$dark-green: #1e352a;
+$white-grey: #78857f;
 
 @font-face {
   font-family: "GT America";
@@ -277,11 +277,11 @@ p {
 //adding to the base
 
 .green-wrapper {
-background-color: $dark-green;
+  background-color: $dark-green;
 }
 
 button {
-  letter-spacing: $letter-spacing; 
+  letter-spacing: $letter-spacing;
   padding-left: $letter-spacing;
   background-color: unset;
   color: #fff;
