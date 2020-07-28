@@ -1,5 +1,5 @@
 <?php
-$section_image = get_field('section_image');
+$sections = get_field('sections');
 
   get_header();
 
@@ -10,17 +10,15 @@ $section_image = get_field('section_image');
 ?>
 
 <div class="green-wrapper">
-<h1>front page</h1>
 <div class="rsep"></div>
 <div class="rsep"></div>
 <?php get_part('2-col-no-pic')?>
 <div class="rsep"></div>
 <div class="rsep"></div>
-<?php get_part('2-col-with-pic', array('value_1' => 'pic_left', 'value_2' => $section_image['villa']['sizes']['large']));?>
+<?php get_part('2-col-with-pic', array('value_1' => 'pic_left', 'content' => $sections[0]));?>
 <div class="rsep"></div>
 <div class="rsep"></div>
-<?php get_part('2-col-with-pic', array('value_1' => 'pic_right', 'value_2' => $section_image['domki']['sizes']['large']));?>
-<div class="rsep"></div>
+<?php get_part('2-col-with-pic', array('value_1' => 'pic_right', 'content' => $sections[1]));?>
 <div class="rsep"></div>
 <div class="rsep"></div>
 <div class="rsep"></div>
@@ -28,7 +26,8 @@ $section_image = get_field('section_image');
 
 <div class="grey-wrapper">
 <div class="rsep"></div>
-
+<div class="rsep"></div>
+<?php get_part('2-col-with-pic', array('value_1' => 'pic_left', 'content' => $sections[2]));?>
 </div>
 
 
