@@ -293,10 +293,14 @@ button {
   border: 1px #fff solid;
   font-size: 0.625em;
   cursor: pointer;
+
+  &:hover {
+    background-color: $color-beige;
+  }
 }
 
-button:hover {
-  background-color: $color-beige;
+.title {
+  font-size: 5em;
 }
 
 @import "nav.scss";

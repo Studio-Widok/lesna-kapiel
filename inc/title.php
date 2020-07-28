@@ -4,6 +4,6 @@
 
 <div class="content">
   <div class="column text-center">
-    <div class="handwrite"><?=$title?></div>
+    <div class="handwrite title"><?=$title?></div>
   </div>
 </div>
