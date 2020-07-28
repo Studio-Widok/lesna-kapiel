@@ -105,6 +105,10 @@
       padding: 3em;
     }
 
+    @media (max-height: 800px) {
+      font-size: 0.8333em;
+    }
+
     #nav-o-links {
       text-align: center;
       display: flex;
@@ -120,7 +124,7 @@
     #nav-book {
       background-color: $color-beige;
       border: 1px solid #fff;
-      padding: 1.7em 4em;
+      padding: 1.5em 3em;
       transition: 0.3s;
       cursor: pointer;
 

@@ -123,7 +123,7 @@
 @include mobile-basic(600);
 @include mobile-basic(450);
 
-@media (max-width: 768) {
+@media (max-width: 768px) {
   body {
     font-size: 0.9em;
   }

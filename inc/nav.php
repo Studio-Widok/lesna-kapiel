@@ -24,7 +24,6 @@
   <div id="nav-overlay"
     style="background-image: url('<?=$nav_img['sizes']['large']?>');">
     <div class=""></div>
-    <div class=""></div>
     <div id="nav-o-links">
       <a href="<?=get_the_permalink(2)?>" class="nav-link">
         <span class="uppercase">strona główna</span>
@@ -37,7 +36,9 @@
       <div class="nav-link"><span class="uppercase">relaks i spa</span></div>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
       <div class="nav-link"><span class="uppercase">atrakcje</span></div>
-      <div class="nav-link"><span class="uppercase">kontakt</span></div>
+      <a class="nav-link" href="<?=get_the_permalink(25)?>">
+        <span class="uppercase"><?=get_the_title(25)?></span>
+      </a>
     </div>
     <div id="nav-book"><span>rezerwuj</span></div>
     <div id="nav-foot">
