@@ -297,6 +297,10 @@ button {
   &:hover {
     background-color: $color-beige;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .title {
