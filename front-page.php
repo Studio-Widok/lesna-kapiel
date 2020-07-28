@@ -1,6 +1,7 @@
 <?php
 $sections = get_field('sections');
 
+
   get_header();
 
   get_part('nav');
