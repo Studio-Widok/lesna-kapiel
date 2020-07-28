@@ -7,7 +7,7 @@
   ));
 ?>
 
-<div class="bg-dark">
+<div class="green-wrapper">
   <div class="rsep"></div>
   <?php get_part('title', array('title' => 'masz pytanie?'));?>
   <div class="rmin"></div>

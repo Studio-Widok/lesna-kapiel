@@ -20,7 +20,11 @@
             Więcej
         </button>
         </div>
-        <div class="col2 column big-title">Shinoin - yoku</div>
+    <div class="col2 column">
+      <div class="big-title handwrite">
+        Shinrin<br>-&nbsp;yoku
+      </div>
+    </div>
         
     </div>
 </div>

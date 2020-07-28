@@ -4,6 +4,13 @@ $dark-green: #1e352a;
 $white-grey: #78857f;
 
 @font-face {
+  font-family: "Belluga";
+  src: url("./../../media/Belluga.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "GT America";
   src: url("./../../media/GT-America-Condensed-Ultra-Light.ttf");
   font-weight: 100;
@@ -261,8 +268,8 @@ p {
 }
 
 .handwrite {
-  font-family: serif;
-  font-size: 5em;
+  font-family: "Belluga", cursive;
+  line-height: 1.1;
 }
 .uppercase {
   text-transform: uppercase;
@@ -270,12 +277,7 @@ p {
   padding-left: $letter-spacing;
 }
 
-.bg-dark {
-  background-color: #1d3429;
-}
-
 //adding to the base
-
 .green-wrapper {
   background-color: $dark-green;
 }
@@ -285,10 +287,12 @@ button {
   padding-left: $letter-spacing;
   background-color: unset;
   color: #fff;
-  padding: 1em;
+  padding: 1em 1.5em;
   transition: 0.3s all ease-in-out;
   text-transform: uppercase;
   border: 1px #fff solid;
+  font-size: 0.625em;
+  cursor: pointer;
 }
 
 button:hover {

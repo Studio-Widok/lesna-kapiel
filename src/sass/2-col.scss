@@ -10,12 +10,12 @@
     text-align: right;
     right: 23%;
     color: $white-grey;
-    top: -1.7em;
-  }
+    top: -0.7em;
 
-  .big-title.column {
-    padding: 0 3rem;
+    @media (max-width: 1200px) {
+      font-size: 5em;
   }
+}
 }
 
 .col-2-with-pic {
@@ -51,24 +51,8 @@
     }
   }
 
-  .pic-left {
-    p {
-      font-weight: 200;
-    }
-
     .big-title {
-      font-size: 10em;
-      position: relative;
-      text-align: left;
-      right: 1em;
-    }
-
-    .text {
-      max-width: 30em;
-    }
-
-    .big-title.column {
-      padding: 0 3rem;
+      left: 1em;
     }
   }
 }
