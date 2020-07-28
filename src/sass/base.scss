@@ -276,6 +276,13 @@ p {
   letter-spacing: $letter-spacing;
   padding-left: $letter-spacing;
 }
+.text {
+  font-size: 1.2em;
+
+  @media (max-width: 1200px) {
+    font-size: 1em;
+  }
+}
 
 //adding to the base
 .green-wrapper {
@@ -310,5 +317,6 @@ button {
 @import "nav.scss";
 @import "top.scss";
 @import "contact.scss";
-@import "_mobile.scss";
 @import "2-col.scss";
+@import "text-full.scss";
+@import "_mobile.scss";

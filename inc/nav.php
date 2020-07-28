@@ -1,20 +1,25 @@
 <?php
   $nav_img = get_field('nav_image', 2);
 ?>
+
 <nav id="nav">
   <div id="nav-links">
+    <?php if (!is_page(2)) {?>
+    <a class="nav-link" href="<?=get_the_permalink(2)?>">
+      <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
+      </div>
+    </a>
+    <?php }?>
     <div class="nav-link">
       <span class="uppercase">villa</span>
     </div>
     <div class="nav-link">
       <span class="uppercase">domki nad stawem</span>
     </div>
-    <div class="nav-link">
-      <span class="uppercase">spa</span>
-    </div>
-    <a class="nav-link" href="<?=get_the_permalink(25)?>">
-      <span class="uppercase"><?=get_the_title(25)?></span>
-    </a>
+    <?php
+      get_part('nav-link', array('page' => 48));
+      get_part('nav-link', array('page' => 25));
+    ?>
   </div>
   <div id="burger">
     <div></div>
@@ -25,20 +30,24 @@
     style="background-image: url('<?=$nav_img['sizes']['large']?>');">
     <div class=""></div>
     <div id="nav-o-links">
-      <a href="<?=get_the_permalink(2)?>" class="nav-link">
-        <span class="uppercase">strona główna</span>
-      </a>
+      <?php
+        if (!is_page(2)) {
+          get_part('nav-link', array('page' => 2));
+        }
+      ?>
       <div class="nav-link"><span class="uppercase">nasza idea</span></div>
       <div class="nav-link"><span class="uppercase">villa</span></div>
       <div class="nav-link">
         <span class="uppercase">domki nad stawem</span>
       </div>
-      <div class="nav-link"><span class="uppercase">relaks i spa</span></div>
+      <?php
+        get_part('nav-link', array('page' => 48));
+      ?>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
       <div class="nav-link"><span class="uppercase">atrakcje</span></div>
-      <a class="nav-link" href="<?=get_the_permalink(25)?>">
-        <span class="uppercase"><?=get_the_title(25)?></span>
-      </a>
+      <?php
+        get_part('nav-link', array('page' => 25));
+      ?>
     </div>
     <div id="nav-book"><span>rezerwuj</span></div>
     <div id="nav-foot">
