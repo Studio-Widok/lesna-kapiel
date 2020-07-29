@@ -2,6 +2,7 @@ $letter-spacing: 0.15em;
 $color-beige: #af9e70;
 $dark-green: #1e352a;
 $white-grey: #78857f;
+$grey-background: #8A9992;
 
 @font-face {
   font-family: "Belluga";
@@ -289,6 +290,10 @@ p {
   background-color: $dark-green;
 }
 
+.grey-wrapper {
+  background-color: $grey-background;
+}
+
 button {
   letter-spacing: $letter-spacing;
   padding-left: $letter-spacing;
@@ -314,9 +319,19 @@ button {
   font-size: 5em;
 }
 
+.small-title {
+  font-size: 2em;
+}
+
+.image-wrapper-full-width {
+    width: 100%;
+}
+
 @import "nav.scss";
 @import "top.scss";
 @import "contact.scss";
+@import "slider.scss";
 @import "2-col.scss";
 @import "text-full.scss";
 @import "_mobile.scss";
+

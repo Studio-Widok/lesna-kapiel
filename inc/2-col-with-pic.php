@@ -20,6 +20,7 @@
     <div class="col2 column">
       <div class="big-title handwrite"><?=$title?></div>
       <div class="rmin"></div>
+      <div class="rmin"></div>
       <div class="text">
         <p><?=$text?></p>
       </div>
