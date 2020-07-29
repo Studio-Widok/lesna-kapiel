@@ -1,31 +1,41 @@
-<div class="content col-2-with-pic">
-  <div class="flex <?=$value_1 === 'pic_right' ? 'pic-right' : ''?>">
+<?php
+  $title      = $title ?? '';
+  $text       = $text ?? '';
+  $image      = $image ?? false;
+  $button     = $button ?? false;
+  $pic_right  = $pic_right ?? false;
+  $alt_layout = $alt_layout ?? false;
+?>
 
-    <?php
-      if (in_array($value_1, array('pic_left', 'pic_right'))) {
-      ?>
+<div class="content col-2-with-pic <?=$alt_layout ? 'alt-layout' : ''?>">
+  <div class="flex <?=$pic_right ? 'pic-right' : ''?>">
+
     <div class="col2 column">
       <div class="image-wrapper">
         <div class="cake cake-3-4"
-          style="background-image: url(<?=$content['image']['sizes']['large']?>)">
+          style="background-image: url(<?=$image['sizes']['large']?>)">
         </div>
       </div>
     </div>
     <div class="col2 column">
-      <div class="big-title handwrite"> <?=$content['title']?></div>
+      <div class="big-title handwrite"><?=$title?></div>
       <div class="rmin"></div>
       <div class="rmin"></div>
       <div class="text">
-        <p><?=$content['text']?></p>
+        <p><?=$text?></p>
       </div>
-      <div class="rmin"></div>
-      <div class="rmin"></div>
 
-      <button>
-        Zobacz Apartamenty
-      </button>
+      <?php
+        if ($button) {
+        ?>
+      <div class="r"></div>
+      <a href="<?=$button['link']?>">
+        <button>
+          <?=$button['text']?>
+        </button>
+      </a>
+      <?php }?>
     </div>
-    <?php }?>
 
   </div>
 </div>
