@@ -14,6 +14,7 @@
     <div class="col2 column">
       <div class="big-title handwrite"> <?=$content['title']?></div>
       <div class="rmin"></div>
+      <div class="rmin"></div>
       <div class="text">
         <p><?=$content['text']?></p>
       </div>
