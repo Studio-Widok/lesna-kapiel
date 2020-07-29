@@ -40,7 +40,9 @@
   .big-title {
     font-size: 10em;
     position: relative;
-    left: -1em;
+    left: -0.3em;
+    margin-bottom: 0.5em;
+    white-space: pre-wrap;
   }
 
   .text {
@@ -53,8 +55,27 @@
     }
 
     .big-title {
-      left: 1em;
       text-align: right;
+      left: 0.3em;
+    }
+  }
+
+  > .flex {
+    align-items: flex-end;
+  }
+
+  &.alt-layout {
+    > .flex {
+      align-items: flex-start;
+    }
+
+    .big-title {
+      left: -1em;
+    }
+    .pic-right {
+      .big-title {
+        left: 1em;
+      }
     }
   }
 }
