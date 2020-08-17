@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.php",
+  "scripts": {
+    "watch": "./node_modules/.bin/gulp"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,5 +17,8 @@
     "browserify": "^16.5.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "cash-dom": "^8.0.0"
   }
 }

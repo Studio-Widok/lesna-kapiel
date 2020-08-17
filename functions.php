@@ -27,6 +27,14 @@ function viewport_meta() {?>
   add_action('wp_print_styles', function () {
     wp_dequeue_style('wp-block-library');
   }, 100);
+  add_action('wp_default_scripts', function ($scripts) {
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+      $script = $scripts->registered['jquery'];
+      if ($script->deps) {
+        $script->deps = array_diff($script->deps, array('jquery-migrate'));
+      }
+    }
+  });
   // cleanup wordpress - end
 
   // custom post types
@@ -73,7 +81,15 @@ function viewport_meta() {?>
   add_action('admin_menu', 'remove_menus', 11);
 
   function get_part($__file, $__data = []) {
-    $__file = __DIR__ . '/inc/' . $__file . '.php';
+    _get_part('parts', $__file, $__data);
+  }
+
+  function get_component($__file, $__data = []) {
+    _get_part('components', $__file, $__data);
+  }
+
+  function _get_part($__folder, $__file, $__data) {
+    $__file = __DIR__ . '/' . $__folder . '/' . $__file . '.php';
     if (!is_file($__file)) {
       return;
     }
@@ -84,4 +100,10 @@ function viewport_meta() {?>
 
     include $__file;
     return $__data;
-}
+  }
+
+  include __DIR__ . '/../../../wp-admin/includes/media.php';
+  function get_video_meta($file) {
+    $video_path = get_attached_file($file['id']);
+    return wp_read_video_metadata($video_path);
+  }
