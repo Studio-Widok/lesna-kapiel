@@ -37,7 +37,7 @@ function viewport_meta() {?>
   });
   // cleanup wordpress - end
 
-  // custom post types na taxonomies
+  // custom post types and taxonomies
   add_action('init', function () {
     register_post_type('apartment', array(
       'public'      => true,
