@@ -51,9 +51,11 @@
 
   <div class="rsep"></div>
   <div class="content flex">
-    <?php get_component('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[0]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'yes', 'content' => $tripple_section[1]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[2]));?>
+
+    <?php get_component('vertical-pic-text', array('links' => 'no','button' => "yes", 'content' => $tripple_section[0]));?>
+    <?php get_component('vertical-pic-text', array('links' => 'yes','button' => "yes", 'content' => $tripple_section[1]));?>
+    <?php get_component('vertical-pic-text', array('links' => 'no','button' => "yes", 'content' => $tripple_section[2]));?>
+
   </div>
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -69,6 +71,11 @@
   ));?>
 </div>
 
-
 </div>
+
+  <div id="map-wrapper">
+    <div class="overlay abs"></div>
+    <div id="gmap"></div>  
+  </div>
+
 <?php get_footer();

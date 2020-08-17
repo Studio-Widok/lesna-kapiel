@@ -1,27 +1,20 @@
 <?php /*Template Name: atrakcje*/
   get_header();
-
-  $attraction = $_GET['attraction'];
-
-  $posts = get_posts(array(
-    'numberposts' => -1,
-    'post_type'   => 'apartment',
-    'order'       => 'DSC',
-    'tax_query'   => [
-      [
-        'taxonomy' => 'apartment_tags',
-        'field'    => 'slug',
-        'terms'    => $attraction,
-      ],
-    ],
+  get_part('nav');
+  get_part('top', array(
+    'show_title' => true,
   ));
+  $tripple_section = get_field('tripple_section');
+?>
 
-  foreach ($posts as $post): setup_postdata($post);
-  ?>
-<div><?=get_the_title()?></div>
-<?php
-    endforeach
-  ?>
-
-
+<div class="green-wrapper">
+  <div class="rsep"></div>
+  <div class="content">
+    <?php get_component('title', ['title' => 'a co na miejscu?']);?>
+  </div>
+  <div class="rsep"></div>
+  <?php get_part('slider-with-bullets');?>
+  <div class="rsep"></div>
+  <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section));?>
+</div>
 <?php get_footer();?>
