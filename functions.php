@@ -37,7 +37,7 @@ function viewport_meta() {?>
   });
   // cleanup wordpress - end
 
-  // custom post types
+  // custom post types and taxonomies
   add_action('init', function () {
     register_post_type('apartment', array(
       'public'      => true,
@@ -45,6 +45,28 @@ function viewport_meta() {?>
       'has_archive' => false,
       'supports'    => array('title'),
     ));
+
+    register_taxonomy(
+      'apartment_categories',
+      'apartment',
+      array(
+        'label'             => 'Categories',
+        'hierarchical'      => true,
+        'show_admin_column' => true,
+        'show_in_menu'      => true,
+      )
+    );
+
+    register_taxonomy(
+      'apartment_tags',
+      'apartment',
+      array(
+        'label'             => 'Tags',
+        'hierarchical'      => false,
+        'show_admin_column' => true,
+        'show_in_menu'      => true,
+      )
+    );
   });
 
   add_action('wp_enqueue_scripts', function () {
@@ -106,4 +128,4 @@ function viewport_meta() {?>
   function get_video_meta($file) {
     $video_path = get_attached_file($file['id']);
     return wp_read_video_metadata($video_path);
-  }
+}
