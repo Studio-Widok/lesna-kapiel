@@ -18,7 +18,7 @@ $links = $links ? $links : "no";
     <p>
     <?= $content['text']?></p> </div>
     <div class="r"></div>
-  
+ 
     <?php if($links === 'yes'){ ?>
     <div class="additional-links flex flex-justify-space-evenly" style="width: 100%;">
     <?php for ($x = 0; $x < count($content['links']); $x++) { ?>
