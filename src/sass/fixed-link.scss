@@ -1,0 +1,15 @@
+.fixed-link-container {
+  position: relative;
+}
+
+.fixed-link {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  z-index: 100;
+  transform: rotate(90deg) translate(-50%, -100%);
+
+  &.fixed {
+    position: fixed;
+  }
+}

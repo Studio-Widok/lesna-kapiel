@@ -2,36 +2,36 @@ $letter-spacing: 0.15em;
 $color-beige: #af9e70;
 $dark-green: #1e352a;
 $white-grey: #78857f;
-$grey-background: #8A9992;
+$grey-background: #8a9992;
 
 @font-face {
-  font-family: "Belluga";
-  src: url("./../../media/Belluga.otf");
+  font-family: 'Belluga';
+  src: url('./../../media/Belluga.otf');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Ultra-Light.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Ultra-Light.ttf');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Thin.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Thin.ttf');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Regular.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Medium.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Medium.ttf');
   font-weight: 600;
   font-style: normal;
 }
@@ -43,7 +43,7 @@ $grey-background: #8A9992;
 body {
   margin: 0;
   background-color: #555;
-  font-family: "GT America", sans-serif;
+  font-family: 'GT America', sans-serif;
   color: #fff;
   font-weight: 200;
 }
@@ -269,7 +269,7 @@ p {
 }
 
 .handwrite {
-  font-family: "Belluga", cursive;
+  font-family: 'Belluga', cursive;
   line-height: 0.8;
 }
 .uppercase {
@@ -324,14 +324,14 @@ button {
 }
 
 .image-wrapper-full-width {
-    width: 100%;
+  width: 100%;
 }
 
-@import "nav.scss";
-@import "top.scss";
-@import "contact.scss";
-@import "slider.scss";
-@import "2-col.scss";
-@import "text-full.scss";
-@import "_mobile.scss";
-
+@import 'nav.scss';
+@import 'top.scss';
+@import 'contact.scss';
+@import 'slider.scss';
+@import '2-col.scss';
+@import 'text-full.scss';
+@import 'fixed-link.scss';
+@import '_mobile.scss';
