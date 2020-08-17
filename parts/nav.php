@@ -17,8 +17,8 @@
       <span class="uppercase">domki nad stawem</span>
     </div>
     <?php
-      get_part('nav-link', array('page' => 48));
-      get_part('nav-link', array('page' => 25));
+      get_component('nav-link', array('page' => 48));
+      get_component('nav-link', array('page' => 25));
     ?>
   </div>
   <div id="burger">
@@ -32,7 +32,7 @@
     <div id="nav-o-links">
       <?php
         if (!is_page(2)) {
-          get_part('nav-link', array('page' => 2));
+          get_component('nav-link', array('page' => 2));
         }
       ?>
       <div class="nav-link"><span class="uppercase">nasza idea</span></div>
@@ -41,12 +41,12 @@
         <span class="uppercase">domki nad stawem</span>
       </div>
       <?php
-        get_part('nav-link', array('page' => 48));
+        get_component('nav-link', array('page' => 48));
       ?>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
       <div class="nav-link"><span class="uppercase">atrakcje</span></div>
       <?php
-        get_part('nav-link', array('page' => 25));
+        get_component('nav-link', array('page' => 25));
       ?>
     </div>
     <div id="nav-book"><span>rezerwuj</span></div>
@@ -56,7 +56,7 @@
       <div class="nav-foot-col empty"></div>
       <div class="nav-foot-col">ul. Karpacka 1, Karpaty</div>
       <div class="nav-foot-col">
-        <?php get_part('social-links');?>
+        <?php get_component('social-links');?>
       </div>
     </div>
   </div>
