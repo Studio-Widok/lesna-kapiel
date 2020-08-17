@@ -44,8 +44,8 @@
         get_component('nav-link', array('page' => 48));
       ?>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
-      <div class="nav-link"><span class="uppercase">atrakcje</span></div>
       <?php
+        get_component('nav-link', array('page' => 111));
         get_component('nav-link', array('page' => 25));
       ?>
     </div>
