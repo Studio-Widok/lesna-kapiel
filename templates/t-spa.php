@@ -34,4 +34,24 @@
   <div class="rsep"></div>
 </div>
 
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'babababa', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'lolololo', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
 <?php get_footer();?>
