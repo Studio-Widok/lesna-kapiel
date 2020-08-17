@@ -1,12 +1,12 @@
 <?php /*Template Name: atrakcje*/
   get_header();
 
-  $attraction = $_GET['attraction']; //explode(',', $_GET['attraction']);
+  $attraction = $_GET['attraction'];
 
   $posts = get_posts(array(
     'numberposts' => -1,
     'post_type'   => 'apartment',
-    'order'       => 'ASC',
+    'order'       => 'DSC',
     'tax_query'   => [
       [
         'taxonomy' => 'apartment_tags',

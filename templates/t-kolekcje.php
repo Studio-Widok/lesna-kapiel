@@ -1,12 +1,12 @@
 <?php /*Template Name: kolekcje*/
   get_header();
 
-  $collection = $_GET["attraction"];
+  $collection = $_GET["collection"];
 
   $posts = get_posts(array(
     'numberposts' => -1,
     'post_type'   => 'apartment',
-    'order'       => 'ASC',
+    'order'       => 'DSC',
     'tax_query'   => [
       [
         'taxonomy' => 'apartment_categories',
