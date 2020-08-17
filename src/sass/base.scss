@@ -2,7 +2,7 @@ $letter-spacing: 0.15em;
 $color-beige: #af9e70;
 $dark-green: #1e352a;
 $white-grey: #78857f;
-$grey-background: #8A9992;
+$grey-background: #8a9992;
 
 @font-face {
   font-family: "Belluga";
@@ -324,14 +324,19 @@ button {
 }
 
 .image-wrapper-full-width {
-    width: 100%;
+  width: 100%;
+}
+
+.circle {
+  display: none;
 }
 
 @import "nav.scss";
 @import "top.scss";
 @import "contact.scss";
+@import "atrakcje.scss";
+@import "map.scss";
 @import "slider.scss";
 @import "2-col.scss";
 @import "text-full.scss";
 @import "_mobile.scss";
-
