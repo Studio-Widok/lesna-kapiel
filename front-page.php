@@ -1,8 +1,8 @@
 <?php
   get_header();
-  $sections = get_field('sections');
+  $sections        = get_field('sections');
   $tripple_section = get_field('tripple_section');
-  $slider = get_field('slider');
+  $slider          = get_field('slider');
 
   get_part('nav');
   get_part('top', array(
@@ -51,9 +51,9 @@
 
   <div class="rsep"></div>
   <div class="content flex">
-    <?php get_part('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[0]));?>
-    <?php get_part('vertical-pic-text', array('links' => 'yes', 'content' => $tripple_section[1]));?>
-    <?php get_part('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[2]));?>
+    <?php get_component('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[0]));?>
+    <?php get_component('vertical-pic-text', array('links' => 'yes', 'content' => $tripple_section[1]));?>
+    <?php get_component('vertical-pic-text', array('links' => 'no', 'content' => $tripple_section[2]));?>
   </div>
   <div class="rsep"></div>
   <div class="rsep"></div>
