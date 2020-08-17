@@ -56,4 +56,13 @@
       padding-left: $letter-spacing;
     }
   }
+
+  .arrow {
+    position: absolute;
+    bottom: 15%;
+    margin: 0 auto;
+    svg{
+      height: 3em;
+    }
+  }
 }
