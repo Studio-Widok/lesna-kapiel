@@ -1,9 +1,5 @@
 const $ = require('cash-dom');
 
-const nav = () => {
-  $('#burger').on('click', () => {
-    $('#nav').toggleClass('opened');
-  });
-};
-
-module.exports = nav;
+$('#burger').on('click', () => {
+  $('#nav').toggleClass('opened');
+});
