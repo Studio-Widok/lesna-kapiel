@@ -1354,22 +1354,73 @@ window.slider = createSlider({
   useKeys: true,
 });
 
-},{"./widok-slider":6}],3:[function(require,module,exports){
+},{"./widok-slider":8}],3:[function(require,module,exports){
+const $ = require('cash-dom');
+const createScrollItem = require('./widok-scrollItem.js');
+const widok = require('./widok.js');
+
+const fixedLink = $('.fixed-link');
+let isFixed = false;
+
+const fixedOrAbs = scrollItem => {
+  console.log(scrollItem.isOnScreen);
+  if (
+    widok.s < scrollItem.offset ||
+    scrollItem.offset + scrollItem.height - infoSectionScrollHeight < widok.s
+  ) {
+    if (isFixed) {
+      isFixed = false;
+      infoSectionScroll.removeClass('fixed');
+      if (
+        scrollItem.offset + scrollItem.height - infoSectionScrollHeight <
+        widok.s
+      ) {
+        infoSectionScroll.css({
+          top: scrollItem.height - infoSectionScrollHeight + rsepHeight,
+        });
+      } else if (widok.s < scrollItem.offset) {
+        infoSectionScroll.css({
+          top: rsepHeight,
+        });
+      }
+    }
+  } else {
+    if (!isFixed) {
+      isFixed = true;
+      infoSectionScroll.addClass('fixed');
+      infoSectionScroll.css({
+        top: rsepHeight,
+      });
+    }
+  }
+};
+
+console.log(fixedLink);
+
+$.each(fixedLink, (index, element) => {
+  console.log(element);
+  createScrollItem(element, {
+    onScroll: fixedOrAbs,
+  });
+});
+
+},{"./widok-scrollItem.js":7,"./widok.js":10,"cash-dom":1}],4:[function(require,module,exports){
 const $ = require('cash-dom');
 require('./nav');
 require('./widok');
 
 const bodyElement = $('body');
 if (bodyElement.hasClass('page-template-t-atrakcje')) require('./atrakcje');
+if ($('.fixed-link').length > 0) require('./fixed-link');
 
-},{"./atrakcje":2,"./nav":4,"./widok":8,"cash-dom":1}],4:[function(require,module,exports){
+},{"./atrakcje":2,"./fixed-link":3,"./nav":5,"./widok":10,"cash-dom":1}],5:[function(require,module,exports){
 const $ = require('cash-dom');
 
 $('#burger').on('click', () => {
   $('#nav').toggleClass('opened');
 });
 
-},{"cash-dom":1}],5:[function(require,module,exports){
+},{"cash-dom":1}],6:[function(require,module,exports){
 const $ = require('cash-dom');
 
 const createHoverable = (function () {
@@ -1417,7 +1468,120 @@ const createHoverable = (function () {
 
 if (typeof module !== 'undefined') module.exports = createHoverable;
 
-},{"cash-dom":1}],6:[function(require,module,exports){
+},{"cash-dom":1}],7:[function(require,module,exports){
+/**
+ * create new scroll item
+ * @param {selector} element element to scroll
+ * @param {object} options extra options
+ * @param {function} options.onScroll function(scrollItem)
+ * @param {function} options.onStateChange function(prop, value, scrollItem)
+ * @param {bool} options.addClasses = false; Adds classes like `.isOnScreen`
+ * @returns {object} scrollItem
+ */
+
+const $ = require('cash-dom');
+const widok = require('./widok');
+
+const createScrollItem = (function () {
+  class ScrollItem {
+    constructor(element, options) {
+      this.element = $(element);
+      this.offset = 0;
+      this.height = 0;
+      this.addClasses = options.addClasses;
+      this.isAboveScreen = false;
+      this.isCrossingScreenTop = false;
+      this.isCrossingScreenBottom = false;
+      this.isBelowScreen = false;
+      this.isOnScreen = false;
+      this.options = options;
+      this.onStateChange = this.options.onStateChange;
+      this.onScroll = this.options.onScroll;
+    }
+    _onResize() {
+      this.offset = this.element.offset().top;
+      this.height = this.element.outerHeight();
+      this._onScroll();
+    }
+    _onScroll() {
+      this.checkScreenRelation();
+      if (this.onScroll !== undefined) {
+        this.onScroll.call(this, this);
+      }
+    }
+    checkScreenRelation() {
+      if (this.offset + this.height < widok.s) {
+        this.setPropClass('AboveScreen', true);
+        this.setPropClass('CrossingScreenTop', false);
+        this.setPropClass('CrossingScreenBottom', false);
+        this.setPropClass('BelowScreen', false);
+        this.setPropClass('OnScreen', false);
+        return;
+      }
+      if (this.offset > widok.s + widok.h) {
+        this.setPropClass('AboveScreen', false);
+        this.setPropClass('CrossingScreenTop', false);
+        this.setPropClass('CrossingScreenBottom', false);
+        this.setPropClass('BelowScreen', true);
+        this.setPropClass('OnScreen', false);
+        return;
+      }
+      this.setPropClass('AboveScreen', false);
+      this.setPropClass('BelowScreen', false);
+      this.setPropClass('OnScreen', true);
+      this.setPropClass(
+        'CrossingScreenTop',
+        this.offset < widok.s && this.offset + this.height > widok.s
+      );
+      this.setPropClass(
+        'CrossingScreenBottom',
+        this.offset < widok.s + widok.h &&
+          this.offset + this.height > widok.s + widok.h
+      );
+    }
+    setPropClass(prop, value) {
+      if (this['is' + prop] !== value) {
+        this['is' + prop] = value;
+        if (this.addClasses) {
+          if (value) this.element.addClass(prop);
+          else this.element.removeClass(prop);
+        }
+        if (this.onStateChange !== void 0) {
+          this.onStateChange.call(this, prop, value, this);
+        }
+      }
+    }
+    screenPos(heightOffset) {
+      if (heightOffset === void 0) heightOffset = 0;
+      return (this.offset + this.height * heightOffset - widok.s) / widok.h;
+    }
+  }
+
+  const scrollItemCollection = [];
+
+  window.addEventListener('afterLayoutChange', function () {
+    scrollItemCollection.map(function (e) {
+      e._onResize();
+    });
+  });
+
+  window.addEventListener('scroll', function () {
+    scrollItemCollection.map(function (e) {
+      e._onScroll();
+    });
+  });
+
+  return function (element, options) {
+    if (options === undefined) options = {};
+    const scrollItem = new ScrollItem(element, options);
+    scrollItemCollection.push(scrollItem);
+    return scrollItem;
+  };
+})();
+
+if (typeof module !== 'undefined') module.exports = createScrollItem;
+
+},{"./widok":10,"cash-dom":1}],8:[function(require,module,exports){
 /**
  * Create a slider. Vertical slider might not work yet.
  * @param {object} options extra options
@@ -2089,7 +2253,7 @@ const createSlider = (function () {
 
 if (typeof module !== 'undefined') module.exports = createSlider;
 
-},{"./widok-hoverable":5,"cash-dom":1}],7:[function(require,module,exports){
+},{"./widok-hoverable":6,"cash-dom":1}],9:[function(require,module,exports){
 function throttle(ms, callback) {
   let lastCall = 0;
   let timeout;
@@ -2107,7 +2271,7 @@ function throttle(ms, callback) {
 
 if (typeof module !== 'undefined') module.exports = throttle;
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 const $ = require('cash-dom');
 const throttle = require('./widok-throttle');
 
@@ -2137,6 +2301,6 @@ $(document).on('ready', widok.sizeCheck);
 
 if (typeof module !== 'undefined') module.exports = widok;
 
-},{"./widok-throttle":7,"cash-dom":1}]},{},[3])
+},{"./widok-throttle":9,"cash-dom":1}]},{},[4])
 
 //# sourceMappingURL=bundle.js.map
