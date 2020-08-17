@@ -13,7 +13,12 @@
     <?php get_component('title', ['title' => 'a co na miejscu?']);?>
   </div>
   <div class="rsep"></div>
-  <?php get_part('slider-with-bullets');?>
+  <?php
+    $on_the_spot = get_field('on_the_spot');
+    for ($i = 0; $i < count($on_the_spot); $i++) {
+      get_part('slider-with-bullets', ['slides' => $on_the_spot[$i]['slides']]);
+    }
+  ?>
   <div class="rsep"></div>
 </div>
 
