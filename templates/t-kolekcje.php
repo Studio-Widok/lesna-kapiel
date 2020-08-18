@@ -17,33 +17,33 @@
   ));
 
   // dont know where to put that
-//   $attraction = $_GET['attraction'];
+  //   $attraction = $_GET['attraction'];
 
-//   $posts = get_posts(array(
-//     'numberposts' => -1,
-//     'post_type'   => 'apartment',
-//     'order'       => 'DSC',
-//     'tax_query'   => [
-//       [
-//         'taxonomy' => 'apartment_tags',
-//         'field'    => 'slug',
-//         'terms'    => $attraction,
-//       ],
-//     ],
-//   ));
+  //   $posts = get_posts(array(
+  //     'numberposts' => -1,
+  //     'post_type'   => 'apartment',
+  //     'order'       => 'DSC',
+  //     'tax_query'   => [
+  //       [
+  //         'taxonomy' => 'apartment_tags',
+  //         'field'    => 'slug',
+  //         'terms'    => $attraction,
+  //       ],
+  //     ],
+  //   ));
 
-//   foreach ($posts as $post): setup_postdata($post);
+  //   foreach ($posts as $post): setup_postdata($post);
 //   ?>
 // <div><?=get_the_title()?></div>
 // <?php
-//     endforeach
-//   ?>
+     //     endforeach
+     //
 
-foreach ($posts as $post): setup_postdata($post);
-?>
+     foreach ($posts as $post): setup_postdata($post);
+     ?>
 <div><?=get_the_title()?></div>
 <?php
-    endforeach
+    endforeach;
   ?>
 
 <?php get_footer();?>
