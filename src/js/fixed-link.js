@@ -3,46 +3,43 @@ const createScrollItem = require('./widok-scrollItem.js');
 const widok = require('./widok.js');
 
 const fixedLink = $('.fixed-link');
+const fixedLinkContainer = $('.fixed-link-container');
 let isFixed = false;
 
-const fixedOrAbs = scrollItem => {
-  console.log(scrollItem.isOnScreen);
+const fixedOrAbs = (index, scrollItem) => {
+  const currentFixedLink = $(fixedLink[index]);
+  const currentFixedLinkH = currentFixedLink.height();
   if (
     widok.s < scrollItem.offset ||
-    scrollItem.offset + scrollItem.height - infoSectionScrollHeight < widok.s
+    scrollItem.offset + scrollItem.height - currentFixedLinkH < widok.s
   ) {
     if (isFixed) {
       isFixed = false;
-      infoSectionScroll.removeClass('fixed');
-      if (
-        scrollItem.offset + scrollItem.height - infoSectionScrollHeight <
-        widok.s
-      ) {
-        infoSectionScroll.css({
-          top: scrollItem.height - infoSectionScrollHeight + rsepHeight,
+      currentFixedLink.removeClass('fixed');
+      if (scrollItem.offset + scrollItem.height - currentFixedLinkH < widok.s) {
+        currentFixedLink.css({
+          bottom: scrollItem.height - currentFixedLinkH, // + resepHeight
         });
       } else if (widok.s < scrollItem.offset) {
-        infoSectionScroll.css({
-          top: rsepHeight,
+        currentFixedLink.css({
+          bottom: 0, // resepHeight
         });
       }
     }
   } else {
     if (!isFixed) {
       isFixed = true;
-      infoSectionScroll.addClass('fixed');
-      infoSectionScroll.css({
-        top: rsepHeight,
+      currentFixedLink.addClass('fixed');
+      currentFixedLink.css({
+        bottom: 0, // resepHeight
       });
     }
   }
 };
 
-console.log(fixedLink);
-
-$.each(fixedLink, (index, element) => {
-  console.log(element);
+$.each(fixedLinkContainer, (index, element) => {
+  console.log(index, element);
   createScrollItem(element, {
-    onScroll: fixedOrAbs,
+    onScroll: fixedOrAbs(index, element),
   });
 });
