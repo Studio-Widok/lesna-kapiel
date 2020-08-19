@@ -1361,43 +1361,47 @@ const widok = require('./widok.js');
 
 const fixedLink = $('.fixed-link');
 const fixedLinkContainer = $('.fixed-link-container');
-let isFixed = false;
 
 const fixedOrAbs = (index, scrollItem) => {
-  const currentFixedLink = $(fixedLink[index]);
-  const currentFixedLinkH = currentFixedLink.height();
+  const currentFixedLink = scrollItem.options.currentFixedLink;
+  const currentFixedLinkH = scrollItem.options.currentFixedLinkH;
   if (
-    widok.s < scrollItem.offset ||
-    scrollItem.offset + scrollItem.height - currentFixedLinkH < widok.s
+    widok.s < scrollItem.offset - scrollItem.height ||
+    scrollItem.offset - currentFixedLinkH < widok.s
   ) {
-    if (isFixed) {
-      isFixed = false;
+    if (scrollItem.options.isFixed) {
+      scrollItem.options.isFixed = false;
       currentFixedLink.removeClass('fixed');
-      if (scrollItem.offset + scrollItem.height - currentFixedLinkH < widok.s) {
+      if (scrollItem.offset - currentFixedLinkH < widok.s) {
         currentFixedLink.css({
-          bottom: scrollItem.height - currentFixedLinkH, // + resepHeight
+          top: scrollItem.height - currentFixedLinkH,
+          bottom: 'auto',
         });
-      } else if (widok.s < scrollItem.offset) {
+      } else if (widok.s < scrollItem.offset - scrollItem.height) {
         currentFixedLink.css({
-          bottom: 0, // resepHeight
+          bottom: 'auto',
+          top: currentFixedLinkH,
         });
       }
     }
   } else {
-    if (!isFixed) {
-      isFixed = true;
+    if (!scrollItem.options.isFixed) {
+      scrollItem.options.isFixed = true;
       currentFixedLink.addClass('fixed');
       currentFixedLink.css({
-        bottom: 0, // resepHeight
+        bottom: '1em',
+        top: 'auto',
       });
     }
   }
 };
 
-$.each(fixedLinkContainer, (index, element) => {
-  console.log(index, element);
-  createScrollItem(element, {
-    onScroll: fixedOrAbs(index, element),
+$.each(fixedLinkContainer, (index, e) => {
+  createScrollItem(e, {
+    onScroll: scrollItem => fixedOrAbs(index, scrollItem),
+    isFixed: false,
+    currentFixedLink: $(fixedLink[index]),
+    currentFixedLinkH: $(fixedLink[index]).height(),
   });
 });
 
