@@ -1,4 +1,4 @@
-<?php /*Template Name: kolekcje*/
+<?php
   get_header();
 ?>
 
