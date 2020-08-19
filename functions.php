@@ -42,7 +42,7 @@ function viewport_meta() {?>
     register_post_type('apartment', array(
       'public'      => true,
       'label'       => 'Apartamenty',
-      'has_archive' => false,
+      'has_archive' => true,
       'supports'    => array('title'),
     ));
 
