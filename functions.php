@@ -42,15 +42,15 @@ function viewport_meta() {?>
     register_post_type('apartment', array(
       'public'      => true,
       'label'       => 'Apartamenty',
-      'has_archive' => false,
+      'has_archive' => true,
       'supports'    => array('title'),
     ));
 
     register_taxonomy(
-      'apartment_categories',
+      'collections',
       'apartment',
       array(
-        'label'             => 'Categories',
+        'label'             => 'Kolekcje',
         'hierarchical'      => true,
         'show_admin_column' => true,
         'show_in_menu'      => true,
@@ -58,10 +58,10 @@ function viewport_meta() {?>
     );
 
     register_taxonomy(
-      'apartment_tags',
+      'tags',
       'apartment',
       array(
-        'label'             => 'Tags',
+        'label'             => 'Tagi',
         'hierarchical'      => false,
         'show_admin_column' => true,
         'show_in_menu'      => true,
