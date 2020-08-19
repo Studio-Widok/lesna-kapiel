@@ -1365,19 +1365,20 @@ const fixedLinkContainer = $('.fixed-link-container');
 const fixedOrAbs = (index, scrollItem) => {
   const currentFixedLink = scrollItem.options.currentFixedLink;
   const currentFixedLinkH = scrollItem.options.currentFixedLinkH;
+  console.log(scrollItem);
   if (
-    widok.s < scrollItem.offset - scrollItem.height ||
-    scrollItem.offset - currentFixedLinkH < widok.s
+    widok.s < scrollItem.offset - scrollItem.height - 16 ||
+    scrollItem.offset - currentFixedLinkH * 2 < widok.s
   ) {
     if (scrollItem.options.isFixed) {
       scrollItem.options.isFixed = false;
       currentFixedLink.removeClass('fixed');
-      if (scrollItem.offset - currentFixedLinkH < widok.s) {
+      if (scrollItem.offset - currentFixedLinkH * 2 < widok.s) {
         currentFixedLink.css({
           top: scrollItem.height - currentFixedLinkH,
           bottom: 'auto',
         });
-      } else if (widok.s < scrollItem.offset - scrollItem.height) {
+      } else if (widok.s < scrollItem.offset - scrollItem.height - 16) {
         currentFixedLink.css({
           bottom: 'auto',
           top: currentFixedLinkH,
@@ -1396,14 +1397,27 @@ const fixedOrAbs = (index, scrollItem) => {
   }
 };
 
+const scrollItems = [];
+
 $.each(fixedLinkContainer, (index, e) => {
-  createScrollItem(e, {
-    onScroll: scrollItem => fixedOrAbs(index, scrollItem),
-    isFixed: false,
-    currentFixedLink: $(fixedLink[index]),
-    currentFixedLinkH: $(fixedLink[index]).height(),
-  });
+  scrollItems.push(
+    createScrollItem(e, {
+      onScroll: scrollItem => fixedOrAbs(index, scrollItem),
+      isFixed: false,
+      currentFixedLink: $(fixedLink[index]),
+      currentFixedLinkH: $(fixedLink[index]).height(),
+      currentFixedLinkW: $(fixedLink[index]).width(),
+    })
+  );
 });
+
+// console.log(scrollItems);
+
+// window.addEventListener('afterLayoutChange', function () {
+//   scrollItems.map(e => {
+//     e.onScroll();
+//   });
+// });
 
 },{"./widok-scrollItem.js":7,"./widok.js":10,"cash-dom":1}],4:[function(require,module,exports){
 const $ = require('cash-dom');
