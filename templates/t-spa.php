@@ -45,7 +45,17 @@
 </div>
 
 <div class="green-wrapper fixed-link-container">
-  <?php get_component('fixed-link', array('text' => 'lolololo', 'link' => 'a'));?>
+  <?php get_component('fixed-link', array('text' => 'lalaalal', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'xdxdxd', 'link' => 'a'));?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
