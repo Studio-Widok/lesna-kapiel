@@ -20,8 +20,11 @@
         'slides' => $on_the_spot[$i]['slides'],
         'title'  => $on_the_spot[$i]['title'],
       ]);
-    }
-  ?>
+    ?>
+  <div class="rsep"></div>
+  <?php
+        }
+      ?>
   <div class="rsep"></div>
   <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section));?>
 </div>
