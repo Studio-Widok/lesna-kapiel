@@ -1365,8 +1365,9 @@ const fixedLinkContainer = $('.fixed-link-container');
 const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
   const currentFixedLink = scrollItem.options.currentFixedLink;
   const currentFixedLinkH = scrollItem.options.currentFixedLinkH;
+  const currentFixedLinkW = scrollItem.options.currentFixedLinkW;
   if (
-    scrollItem.offset + currentFixedLinkH + 16 > widok.s + widok.h ||
+    scrollItem.offset + currentFixedLinkH + widok.em > widok.s + widok.h ||
     scrollItem.offset + scrollItem.height < widok.s + widok.h
   ) {
     if (isLayoutChange || scrollItem.options.isFixed) {
@@ -1374,16 +1375,16 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
       currentFixedLink.removeClass('fixed');
       if (scrollItem.offset + scrollItem.height < widok.s + widok.h) {
         currentFixedLink.css({
-          top: scrollItem.height - currentFixedLinkH,
+          top: scrollItem.height - currentFixedLinkW - widok.em,
           bottom: 'auto',
         });
       } else if (
-        scrollItem.offset + currentFixedLinkH + 16 >
+        scrollItem.offset + currentFixedLinkH + widok.em >
         widok.s + widok.h
       ) {
         currentFixedLink.css({
           bottom: 'auto',
-          top: currentFixedLinkH,
+          top: currentFixedLinkH - currentFixedLinkW,
         });
       }
     }
@@ -1399,28 +1400,22 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
   }
 };
 
-const scrollItems = [];
-
 $.each(fixedLinkContainer, (index, e) => {
+  const currentFixedLink = $(fixedLink[index]);
   const item = createScrollItem(e, {
     onScroll: scrollItem => fixedOrAbs(scrollItem),
     isFixed: false,
-    currentFixedLink: $(fixedLink[index]),
-    currentFixedLinkH: $(fixedLink[index]).height(),
-    currentFixedLinkW: $(fixedLink[index]).width(),
+    currentFixedLink,
+    currentFixedLinkH: currentFixedLink.height(),
+    currentFixedLinkW: currentFixedLink.width(),
   });
-
-  scrollItems.push(item);
 
   item._onResize = () => {
     Object.getPrototypeOf(item)._onResize.call(item);
+    item.options.currentFixedLinkH = item.options.currentFixedLink.height();
+    item.options.currentFixedLinkW = item.options.currentFixedLink.width();
+    fixedOrAbs(item, true);
   };
-});
-
-window.addEventListener('afterLayoutChange', function () {
-  scrollItems.map(e => {
-    fixedOrAbs(e, true);
-  });
 });
 
 },{"./widok-scrollItem.js":7,"./widok.js":10,"cash-dom":1}],4:[function(require,module,exports){
@@ -2298,9 +2293,11 @@ const widok = {
   h: 0,
   w: 0,
   s: 0,
+  em: 0,
   sizeCheck: () => {
     widok.h = $(window).height();
     widok.w = $(window).width();
+    widok.em = parseFloat($('body').css('font-size'));
     window.dispatchEvent(new CustomEvent('layoutChange'));
     widok.scrollCheck();
     window.dispatchEvent(new CustomEvent('afterLayoutChange'));
