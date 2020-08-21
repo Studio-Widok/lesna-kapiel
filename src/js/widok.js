@@ -5,9 +5,11 @@ const widok = {
   h: 0,
   w: 0,
   s: 0,
+  em: 0,
   sizeCheck: () => {
     widok.h = $(window).height();
     widok.w = $(window).width();
+    widok.em = parseFloat($('body').css('font-size'));
     window.dispatchEvent(new CustomEvent('layoutChange'));
     widok.scrollCheck();
     window.dispatchEvent(new CustomEvent('afterLayoutChange'));

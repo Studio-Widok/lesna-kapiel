@@ -34,4 +34,37 @@
   <div class="rsep"></div>
 </div>
 
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'babababa', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius optio, iste
+    debitis maxime ut doloremque nam tempore est, fuga distinctio asperiores
+    ipsa dolor amet totam magnam eaque ex quasi aperiam.</p>
+  <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'lalaalal', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper fixed-link-container">
+  <?php get_component('fixed-link', array('text' => 'xdxdxd', 'link' => 'a'));?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
 <?php get_footer();?>
