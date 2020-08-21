@@ -1,23 +1,27 @@
 /**
  * Create a slider. Vertical slider might not work yet.
  * @param {object} options extra options
- * @param {boolean} options.slideOnWheel default=false,
- * @param {boolean} options.shouldHaveBullets default=true,
+ * @param {selector} options.wrap selector of the slider wrap
  * @param {selector} options.slideSelector default='.single-slide', selector of a single slide, searched inside wrap
+ * @param {boolean} options.shouldHaveBullets default=true,
+ * @param {selector} options.bulletContainer
+ * @param {selector} options.bulletSelector
  * @param {boolean} options.isVertical default=false, direction of the slider
  * @param {number} options.initialSlide default=0, id of the initially selected slide
  * @param {number} options.duration default=300, duration of the sliding animation
  * @param {boolean} options.mouseDrag default=false, allows slider to be dragged with the mouse
+ * @param {boolean} options.touchDrag default=false, allows slider to be dragged on a touchscreen
+ * @param {boolean} options.slideOnWheel default=false,
  * @param {boolean} options.useKeys default=false, changes slides on arrow keys, can be changed later
- * @param {selector} options.wrap selector of the slider wrap
  * @param {selector} options.arrowPrev selector of the up arrow, searched in the whole document
  * @param {selector} options.arrowNext analogous
  * @param {function} options.onActivate callback to be called when a slide activates
  * @param {function} options.onDeactivate analogous
  * @param {boolean} options.loop default=false
  * @param {string} options.animationType default="slide", 'fade' - fade effect
- * @param {boolean} options.touchDrag default=false, allows slider to be dragged on mobile
- * @returns F3Slider
+ * @param {boolean} options.slidesAsLinks default=false, clicking on a slide activates it
+ * @param {boolean} options.adjustHeight default=false, after switching slides the height of the slider is changed
+ * @returns Slider object
  */
 
 const $ = require('cash-dom');
@@ -32,7 +36,7 @@ const createSlider = (function () {
 
       this.prepareOptions(options);
       this.currentSlideId = this.options.initialSlide; // id of the current slide
-      this.slideOffset = 0; // number of pixels from current slide top
+      this.slideOffset = 0; // number of pixels from current slide beginning
       this.position = 0; // current scroll amount in pixels
       this.barSize = 0; // size of the entire scroll bar
       this.size = 0; // size of the sizer element
@@ -71,6 +75,8 @@ const createSlider = (function () {
         touchDrag: false,
         useKeys: false,
         loop: false,
+        slidesAsLinks: false,
+        adjustHeight: false,
         animationType: 'slide',
       };
       for (const optionName in options) {
@@ -106,18 +112,18 @@ const createSlider = (function () {
       const foundSlides = this.wrap.find(this.options.slideSelector);
       if (this.options.loop) {
         foundSlides.clone().map((index, element) => {
-          let slide = new F3SliderSlide(element, this);
+          let slide = new Slide(element, this);
           slide.element.appendTo(this.bar);
           this.slides.push(slide);
         });
         foundSlides.clone().map((index, element) => {
-          let slide = new F3SliderSlide(element, this);
+          let slide = new Slide(element, this);
           slide.element.appendTo(this.bar);
           this.slides.push(slide);
         });
       }
       foundSlides.map((index, element) => {
-        let slide = new F3SliderSlide(element, this);
+        let slide = new Slide(element, this);
         slide.element.appendTo(this.bar);
         this.slides.push(slide);
       });
@@ -233,7 +239,8 @@ const createSlider = (function () {
         this.onDrag = this.onDrag.bind(this);
         this.wrap.on('touchstart', event => {
           if (!this.isEnabled) return;
-          event.preventDefault();
+          // TODO: add an option to switch this
+          // event.preventDefault();
           if (this.isSliding) return;
           this.dragStart = {
             x: event.changedTouches[0].pageX,
@@ -329,17 +336,17 @@ const createSlider = (function () {
     }
 
     endMove(dragEnd) {
+      const partNeededToSlide = 1 / 100;
       this.isDragged = false;
       const axis = this.options.isVertical ? 'y' : 'x';
-      let oldestSavedId = 0;
-      if (this.lastDrag.values.length === 10) {
-        oldestSavedId = (this.lastDrag.lastSaveId + 1) % 10;
-      }
 
       let currentPos = this.slides[this.currentSlideId].offset;
       currentPos -= dragEnd[axis] - this.dragStart[axis];
 
-      let changedSlide = false;
+      const applyFoundSlide = found => {
+        this.currentSlideId = found;
+        this.slideOffset = 0;
+      };
 
       // previous position
       if (dragEnd[axis] > this.dragStart[axis]) {
@@ -353,12 +360,17 @@ const createSlider = (function () {
             break;
           }
         }
-        if (this.currentSlideId !== found) {
-          this.currentSlideId = found;
-          this.slideOffset = 0;
-          this.applyPosition();
-          changedSlide = true;
-        }
+
+        const isSlidedEnoughToChange = () => {
+          const slidedAmount = dragEnd[axis] - this.dragStart[axis];
+          const amountNedeedToSlide =
+            this.slides[this.currentSlideId].size * partNeededToSlide;
+          return slidedAmount > amountNedeedToSlide;
+        };
+
+        if (this.currentSlideId === found) {
+          if (isSlidedEnoughToChange() && found > 0) applyFoundSlide(found - 1);
+        } else applyFoundSlide(found);
       }
 
       // next position
@@ -372,18 +384,21 @@ const createSlider = (function () {
             break;
           }
         }
-        if (this.currentSlideId !== found) {
-          this.currentSlideId = found;
-          this.slideOffset = 0;
-          this.applyPosition();
-          changedSlide = true;
-        }
+
+        const isSlidedEnoughToChange = () => {
+          const slidedAmount = this.dragStart[axis] - dragEnd[axis];
+          const amountNedeedToSlide =
+            this.slides[this.currentSlideId].size * partNeededToSlide;
+          return slidedAmount > amountNedeedToSlide;
+        };
+
+        if (this.currentSlideId === found) {
+          if (isSlidedEnoughToChange() && found + 1 < this.slides.length)
+            applyFoundSlide(found + 1);
+        } else applyFoundSlide(found);
       }
 
-      // same position
-      if (!changedSlide) {
-        this.applyPosition();
-      }
+      this.applyPosition();
     }
 
     checkSize() {
@@ -411,9 +426,15 @@ const createSlider = (function () {
           (prev, curr) => Math.max(prev, curr.element[0].scrollHeight),
           0
         );
-        this.wrap.css({
-          height: maxHeight,
-        });
+        if (this.options.adjustHeight) {
+          this.wrap.css({
+            height: this.slides[this.currentSlideId].element[0].scrollHeight,
+          });
+        } else {
+          this.wrap.css({
+            height: maxHeight,
+          });
+        }
       }
     }
 
@@ -512,6 +533,13 @@ const createSlider = (function () {
           adjustPosition();
         }, duration);
       }
+      setTimeout(() => {
+        if (this.options.adjustHeight) {
+          this.wrap.css({
+            height: this.slides[this.currentSlideId].element[0].scrollHeight,
+          });
+        }
+      }, duration);
     }
 
     handleArrows() {
@@ -538,7 +566,7 @@ const createSlider = (function () {
   }
   Slider.lastId = -1;
 
-  class F3SliderSlide {
+  class Slide {
     constructor(element, slider) {
       this.element = $(element);
       if (this.element.length !== 1) return;
@@ -555,6 +583,14 @@ const createSlider = (function () {
       this.directionToActive = undefined;
       this.size = 0;
       this.offset = 0;
+
+      if (this.slider.options.slidesAsLinks) {
+        this.element.on('click', () => {
+          if (this.directionToActive === 0) return;
+          if (this.slider.isSliding) return;
+          this.goTo();
+        });
+      }
     }
 
     createBullet() {
@@ -571,7 +607,7 @@ const createSlider = (function () {
           (this.id >= this.slider.slides.length / 3 &&
             this.id < (2 * this.slider.slides.length) / 3)
         ) {
-          this.bullet = new F3SliderBullet(this.slider, this);
+          this.bullet = new Bullet(this.slider, this);
         } else {
           this.bulletLink = {
             isLink: true,
@@ -644,7 +680,7 @@ const createSlider = (function () {
     }
   }
 
-  class F3SliderBullet {
+  class Bullet {
     constructor(slider, slide, dummy) {
       this.slider = slider;
       this.slide = slide;
