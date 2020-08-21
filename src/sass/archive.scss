@@ -1,0 +1,50 @@
+hr {
+  border-color: inherit;
+  border-style: solid;
+  color: inherit;
+  background-color: inherit;
+}
+
+.big-title {
+  font-size: 8em;
+  white-space: pre-wrap;
+}
+
+// @mixin colors-set($name, $bg, $text, $namePremium) {
+//   .#{$name}-set {
+//     background-color: $bg;
+//     color: $text;
+//     border-color: $text;
+//     .premium-container {
+//       @include mobile-basic($namePremium);
+//     }
+//   }
+// }
+
+.green-dark-set {
+  background-color: $dark-green;
+  color: #fff;
+  border-color: #fff;
+  .premium-container {
+    background-color: $color-beige;
+    color: $dark-green;
+    border-color: $dark-green;
+  }
+}
+
+.green-light-set {
+  background-color: $grey-background;
+  color: #fff;
+  border-color: #fff;
+}
+
+.beige-set {
+  background-color: $color-beige;
+  color: $dark-green;
+  border-color: $dark-green;
+  .premium-container {
+    background-color: $dark-green;
+    color: #fff;
+    border-color: #fff;
+  }
+}
