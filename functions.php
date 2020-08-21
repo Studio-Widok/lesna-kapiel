@@ -116,6 +116,13 @@ function viewport_meta() {?>
       return;
     }
 
+    $__index = call_user_func(function($__file) {
+      global $displayed_parts;
+      if (!isset($displayed_parts)) $displayed_parts = [];
+      if (!isset($displayed_parts[$__file])) $displayed_parts[$__file] = 0;
+      return $displayed_parts[$__file]++;
+    }, $__file);
+
     foreach ($__data as $__key => &$__value) {
       $$__key = &$__value;
     }

@@ -6,29 +6,30 @@
   .small-title {
     position: relative;
   }
+
   .border-below {
-      position: absolute;
-      height: 1px;
-      background-color: #fff;
-      width: 70%;
-      bottom: -20px;
-      left: 15%;
-      right: 15%;
+    position: absolute;
+    height: 1px;
+    background-color: #fff;
+    width: 70%;
+    bottom: -20px;
+    left: 15%;
+    right: 15%;
   }
 
   .text {
-      text-align: left;
+    text-align: left;
   }
 
   .additional-links {
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-size: 1.2em;
-      flex-direction: column;
-      justify-content: flex-start;
-        div.flex{
-          margin: 0.5em;
-      }
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 1.2em;
+    flex-direction: column;
+    justify-content: flex-start;
+    div.flex {
+      margin: 0.5em;
+    }
   }
 
   .circle {

@@ -13,8 +13,19 @@
     <?php get_component('title', ['title' => 'a co na miejscu?']);?>
   </div>
   <div class="rsep"></div>
-  <?php get_part('slider-with-bullets');?>
+  <?php
+    $on_the_spot = get_field('on_the_spot');
+    for ($i = 0; $i < count($on_the_spot); $i++) {
+      get_part('slider-with-bullets', [
+        'slides' => $on_the_spot[$i]['slides'],
+        'title'  => $on_the_spot[$i]['title'],
+      ]);
+    ?>
   <div class="rsep"></div>
-  <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section)); ?>
+  <?php
+        }
+      ?>
+  <div class="rsep"></div>
+  <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section));?>
 </div>
 <?php get_footer();?>
