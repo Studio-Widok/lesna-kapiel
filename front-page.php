@@ -46,15 +46,19 @@
 
 <div class="grey-wrapper">
   <div class="rsep"></div>
-  <?php get_part('slider', array('value_1' => 'pic_left', 'slider' => $slider));?>
+  <?php
+    get_part('collections-slider');
+  ?>
   <div class="rsep"></div>
 
   <div class="rsep"></div>
   <div class="content flex">
 
-    <?php get_component('vertical-pic-text', array('links' => 'no','button' => "yes", 'content' => $tripple_section[0]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'yes','button' => "yes", 'content' => $tripple_section[1]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'no','button' => "yes", 'content' => $tripple_section[2]));?>
+    <?php
+      get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));
+      get_component('vertical-pic-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));
+      get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));
+    ?>
 
   </div>
   <div class="rsep"></div>
@@ -73,9 +77,9 @@
 
 </div>
 
-  <div id="map-wrapper">
-    <div class="overlay abs"></div>
-    <div id="gmap"></div>  
-  </div>
+<div id="map-wrapper">
+  <div class="overlay abs"></div>
+  <div id="gmap"></div>
+</div>
 
 <?php get_footer();

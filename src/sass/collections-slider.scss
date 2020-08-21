@@ -1,0 +1,21 @@
+.collections-slider {
+  .content {
+    .collection-image-column {
+      width: 60%;
+    }
+
+    .collection-description-column {
+      width: 40%;
+
+      .collection-number {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+      }
+
+      .collection-title {
+        font-size: 8em;
+        margin-left: -1.15em;
+      }
+    }
+  }
+}
