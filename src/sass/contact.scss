@@ -94,10 +94,17 @@
 }
 
 .instagram-container {
+  margin-bottom: -5em;
+  z-index: 4;
+  position: relative;
   #sb_instagram {
     #sbi_images {
       .sbi_item {
         padding: 0 1em !important;
+
+        @media (max-width: 768px) {
+          padding: 1em 1em !important;
+        }
       }
     }
   }
