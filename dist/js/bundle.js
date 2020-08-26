@@ -1375,7 +1375,7 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
   const currentFixedLinkH = scrollItem.options.currentFixedLinkH;
   const currentFixedLinkW = scrollItem.options.currentFixedLinkW;
   if (
-    scrollItem.offset + currentFixedLinkH + widok.em > widok.s + widok.h ||
+    scrollItem.offset + currentFixedLinkH + widok.em * 2 > widok.s + widok.h ||
     scrollItem.offset + scrollItem.height < widok.s + widok.h
   ) {
     if (isLayoutChange || scrollItem.options.isFixed) {
@@ -1387,12 +1387,12 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
           bottom: 'auto',
         });
       } else if (
-        scrollItem.offset + currentFixedLinkH + widok.em >
+        scrollItem.offset + currentFixedLinkH + widok.em * 2 >
         widok.s + widok.h
       ) {
         currentFixedLink.css({
           bottom: 'auto',
-          top: currentFixedLinkH - currentFixedLinkW,
+          top: currentFixedLinkH - currentFixedLinkW + widok.em,
         });
       }
     }
