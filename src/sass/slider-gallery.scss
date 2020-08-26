@@ -1,0 +1,14 @@
+.slider-gallery {
+  .slider-arrows {
+    position: static;
+    margin: 0;
+    .arrow-left {
+      margin-right: 0.5em;
+    }
+    .arrow-left,
+    .arrow-right {
+      position: static;
+      width: 2em;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.lb-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  left: -100%;
+  background-color: $green-overlay;
+  z-index: 30;
+  transition: left 0.3s;
+
+  &.active {
+    left: 0;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.lb {
+  position: absolute;
+  background-color: #333;
+  overflow: hidden;
+  transition: 0.3s;
+
+  .cake {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    padding: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+.lb {
+  overflow: visible;
+}
+
+.close-lb {
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+  width: 1.3em;
+  height: 1.3em;
+  padding: 0.25em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+
+  path {
+    stroke: #fff;
+    stroke-width: 10;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    background-color: #f55;
+
+    path {
+      stroke: #fff;
+    }
+  }
+}
+
+.text {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
