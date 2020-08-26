@@ -4,6 +4,7 @@
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
+    'bg'         => get_field('top_image'),
   ));
 ?>
 
