@@ -285,6 +285,10 @@ p {
   }
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 //adding to the base
 .green-wrapper {
   background-color: $dark-green;
@@ -337,4 +341,5 @@ button {
 @import 'text-full.scss';
 @import 'slider-with-bullets.scss';
 @import 'fixed-link.scss';
+@import 'archive.scss';
 @import '_mobile.scss';

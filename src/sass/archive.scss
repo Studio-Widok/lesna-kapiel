@@ -1,0 +1,36 @@
+hr {
+  border-color: inherit;
+  border-style: solid;
+  color: inherit;
+  background-color: inherit;
+}
+
+.big-title {
+  font-size: 8em;
+  white-space: pre-wrap;
+}
+
+@mixin colors-set(
+  $name,
+  $bg,
+  $text,
+  $bgPremium: $grey-background,
+  $textPremium: #fff
+) {
+  .#{$name}-set {
+    @include colors($bg, $text);
+    .premium-container {
+      @include colors($bgPremium, $textPremium);
+    }
+  }
+}
+
+@mixin colors($bg, $text) {
+  background-color: $bg;
+  color: $text;
+  border-color: $text;
+}
+
+@include colors-set('green-dark', $dark-green, #fff, $color-beige, $dark-green);
+@include colors-set('green-light', $grey-background, #fff);
+@include colors-set('beige', $color-beige, $dark-green, $dark-green, #fff);
