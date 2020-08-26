@@ -49,6 +49,7 @@
     position: relative;
     font-size: 2em;
     font-weight: 600;
+    width: 100%;
 
     span {
       text-transform: uppercase;
@@ -61,7 +62,8 @@
     position: absolute;
     bottom: 15%;
     margin: 0 auto;
-    svg{
+    cursor: pointer;
+    svg {
       height: 3em;
     }
   }
