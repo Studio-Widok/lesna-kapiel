@@ -1797,6 +1797,7 @@ $('.slider-with-bullets').each((index, element) => {
   });
 });
 
+
 },{"./widok-slider":10,"cash-dom":1}],4:[function(require,module,exports){
 const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem.js');
@@ -1861,10 +1862,27 @@ $.each(fixedLinkContainer, (index, e) => {
   };
 });
 
-},{"./widok-scrollItem.js":9,"./widok.js":12,"cash-dom":1}],5:[function(require,module,exports){
+},{"./widok-scrollItem.js":8,"./widok.js":11,"cash-dom":1}],4:[function(require,module,exports){
+const videoOverlay = document.getElementById("footer-video-overlay");
+const video = document.getElementById("footer-video");
+
+
+videoOverlay.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    videoOverlay.classList.add("non-active");
+  } else {
+    video.pause();
+    videoOverlay.classList.remove("non-active");
+  }
+});
+
+},{}],5:[function(require,module,exports){
 const $ = require('cash-dom');
 require('./nav');
 require('./widok');
+require('./footer');
+
 
 const bodyElement = $('body');
 if (bodyElement.hasClass('page-template-t-atrakcje')) require('./atrakcje');
@@ -1879,6 +1897,7 @@ $('#burger').on('click', () => {
 });
 
 },{"cash-dom":1}],7:[function(require,module,exports){
+
 const $ = require('cash-dom');
 const smoothscroll = require('smoothscroll-polyfill');
 
@@ -1890,6 +1909,7 @@ $('#top .arrow').on('click', () => {
 });
 
 },{"cash-dom":1,"smoothscroll-polyfill":2}],8:[function(require,module,exports){
+
 const $ = require('cash-dom');
 
 const createHoverable = (function () {
@@ -1937,7 +1957,9 @@ const createHoverable = (function () {
 
 if (typeof module !== 'undefined') module.exports = createHoverable;
 
-},{"cash-dom":1}],9:[function(require,module,exports){
+
+},{"cash-dom":1}],8:[function(require,module,exports){
+
 /**
  * create new scroll item
  * @param {selector} element element to scroll
@@ -2051,6 +2073,7 @@ const createScrollItem = (function () {
 if (typeof module !== 'undefined') module.exports = createScrollItem;
 
 },{"./widok":12,"cash-dom":1}],10:[function(require,module,exports){
+
 /**
  * Create a slider. Vertical slider might not work yet.
  * @param {object} options extra options
@@ -2758,7 +2781,8 @@ const createSlider = (function () {
 
 if (typeof module !== 'undefined') module.exports = createSlider;
 
-},{"./widok-hoverable":8,"cash-dom":1}],11:[function(require,module,exports){
+},{"./widok-hoverable":7,"cash-dom":1}],10:[function(require,module,exports){
+
 function throttle(ms, callback) {
   let lastCall = 0;
   let timeout;
@@ -2776,7 +2800,8 @@ function throttle(ms, callback) {
 
 if (typeof module !== 'undefined') module.exports = throttle;
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
+
 const $ = require('cash-dom');
 const throttle = require('./widok-throttle');
 
@@ -2808,6 +2833,7 @@ $(document).on('ready', widok.sizeCheck);
 
 if (typeof module !== 'undefined') module.exports = widok;
 
-},{"./widok-throttle":11,"cash-dom":1}]},{},[5])
+},{"./widok-throttle":10,"cash-dom":1}]},{},[5])
+
 
 //# sourceMappingURL=bundle.js.map
