@@ -34,18 +34,18 @@
     };
     var div = document.getElementById('gmap');
     var map = new google.maps.Map(div, options);
-  //   var image =
-  //     '<?=esc_url(get_template_directory_uri());?>/media/pin.png';
-  //   var marker = new google.maps.Marker({
-  //     position: myLatLng,
-  //     map: map,
-  //     icon: {
-  //       url: image,
-  //       scaledSize: new google.maps.Size(90, 100),
-  //       // scaledSize: new google.maps.Size(80, 80),
-  //       anchor: new google.maps.Point(35, 105)
-  //     }
-  //   });
+    //   var image =
+    //     '<?=esc_url(get_template_directory_uri());?>/media/pin.png';
+    //   var marker = new google.maps.Marker({
+    //     position: myLatLng,
+    //     map: map,
+    //     icon: {
+    //       url: image,
+    //       scaledSize: new google.maps.Size(90, 100),
+    //       // scaledSize: new google.maps.Size(80, 80),
+    //       anchor: new google.maps.Point(35, 105)
+    //     }
+    //   });
   }
   </script>
   <?php endif;?>

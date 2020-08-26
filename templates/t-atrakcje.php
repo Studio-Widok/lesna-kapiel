@@ -3,6 +3,7 @@
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
+    'bg'         => get_field('top_image'),
   ));
   $tripple_section = get_field('tripple_section');
 ?>
@@ -23,8 +24,8 @@
     ?>
   <div class="rsep"></div>
   <?php
-        }
-      ?>
+    }
+  ?>
   <div class="rsep"></div>
   <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section));?>
   <div class="rsep"></div>

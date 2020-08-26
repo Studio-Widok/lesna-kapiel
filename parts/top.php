@@ -1,11 +1,12 @@
 <?php
-  $img        = get_field('top_image');
+  $bg         = $bg ?? '';
   $show_logo  = $show_logo ?? false;
   $show_title = $show_title ?? false;
+  $text_align = $text_align ?? 'text-center';
 ?>
 
 <div id="top">
-  <div id="top-bg" style="background-image: url('<?=$img['sizes']['large']?>')">
+  <div id="top-bg" style="background-image: url('<?=$bg['sizes']['large']?>')">
   </div>
   <?php if ($show_logo) {?>
   <div id="top-logo-wrap">
@@ -15,16 +16,16 @@
     <div id="top-logo-subtitle">slow life apartments</div>
   </div>
   <?php }if ($show_title) {?>
-  <div id="top-title">
+  <div id="top-title" class="content column-double <?=$text_align?>">
     <span><?=get_the_title()?></span>
   </div>
   <?php }?>
 
-  <div class="arrow"> 
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
-  <path d="M5 0L5 17" stroke-width="1.5" stroke="#fff" />
-  <path d="M5 27L1.5 17L8.5 17z" stroke-width="0" fill="#fff" />
-</svg>
+  <div class="arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
+      <path d="M5 0L5 17" stroke-width="1.5" stroke="#fff" />
+      <path d="M5 27L1.5 17L8.5 17z" stroke-width="0" fill="#fff" />
+    </svg>
 
   </div>
 </div>

@@ -7,4 +7,4 @@ require('./footer');
 const bodyElement = $('body');
 if (bodyElement.hasClass('page-template-t-atrakcje')) require('./atrakcje');
 if ($('.fixed-link').length > 0) require('./fixed-link');
-// if($('#footer-video-overlay').length > 0) require('./footer')
+if ($('#top').length > 0) require('./top');
