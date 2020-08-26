@@ -67,4 +67,6 @@
   <div class="rsep"></div>
 </div>
 
-<?php get_footer();?>
+<?php get_footer();
+get_part('map-block');
+?>

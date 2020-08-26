@@ -7,7 +7,13 @@
     content="<?php echo esc_url(get_template_directory_uri()); ?>/img/ogimg.png" />
   <?php wp_head();?>
 
-  <?php if (is_front_page()): ?>
+  <?php if (is_front_page()
+  || is_page_template('templates/projects.php')
+  || is_page_template('templates/t-atrakcje.php')
+  || is_page_template('templates/t-nasza-idea.php')
+  || is_page_template('templates/t-spa.php')
+  || is_page_template('templates/t-kontakt.php')
+  ): ?>
 
   <script
     src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh1cBvGlHA4BwCGsecfiBhgEdi80meJYM">

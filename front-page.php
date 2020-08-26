@@ -73,9 +73,6 @@
 
 </div>
 
-  <div id="map-wrapper">
-    <div class="overlay abs"></div>
-    <div id="gmap"></div>  
-  </div>
+<?php get_part('map-block')?>
 
 <?php get_footer();
