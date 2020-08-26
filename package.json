@@ -19,6 +19,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "cash-dom": "^8.0.0"
+    "cash-dom": "^8.0.0",
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }
