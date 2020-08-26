@@ -18,7 +18,7 @@
   <div class="rsep"></div>
   <?php get_part('contact-images');?>
 </div>
-<div class="green-wrapper fixed-link-container">
+<div class="fixed-link-container">
   <?php get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_the_permalink()));?>
   <div id="map-wrapper">
     <div class="overlay abs"></div>
