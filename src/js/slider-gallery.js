@@ -2,17 +2,7 @@ const $ = require('cash-dom');
 const widok = require('./widok');
 const createSlider = require('./widok-slider');
 const createLightbox = require('./widok-lightbox');
-
 const Masonry = require('masonry-layout');
-
-createSlider({
-  wrap: '.slider-gallery',
-  useKeys: true,
-  bulletContainer: '.slider-gallery .slider-arrows',
-  animationType: 'fade',
-  duration: 800,
-  loop: true,
-});
 
 function onImageChange() {
   var imageSrc =
@@ -74,15 +64,24 @@ function onMasonryChange() {
   masonry.layout();
 }
 
+createSlider({
+  wrap: '.slider-gallery',
+  useKeys: true,
+  shouldHaveBullets: false,
+  arrowPrev: '.slider-arrows-container .arrow-left',
+  arrowNext: '.slider-arrows-container .arrow-right',
+  duration: 600,
+});
+
 const singleLb = createLightbox({
-  items: '.element-lb',
-  container: '#lb-container',
+  items: '.single-slide',
+  container: '#lb-container-image',
   onChange: onImageChange,
   onActivate: onImageActivate,
   onResize: onImageResize,
   hasArrows: true,
   hasExit: true,
-  exitClass: '#lb-container .close-lb',
+  exitClass: '#lb-container-image .close-lb',
 });
 
 const masonryLb = createLightbox({
@@ -94,8 +93,8 @@ const masonryLb = createLightbox({
   hasExit: true,
 });
 
-$('.gallery-item').on('click', () => {
-  const imageId = masonryLb.currentLb;
+$('.gallery-item').on('click', function () {
+  const id = $(this).data('iterator');
   masonryLb.deactive();
-  singleLb.active(imageId);
+  singleLb.active(id);
 });

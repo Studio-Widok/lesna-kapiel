@@ -1,14 +1,47 @@
 .slider-gallery {
+  width: 100%;
+  .slider-sizer {
+    width: 37.5%;
+  }
+  .single-slide {
+    padding-right: 3em;
+    .single-slide-content {
+      overflow: hidden;
+    }
+    .cake {
+      transition: padding 0.3s, transform 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &.active .cake {
+      padding-bottom: 166.66666%;
+    }
+  }
+}
+
+.slider-arrows-container {
   .slider-arrows {
     position: static;
     margin: 0;
-    .arrow-left {
-      margin-right: 0.5em;
-    }
+    display: flex;
     .arrow-left,
     .arrow-right {
       position: static;
-      width: 2em;
+      margin-right: 0.5em;
+      svg {
+        width: 2em;
+      }
+      &.hovered {
+        svg {
+          margin: 0;
+        }
+      }
     }
   }
+}
+
+.slider-content {
+  margin-top: -10em;
 }
