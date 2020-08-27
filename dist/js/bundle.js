@@ -1447,8 +1447,8 @@ createSlider({
   touchDrag: true,
   bulletContainer: '.collections-slider .bullets-container',
   bulletSelector: '.collections-slider .bullets-container .slider-bullet',
-  // arrowPrev: `.slider-with-bullets .arrow-left`,
-  // arrowNext: `.slider-with-bullets .arrow-right`,
+  arrowPrev: `.collections-slider .arrow-left`,
+  arrowNext: `.collections-slider .arrow-right`,
 });
 
 },{"./widok-slider":8,"cash-dom":1}],6:[function(require,module,exports){
@@ -1724,14 +1724,14 @@ const createSlider = (function () {
     }
 
     prepareSlides() {
-      this.sizer = $('<div class="f3-slider-sizer">')
+      this.sizer = $('<div class="slider-sizer">')
         .css({
           position: 'relative',
           height: '100%',
           margin: '0 auto',
         })
         .appendTo(this.wrap);
-      this.bar = $('<div class="f3-slider-bar">').appendTo(this.sizer);
+      this.bar = $('<div class="slider-bar">').appendTo(this.sizer);
       this.slides = [];
 
       if (this.options.shouldHaveBullets) {

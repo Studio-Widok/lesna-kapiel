@@ -109,14 +109,14 @@ const createSlider = (function () {
     }
 
     prepareSlides() {
-      this.sizer = $('<div class="f3-slider-sizer">')
+      this.sizer = $('<div class="slider-sizer">')
         .css({
           position: 'relative',
           height: '100%',
           margin: '0 auto',
         })
         .appendTo(this.wrap);
-      this.bar = $('<div class="f3-slider-bar">').appendTo(this.sizer);
+      this.bar = $('<div class="slider-bar">').appendTo(this.sizer);
       this.slides = [];
 
       if (this.options.shouldHaveBullets) {

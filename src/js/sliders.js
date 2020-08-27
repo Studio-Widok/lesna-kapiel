@@ -19,6 +19,6 @@ createSlider({
   touchDrag: true,
   bulletContainer: '.collections-slider .bullets-container',
   bulletSelector: '.collections-slider .bullets-container .slider-bullet',
-  // arrowPrev: `.slider-with-bullets .arrow-left`,
-  // arrowNext: `.slider-with-bullets .arrow-right`,
+  arrowPrev: `.collections-slider .arrow-left`,
+  arrowNext: `.collections-slider .arrow-right`,
 });

@@ -1,4 +1,7 @@
 .collections-slider {
+  position: relative;
+  margin-top: -12em;
+
   .content {
     .collection-image-column {
       width: 60%;
@@ -42,6 +45,21 @@
         &.active {
           border-color: #fff;
         }
+      }
+    }
+  }
+
+  .slider-arrows {
+    top: 12em;
+
+    .disabled {
+      opacity: 0;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      svg {
+        background-color: transparent;
       }
     }
   }

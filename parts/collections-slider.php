@@ -6,7 +6,6 @@
   <div class="content">
 
     <div class="slider">
-
       <?php
         for ($i = 0; $i < count($collections); $i++) {
           $img = get_field('image', $collections[$i]);
@@ -31,7 +30,6 @@
         </div>
       </div>
       <?php }?>
-
     </div>
 
     <div class="bullets-container">
@@ -41,4 +39,5 @@
     </div>
 
   </div>
+  <?php get_component('slider-arrows');?>
 </div>
