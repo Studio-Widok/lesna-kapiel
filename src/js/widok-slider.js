@@ -113,7 +113,6 @@ const createSlider = (function () {
         .css({
           position: 'relative',
           height: '100%',
-          margin: '0 auto',
         })
         .appendTo(this.wrap);
       this.bar = $('<div class="slider-bar">').appendTo(this.sizer);
