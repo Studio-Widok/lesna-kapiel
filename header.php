@@ -4,15 +4,17 @@
 <head>
   <meta charset="<?php bloginfo('charset');?>">
   <meta property="og:image"
-    content="<?php echo esc_url(get_template_directory_uri()); ?>/img/ogimg.png" />
+    content="<?=get_template_directory_uri()?>/media/favicon.png" />
+  <link rel="icon" type="image/png"
+    href="<?=get_template_directory_uri()?>/media/favicon.png" />
   <?php wp_head();?>
 
   <?php if (is_front_page()
-  || is_page_template('templates/projects.php')
-  || is_page_template('templates/t-atrakcje.php')
-  || is_page_template('templates/t-nasza-idea.php')
-  || is_page_template('templates/t-spa.php')
-  || is_page_template('templates/t-kontakt.php')
+      || is_page_template('templates/projects.php')
+      || is_page_template('templates/t-atrakcje.php')
+      || is_page_template('templates/t-nasza-idea.php')
+      || is_page_template('templates/t-spa.php')
+      || is_page_template('templates/t-kontakt.php')
   ): ?>
 
   <script
