@@ -2,5 +2,6 @@
   get_header();
 ?>
 
+<?php get_part('map-block')?>
 
 <?php get_footer();?>

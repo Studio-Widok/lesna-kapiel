@@ -71,37 +71,48 @@
   .arrow-left,
   .arrow-right {
     position: absolute;
-    width: 2.4em;
-    padding: 0.4em;
-    border: 1px solid #fff;
-    background-color: #3333;
     top: 0;
-    transition: 0.3s;
     cursor: pointer;
 
-    &.hovered {
+    svg {
+      width: 2.4em;
+      padding: 0.4em;
+      border: 1px solid #fff;
+      background-color: #3333;
+      transition: 0.3s;
+    }
+
+    &.hovered svg {
       margin: 0 -0.5em;
     }
 
     &.disabled {
-      border-color: #fff3;
-      margin: 0;
-      pointer-events: none;
+      svg {
+        border-color: #fff3;
+        margin: 0;
+        pointer-events: none;
 
-      path {
-        stroke: #fff0;
-        fill: #fff0;
+        path {
+          stroke: #fff0;
+          fill: #fff0;
+        }
       }
     }
   }
 
   .arrow-left {
     left: 3em;
-    transform: rotate(90deg);
+
+    svg {
+      transform: rotate(90deg);
+    }
   }
 
   .arrow-right {
     right: 3em;
-    transform: rotate(-90deg);
+
+    svg {
+      transform: rotate(-90deg);
+    }
   }
 }
