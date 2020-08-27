@@ -31,13 +31,16 @@
       </div>
       <?php }?>
     </div>
-
-    <div class="bullets-container">
-      <?php for ($i = 0; $i < count($collections); $i++) {?>
-      <div class="slider-bullet"><?=($i + 1)?></div>
-      <?php }?>
-    </div>
-
   </div>
-  <?php get_component('slider-arrows');?>
+
+  <div class="bullets-container">
+    <?php for ($i = 0; $i < count($collections); $i++) {?>
+    <div class="slider-bullet"><?=($i + 1)?></div>
+    <?php }?>
+  </div>
+
+  <?php get_component('slider-arrows', [
+      'next_arrow_text' => 'kolejna kolekcja',
+  ]);?>
+
 </div>

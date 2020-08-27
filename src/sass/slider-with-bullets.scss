@@ -73,6 +73,15 @@
     position: absolute;
     top: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .arrow-text {
+      padding: 0 1em;
+      letter-spacing: $letter-spacing;
+      opacity: 0.5;
+      transition: 0.3s;
+    }
 
     svg {
       width: 2.4em;
@@ -82,8 +91,13 @@
       transition: 0.3s;
     }
 
-    &.hovered svg {
-      margin: 0 -0.5em;
+    &.hovered {
+      .arrow-text {
+        opacity: 1;
+      }
+      svg {
+        margin: 0 -0.5em;
+      }
     }
 
     &.disabled {
