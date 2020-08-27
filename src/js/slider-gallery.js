@@ -3,10 +3,12 @@ const widok = require('./widok');
 const createSlider = require('./widok-slider');
 const createLightbox = require('./widok-lightbox');
 
+const Masonry = require('masonry-layout');
+
 createSlider({
-  wrap: '.gallery-slider',
+  wrap: '.slider-gallery',
   useKeys: true,
-  bulletContainer: '.gallery-slider .slider-arrows',
+  bulletContainer: '.slider-gallery .slider-arrows',
   animationType: 'fade',
   duration: 800,
   loop: true,
@@ -16,16 +18,16 @@ function onImageChange() {
   var imageSrc =
     imageSrc === undefined ? this.$element.data('full-image') : imageSrc;
 
-  this.parent.$containerIn.find('.cake').css({
+  this.parent.$containerIn.find('.image-container').css({
     backgroundImage: 'none',
   });
 
-  this.parent.$containerIn.find('.cake').css({
+  this.parent.$containerIn.find('.image-container').css({
     backgroundImage: 'url(' + imageSrc + ')',
   });
   setTimeout(() => {
     if (this.parent.currentLb === this.id) {
-      this.parent.$containerIn.find('.cake').css({
+      this.parent.$containerIn.find('.image-container').css({
         opacity: 1,
       });
     }
@@ -59,7 +61,20 @@ function onImageResize() {
   });
 }
 
-createLightbox({
+const masonryContainer = document.querySelector('.masonry');
+
+let masonry = new Masonry(masonryContainer, {
+  itemSelector: '.gallery-item',
+  resize: true,
+  transitionDuration: 0,
+  percentPosition: true,
+});
+
+function onMasonryChange() {
+  masonry.layout();
+}
+
+const singleLb = createLightbox({
   items: '.element-lb',
   container: '#lb-container',
   onChange: onImageChange,
@@ -67,4 +82,20 @@ createLightbox({
   onResize: onImageResize,
   hasArrows: true,
   hasExit: true,
+  exitClass: '#lb-container .close-lb',
+});
+
+const masonryLb = createLightbox({
+  items: '.masonry-icon',
+  container: '#lb-container-masonry',
+  onChange: onMasonryChange,
+  onActivate: onMasonryChange,
+  onResize: onMasonryChange,
+  hasExit: true,
+});
+
+$('.gallery-item').on('click', () => {
+  const imageId = masonryLb.currentLb;
+  masonryLb.deactive();
+  singleLb.active(imageId);
 });

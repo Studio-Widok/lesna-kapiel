@@ -9,6 +9,7 @@
  * @param {function} options.onDeactivate callback function which is executed on deactivate
  * @param {function} options.onChange callback function which is executed on change
  * @param {function} options.onResize callback function which is executed on resize
+ * @param {function} options.exitClass name of custom exit class
  * @returns {object} Lightbox
  * containerIn '.lb'
  * arrows '.arrow-left' '.arrow-right'
@@ -57,7 +58,11 @@ const createLightbox = (function () {
       }
 
       if (this.hasExit) {
-        this.exit = this.$container.find('.close-lb');
+        if (this.$exitClass) {
+          this.exit = $(this.options.exitClass);
+        } else {
+          this.exit = this.$container.find('.close-lb');
+        }
 
         this.exit.on('click', () => {
           this.deactive();

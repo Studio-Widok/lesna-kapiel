@@ -5,17 +5,53 @@
 ?>
 
 <div id="lb-container" class="lb-container hidden">
+  <div class='close-lb'>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <div class="lb">
-    <div class="cake"></div>
+    <div class="image-container"></div>
     <?php get_component('slider-arrows')?>
-    <svg class='close-lb' viewBox="0 0 100 100">
-      <path d="M10 10L90 90" />
-      <path d="M90 10L10 90" />
-    </svg>
+  </div>
+</div>
+
+<div id="lb-container-masonry" class="lb-container hidden">
+  <div class="lb column">
+    <div class="rsep"></div>
+    <div class="masonry">
+      <?php for ($i = 0; $i < count($gallery); $i++) {?>
+      <div class="gallery-item column">
+        <div class="gallery-item-in">
+          <div class="cake"
+            style="padding-bottom: <?=$gallery[$i]['height'] / $gallery[$i]['width'] * 100?>%; background-image: url('<?=$gallery[$i]['sizes']['medium']?>');">
+          </div>
+        </div>
+      </div>
+      <?php }?>
+    </div>
+    <div class='close-lb'>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </div>
 
 <div class="slider-gallery content column">
+  <div class="flex column-outer">
+    <?php for ($i = 0; $i < count($gallery); $i++) {?>
+    <div class="col5-2 column-inner single-slide element-lb"
+      data-full-image="<?=$gallery[$i]['sizes']['large']?>"
+      data-width="<?=$gallery[$i]['width']?>"
+      data-height="<?=$gallery[$i]['height']?>">
+      <div class="cake cake-10-16"
+        style="background-image: url('<?=$gallery[$i]['sizes']['medium']?>');">
+      </div>
+    </div>
+    <?php }?>
+  </div>
+  <?php get_component('slider-arrows')?>
   <div class="flex column-outer">
     <div class="col5-2 column-inner single-slide element-lb"
       data-full-image="<?=$gallery[0]['sizes']['large']?>"
@@ -45,7 +81,6 @@
         </div>
       </div>
       <div class="column flex flex-align-center flex-justify-end">
-        <?php get_component('slider-arrows')?>
         <div class="masonry-icon">masonry</div>
       </div>
       <div class="column">
