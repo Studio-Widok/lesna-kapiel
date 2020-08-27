@@ -1783,23 +1783,6 @@ if (typeof exports !== 'undefined') {
 
 },{}],3:[function(require,module,exports){
 const $ = require('cash-dom');
-const createSlider = require('./widok-slider');
-
-$('.slider-with-bullets').each((index, element) => {
-  window.slider = createSlider({
-    wrap: `#slider-with-bullets-${index} .slider`,
-    bulletContainer: `#slider-with-bullets-${index} .bullets-container`,
-    bulletSelector: `#slider-with-bullets-${index} .bullet`,
-    useKeys: true,
-    mouseDrag: true,
-    arrowPrev: '.slider-with-bullets .arrow-left',
-    arrowNext: '.slider-with-bullets .arrow-right',
-  });
-});
-
-
-},{"./widok-slider":10,"cash-dom":1}],4:[function(require,module,exports){
-const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem.js');
 const widok = require('./widok.js');
 
@@ -1862,7 +1845,7 @@ $.each(fixedLinkContainer, (index, e) => {
   };
 });
 
-},{"./widok-scrollItem.js":8,"./widok.js":11,"cash-dom":1}],4:[function(require,module,exports){
+},{"./widok-scrollItem.js":10,"./widok.js":13,"cash-dom":1}],4:[function(require,module,exports){
 const videoOverlay = document.getElementById("footer-video-overlay");
 const video = document.getElementById("footer-video");
 
@@ -1882,14 +1865,12 @@ const $ = require('cash-dom');
 require('./nav');
 require('./widok');
 require('./footer');
+require('./sliders');
 
-
-const bodyElement = $('body');
-if (bodyElement.hasClass('page-template-t-atrakcje')) require('./atrakcje');
 if ($('.fixed-link').length > 0) require('./fixed-link');
 if ($('#top').length > 0) require('./top');
 
-},{"./atrakcje":3,"./fixed-link":4,"./nav":6,"./top":7,"./widok":12,"cash-dom":1}],6:[function(require,module,exports){
+},{"./fixed-link":3,"./footer":4,"./nav":6,"./sliders":7,"./top":8,"./widok":13,"cash-dom":1}],6:[function(require,module,exports){
 const $ = require('cash-dom');
 
 $('#burger').on('click', () => {
@@ -1897,7 +1878,32 @@ $('#burger').on('click', () => {
 });
 
 },{"cash-dom":1}],7:[function(require,module,exports){
+const $ = require('cash-dom');
+const createSlider = require('./widok-slider');
 
+$('.slider-with-bullets').each((index, element) => {
+  createSlider({
+    wrap: `#slider-with-bullets-${index} .slider`,
+    bulletContainer: `#slider-with-bullets-${index} .bullets-container`,
+    bulletSelector: `#slider-with-bullets-${index} .bullet`,
+    useKeys: true,
+    touchDrag: true,
+    arrowPrev: `#slider-with-bullets-${index} .arrow-left`,
+    arrowNext: `#slider-with-bullets-${index} .arrow-right`,
+  });
+});
+
+createSlider({
+  wrap: `.collections-slider .slider`,
+  useKeys: true,
+  touchDrag: true,
+  bulletContainer: '.collections-slider .bullets-container',
+  bulletSelector: '.collections-slider .bullets-container .slider-bullet',
+  arrowPrev: `.collections-slider .arrow-left`,
+  arrowNext: `.collections-slider .arrow-right`,
+});
+
+},{"./widok-slider":11,"cash-dom":1}],8:[function(require,module,exports){
 const $ = require('cash-dom');
 const smoothscroll = require('smoothscroll-polyfill');
 
@@ -1908,8 +1914,7 @@ $('#top .arrow').on('click', () => {
   window.scrollTo({ top: topHeight, behavior: 'smooth' });
 });
 
-},{"cash-dom":1,"smoothscroll-polyfill":2}],8:[function(require,module,exports){
-
+},{"cash-dom":1,"smoothscroll-polyfill":2}],9:[function(require,module,exports){
 const $ = require('cash-dom');
 
 const createHoverable = (function () {
@@ -1957,9 +1962,7 @@ const createHoverable = (function () {
 
 if (typeof module !== 'undefined') module.exports = createHoverable;
 
-
-},{"cash-dom":1}],8:[function(require,module,exports){
-
+},{"cash-dom":1}],10:[function(require,module,exports){
 /**
  * create new scroll item
  * @param {selector} element element to scroll
@@ -2072,31 +2075,54 @@ const createScrollItem = (function () {
 
 if (typeof module !== 'undefined') module.exports = createScrollItem;
 
-},{"./widok":12,"cash-dom":1}],10:[function(require,module,exports){
-
+},{"./widok":13,"cash-dom":1}],11:[function(require,module,exports){
 /**
  * Create a slider. Vertical slider might not work yet.
- * @param {object} options extra options
+ * @param {object} optionsextra options
+ *
+ * main
  * @param {selector} options.wrap selector of the slider wrap
- * @param {selector} options.slideSelector default='.single-slide', selector of a single slide, searched inside wrap
+ * @param {selector} options.slideSelector default='.single-slide'
+ * @param {boolean} options.isVertical default=false, direction of the slider
+ *  selector of a single slide, searched inside wrap
+ * @param {number} options.initialSlide default=0
+ *  id of the initially selected slide
+ * @param {boolean} options.loop default=false
+ * @param {boolean} options.slidesAsLinks default=false
+ *  clicking on a slide activates it
+ * @param {boolean} options.adjustHeight default=false
+ *  after switching slides the height of the slider is changed
+ *
+ * animation
+ * @param {number} options.duration default=300
+ *  duration of the sliding animation
+ * @param {string} options.animationType default="slide", 'fade' - fade effect
+ *
+ * bullets
  * @param {boolean} options.shouldHaveBullets default=true,
  * @param {selector} options.bulletContainer
+ *  if undefined bullet container will get created inside options.wrap with
+ *  class .slider-bullet-container
  * @param {selector} options.bulletSelector
- * @param {boolean} options.isVertical default=false, direction of the slider
- * @param {number} options.initialSlide default=0, id of the initially selected slide
- * @param {number} options.duration default=300, duration of the sliding animation
- * @param {boolean} options.mouseDrag default=false, allows slider to be dragged with the mouse
- * @param {boolean} options.touchDrag default=false, allows slider to be dragged on a touchscreen
+ *  if undefined bullets will get created with class .slider-bullet
+ *
+ * controls
+ * @param {boolean} options.mouseDrag default=false
+ *  allows slider to be dragged with the mouse
+ * @param {boolean} options.touchDrag default=false
+ *  allows slider to be dragged on a touchscreen
  * @param {boolean} options.slideOnWheel default=false,
- * @param {boolean} options.useKeys default=false, changes slides on arrow keys, can be changed later
- * @param {selector} options.arrowPrev selector of the up arrow, searched in the whole document
+ * @param {boolean} options.useKeys default=false
+ *  changes slides on arrow keys, can be changed later
+ * @param {selector} options.arrowPrev
+ *  selector of the up arrow, searched in the whole document
  * @param {selector} options.arrowNext analogous
- * @param {function} options.onActivate callback to be called when a slide activates
+ *
+ * callbacks
+ * @param {function} options.onActivate
+ *  callback to be called when a slide activates
  * @param {function} options.onDeactivate analogous
- * @param {boolean} options.loop default=false
- * @param {string} options.animationType default="slide", 'fade' - fade effect
- * @param {boolean} options.slidesAsLinks default=false, clicking on a slide activates it
- * @param {boolean} options.adjustHeight default=false, after switching slides the height of the slider is changed
+ *
  * @returns Slider object
  */
 
@@ -2161,20 +2187,23 @@ const createSlider = (function () {
     }
 
     prepareSlides() {
-      this.sizer = $('<div class="f3-slider-sizer">')
+      this.sizer = $('<div class="slider-sizer">')
         .css({
           position: 'relative',
           height: '100%',
           margin: '0 auto',
         })
         .appendTo(this.wrap);
-      this.bar = $('<div class="f3-slider-bar">').appendTo(this.sizer);
+      this.bar = $('<div class="slider-bar">').appendTo(this.sizer);
       this.slides = [];
 
       if (this.options.shouldHaveBullets) {
-        if (this.options.bulletContainer === undefined) {
+        if (
+          this.options.bulletContainer === undefined &&
+          this.options.bulletSelector === undefined
+        ) {
           this.bulletContainer = $(document.createElement('div'))
-            .addClass('f3-slider-bullet-container')
+            .addClass('slider-bullet-container')
             .appendTo(this.wrap)
             .on('touchstart', event => {
               if (!this.isEnabled) return;
@@ -2762,7 +2791,7 @@ const createSlider = (function () {
       this.slide = slide;
       if (this.slider.options.bulletSelector === undefined) {
         this.element = $(document.createElement('div'))
-          .addClass('f3-slider-bullet')
+          .addClass('slider-bullet')
           .appendTo(this.slider.bulletContainer);
       } else {
         this.element = this.slider.bulletContainer
@@ -2781,8 +2810,7 @@ const createSlider = (function () {
 
 if (typeof module !== 'undefined') module.exports = createSlider;
 
-},{"./widok-hoverable":7,"cash-dom":1}],10:[function(require,module,exports){
-
+},{"./widok-hoverable":9,"cash-dom":1}],12:[function(require,module,exports){
 function throttle(ms, callback) {
   let lastCall = 0;
   let timeout;
@@ -2800,8 +2828,7 @@ function throttle(ms, callback) {
 
 if (typeof module !== 'undefined') module.exports = throttle;
 
-},{}],11:[function(require,module,exports){
-
+},{}],13:[function(require,module,exports){
 const $ = require('cash-dom');
 const throttle = require('./widok-throttle');
 
@@ -2833,7 +2860,6 @@ $(document).on('ready', widok.sizeCheck);
 
 if (typeof module !== 'undefined') module.exports = widok;
 
-},{"./widok-throttle":10,"cash-dom":1}]},{},[5])
-
+},{"./widok-throttle":12,"cash-dom":1}]},{},[5])
 
 //# sourceMappingURL=bundle.js.map

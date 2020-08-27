@@ -1,26 +1,50 @@
 /**
  * Create a slider. Vertical slider might not work yet.
- * @param {object} options extra options
+ * @param {object} optionsextra options
+ *
+ * main
  * @param {selector} options.wrap selector of the slider wrap
- * @param {selector} options.slideSelector default='.single-slide', selector of a single slide, searched inside wrap
+ * @param {selector} options.slideSelector default='.single-slide'
+ * @param {boolean} options.isVertical default=false, direction of the slider
+ *  selector of a single slide, searched inside wrap
+ * @param {number} options.initialSlide default=0
+ *  id of the initially selected slide
+ * @param {boolean} options.loop default=false
+ * @param {boolean} options.slidesAsLinks default=false
+ *  clicking on a slide activates it
+ * @param {boolean} options.adjustHeight default=false
+ *  after switching slides the height of the slider is changed
+ *
+ * animation
+ * @param {number} options.duration default=300
+ *  duration of the sliding animation
+ * @param {string} options.animationType default="slide", 'fade' - fade effect
+ *
+ * bullets
  * @param {boolean} options.shouldHaveBullets default=true,
  * @param {selector} options.bulletContainer
+ *  if undefined bullet container will get created inside options.wrap with
+ *  class .slider-bullet-container
  * @param {selector} options.bulletSelector
- * @param {boolean} options.isVertical default=false, direction of the slider
- * @param {number} options.initialSlide default=0, id of the initially selected slide
- * @param {number} options.duration default=300, duration of the sliding animation
- * @param {boolean} options.mouseDrag default=false, allows slider to be dragged with the mouse
- * @param {boolean} options.touchDrag default=false, allows slider to be dragged on a touchscreen
+ *  if undefined bullets will get created with class .slider-bullet
+ *
+ * controls
+ * @param {boolean} options.mouseDrag default=false
+ *  allows slider to be dragged with the mouse
+ * @param {boolean} options.touchDrag default=false
+ *  allows slider to be dragged on a touchscreen
  * @param {boolean} options.slideOnWheel default=false,
- * @param {boolean} options.useKeys default=false, changes slides on arrow keys, can be changed later
- * @param {selector} options.arrowPrev selector of the up arrow, searched in the whole document
+ * @param {boolean} options.useKeys default=false
+ *  changes slides on arrow keys, can be changed later
+ * @param {selector} options.arrowPrev
+ *  selector of the up arrow, searched in the whole document
  * @param {selector} options.arrowNext analogous
- * @param {function} options.onActivate callback to be called when a slide activates
+ *
+ * callbacks
+ * @param {function} options.onActivate
+ *  callback to be called when a slide activates
  * @param {function} options.onDeactivate analogous
- * @param {boolean} options.loop default=false
- * @param {string} options.animationType default="slide", 'fade' - fade effect
- * @param {boolean} options.slidesAsLinks default=false, clicking on a slide activates it
- * @param {boolean} options.adjustHeight default=false, after switching slides the height of the slider is changed
+ *
  * @returns Slider object
  */
 
@@ -85,20 +109,23 @@ const createSlider = (function () {
     }
 
     prepareSlides() {
-      this.sizer = $('<div class="f3-slider-sizer">')
+      this.sizer = $('<div class="slider-sizer">')
         .css({
           position: 'relative',
           height: '100%',
           margin: '0 auto',
         })
         .appendTo(this.wrap);
-      this.bar = $('<div class="f3-slider-bar">').appendTo(this.sizer);
+      this.bar = $('<div class="slider-bar">').appendTo(this.sizer);
       this.slides = [];
 
       if (this.options.shouldHaveBullets) {
-        if (this.options.bulletContainer === undefined) {
+        if (
+          this.options.bulletContainer === undefined &&
+          this.options.bulletSelector === undefined
+        ) {
           this.bulletContainer = $(document.createElement('div'))
-            .addClass('f3-slider-bullet-container')
+            .addClass('slider-bullet-container')
             .appendTo(this.wrap)
             .on('touchstart', event => {
               if (!this.isEnabled) return;
@@ -686,7 +713,7 @@ const createSlider = (function () {
       this.slide = slide;
       if (this.slider.options.bulletSelector === undefined) {
         this.element = $(document.createElement('div'))
-          .addClass('f3-slider-bullet')
+          .addClass('slider-bullet')
           .appendTo(this.slider.bulletContainer);
       } else {
         this.element = this.slider.bulletContainer
