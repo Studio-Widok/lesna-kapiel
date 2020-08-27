@@ -80,10 +80,10 @@
       border: 1px solid #fff;
       background-color: #3333;
       transition: 0.3s;
-    }
-
-    &.hovered svg {
-      margin: 0 -0.5em;
+      &:hover {
+        background-color: $color-beige;
+        fill: white;
+      }
     }
 
     &.disabled {
@@ -93,8 +93,8 @@
         pointer-events: none;
 
         path {
-          stroke: #fff0;
-          fill: #fff0;
+          stroke: #fff3;
+          fill: #fff3;
         }
       }
     }
