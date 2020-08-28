@@ -41,8 +41,6 @@ function onImageResize() {
     w *= widok.h / h;
     h = widok.h;
   }
-  h *= 0.95;
-  w *= 0.95;
   this.parent.$containerIn.css({
     left: (widok.w - w) / 2,
     top: (widok.h - h) / 2,
@@ -53,7 +51,8 @@ function onImageResize() {
 
 const masonryContainer = document.querySelector('.masonry');
 
-let masonry = new Masonry(masonryContainer, {
+const masonry = new Masonry(masonryContainer, {
+  columnWidth: '.gallery-sizer',
   itemSelector: '.gallery-item',
   resize: true,
   transitionDuration: 0,
@@ -71,6 +70,7 @@ createSlider({
   arrowPrev: '.slider-arrows-container .arrow-left',
   arrowNext: '.slider-arrows-container .arrow-right',
   duration: 600,
+  loop: 'true',
 });
 
 const singleLb = createLightbox({
@@ -82,6 +82,7 @@ const singleLb = createLightbox({
   hasArrows: true,
   hasExit: true,
   exitClass: '#lb-container-image .close-lb',
+  loop: true,
 });
 
 const masonryLb = createLightbox({
@@ -93,8 +94,13 @@ const masonryLb = createLightbox({
   hasExit: true,
 });
 
-$('.gallery-item').on('click', function () {
+$('.gallery-item-in').on('click', function () {
   const id = $(this).data('iterator');
-  masonryLb.deactive();
   singleLb.active(id);
+});
+
+$('#lb-container-masonry .lb').on('click', function (event) {
+  if (event.target.className !== 'cake') {
+    masonryLb.deactive();
+  }
 });
