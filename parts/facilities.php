@@ -21,7 +21,7 @@
       <div class="r"></div>
       <div class="r"></div>
       <?php for ($i = 0; $i < count($meals); $i++) {?>
-      <div class="flex flex-align-center meals-single">
+      <div class='meals-single'>
         <span class="uppercase"><?=$meals[$i]['name']?></span>
         <?=$meals[$i]['text']?>
       </div>
