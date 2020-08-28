@@ -4,10 +4,8 @@
     width: 37.5%;
   }
   .single-slide {
-    padding-right: 3em;
-    .single-slide-content {
-      overflow: hidden;
-    }
+    overflow: hidden;
+    margin-right: 3em;
     .cake {
       transition: padding 0.3s, transform 0.3s;
       cursor: pointer;
@@ -19,6 +17,10 @@
       padding-bottom: 166.66666%;
     }
   }
+}
+
+.slider-gallery.adjusting .cake {
+  transition: 0s !important;
 }
 
 .slider-arrows-container {
