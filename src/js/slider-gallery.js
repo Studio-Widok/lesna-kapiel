@@ -60,8 +60,8 @@ const masonry = new Masonry(masonryContainer, {
   percentPosition: true,
 });
 
-function onMasonryActive() {
-  onActive();
+function onMasonryActivate() {
+  onActivate();
   onMasonryChange();
 }
 
@@ -69,11 +69,11 @@ function onMasonryChange() {
   masonry.layout();
 }
 
-function onActive() {
+function onActivate() {
   $('body').addClass('lightbox-opened');
 }
 
-function onDeactive() {
+function onDeactivate() {
   $('body').removeClass('lightbox-opened');
 }
 
@@ -93,7 +93,7 @@ const singleLb = createLightbox({
   onChange: onImageChange,
   onActivate: onImageActivate,
   onResize: onImageResize,
-  onDeactive: onDeactive,
+  onDeactivate: onDeactivate,
   hasArrows: true,
   hasExit: true,
   exitClass: '#lb-container-image .close-lb',
@@ -104,8 +104,8 @@ const masonryLb = createLightbox({
   items: '.masonry-icon',
   container: '#lb-container-masonry',
   onChange: onMasonryChange,
-  onActivate: onMasonryActive,
-  onDeactive: onDeactive,
+  onActivate: onMasonryActivate,
+  onDeactivate: onDeactivate,
   onResize: onMasonryChange,
   hasExit: true,
 });

@@ -133,7 +133,7 @@ const createLightbox = (function () {
         setTimeout(() => {
           this.$container.addClass('hidden');
         }, 300);
-        if (this.options.onnDeactivate !== undefined) {
+        if (this.options.onDeactivate !== undefined) {
           this.options.onDeactivate.call(this);
         }
       }
