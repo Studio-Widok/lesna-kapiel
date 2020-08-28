@@ -4,25 +4,28 @@
   $title   = $title ?? '';
 ?>
 
-<div id="lb-container-image" class="lb-container hidden">
+<div id="lb-container-image" class="lb-container hidden"
+  style="background-image: url('<?=$gallery[0]['sizes']['large']?>');">
   <div class='close-lb'>
     <div></div>
     <div></div>
     <div></div>
   </div>
-  <div class="lb">
+  <div class=" lb">
     <div class="image-container"></div>
-    <?php get_component('slider-arrows')?>
   </div>
+  <?php get_component('slider-arrows')?>
 </div>
 
-<div id="lb-container-masonry" class="lb-container hidden">
-  <div class="lb column">
+<div id="lb-container-masonry" class="lb-container hidden"
+  style="background-image: url('<?=$gallery[0]['sizes']['large']?>');">
+  <div class="lb">
     <div class="rsep"></div>
     <div class="masonry">
+      <div class="gallery-sizer"></div>
       <?php for ($i = 0; $i < count($gallery); $i++) {?>
-      <div class="gallery-item column" data-iterator="<?=$i?>">
-        <div class="gallery-item-in">
+      <div class="gallery-item column">
+        <div class="gallery-item-in" data-iterator="<?=$i?>">
           <div class="cake"
             style="padding-bottom: <?=$gallery[$i]['height'] / $gallery[$i]['width'] * 100?>%; background-image: url('<?=$gallery[$i]['sizes']['medium']?>');">
           </div>
