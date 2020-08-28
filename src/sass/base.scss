@@ -279,7 +279,6 @@ p {
 .uppercase {
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  padding-left: $letter-spacing;
 }
 .text {
   font-size: 1.2em;
@@ -369,6 +368,7 @@ button {
 @import 'collections-slider.scss';
 @import 'slider-with-bullets.scss';
 @import 'slider-gallery.scss';
+@import 'facilities.scss';
 
 // general
 @import 'contact.scss';

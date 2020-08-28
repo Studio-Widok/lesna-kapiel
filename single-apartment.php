@@ -4,10 +4,21 @@
 <div class="green-wrapper">
   <div class="rsep"></div>
   <div class="rsep"></div>
-  <?php get_part('slider-gallery', [
+  <?php
+    $slider = get_field('slider');
+    get_part('slider-gallery', [
       'title'   => get_the_title(),
-      'text'    => get_field('text'),
-      'gallery' => get_field('gallery'),
+      'text'    => $slider['text'],
+      'gallery' => $slider['gallery'],
+  ]);?>
+  <div class="rsep"></div>
+  <?php
+    $facilities = get_field('facilities');
+    get_part('facilities', [
+      'title'      => $facilities['title'],
+      'facilities' => $facilities['facilities'],
+      'meals'      => $facilities['meals'],
+      'image'      => $facilities['image']['sizes']['medium'],
   ]);?>
   <div class="rsep"></div>
   <div class="rsep"></div>
