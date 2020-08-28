@@ -4281,8 +4281,6 @@ function onImageResize() {
     w *= widok.h / h;
     h = widok.h;
   }
-  h *= 0.95;
-  w *= 0.95;
   this.parent.$containerIn.css({
     left: (widok.w - w) / 2,
     top: (widok.h - h) / 2,
@@ -4293,7 +4291,8 @@ function onImageResize() {
 
 const masonryContainer = document.querySelector('.masonry');
 
-let masonry = new Masonry(masonryContainer, {
+const masonry = new Masonry(masonryContainer, {
+  columnWidth: '.gallery-sizer',
   itemSelector: '.gallery-item',
   resize: true,
   transitionDuration: 0,
@@ -4311,6 +4310,7 @@ createSlider({
   arrowPrev: '.slider-arrows-container .arrow-left',
   arrowNext: '.slider-arrows-container .arrow-right',
   duration: 600,
+  loop: 'true',
 });
 
 const singleLb = createLightbox({
@@ -4322,6 +4322,7 @@ const singleLb = createLightbox({
   hasArrows: true,
   hasExit: true,
   exitClass: '#lb-container-image .close-lb',
+  loop: true,
 });
 
 const masonryLb = createLightbox({
@@ -4333,10 +4334,15 @@ const masonryLb = createLightbox({
   hasExit: true,
 });
 
-$('.gallery-item').on('click', function () {
+$('.gallery-item-in').on('click', function () {
   const id = $(this).data('iterator');
-  masonryLb.deactive();
   singleLb.active(id);
+});
+
+$('#lb-container-masonry .lb').on('click', function (event) {
+  if (event.target.className !== 'cake') {
+    masonryLb.deactive();
+  }
 });
 
 },{"./widok":22,"./widok-lightbox":18,"./widok-slider":20,"cash-dom":1,"masonry-layout":6}],15:[function(require,module,exports){
@@ -4436,7 +4442,8 @@ if (typeof module !== 'undefined') module.exports = createHoverable;
  * @param {function} options.onDeactivate callback function which is executed on deactivate
  * @param {function} options.onChange callback function which is executed on change
  * @param {function} options.onResize callback function which is executed on resize
- * @param {function} options.exitClass name of custom exit class
+ * @param {selector} options.exitClass name of custom exit class
+ * @param {boolean} options.loop is images are looped
  * @returns {object} Lightbox
  * containerIn '.lb'
  * arrows '.arrow-left' '.arrow-right'
@@ -4476,6 +4483,7 @@ const createLightbox = (function () {
       this.onScreen = false;
       this.lightboxCollection = [];
       this.currentLb = 0;
+      this.loop = this.options.loop || false;
 
       if (this.hasArrows) {
         this.arrowLeft = this.$container.find('.arrow-left');
@@ -4485,7 +4493,7 @@ const createLightbox = (function () {
       }
 
       if (this.hasExit) {
-        if (this.$exitClass) {
+        if (this.options.exitClass) {
           this.exit = $(this.options.exitClass);
         } else {
           this.exit = this.$container.find('.close-lb');
@@ -4581,18 +4589,24 @@ const createLightbox = (function () {
     }
 
     nextLb() {
+      if (this.loop && this.$items.length - 1 === this.currentLb) {
+        this.change(0);
+      }
       if (this.onScreen && !this.isRightHidden) {
         this.change(this.currentLb + 1);
       }
     }
     prevLb() {
+      if (this.loop && this.currentLb === 0) {
+        this.change(this.$items.length - 1);
+      }
       if (this.onScreen && !this.isLeftHidden) {
         this.change(this.currentLb - 1);
       }
     }
 
     checkArrows() {
-      if (this.hasArrows && this.onScreen) {
+      if (this.hasArrows && this.onScreen && !this.loop) {
         if (this.currentLb + 1 === this.lightboxCollection.length) {
           this.isRightHidden = true;
           this.arrowRight.addClass('hidden');
@@ -4632,14 +4646,6 @@ const createLightbox = (function () {
     return lb;
   };
 })();
-
-function onTextChange() {
-  var $texts =
-    $texts === undefined ? this.parent.$container.find('.text') : $texts;
-
-  $texts.removeClass('show');
-  this.parent.$container.find(`#text-${this.id + 1}`).addClass('show');
-}
 
 if (typeof module !== 'undefined') module.exports = createLightbox;
 
