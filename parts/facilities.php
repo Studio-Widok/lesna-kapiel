@@ -34,6 +34,8 @@
   </div>
   <div class="rsep"></div>
   <div class="flex flex-justify-center">
-    <button>Zobacz apartamenty</button>
+    <a href="">
+      <button>Zobacz apartamenty</button>
+    </a>
   </div>
 </div>
