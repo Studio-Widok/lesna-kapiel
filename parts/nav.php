@@ -3,6 +3,7 @@
 ?>
 
 <nav id="nav">
+
   <div id="nav-links">
     <?php if (!is_page(2)) {?>
     <a class="nav-link" href="<?=get_the_permalink(2)?>">
@@ -21,13 +22,30 @@
       get_component('nav-link', array('page' => 25));
     ?>
   </div>
+
   <div id="burger">
     <div></div>
     <div></div>
     <div></div>
   </div>
+
   <div id="nav-overlay"
     style="background-image: url('<?=$nav_img['sizes']['large']?>');">
+
+    <div class="language-switcher">
+      <?php
+        $langs = pll_the_languages([
+          'raw'          => true,
+          'hide_current' => true,
+        ]);
+        foreach ($langs as $lang) {
+        ?>
+      <a href="<?=$lang['url']?>" class="lang-link"><?=$lang['slug']?></a>
+      <?php
+        }
+      ?>
+    </div>
+
     <div class=""></div>
     <div id="nav-o-links">
       <?php
