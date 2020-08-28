@@ -27,6 +27,7 @@
   .slider-arrows {
     position: static;
     margin: 0;
+    display: flex;
     .arrow-left,
     .arrow-right {
       position: static;
@@ -49,6 +50,8 @@
 
 .masonry-icon {
   cursor: pointer;
+  display: flex;
+  align-items: center;
   svg {
     width: 2em;
     rect {
