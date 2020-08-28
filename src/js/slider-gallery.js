@@ -28,6 +28,7 @@ function onImageChange() {
 function onImageActivate() {
   onImageResize.call(this);
   onImageChange.call(this);
+  onActive();
 }
 
 function onImageResize() {
@@ -59,8 +60,21 @@ const masonry = new Masonry(masonryContainer, {
   percentPosition: true,
 });
 
+function onMasonryActive() {
+  onActive();
+  onMasonryChange();
+}
+
 function onMasonryChange() {
   masonry.layout();
+}
+
+function onActive() {
+  $('body').addClass('lightbox-opened');
+}
+
+function onDeactive() {
+  $('body').removeClass('lightbox-opened');
 }
 
 createSlider({
@@ -79,6 +93,7 @@ const singleLb = createLightbox({
   onChange: onImageChange,
   onActivate: onImageActivate,
   onResize: onImageResize,
+  onDeactive: onDeactive,
   hasArrows: true,
   hasExit: true,
   exitClass: '#lb-container-image .close-lb',
@@ -89,7 +104,8 @@ const masonryLb = createLightbox({
   items: '.masonry-icon',
   container: '#lb-container-masonry',
   onChange: onMasonryChange,
-  onActivate: onMasonryChange,
+  onActivate: onMasonryActive,
+  onDeactive: onDeactive,
   onResize: onMasonryChange,
   hasExit: true,
 });
