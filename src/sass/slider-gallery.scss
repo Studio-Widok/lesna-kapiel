@@ -47,3 +47,21 @@
 .slider-content {
   margin-top: -10em;
 }
+
+.masonry-icon {
+  cursor: pointer;
+  svg {
+    width: 2em;
+    rect {
+      stroke: #fff;
+      stroke-width: 1.5;
+      fill: transparent;
+      transition: fill 0.3s;
+    }
+    &:hover {
+      rect {
+        fill: $color-beige;
+      }
+    }
+  }
+}

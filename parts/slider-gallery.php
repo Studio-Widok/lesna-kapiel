@@ -61,7 +61,19 @@
     <div
       class="flex flex-align-center flex-justify-end slider-arrows-container">
       <?php get_component('slider-arrows')?>
-      <div class="masonry-icon">masonry</div>
+      <div class="masonry-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0 0 44 44">
+          <rect x="2" y="2" width="10" height="10" />
+          <rect x="17" y="2" width="10" height="10" />
+          <rect x="32" y="2" width="10" height="10" />
+          <rect x="2" y="17" width="10" height="10" />
+          <rect x="17" y="17" width="10" height="10" />
+          <rect x="32" y="17" width="10" height="10" />
+          <rect x="2" y="32" width="10" height="10" />
+          <rect x="17" y="32" width="10" height="10" />
+          <rect x="32" y="32" width="10" height="10" />
+        </svg>
+      </div>
     </div>
     <div class="uppercase"><?=$title?></div>
     <div><?=$text?></div>
