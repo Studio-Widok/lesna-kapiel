@@ -63,8 +63,18 @@
     bottom: 15%;
     margin: 0 auto;
     cursor: pointer;
+
     svg {
+      position: relative;
+      top: 0;
       height: 3em;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      svg {
+        top: 0.5em;
+      }
     }
   }
 }
