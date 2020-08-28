@@ -3,6 +3,7 @@
   $sections       = get_field('sections');
   $featured_links = get_field('featured_links');
   $slider         = get_field('slider');
+  $footer         = get_field('footer');
 
   get_part('nav');
   get_part('top', array(
@@ -61,6 +62,6 @@
 
 </div>
 
-<?php get_part('map-block')?>
-
-<?php get_footer();
+<?php
+  get_part('full-width-image', ['image' => $footer['image']]);
+get_footer();

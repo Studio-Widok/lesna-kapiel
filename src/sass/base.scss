@@ -1,6 +1,7 @@
 $letter-spacing: 0.15em;
 $color-beige: #af9e70;
 $dark-green: #1e352a;
+$dark: #122218;
 $white-grey: #78857f;
 $grey-background: #8a9992;
 $green-overlay: rgba(51, 105, 80, 0.7);
@@ -298,6 +299,10 @@ p {
   background-color: $dark-green;
 }
 
+.dark-wrapper {
+  background-color: $dark;
+}
+
 .grey-wrapper {
   background-color: $grey-background;
 }
@@ -347,6 +352,9 @@ button {
     margin: 0 auto;
     width: 100%;
   }
+}
+.text-center > .small-title {
+  padding-left: $letter-spacing;
 }
 
 .image-wrapper-full-width {

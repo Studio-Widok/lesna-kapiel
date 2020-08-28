@@ -1,15 +1,13 @@
 .footer-video-section {
-  min-height: 50vh;
-
   .video-wrapper {
     position: relative;
-    top: -10vh;
-    height: 117%;
+    margin-top: -12%;
     z-index: 3;
   }
+
   video {
+    display: block;
     width: 100%;
-    height: 100%;
     pointer-events: none;
   }
 
@@ -19,32 +17,39 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: 0.3s;
+
     .play-button {
-      letter-spacing: 0.15em;
-      padding-left: 0.15em;
+      letter-spacing: $letter-spacing;
       background-color: unset;
       border: 1px solid #fff;
       color: #fff;
-      transition: 0.3s all ease-in-out;
+      transition: 0.3s;
+
       svg {
+        display: block;
+        padding: 1.2em;
+        width: 3.8em;
         fill: transparent;
-        padding: 1em 1.5em;
+        stroke-width: 4;
         stroke: #fff;
-        stroke-width: 100;
-        width: 4em;
-        transition: 0.3s all ease-in-out;
+        transition: 0.3s;
       }
+
       div {
-        padding: 1em 1.5em;
+        padding: 0 1.5em;
         border-right: 1px solid #fff;
       }
     }
+
     &:hover {
       background-color: rgba(0, 0, 0, 0);
+
       .play-button {
         background-color: $color-beige;
+
         svg {
-            fill: white;
+          fill: white;
         }
       }
     }
