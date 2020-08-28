@@ -30,15 +30,15 @@
 
   <div class="content flex">
     <?php
-      get_component('vertical-pic-text', [
+      get_component('vertical-image-text', [
         'links'   => true,
         'content' => $tripple_section[0],
       ]);
-      get_component('vertical-pic-text', [
+      get_component('vertical-image-text', [
         'links'   => true,
         'content' => $tripple_section[1],
       ]);
-      get_component('vertical-pic-text', [
+      get_component('vertical-image-text', [
         'links'   => true,
         'content' => $tripple_section[2],
       ]);

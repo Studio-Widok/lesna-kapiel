@@ -13,7 +13,7 @@
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?'));?>
+  ipsa vel aliquid! Qui natus iusto odit?', ));?>
   <div class="rsep"></div>
   <div class="content flex column">
     <?php
@@ -87,7 +87,7 @@
 
           ));
         foreach ($posts as $post): ?>
-  <?php endforeach;
+<?php endforeach;
     endif;
   endforeach;
 ?>
@@ -98,9 +98,9 @@
   <div class="rsep"></div>
   <div class="content flex">
 
-    <?php get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
-    <?php get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
+    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));?>
+<?php get_component('vertical-image-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
+<?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
 
   </div>
   <div class="rsep"></div>
