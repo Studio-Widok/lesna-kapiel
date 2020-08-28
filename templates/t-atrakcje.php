@@ -27,11 +27,28 @@
     }
   ?>
   <div class="rsep"></div>
-  <?php get_part('3-col-with-pic', array('links' => 'yes', 'content' => $tripple_section));?>
+
+  <div class="content flex">
+    <?php
+      get_component('vertical-image-text', [
+        'links'   => true,
+        'content' => $tripple_section[0],
+      ]);
+      get_component('vertical-image-text', [
+        'links'   => true,
+        'content' => $tripple_section[1],
+      ]);
+      get_component('vertical-image-text', [
+        'links'   => true,
+        'content' => $tripple_section[2],
+      ]);
+    ?>
+  </div>
+
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
 
 <?php get_footer();
-get_part('map-block');
+  get_part('map-block');
 ?>

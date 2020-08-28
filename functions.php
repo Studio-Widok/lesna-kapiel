@@ -116,10 +116,16 @@ function viewport_meta() {?>
       return;
     }
 
-    $__index = call_user_func(function($__file) {
+    $__index = call_user_func(function ($__file) {
       global $displayed_parts;
-      if (!isset($displayed_parts)) $displayed_parts = [];
-      if (!isset($displayed_parts[$__file])) $displayed_parts[$__file] = 0;
+      if (!isset($displayed_parts)) {
+        $displayed_parts = [];
+      }
+
+      if (!isset($displayed_parts[$__file])) {
+        $displayed_parts[$__file] = 0;
+      }
+
       return $displayed_parts[$__file]++;
     }, $__file);
 
@@ -135,4 +141,17 @@ function viewport_meta() {?>
   function get_video_meta($file) {
     $video_path = get_attached_file($file['id']);
     return wp_read_video_metadata($video_path);
+  }
+
+  function get_link_url($field) {
+    switch ($field['target']) {
+      case 'out':
+        return $field['url'];
+      case 'dla_dzieci':
+        return get_the_permalink(pll_get_post(111)) . '#children';
+      case 'sauna':
+        return get_the_permalink(pll_get_post(48)) . '#sauna';
+      case 'basen':
+        return get_the_permalink(pll_get_post(48)) . '#pool';
+    }
 }

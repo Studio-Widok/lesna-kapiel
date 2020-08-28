@@ -1,0 +1,75 @@
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  margin: -1.2em auto 0 auto;
+  max-width: 100em;
+
+  .arrow-left,
+  .arrow-right {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .arrow-text {
+      padding: 0 1em;
+      letter-spacing: $letter-spacing;
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+
+    svg {
+      width: 2.4em;
+      padding: 0.4em;
+      border: 1px solid #fff;
+      background-color: #3333;
+      transition: 0.3s;
+      &:hover {
+        background-color: $color-beige;
+        fill: white;
+      }
+    }
+
+    &.hovered {
+      .arrow-text {
+        opacity: 1;
+      }
+      svg {
+        margin: 0 -0.5em;
+      }
+    }
+
+    &.disabled {
+      opacity: 0;
+
+      svg {
+        margin: 0;
+        pointer-events: none;
+
+        path {
+          stroke: #fff0;
+          fill: #fff0;
+        }
+      }
+    }
+  }
+
+  .arrow-left {
+    left: 3em;
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  .arrow-right {
+    right: 3em;
+
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+}

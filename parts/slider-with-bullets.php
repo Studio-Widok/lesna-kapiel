@@ -7,7 +7,7 @@
 <div class="slider-with-bullets" id="slider-with-bullets-<?=$__index?>">
   <div class="content">
     <div class="slider-bullets">
-      <div class="slider-title"><?=$title?></div>
+      <div class="small-title"><?=$title?></div>
       <div class="rmin"></div>
       <div class="bullets-container">
         <?php for ($i = 0; $i < count($slides); $i++) {?>

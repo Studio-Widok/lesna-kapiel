@@ -1,8 +1,8 @@
 <?php
   get_header();
-  $sections        = get_field('sections');
-  $tripple_section = get_field('tripple_section');
-  $slider          = get_field('slider');
+  $sections       = get_field('sections');
+  $featured_links = get_field('featured_links');
+  $slider         = get_field('slider');
 
   get_part('nav');
   get_part('top', array(
@@ -17,7 +17,7 @@
   <?php get_part('2-col-no-pic')?>
   <div class="rsep"></div>
   <div class="rsep"></div>
-  <?php get_part('2-col-with-pic', array(
+  <?php get_part('2-col-with-pic', [
       'image'      => $sections[0]['image'],
       'title'      => $sections[0]['title'],
       'text'       => $sections[0]['text'],
@@ -26,21 +26,20 @@
         'link' => '',
       ),
       'alt_layout' => true,
-  ));?>
+  ]);?>
   <div class="rsep"></div>
   <div class="rsep"></div>
-  <?php get_part('2-col-with-pic', array(
+  <?php get_part('2-col-with-pic', [
       'image'      => $sections[1]['image'],
       'title'      => $sections[1]['title'],
       'text'       => $sections[1]['text'],
-      'button'     => array(
+      'button'     => [
         'text' => 'Zobacz Apartamenty',
         'link' => '',
-      ),
+      ],
       'pic_right'  => true,
       'alt_layout' => true,
-  ));?>
-  <div class="rsep"></div>
+  ]);?>
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
@@ -53,28 +52,12 @@
   <div class="rsep"></div>
 
   <div class="rsep"></div>
-  <div class="content flex">
 
-    <?php
-      get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));
-      get_component('vertical-pic-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));
-      get_component('vertical-pic-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));
-    ?>
+  <?php get_part('featured-links', [
+      'links' => $featured_links,
+  ]);?>
 
-  </div>
   <div class="rsep"></div>
-  <div class="rsep"></div>
-  <?php get_part('2-col-with-pic', array(
-      'image'      => $sections[2]['image'],
-      'title'      => $sections[2]['title'],
-      'text'       => $sections[2]['text'],
-      'button'     => array(
-        'text' => 'Zobacz Apartamenty',
-        'link' => '',
-      ),
-      'alt_layout' => true,
-  ));?>
-</div>
 
 </div>
 

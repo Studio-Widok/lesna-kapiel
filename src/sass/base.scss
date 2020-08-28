@@ -328,25 +328,50 @@ button {
 }
 
 .small-title {
-  font-size: 2em;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: $letter-spacing;
+  padding-bottom: 0.4em;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .image-wrapper-full-width {
   width: 100%;
 }
 
+// components
+@import 'fixed-link.scss';
+@import 'slider-arrows.scss';
+@import 'vertical-image-text.scss';
+@import 'lightbox.scss';
+
+// parts
 @import 'nav.scss';
 @import 'top.scss';
-@import 'contact.scss';
 @import 'atrakcje.scss';
-@import 'map.scss';
 @import '2-col.scss';
+@import 'map.scss';
 @import 'text-full.scss';
 @import 'collections-slider.scss';
 @import 'slider-with-bullets.scss';
-@import 'fixed-link.scss';
-@import 'footer.scss';
-@import 'archive.scss';
 @import 'slider-gallery.scss';
-@import 'lightbox.scss';
+
+// general
+@import 'contact.scss';
+@import 'archive.scss';
+@import 'footer.scss';
 @import '_mobile.scss';

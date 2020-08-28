@@ -33,6 +33,7 @@
  *  allows slider to be dragged with the mouse
  * @param {boolean} options.touchDrag default=false
  *  allows slider to be dragged on a touchscreen
+ * @param {boolean} option.preventDefaultDrag default=false
  * @param {boolean} options.slideOnWheel default=false,
  * @param {boolean} options.useKeys default=false
  *  changes slides on arrow keys, can be changed later
@@ -67,7 +68,6 @@ const createSlider = (function () {
       this.isSliding = false; // is slider currently being animated
       this.isDragged = false; // is slider currently being dragged
       this.isEnabled = options.isEnabled;
-      if (this.isEnabled === undefined) this.isEnabled = true;
 
       this.prepareArrows();
       this.prepareSlides();
@@ -97,11 +97,13 @@ const createSlider = (function () {
         duration: 300,
         mouseDrag: false,
         touchDrag: false,
+        preventDefaultDrag: false,
         useKeys: false,
         loop: false,
         slidesAsLinks: false,
         adjustHeight: false,
         animationType: 'slide',
+        isEnabled: true,
       };
       for (const optionName in options) {
         this.options[optionName] = options[optionName];
@@ -265,8 +267,7 @@ const createSlider = (function () {
         this.onDrag = this.onDrag.bind(this);
         this.wrap.on('touchstart', event => {
           if (!this.isEnabled) return;
-          // TODO: add an option to switch this
-          // event.preventDefault();
+          if (this.options.preventDefaultDrag) event.preventDefault();
           if (this.isSliding) return;
           this.dragStart = {
             x: event.changedTouches[0].pageX,
