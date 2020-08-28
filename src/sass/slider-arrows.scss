@@ -27,6 +27,10 @@
       border: 1px solid #fff;
       background-color: #3333;
       transition: 0.3s;
+      &:hover {
+        background-color: $color-beige;
+        fill: white;
+      }
     }
 
     &.hovered {

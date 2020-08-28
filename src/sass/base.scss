@@ -3,6 +3,7 @@ $color-beige: #af9e70;
 $dark-green: #1e352a;
 $white-grey: #78857f;
 $grey-background: #8a9992;
+$green-overlay: rgba(51, 105, 80, 0.7);
 
 @font-face {
   font-family: 'Belluga';
@@ -253,6 +254,9 @@ p {
 .column-outer {
   padding: 0 2em;
 }
+.column-outer-right {
+  padding-right: 2em;
+}
 .column-double {
   padding: 0 6em;
 }
@@ -353,6 +357,7 @@ button {
 @import 'fixed-link.scss';
 @import 'slider-arrows.scss';
 @import 'vertical-image-text.scss';
+@import 'lightbox.scss';
 
 // parts
 @import 'nav.scss';
@@ -363,6 +368,7 @@ button {
 @import 'text-full.scss';
 @import 'collections-slider.scss';
 @import 'slider-with-bullets.scss';
+@import 'slider-gallery.scss';
 
 // general
 @import 'contact.scss';
