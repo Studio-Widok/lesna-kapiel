@@ -16,7 +16,7 @@
       </div>
 
     </div>
-    <div class="column">
+    <div class="full-width column">
       <div class="big-title handwrite">
         <?=$text?>
       </div>
