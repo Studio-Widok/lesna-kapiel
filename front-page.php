@@ -1,5 +1,6 @@
 <?php
   get_header();
+  $firstSection   = get_field('first_section');
   $sections       = get_field('sections');
   $featured_links = get_field('featured_links');
   $slider         = get_field('slider');
@@ -15,34 +16,31 @@
 <div class="green-wrapper">
   <div class="rsep"></div>
   <div class="rsep more-1200"></div>
-  <?php get_part('2-col-no-pic')?>
-  <div class="rsep"></div>
-  <div class="rsep"></div>
-  <?php get_part('2-col-with-pic', [
-      'image'      => $sections[0]['image'],
-      'title'      => $sections[0]['title'],
-      'text'       => $sections[0]['text'],
-      'button'     => array(
-        'text' => 'Zobacz Apartamenty',
-        'link' => '',
+  <?php get_part('2-col-no-pic', [
+      'title'  => $firstSection['title'],
+      'text'   => $firstSection['text'],
+      'button' => array(
+        'text' => $firstSection['button_text'],
+        'link' => $firstSection['button_link'],
       ),
-      'alt_layout' => true,
-  ]);?>
+  ])?>
   <div class="rsep"></div>
   <div class="rsep"></div>
-  <?php get_part('2-col-with-pic', [
-      'image'      => $sections[1]['image'],
-      'title'      => $sections[1]['title'],
-      'text'       => $sections[1]['text'],
-      'button'     => [
-        'text' => 'Zobacz Apartamenty',
-        'link' => '',
-      ],
-      'pic_right'  => true,
-      'alt_layout' => true,
-  ]);?>
+  <?php for ($i = 0; $i < count($sections); $i++) {?>
+<?php get_part('2-col-with-pic', [
+    'image'      => $sections[$i]['image'],
+    'title'      => $sections[$i]['title'],
+    'text'       => $sections[$i]['text'],
+    'button'     => array(
+      'text' => 'Zobacz Apartamenty',
+      'link' => '',
+    ),
+    'alt_layout' => true,
+    'pic_right'  => $i % 2,
+]);?>
   <div class="rsep"></div>
   <div class="rsep"></div>
+  <?php }?>
 </div>
 
 <div class="grey-wrapper">
