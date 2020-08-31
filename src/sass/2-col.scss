@@ -13,6 +13,10 @@
     top: -0.7em;
 
     @media (max-width: 1200px) {
+      font-size: 6.5em;
+    }
+
+    @media (max-width: 768px) {
       font-size: 5em;
     }
   }
@@ -42,7 +46,10 @@
     position: relative;
     left: -0.3em;
     margin-bottom: 0.5em;
-    white-space: pre-wrap;
+
+    @media (max-width: 1200px) {
+      font-size: 5em;
+    }
   }
 
   .text {
