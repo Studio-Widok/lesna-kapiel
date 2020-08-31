@@ -13,14 +13,14 @@
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?', ));?>
+  ipsa vel aliquid! Qui natus iusto odit?'));?>
   <div class="rsep"></div>
   <div class="content flex column">
     <?php
       while (have_posts()):
         the_post();
         get_component('single-apartment', [
-          'image' => get_field('gallery')[0]['sizes']['large'],
+          'image' => get_field('slider')['gallery'][0]['sizes']['large'],
           'link'  => get_permalink(),
           'title' => get_the_title(),
           'price' => get_field('price'),
