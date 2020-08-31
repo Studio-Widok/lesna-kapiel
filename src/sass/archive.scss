@@ -5,11 +5,6 @@ hr {
   background-color: inherit;
 }
 
-.big-title {
-  font-size: 8em;
-  white-space: pre-wrap;
-}
-
 @mixin colors-set(
   $name,
   $bg,

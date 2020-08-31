@@ -1,4 +1,4 @@
-<div class="footer-video-section content col-2-no-pic">
+<div class="footer-video-section content">
   <div class="flex flex-column flex-justify-center flex-align-center">
     <div class="column">
       <div class="video-wrapper rel">
@@ -16,11 +16,10 @@
       </div>
 
     </div>
-    <div class="column">
+    <div class="full-width column">
       <div class="big-title handwrite">
         <?=$text?>
       </div>
     </div>
-
   </div>
 </div>

@@ -372,6 +372,23 @@ button {
   width: 100%;
 }
 
+.full-width {
+  width: 100%;
+}
+
+.big-title {
+  font-size: 8em;
+  @media (max-width: 1200px) {
+    font-size: 6.5em;
+  }
+  @media (max-width: 768px) {
+    font-size: 5em;
+  }
+  @media (max-width: 450px) {
+    font-size: 4em;
+  }
+}
+
 // components
 @import 'fixed-link.scss';
 @import 'slider-arrows.scss';
