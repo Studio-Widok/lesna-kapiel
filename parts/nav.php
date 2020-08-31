@@ -11,9 +11,12 @@
       </div>
     </a>
     <?php }?>
-    <div class="nav-link">
-      <span class="uppercase">villa</span>
-    </div>
+    <?php
+    $villa = get_term_by('slug', 'villa', 'tags');
+     ?>
+    <?php 
+    get_component('nav-link', array('tag' => $villa));
+    ?>
     <div class="nav-link">
       <span class="uppercase">domki nad stawem</span>
     </div>

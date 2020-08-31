@@ -10,7 +10,7 @@
     <div class="col2 column-outer flex flex-justify-end flex-align-center">
       <div class="column-inner">@lesnakapiel</div>
       <div class="column-inner">
-        <?php get_part('social-links');?>
+        <?php get_component('social-links');?>
       </div>
     </div>
   </div>
