@@ -20,6 +20,9 @@
       .collection-title {
         font-size: 8em;
         margin-left: -1.15em;
+        @media (max-width: 1200px) {
+          font-size: 5em;
+        }
       }
     }
   }

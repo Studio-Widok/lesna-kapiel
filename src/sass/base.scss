@@ -294,17 +294,29 @@ p {
 }
 
 //adding to the base
-.green-wrapper {
-  background-color: $dark-green;
+
+@mixin wrapper($selector, $color) {
+  #{$selector} {
+    position: relative;
+    background-color: $color;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      margin-bottom: -1em;
+      padding-bottom: 7.3404%;
+      background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$color}, 2)}');
+    }
+  }
 }
 
-.dark-wrapper {
-  background-color: $dark;
-}
-
-.grey-wrapper {
-  background-color: $grey-background;
-}
+@include wrapper('.green-wrapper', $dark-green);
+@include wrapper('.dark-wrapper', $dark);
+@include wrapper('.grey-wrapper', $grey-background);
 
 button {
   letter-spacing: $letter-spacing;
@@ -358,6 +370,23 @@ button {
 
 .image-wrapper-full-width {
   width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.big-title {
+  font-size: 8em;
+  @media (max-width: 1200px) {
+    font-size: 6.5em;
+  }
+  @media (max-width: 768px) {
+    font-size: 5em;
+  }
+  @media (max-width: 450px) {
+    font-size: 4em;
+  }
 }
 
 // components
