@@ -3,6 +3,7 @@
   get_part('nav');
   $archive         = get_queried_object();
   $tripple_section = get_field('tripple_section', 2);
+  $footer          = get_field('footer', 2);
 ?>
 <div class="<?=get_field("colors", $archive)?>-set">
   <div class="column-double content title-container">
@@ -13,7 +14,7 @@
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?'));?>
+  ipsa vel aliquid! Qui natus iusto odit?', ));?>
   <div class="rsep"></div>
   <div class="content flex column">
     <?php
@@ -105,6 +106,11 @@
   </div>
   <div class="rsep"></div>
 </div>
-
+<?php get_part('full-width-image', ['image' => $footer['image']]);?>
+<div class="green-wrapper">
+  <div class="rsep"></div>
+  <?php get_part('contact-info');?>
+  <div class="rsep"></div>
+</div>
 
 <?php get_footer();?>

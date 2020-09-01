@@ -22,6 +22,11 @@
 <div class="fixed-link-container">
   <?php $term = get_term_by('slug', 'villa', 'tags');
   get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
+  <?php get_part('map-block');?>
+</div>
+
+<div class="green-wrapper green-wrapper-footer">
+  <div class="rmin"></div>
 </div>
 
 <?php get_footer();

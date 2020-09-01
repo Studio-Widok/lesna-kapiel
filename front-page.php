@@ -33,7 +33,7 @@
     get_component('fixed-link', array('text' => 'see_apartments', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
     <div class="rsep"></div>
     <?php for ($i = 0; $i < count($sections); $i++) {?>
-<?php get_part('2-col-with-pic', [
+    <?php get_part('2-col-with-pic', [
     'image'      => $sections[$i]['image'],
     'title'      => $sections[$i]['title'],
     'text'       => $sections[$i]['text'],
@@ -67,6 +67,21 @@
 
 </div>
 
-<?php
-  get_part('full-width-image', ['image' => $footer['image']]);
-get_footer();
+<?php get_part('full-width-image', ['image' => $footer['image']]);?>
+<div class="green-wrapper">
+  <?php
+    $footer = get_field('footer', 2);
+    get_part('footer-video', array(
+      'source' => $footer['video'],
+      'text'   => $footer['text']));
+  ?>
+  <div class="rsep"></div>
+  <?php get_part('contact-info');?>
+  <div class="rsep"></div>
+</div>
+<?php get_part('map-block');?>
+<div class="green-wrapper green-wrapper-footer">
+  <div class="rmin"></div>
+</div>
+</div>
+<?php get_footer();?>
