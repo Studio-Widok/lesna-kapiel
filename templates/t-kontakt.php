@@ -21,12 +21,8 @@
 </div>
 <div class="fixed-link-container">
   <?php get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
-  <div id="map-wrapper">
-    <div class="overlay abs"></div>
-    <div id="gmap"></div>
-  </div>
+  <?php get_part('map-block');?>
 </div>
 
 <?php get_footer();
-  get_part('map-block');
 ?>
