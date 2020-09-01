@@ -1,5 +1,10 @@
 <?php
-  $collections = get_categories(['taxonomy' => 'collections']);
+  $exclude = $exclude ?? [];
+
+  $collections = get_categories([
+    'taxonomy' => 'collections',
+    'exclude'  => $exclude,
+  ]);
 ?>
 
 <div class="collections-slider">
@@ -27,6 +32,9 @@
             <div class="collection-description">
               <?=$collections[$i]->description?></div>
             <div class="r"></div>
+            <a href="<?=get_tag_link($collections[$i])?>">
+              <button>zobacz więcej</button>
+            </a>
           </div>
         </div>
       </div>
@@ -35,9 +43,15 @@
   </div>
 
   <div class="bullets-container">
-    <?php for ($i = 0; $i < count($collections); $i++) {?>
+    <?php
+      if (count($collections) > 1) {
+        for ($i = 0; $i < count($collections); $i++) {
+        ?>
     <div class="slider-bullet"><?=($i + 1)?></div>
-    <?php }?>
+    <?php
+      }
+      }
+    ?>
   </div>
 
   <?php get_component('slider-arrows', [

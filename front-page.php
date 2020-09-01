@@ -33,7 +33,7 @@
     get_component('fixed-link', array('text' => 'see_apartments', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
     <div class="rsep"></div>
     <?php for ($i = 0; $i < count($sections); $i++) {?>
-<?php get_part('2-col-with-pic', [
+    <?php get_part('2-col-with-pic', [
     'image'      => $sections[$i]['image'],
     'title'      => $sections[$i]['title'],
     'text'       => $sections[$i]['text'],
@@ -51,7 +51,8 @@
 </div>
 
 <div class="grey-wrapper">
-  <div class="rsep"></div>
+  <div class="r"></div>
+  <div class="overlap"></div>
   <?php
     get_part('collections-slider');
   ?>

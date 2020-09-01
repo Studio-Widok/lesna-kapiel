@@ -393,6 +393,10 @@ button {
   }
 }
 
+.overlap {
+  margin-top: -12em;
+}
+
 // components
 @import 'fixed-link.scss';
 @import 'slider-arrows.scss';

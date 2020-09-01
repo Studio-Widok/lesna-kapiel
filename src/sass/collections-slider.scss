@@ -1,6 +1,5 @@
 .collections-slider {
   position: relative;
-  margin-top: -12em;
 
   .content {
     .collection-image-column {
@@ -8,6 +7,7 @@
     }
 
     .collection-description-column {
+      position: relative;
       width: 40%;
       padding-top: 18em;
       padding-right: 6em;
