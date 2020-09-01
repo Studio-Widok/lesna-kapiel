@@ -4259,6 +4259,7 @@ const $ = require('cash-dom');
 
 $('#burger').on('click', () => {
   $('#nav').toggleClass('opened');
+  $('body').toggleClass('nav-opened');
 });
 
 },{"cash-dom":1}],15:[function(require,module,exports){
