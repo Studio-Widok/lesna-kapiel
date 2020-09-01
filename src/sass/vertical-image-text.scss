@@ -1,5 +1,10 @@
 .vertical-image-text {
   .text-link {
+    .additional-link-icon {
+      width: 2em;
+      margin-right: 0.5em;
+    }
+
     span {
       text-transform: uppercase;
       letter-spacing: $letter-spacing;
