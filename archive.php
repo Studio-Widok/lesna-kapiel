@@ -57,7 +57,7 @@
     <div class="rsep"></div>
     <?php foreach ($premiumApartments as $apartment):
         get_component('single-apartment', [
-          'image' => get_field('gallery', $apartment->ID)[0]['sizes']['large'],
+          'image' => get_field('slider', $apartment->ID)['gallery'][0]['sizes']['large'],
           'link'  => get_permalink($apartment->ID),
           'title' => get_the_title($apartment->ID),
           'price' => get_field('price', $apartment->ID),
@@ -87,7 +87,7 @@
 
           ));
         foreach ($posts as $post): ?>
-<?php endforeach;
+  <?php endforeach;
     endif;
   endforeach;
 ?>
@@ -99,8 +99,8 @@
   <div class="content flex">
 
     <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));?>
-<?php get_component('vertical-image-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
-<?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
+    <?php get_component('vertical-image-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
+    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
 
   </div>
   <div class="rsep"></div>
