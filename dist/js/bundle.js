@@ -4142,6 +4142,30 @@ return Outlayer;
 
 },{}],10:[function(require,module,exports){
 const $ = require('cash-dom');
+const createScrollItem = require('./widok-scrollItem');
+const widok = require('./widok');
+
+$('.cake-frame').each((index, element) => {
+  createScrollItem($(element).parent('.cake'), {
+    isActive: false,
+    onScroll: scrollItem => {
+      if (scrollItem.offset + scrollItem.height < widok.s + widok.h) {
+        if (!scrollItem.options.isActive) {
+          scrollItem.element.addClass('active');
+          scrollItem.options.isActive = true;
+        }
+      } else {
+        if (scrollItem.options.isActive) {
+          scrollItem.element.removeClass('active');
+          scrollItem.options.isActive = false;
+        }
+      }
+    },
+  });
+});
+
+},{"./widok":23,"./widok-scrollItem":20,"cash-dom":1}],11:[function(require,module,exports){
+const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem.js');
 const widok = require('./widok.js');
 
@@ -4204,7 +4228,7 @@ $.each(fixedLinkContainer, (index, e) => {
   };
 });
 
-},{"./widok-scrollItem.js":19,"./widok.js":22,"cash-dom":1}],11:[function(require,module,exports){
+},{"./widok-scrollItem.js":20,"./widok.js":23,"cash-dom":1}],12:[function(require,module,exports){
 const videoOverlay = document.getElementById('footer-video-overlay');
 const video = document.getElementById('footer-video');
 
@@ -4218,25 +4242,26 @@ videoOverlay.addEventListener('click', () => {
   }
 });
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 const $ = require('cash-dom');
-require('./nav');
 require('./widok');
+require('./nav');
 require('./footer');
 require('./sliders');
+require('./cake-frame');
 
 if ($('.fixed-link').length > 0) require('./fixed-link');
 if ($('#top').length > 0) require('./top');
 if ($('.slider-gallery').length > 0) require('./slider-gallery');
 
-},{"./fixed-link":10,"./footer":11,"./nav":13,"./slider-gallery":14,"./sliders":15,"./top":16,"./widok":22,"cash-dom":1}],13:[function(require,module,exports){
+},{"./cake-frame":10,"./fixed-link":11,"./footer":12,"./nav":14,"./slider-gallery":15,"./sliders":16,"./top":17,"./widok":23,"cash-dom":1}],14:[function(require,module,exports){
 const $ = require('cash-dom');
 
 $('#burger').on('click', () => {
   $('#nav').toggleClass('opened');
 });
 
-},{"cash-dom":1}],14:[function(require,module,exports){
+},{"cash-dom":1}],15:[function(require,module,exports){
 const $ = require('cash-dom');
 const widok = require('./widok');
 const createSlider = require('./widok-slider');
@@ -4360,7 +4385,7 @@ $('#lb-container-masonry .lb').on('click', function (event) {
   }
 });
 
-},{"./widok":22,"./widok-lightbox":18,"./widok-slider":20,"cash-dom":1,"masonry-layout":6}],15:[function(require,module,exports){
+},{"./widok":23,"./widok-lightbox":19,"./widok-slider":21,"cash-dom":1,"masonry-layout":6}],16:[function(require,module,exports){
 const $ = require('cash-dom');
 const createSlider = require('./widok-slider');
 
@@ -4386,7 +4411,7 @@ createSlider({
   arrowNext: `.collections-slider .arrow-right`,
 });
 
-},{"./widok-slider":20,"cash-dom":1}],16:[function(require,module,exports){
+},{"./widok-slider":21,"cash-dom":1}],17:[function(require,module,exports){
 const $ = require('cash-dom');
 const smoothscroll = require('smoothscroll-polyfill');
 
@@ -4397,7 +4422,7 @@ $('#top .arrow').on('click', () => {
   window.scrollTo({ top: topHeight, behavior: 'smooth' });
 });
 
-},{"cash-dom":1,"smoothscroll-polyfill":9}],17:[function(require,module,exports){
+},{"cash-dom":1,"smoothscroll-polyfill":9}],18:[function(require,module,exports){
 const $ = require('cash-dom');
 
 const createHoverable = (function () {
@@ -4445,7 +4470,7 @@ const createHoverable = (function () {
 
 if (typeof module !== 'undefined') module.exports = createHoverable;
 
-},{"cash-dom":1}],18:[function(require,module,exports){
+},{"cash-dom":1}],19:[function(require,module,exports){
 /**
  * add new Lightbox
  * @param {object} options extra options
@@ -4664,7 +4689,7 @@ const createLightbox = (function () {
 
 if (typeof module !== 'undefined') module.exports = createLightbox;
 
-},{"cash-dom":1}],19:[function(require,module,exports){
+},{"cash-dom":1}],20:[function(require,module,exports){
 /**
  * create new scroll item
  * @param {selector} element element to scroll
@@ -4694,17 +4719,20 @@ const createScrollItem = (function () {
       this.onStateChange = this.options.onStateChange;
       this.onScroll = this.options.onScroll;
     }
+
     _onResize() {
       this.offset = this.element.offset().top;
       this.height = this.element.outerHeight();
       this._onScroll();
     }
+
     _onScroll() {
       this.checkScreenRelation();
       if (this.onScroll !== undefined) {
         this.onScroll.call(this, this);
       }
     }
+
     checkScreenRelation() {
       if (this.offset + this.height < widok.s) {
         this.setPropClass('AboveScreen', true);
@@ -4735,6 +4763,7 @@ const createScrollItem = (function () {
           this.offset + this.height > widok.s + widok.h
       );
     }
+
     setPropClass(prop, value) {
       if (this['is' + prop] !== value) {
         this['is' + prop] = value;
@@ -4747,6 +4776,7 @@ const createScrollItem = (function () {
         }
       }
     }
+
     screenPos(heightOffset) {
       if (heightOffset === void 0) heightOffset = 0;
       return (this.offset + this.height * heightOffset - widok.s) / widok.h;
@@ -4777,7 +4807,7 @@ const createScrollItem = (function () {
 
 if (typeof module !== 'undefined') module.exports = createScrollItem;
 
-},{"./widok":22,"cash-dom":1}],20:[function(require,module,exports){
+},{"./widok":23,"cash-dom":1}],21:[function(require,module,exports){
 /**
  * Create a slider. Vertical slider might not work yet.
  * @param {object} optionsextra options
@@ -5512,7 +5542,7 @@ const createSlider = (function () {
 
 if (typeof module !== 'undefined') module.exports = createSlider;
 
-},{"./widok-hoverable":17,"cash-dom":1}],21:[function(require,module,exports){
+},{"./widok-hoverable":18,"cash-dom":1}],22:[function(require,module,exports){
 function throttle(ms, callback) {
   let lastCall = 0;
   let timeout;
@@ -5530,7 +5560,7 @@ function throttle(ms, callback) {
 
 if (typeof module !== 'undefined') module.exports = throttle;
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 const $ = require('cash-dom');
 const throttle = require('./widok-throttle');
 
@@ -5562,6 +5592,6 @@ $(document).on('ready', widok.sizeCheck);
 
 if (typeof module !== 'undefined') module.exports = widok;
 
-},{"./widok-throttle":21,"cash-dom":1}]},{},[12])
+},{"./widok-throttle":22,"cash-dom":1}]},{},[13])
 
 //# sourceMappingURL=bundle.js.map

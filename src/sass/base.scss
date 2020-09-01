@@ -274,7 +274,7 @@ p {
 }
 
 .handwrite {
-  font-family: 'Belluga', cursive;
+  font-family: 'Belluga', serif;
   line-height: 0.8;
 }
 .uppercase {
@@ -310,6 +310,10 @@ p {
       margin-bottom: -1em;
       padding-bottom: 7.3404%;
       background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$color}, 2)}');
+    }
+
+    .cake-frame .drawing path {
+      stroke: $color;
     }
   }
 }
@@ -394,6 +398,7 @@ button {
 @import 'slider-arrows.scss';
 @import 'vertical-image-text.scss';
 @import 'lightbox.scss';
+@import 'cake-frame.scss';
 
 // parts
 @import 'nav.scss';

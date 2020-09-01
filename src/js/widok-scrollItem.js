@@ -27,17 +27,20 @@ const createScrollItem = (function () {
       this.onStateChange = this.options.onStateChange;
       this.onScroll = this.options.onScroll;
     }
+
     _onResize() {
       this.offset = this.element.offset().top;
       this.height = this.element.outerHeight();
       this._onScroll();
     }
+
     _onScroll() {
       this.checkScreenRelation();
       if (this.onScroll !== undefined) {
         this.onScroll.call(this, this);
       }
     }
+
     checkScreenRelation() {
       if (this.offset + this.height < widok.s) {
         this.setPropClass('AboveScreen', true);
@@ -68,6 +71,7 @@ const createScrollItem = (function () {
           this.offset + this.height > widok.s + widok.h
       );
     }
+
     setPropClass(prop, value) {
       if (this['is' + prop] !== value) {
         this['is' + prop] = value;
@@ -80,6 +84,7 @@ const createScrollItem = (function () {
         }
       }
     }
+
     screenPos(heightOffset) {
       if (heightOffset === void 0) heightOffset = 0;
       return (this.offset + this.height * heightOffset - widok.s) / widok.h;

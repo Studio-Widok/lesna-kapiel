@@ -14,6 +14,7 @@
       <div class="image-wrapper">
         <div class="cake cake-3-4"
           style="background-image: url(<?=$image['sizes']['large']?>)">
+          <?php get_component('cake-frame');?>
         </div>
       </div>
     </div>
