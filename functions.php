@@ -147,6 +147,12 @@ function viewport_meta() {?>
     switch ($field['target']) {
       case 'out':
         return $field['url'];
+      case 'in':
+        return $field['link_page'];
+      case 'collections':
+        return get_category_link(pll_get_term($field['link_collections']));
+      case 'tags':
+        return get_tag_link(pll_get_term($field['link_tags']));
       case 'dla_dzieci':
         return get_the_permalink(pll_get_post(111)) . '#children';
       case 'sauna':

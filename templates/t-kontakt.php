@@ -9,7 +9,7 @@
 ?>
 
 <div class="green-wrapper fixed-link-container">
-  <?php get_component('fixed-link', array('text' => 'nasza idea', 'link' => get_the_permalink(100)));?>
+  <?php get_component('fixed-link', array('text' => get_the_title(pll_get_post(100)), 'link' => get_the_permalink(pll_get_post(100))));?>
   <div class="rsep"></div>
   <?php get_part('contact-form');?>
   <div class="rsep"></div>
@@ -20,8 +20,8 @@
   <?php get_part('contact-images');?>
 </div>
 <div class="fixed-link-container">
-  <?php get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_the_permalink()));?>
- <?php get_part('map-block'); ?>
+  <?php get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
+  <?php get_part('map-block');?>
 </div>
 
 <?php get_footer();

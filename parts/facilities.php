@@ -3,6 +3,7 @@
   $title      = $title ?? '';
   $meals      = $meals ?? [];
   $image      = $image ?? '';
+  $link       = $link  ?? '';
 ?>
 
 <div class="content facilities-container">
@@ -34,8 +35,8 @@
   </div>
   <div class="rsep"></div>
   <div class="flex flex-justify-center">
-    <a href="">
-      <button>Zobacz apartamenty</button>
+    <a href="<?=get_link_url($link)?>">
+      <button><?=$link['text']?></button>
     </a>
   </div>
 </div>
