@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="col2 column collection-description-column">
-            <div class="collection-number">kolekcja #<?=($i + 1)?></div>
+            <div class="collection-number"><?php pll_e('kolekcja #')?><?=($i + 1)?></div>
             <div class="r"></div>
             <div class="collection-title handwrite"><?=$collections[$i]->name?>
             </div>
