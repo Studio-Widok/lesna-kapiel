@@ -1,0 +1,27 @@
+.cake {
+  position: relative;
+
+  .cake-frame {
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+
+    .drawing path {
+      stroke-width: 50;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 150;
+      stroke-dashoffset: 150;
+      transition: 1s;
+    }
+  }
+
+  &.active {
+    .drawing path {
+      stroke-dashoffset: 0;
+    }
+  }
+}

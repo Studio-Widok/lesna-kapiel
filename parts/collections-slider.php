@@ -15,6 +15,7 @@
           <div class="col2 column collection-image-column">
             <div class="cake cake-3-4"
               style="background-image: url('<?=$img['sizes']['large']?>');">
+              <?php get_component('cake-frame');?>
             </div>
           </div>
           <div class="col2 column collection-description-column">

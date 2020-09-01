@@ -5,7 +5,7 @@
     'show_title' => true,
     'bg'         => get_field('top_image'),
   ));
-  $tripple_section = get_field('tripple_section');
+  $nearby = get_field('nearby');
 ?>
 
 <div class="green-wrapper">
@@ -30,17 +30,8 @@
 
   <div class="content flex">
     <?php
-      get_component('vertical-image-text', [
-        'links'   => true,
-        'content' => $tripple_section[0],
-      ]);
-      get_component('vertical-image-text', [
-        'links'   => true,
-        'content' => $tripple_section[1],
-      ]);
-      get_component('vertical-image-text', [
-        'links'   => true,
-        'content' => $tripple_section[2],
+      get_part('featured-links', [
+        'links' => $nearby,
       ]);
     ?>
   </div>
