@@ -4205,17 +4205,16 @@ $.each(fixedLinkContainer, (index, e) => {
 });
 
 },{"./widok-scrollItem.js":19,"./widok.js":22,"cash-dom":1}],11:[function(require,module,exports){
-const videoOverlay = document.getElementById("footer-video-overlay");
-const video = document.getElementById("footer-video");
+const videoOverlay = document.getElementById('footer-video-overlay');
+const video = document.getElementById('footer-video');
 
-
-videoOverlay.addEventListener("click", () => {
+videoOverlay.addEventListener('click', () => {
   if (video.paused) {
     video.play();
-    videoOverlay.classList.add("non-active");
+    videoOverlay.classList.add('non-active');
   } else {
     video.pause();
-    videoOverlay.classList.remove("non-active");
+    videoOverlay.classList.remove('non-active');
   }
 });
 
