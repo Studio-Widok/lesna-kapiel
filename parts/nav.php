@@ -66,15 +66,32 @@
         get_component('nav-link', array('page' => 111));
         get_component('nav-link', array('page' => 25));
       ?>
+      <div class="rmin"></div>
     </div>
     <div id="nav-book"><span>rezerwuj</span></div>
-    <div id="nav-foot">
-      <div class="nav-foot-col">+48 897 978 857</div>
-      <div class="nav-foot-col">kontakt@lesnakapiel.com</div>
-      <div class="nav-foot-col empty"></div>
-      <div class="nav-foot-col">ul. Karpacka 1, Karpaty</div>
-      <div class="nav-foot-col">
+    <div id="nav-foot-mobile"
+      class="flex flex-column flex-justify-center less-768">
+      <div>
         <?php get_component('social-links');?>
+      </div>
+      <div class="rmin"></div>
+      <div>+48 897 978 857</div>
+      <div>kontakt@lesnakapiel.com</div>
+      <div class="text-right">ul. Karpacka 1, Karpaty</div>
+    </div>
+    <div id="nav-foot" class="flex more-768">
+      <div class="nav-foot-col flex flex-wrap flex-align-center">
+        <div>+48 897 978 857</div>
+        <div class="rmin less-1050"></div>
+        <div>kontakt@lesnakapiel.com</div>
+      </div>
+      <div class="nav-foot-col empty"></div>
+      <div class="nav-foot-col flex flex-wrap flex-align-center">
+        <div class="text-right">ul. Karpacka 1, Karpaty</div>
+        <div class="rmik less-1050"></div>
+        <div>
+          <?php get_component('social-links');?>
+        </div>
       </div>
     </div>
   </div>
