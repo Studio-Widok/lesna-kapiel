@@ -19,6 +19,7 @@
       'facilities' => $facilities['facilities'],
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
+      'link'       => $facilities['link'],
   ]);?>
   <div class="rsep"></div>
   <div class="rsep"></div>
