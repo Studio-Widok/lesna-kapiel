@@ -10,17 +10,14 @@
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <?php }?>
     <?php
-    $villa = get_term_by('slug', 'villa', 'tags');
-     ?>
-    <?php 
-    get_component('nav-link', array('tag' => $villa));
-    ?>
-    <div class="nav-link">
-      <span class="uppercase">domki nad stawem</span>
-    </div>
-    <?php
+      }
+      get_component('nav-link', [
+        'tag' => get_term_by('slug', 'villa', 'tags'),
+      ]);
+      get_component('nav-link', [
+        'tag' => get_term_by('slug', 'domek', 'tags'),
+      ]);
       get_component('nav-link', array('page' => 48));
       get_component('nav-link', array('page' => 25));
     ?>
