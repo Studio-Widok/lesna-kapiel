@@ -19,7 +19,7 @@
     <div class="rsep"></div>
     <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?'));?>
+  ipsa vel aliquid! Qui natus iusto odit?', ));?>
     <div class="rsep"></div>
     <div class="content flex column">
       <?php
@@ -78,8 +78,8 @@
       <div class="rsep"></div>
       <div class="rsep"></div>
     </div>
+    <?php endif;?>
   </div>
-  <?php endif;?>
   <div class="section-container">
     <?php
       if (is_tax('collections')):
