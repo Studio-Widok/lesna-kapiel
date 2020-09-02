@@ -5,17 +5,38 @@ hr {
   background-color: inherit;
 }
 
+.archive-top {
+  position: relative;
+  min-height: 70vh;
+  .archive-top-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 @mixin colors-set(
   $name,
   $bg,
   $text,
-  $bgPremium: $grey-background,
-  $textPremium: #fff
+  $bgPremium,
+  $textPremium,
+  $bgSection,
+  $textSection
 ) {
   .#{$name}-set {
     @include colors($bg, $text);
     .premium-container {
+      @include sectionWrapper($bgPremium);
       @include colors($bgPremium, $textPremium);
+    }
+    .section-container {
+      @include sectionWrapper($bgSection);
+      @include colors($bgSection, $textSection);
     }
   }
 }
@@ -26,6 +47,51 @@ hr {
   border-color: $text;
 }
 
-@include colors-set('green-dark', $dark-green, #fff, $color-beige, $dark-green);
-@include colors-set('green-light', $grey-background, #fff);
-@include colors-set('beige', $color-beige, $dark-green, $dark-green, #fff);
+@mixin sectionWrapper($color) {
+  position: relative;
+  background-color: $color;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    margin-bottom: -1em;
+    padding-bottom: 7.3404%;
+    background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$color}, 2)}');
+  }
+
+  .cake-frame .drawing path {
+    stroke: $color;
+  }
+}
+
+@include colors-set(
+  'green',
+  $dark-green,
+  #fff,
+  $color-beige,
+  $dark-green,
+  $grey-background,
+  #fff
+);
+@include colors-set(
+  'grey',
+  $grey-background,
+  #fff,
+  $dark-green,
+  #fff,
+  $color-beige,
+  $dark-green
+);
+@include colors-set(
+  'beige',
+  $color-beige,
+  $dark-green,
+  $dark-green,
+  #fff,
+  $grey-background,
+  #fff
+);
