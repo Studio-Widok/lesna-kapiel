@@ -12,17 +12,16 @@
     </a>
     <?php
       }
-      get_component('nav-link', [
+      get_component('nav-link', array(
         'tag' => get_term_by('slug', 'villa', 'tags'),
-      ]);
+      ));
       get_component('nav-link', [
         'tag' => get_term_by('slug', 'domek', 'tags'),
       ]);
-      get_component('nav-link', array('page' => 48));
-      get_component('nav-link', array('page' => 25));
+      get_component('nav-link', array('page' => pll_get_post(48)));
+      get_component('nav-link', array('page' => pll_get_post(25)));
     ?>
   </div>
-
   <div id="burger">
     <div></div>
     <div></div>
@@ -50,25 +49,27 @@
     <div id="nav-o-links">
       <?php
         if (!is_page(2)) {
-          get_component('nav-link', array('page' => 2));
+          get_component('nav-link', array('page' => pll_get_post(2)));
         }
       ?>
-      <div class="nav-link"><span class="uppercase">nasza idea</span></div>
+      <?php 
+       get_component('nav-link', array('page' => pll_get_post(100)));
+      ?>
       <div class="nav-link"><span class="uppercase">villa</span></div>
       <div class="nav-link">
         <span class="uppercase">domki nad stawem</span>
       </div>
       <?php
-        get_component('nav-link', array('page' => 48));
+        get_component('nav-link', array('page' => pll_get_post(48)));
       ?>
       <div class="nav-link"><span class="uppercase">restauracja</span></div>
       <?php
-        get_component('nav-link', array('page' => 111));
-        get_component('nav-link', array('page' => 25));
+        get_component('nav-link', array('page' => pll_get_post(111)));
+        get_component('nav-link', array('page' => pll_get_post(25)));
       ?>
       <div class="rmin"></div>
     </div>
-    <div id="nav-book"><span>rezerwuj</span></div>
+    <div id="nav-book"><span><?php pll_e('rezerwuj')?></span></div>
     <div id="nav-foot-mobile"
       class="flex flex-column flex-justify-center less-768">
       <div>

@@ -14,7 +14,9 @@
     </div>
   </div>
   <div class="col2 column collection-description-column">
-    <div class="collection-number">kolekcja #<?=($__index + 1)?></div>
+    <div class="collection-number">
+      <?php pll_e('kolekcja #')?><?=($__index + 1)?>
+    </div>
     <div class="r"></div>
     <div class="collection-title handwrite"><?=$collection->name?>
     </div>
@@ -23,7 +25,7 @@
       <?=$collection->description?></div>
     <div class="r"></div>
     <a href="<?=get_tag_link($collection)?>">
-      <button>zobacz więcej</button>
+      <button><?php pll_e('zobacz więcej')?></button>
     </a>
   </div>
 </div>

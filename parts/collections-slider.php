@@ -15,9 +15,11 @@
         for ($i = 0; $i < count($collections); $i++) {
         ?>
       <div class="single-slide">
-        <?php get_component('single-collection', [
+        <?php
+          get_component('single-collection', [
               'collection' => $collections[$i],
-          ]);?>
+            ]);
+          ?>
       </div>
       <?php }?>
     </div>

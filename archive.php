@@ -9,7 +9,7 @@
     <div class="rsep"></div>
     <div class="big-title handwrite"><?=$archive->name?></div>
   </div>
-  <div>Tutaj Pasek z rezerwacją</div>
+  <div><?php pll_e('Tutaj Pasek z rezerwacją')?></div>
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
