@@ -20,16 +20,22 @@
   <div class="rmin"></div>
 
   <?php if (!empty($content['links'])) {?>
-  <div class="additional-links flex">
+  <div class="additional-links flex flex-wrap">
     <?php for ($i = 0; $i < count($content['links']); $i++) {?>
+
     <a href="<?=get_link_url($content['links'][$i]['link'])?>"
       class="col2 flex flex-align-center text-link">
+      <?php if (!empty($content['links'][$i]['icon'])) {?>
+      <img src="<?=$content['links'][$i]['icon']['sizes']['medium']?>"
+        class="additional-link-icon">
+      <?php }?>
       <span><?=$content['links'][$i]['link']['text']?></span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="-53 0 80 10">
         <path d="M-53 5L17 5" stroke-width="1.5" stroke="#fff" />
         <path d="M27 5L17 1.5L17 8.5z" stroke-width="0" fill="#fff" />
       </svg>
     </a>
+
     <?php }?>
   </div>
   <div class="r"></div>

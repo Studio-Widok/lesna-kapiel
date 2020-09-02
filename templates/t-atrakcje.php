@@ -11,6 +11,21 @@
 
 <div class="green-wrapper">
   <div class="rsep"></div>
+
+  <div class="content flex">
+    <?php
+      get_part('featured-links', [
+        'links' => $nearby,
+      ]);
+    ?>
+  </div>
+
+  <div class="rsep"></div>
+</div>
+
+<div class="grey-wrapper">
+
+  <div class="rsep"></div>
   <div class="content">
     <?php get_component('title', ['title' => 'a co na miejscu?']);?>
   </div>
@@ -27,15 +42,6 @@
   <?php
     }
   ?>
-  <div class="rsep"></div>
-
-  <div class="content flex">
-    <?php
-      get_part('featured-links', [
-        'links' => $nearby,
-      ]);
-    ?>
-  </div>
 
   <div class="rsep"></div>
   <div class="rsep"></div>

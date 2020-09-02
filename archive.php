@@ -1,32 +1,34 @@
 <?php
   get_header();
   get_part('nav');
-  $archive         = get_queried_object();
-  $tripple_section = get_field('tripple_section', 2);
-  $footer          = get_field('footer', 2);
+  $archive        = get_queried_object();
+  $featured_links = get_field('featured_links', 2);
+  $footer         = get_field('footer', 2);
 ?>
 <div class="<?=get_field("colors", $archive)?>-set">
   <div class="column-double content title-container">
     <div class="rsep"></div>
     <div class="big-title handwrite"><?=$archive->name?></div>
   </div>
-  <div>Tutaj Pasek z rezerwacją</div>
+  <div><?php pll_e('Tutaj Pasek z rezerwacją')?></div>
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
   fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?', ));?>
+  ipsa vel aliquid! Qui natus iusto odit?'));?>
   <div class="rsep"></div>
   <div class="content flex column">
     <?php
       while (have_posts()):
         the_post();
+        $slider = get_field('slider');
+        $images = isset($slider['gallery']) ? $slider['gallery'] : null;
         get_component('single-apartment', [
-          'image' => get_field('slider')['gallery'][0]['sizes']['large'],
+          'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
           'link'  => get_permalink(),
           'title' => get_the_title(),
           'price' => get_field('price'),
         ]);
-      endwhile
+      endwhile;
     ?>
   </div>
   <div class="rsep"></div>
@@ -57,8 +59,9 @@
     </div>
     <div class="rsep"></div>
     <?php foreach ($premiumApartments as $apartment):
+        $images = get_field('slider', $apartment->ID)['gallery'];
         get_component('single-apartment', [
-          'image' => get_field('slider', $apartment->ID)['gallery'][0]['sizes']['large'],
+          'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
           'link'  => get_permalink($apartment->ID),
           'title' => get_the_title($apartment->ID),
           'price' => get_field('price', $apartment->ID),
@@ -69,41 +72,25 @@
   <?php
     endif;
     if (is_tax('collections')):
-      $categories = get_categories(['taxonomy' => 'collections']);
-      $catSlug    = get_queried_object()->slug;
-      foreach ($categories as $category):
-        if ($category->slug != $catSlug):
-
-          $posts = get_posts(array(
-            'order'       => 'DSC',
-            'post_type'   => 'apartment',
-            'numberposts' => 1,
-            'tax_query'   => [
-              [
-                'taxonomy' => 'collections',
-                'field'    => 'term_id',
-                'terms'    => $category->term_id,
-              ],
-            ],
-
-          ));
-        foreach ($posts as $post): ?>
-  <?php endforeach;
-    endif;
-  endforeach;
-?>
-  <div>inne kolekjce</div>
+      get_part('collections-slider', [
+        'exclude' => $archive->term_id,
+      ]);
+    ?>
   <?php endif;?>
 
 
   <div class="rsep"></div>
-  <div class="content flex">
+  <div class="rsep"></div>
 
-    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));?>
-    <?php get_component('vertical-image-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
-    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
-
+  <div class="content">
+    <?php get_component('title', ['title' => 'a co w villi?']);?>
   </div>
+
+  <div class="rsep"></div>
+
+  <?php get_part('featured-links', ['links' => $featured_links]);?>
+
+  <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
 <?php get_part('full-width-image', ['image' => $footer['image']]);?>

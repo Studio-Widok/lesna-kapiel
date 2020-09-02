@@ -51,7 +51,8 @@
 </div>
 
 <div class="grey-wrapper">
-  <div class="rsep"></div>
+  <div class="r"></div>
+  <div class="overlap"></div>
   <?php
     get_part('collections-slider');
   ?>

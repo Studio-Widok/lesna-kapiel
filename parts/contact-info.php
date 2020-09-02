@@ -1,7 +1,7 @@
 <div class="content">
   <div class="flex flex-align-end">
     <div class="col2 column">
-      <div class="uppercase">leśna kąpiel</div>
+      <div class="uppercase"><?php pll_e('leśna kąpiel')?></div>
       <div class="rmin"></div>
       <p>ul. Karpacka 1<br>Krapaty, Polska</p>
       <div class="rmin"></div>

@@ -20,7 +20,20 @@
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
       'link'       => $facilities['link'],
-  ]);?>
+  ]);
+  $collections = get_the_terms($post, 'collections');
+    if (!empty($collections)) {
+  ?>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+  <div class="content">
+    <?php
+      get_component('single-collection', [
+        'collection' => $collections[0],
+      ]);
+  ?>
+  </div>
+  <?php } ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
