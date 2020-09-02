@@ -56,8 +56,8 @@
   </div>
 </div>
 
-<div class="slider-content content column flex flex-justify-end">
-  <div class="col2">
+<div class="slider-content-wrap content column flex flex-justify-end">
+  <div class="slider-content">
     <div
       class="flex flex-align-center flex-justify-end slider-arrows-container">
       <?php get_component('slider-arrows')?>

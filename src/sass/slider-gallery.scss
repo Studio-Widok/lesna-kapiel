@@ -19,7 +19,7 @@
       cursor: pointer;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
 
@@ -57,8 +57,11 @@
   }
 }
 
-.slider-content {
-  margin-top: -10em;
+.slider-content-wrap {
+  .slider-content {
+    width: 62.5%;
+    margin-top: -14%;
+  }
 }
 
 .masonry-icon {
