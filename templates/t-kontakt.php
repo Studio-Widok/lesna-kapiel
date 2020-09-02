@@ -8,20 +8,25 @@
   ));
 ?>
 
-<div class="green-wrapper fixed-link-container">
-  <?php get_component('fixed-link', array('text' => get_the_title(pll_get_post(100)), 'link' => get_the_permalink(pll_get_post(100))));?>
-  <div class="rsep"></div>
-  <?php get_part('contact-form');?>
-  <div class="rsep"></div>
-  <?php get_part('contact-info');?>
-</div>
 <div class="green-wrapper">
+  <div class="fixed-link-container">
+    <?php get_component('fixed-link', array('text' => get_the_title(pll_get_post(100)), 'link' => get_the_permalink(pll_get_post(100))));?>
+    <div class="rsep"></div>
+    <?php get_part('contact-form');?>
+    <div class="rsep"></div>
+    <?php get_part('contact-info');?>
+  </div>
   <div class="rsep"></div>
   <?php get_part('contact-images');?>
 </div>
 <div class="fixed-link-container">
-  <?php get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
+  <?php $term = get_term_by('slug', 'villa', 'tags');
+  get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
   <?php get_part('map-block');?>
+</div>
+
+<div class="green-wrapper green-wrapper-footer">
+  <div class="rmin"></div>
 </div>
 
 <?php get_footer();
