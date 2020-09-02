@@ -321,6 +321,7 @@ p {
 @include wrapper('.green-wrapper', $dark-green);
 @include wrapper('.dark-wrapper', $dark);
 @include wrapper('.grey-wrapper', $grey-background);
+@include wrapper('.beige-wrapper', $color-beige);
 
 button {
   letter-spacing: $letter-spacing;
