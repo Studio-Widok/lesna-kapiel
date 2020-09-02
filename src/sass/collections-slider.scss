@@ -1,32 +1,6 @@
 .collections-slider {
   position: relative;
 
-  .content {
-    .collection-image-column {
-      width: 60%;
-    }
-
-    .collection-description-column {
-      position: relative;
-      width: 40%;
-      padding-top: 18em;
-      padding-right: 6em;
-
-      .collection-number {
-        text-transform: uppercase;
-        letter-spacing: $letter-spacing;
-      }
-
-      .collection-title {
-        font-size: 8em;
-        margin-left: -1.15em;
-        @media (max-width: 1200px) {
-          font-size: 5em;
-        }
-      }
-    }
-  }
-
   .bullets-container {
     position: absolute;
     right: 0;
@@ -73,6 +47,32 @@
 
       svg {
         background-color: transparent;
+      }
+    }
+  }
+}
+
+.single-collection {
+  .collection-image-column {
+    width: 60%;
+  }
+
+  .collection-description-column {
+    position: relative;
+    width: 40%;
+    padding-top: 18em;
+    padding-right: 6em;
+
+    .collection-number {
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+    }
+
+    .collection-title {
+      font-size: 8em;
+      margin-left: -1.15em;
+      @media (max-width: 1200px) {
+        font-size: 5em;
       }
     }
   }

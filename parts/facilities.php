@@ -3,7 +3,7 @@
   $title      = $title ?? '';
   $meals      = $meals ?? [];
   $image      = $image ?? '';
-  $link       = $link  ?? '';
+  $link       = $link ?? '';
 ?>
 
 <div class="content facilities-container">
@@ -33,11 +33,5 @@
         <?php get_component('cake-frame');?>
       </div>
     </div>
-  </div>
-  <div class="rsep"></div>
-  <div class="flex flex-justify-center">
-    <a href="<?=get_link_url($link)?>">
-      <button><?=$link['text']?></button>
-    </a>
   </div>
 </div>

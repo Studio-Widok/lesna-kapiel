@@ -1,8 +1,8 @@
 <?php
   get_header();
   get_part('nav');
-  $archive         = get_queried_object();
-  $tripple_section = get_field('tripple_section', 2);
+  $archive        = get_queried_object();
+  $featured_links = get_field('featured_links', 2);
 ?>
 <div class="<?=get_field("colors", $archive)?>-set">
   <div class="column-double content title-container">
@@ -72,20 +72,24 @@
     endif;
     if (is_tax('collections')):
       get_part('collections-slider', [
-        'exclude' => get_queried_object()->term_id,
+        'exclude' => $archive->term_id,
       ]);
     ?>
   <?php endif;?>
 
 
   <div class="rsep"></div>
-  <div class="content flex">
+  <div class="rsep"></div>
 
-    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[0]));?>
-    <?php get_component('vertical-image-text', array('links' => 'yes', 'button' => "yes", 'content' => $tripple_section[1]));?>
-    <?php get_component('vertical-image-text', array('links' => 'no', 'button' => "yes", 'content' => $tripple_section[2]));?>
-
+  <div class="content">
+    <?php get_component('title', ['title' => 'a co w villi?']);?>
   </div>
+
+  <div class="rsep"></div>
+
+  <?php get_part('featured-links', ['links' => $featured_links]);?>
+
+  <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
 
