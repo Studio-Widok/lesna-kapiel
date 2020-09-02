@@ -1,6 +1,7 @@
 <?php /*Template Name: nasza idea*/
   get_header();
   $footer = get_field('footer', 2);
+  get_part('nav');
 ?>
 <div class="green-wrapper">
   <?php
@@ -9,9 +10,12 @@
       'text'   => $footer['text']));
   ?>
   <div class="rsep"></div>
-  <?php get_part('contact-info');?>
-  <div class="rsep"></div>
 </div>
+<?php get_part('full-width-image', [
+    'image'         => $footer['image'],
+    'imageOverlay'  => $footer['image_with_overlay'],
+    'isContactInfo' => true,
+]);?>
 <?php get_part('map-block')?>
 <div class="green-wrapper green-wrapper-footer">
   <div class="rmin"></div>
