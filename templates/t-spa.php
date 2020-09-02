@@ -3,6 +3,7 @@
 
   $sections = get_field('sections');
   $top      = get_field('top');
+  $footer   = get_field('footer', 2);
 
   get_part('nav');
   get_part('top', array(
@@ -34,8 +35,24 @@
       ));
   }?>
   <div class="rsep"></div>
-  <div class="rsep"></div>
-  <div class="rsep"></div>
+
+  <?php get_part('full-width-image', ['image' => $footer['image']]);?>
+  <div class="green-wrapper">
+    <?php
+      $footer = get_field('footer', 2);
+      get_part('footer-video', array(
+        'source' => $footer['video'],
+        'text'   => $footer['text']));
+    ?>
+    <div class="rsep"></div>
+    <?php get_part('contact-info');?>
+    <div class="rsep"></div>
+  </div>
+  <?php get_part('map-block');?>
+  <div class="green-wrapper green-wrapper-footer">
+    <div class="rmin"></div>
+  </div>
+</div>
 </div>
 
 <?php get_footer();

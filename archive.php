@@ -3,6 +3,7 @@
   get_part('nav');
   $archive        = get_queried_object();
   $featured_links = get_field('featured_links', 2);
+  $footer         = get_field('footer', 2);
 ?>
 <div class="<?=get_field("colors", $archive)?>-set">
   <div class="column-double content title-container">
@@ -92,6 +93,11 @@
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
-
+<?php get_part('full-width-image', ['image' => $footer['image']]);?>
+<div class="green-wrapper">
+  <div class="rsep"></div>
+  <?php get_part('contact-info');?>
+  <div class="rsep"></div>
+</div>
 
 <?php get_footer();?>
