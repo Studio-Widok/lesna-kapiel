@@ -12,8 +12,7 @@
   <div class="rsep"></div>
 </div>
 <?php get_part('full-width-image', [
-    'image'         => $footer['image'],
-    'imageOverlay'  => $footer['image_with_overlay'],
+    'image'         => $footer['image_with_overlay'],
     'isContactInfo' => true,
 ]);?>
 <?php get_part('map-block')?>

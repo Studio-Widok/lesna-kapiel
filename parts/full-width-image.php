@@ -1,5 +1,5 @@
 <?php
-  $image         = $imageOverlay ? $imageOverlay : $image;
+  $image         = $image ?? [];
   $isContactInfo = $isContactInfo ?? false;
 
   if (empty($image)) {
