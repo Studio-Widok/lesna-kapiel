@@ -7,7 +7,7 @@
 
 <div class="col2 column">
   <a href="<?=$link?>" class="flex flex-column flex-align-center">
-    <div class="image-wrapper-full-width">
+    <div class="single-apartment-container image-wrapper-full-width">
       <div class="cake cake-3-4" style="background-image: url(<?=$image?>)">
       </div>
     </div>
