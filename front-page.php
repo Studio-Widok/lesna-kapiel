@@ -68,7 +68,7 @@
 
 </div>
 
-<?php get_part('full-width-image', ['image' => $footer['image']]);?>
+<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
