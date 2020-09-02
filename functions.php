@@ -92,7 +92,7 @@ function viewport_meta() {?>
     10, 3
   );
   add_filter('get_attached_file', function ($file) {
-    return str_replace('/lesnakapiel_2/', '/lesnakapiel/', $file);
+    return str_replace('/lesnakapiel_3/', '/lesnakapiel/', $file);
   }, 10, 2);
   // dev - end
 
