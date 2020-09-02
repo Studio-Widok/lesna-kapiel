@@ -1,20 +1,30 @@
 .slider-gallery {
   width: 100%;
+
   .slider-sizer {
     width: 37.5%;
   }
+
   .single-slide {
-    overflow: hidden;
-    margin-right: 3em;
+    margin-left: 3em;
+
+    .single-slide-content {
+      margin-left: -3em;
+      width: 100%;
+      overflow: hidden;
+    }
+
     .cake {
       transition: padding 0.3s, transform 0.3s;
       cursor: pointer;
+
       &:hover {
         transform: scale(1.1);
       }
     }
+
     &.active .cake {
-      padding-bottom: 166.66666%;
+      padding-bottom: 150%;
     }
   }
 }
@@ -28,13 +38,16 @@
     position: static;
     margin: 0;
     display: flex;
+
     .arrow-left,
     .arrow-right {
       position: static;
       margin-right: 0.5em;
+
       svg {
         width: 2em;
       }
+
       &.hovered {
         svg {
           margin: 0;
@@ -52,14 +65,17 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+
   svg {
     width: 2em;
+
     rect {
       stroke: #fff;
       stroke-width: 1.5;
       fill: transparent;
       transition: fill 0.3s;
     }
+
     &:hover {
       rect {
         fill: $color-beige;
