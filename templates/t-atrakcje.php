@@ -46,13 +46,13 @@
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
-<?php get_part('full-width-image', ['image' => $footer['image']]);?>
+<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 <div class="green-wrapper">
   <?php
-  get_part('footer-video', array(
-    'source' => $footer['video'],
-    'text'   => $footer['text']));
-?>
+    get_part('footer-video', array(
+      'source' => $footer['video'],
+      'text'   => $footer['text']));
+  ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
