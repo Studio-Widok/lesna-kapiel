@@ -47,11 +47,11 @@
 
   #top-title {
     position: relative;
-    font-size: 2em;
-    font-weight: 600;
     width: 100%;
 
     span {
+      font-size: 2em;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: $letter-spacing;
       padding-left: $letter-spacing;
