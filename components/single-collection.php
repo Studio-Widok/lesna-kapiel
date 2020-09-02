@@ -2,6 +2,7 @@
   if (!isset($collection)) {
     return;
   }
+  $is_current = $is_current ?? false;
 
   $img = get_field('image', $collection);
 ?>
@@ -15,7 +16,14 @@
   </div>
   <div class="col2 column collection-description-column">
     <div class="collection-number">
-      <?php pll_e('kolekcja #')?><?=($__index + 1)?>
+      <?php
+        if ($is_current) {
+          pll_e('ten apartament jest z kolekcji');
+        } else {
+          pll_e('kolekcja #');
+          echo ($__index + 1);
+        }
+      ?>
     </div>
     <div class="r"></div>
     <div class="collection-title handwrite"><?=$collection->name?>

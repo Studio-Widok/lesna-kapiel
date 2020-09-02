@@ -51,19 +51,15 @@
         if (!is_page(2)) {
           get_component('nav-link', array('page' => pll_get_post(2)));
         }
-      ?>
-      <?php 
-       get_component('nav-link', array('page' => pll_get_post(100)));
-      ?>
-      <div class="nav-link"><span class="uppercase">villa</span></div>
-      <div class="nav-link">
-        <span class="uppercase">domki nad stawem</span>
-      </div>
-      <?php
+        get_component('nav-link', array('page' => pll_get_post(100)));
+        get_component('nav-link', array(
+          'tag' => get_term_by('slug', 'villa', 'tags'),
+        ));
+        get_component('nav-link', [
+          'tag' => get_term_by('slug', 'domek', 'tags'),
+        ]);
         get_component('nav-link', array('page' => pll_get_post(48)));
-      ?>
-      <div class="nav-link"><span class="uppercase">restauracja</span></div>
-      <?php
+        get_component('nav-link', array('page' => pll_get_post(109)));
         get_component('nav-link', array('page' => pll_get_post(111)));
         get_component('nav-link', array('page' => pll_get_post(25)));
       ?>
