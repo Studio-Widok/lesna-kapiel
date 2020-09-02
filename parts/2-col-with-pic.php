@@ -19,7 +19,9 @@
       </div>
     </div>
     <div class="col2 column">
+      <?php if ($title): ?>
       <div class="big-title handwrite"><?=$title?></div>
+      <?php endif;?>
       <div class="rmin"></div>
       <div class="rmin"></div>
       <div class="text">
