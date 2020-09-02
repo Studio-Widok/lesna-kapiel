@@ -3,6 +3,7 @@
   $show_logo  = $show_logo ?? false;
   $show_title = $show_title ?? false;
   $text_align = $text_align ?? 'text-center';
+  $title      = $title ?? get_the_title();
 ?>
 
 <div id="top">
@@ -17,7 +18,7 @@
   </div>
   <?php }if ($show_title) {?>
   <div id="top-title" class="content column-double <?=$text_align?>">
-    <span><?=get_the_title()?></span>
+    <span><?=$title?></span>
   </div>
   <?php }?>
 
