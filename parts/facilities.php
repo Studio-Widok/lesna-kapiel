@@ -34,4 +34,12 @@
       </div>
     </div>
   </div>
+  <?php if (!empty($link)) {?>
+  <div class="rsep"></div>
+  <div class="text-center">
+    <a href="<?=get_link_url($link)?>">
+      <button><?=$link['text']?></button>
+    </a>
+  </div>
+  <?php }?>
 </div>
