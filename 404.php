@@ -9,7 +9,7 @@
   </div>
   <div id="top-title" class="content column-double text-center title-404">
     <span>404</span>
-    <div class="subtitle-404"><?=$fields['text']?></div>
+    <div class="big"><?=$fields['text']?></div>
   </div>
 </div>
 
