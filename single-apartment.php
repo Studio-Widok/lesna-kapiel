@@ -2,9 +2,16 @@
   get_part('nav');
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
+  $top            = get_field('top')['top'];
+  get_part('top', array(
+    'show_title' => true,
+    'bg'         => $top['top_image'],
+    'text_align' => $top['align'],
+  ));
 ?>
 <div class="green-wrapper">
   <div class="rsep"></div>
+  <?php get_part('text-full', array('text' => $top['text']));?>
   <div class="rsep"></div>
   <?php
     $slider = get_field('slider');
