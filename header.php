@@ -15,6 +15,7 @@
       || is_page_template('templates/t-nasza-idea.php')
       || is_page_template('templates/t-spa.php')
       || is_page_template('templates/t-kontakt.php')
+      || is_singular('apartment')
   ): ?>
 
   <script
