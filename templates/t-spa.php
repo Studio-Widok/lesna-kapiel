@@ -13,7 +13,7 @@
   ));
 ?>
 
-<div class="green-wrapper">
+<div class="beige-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => get_field('top')['text']));?>
 
@@ -52,7 +52,6 @@
   <div class="green-wrapper green-wrapper-footer">
     <div class="rmin"></div>
   </div>
-</div>
 </div>
 
 <?php get_footer();
