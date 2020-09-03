@@ -160,4 +160,16 @@ function viewport_meta() {?>
       case 'basen':
         return get_the_permalink(pll_get_post(48)) . '#pool';
     }
+  }
+
+  function get_term_id($termSlug) {
+    return get_terms([
+      'taxonomy'   => 'tags',
+      'hide_empty' => false,
+      'slug'       => $termSlug,
+      'lang'       => 'pl',
+    ])[0]->term_id;
+
+    // polylang translations
+    pll_register_string('see_apartments', 'Zobacz apartamenty');
 }
