@@ -22,6 +22,7 @@
       <div class="big-title handwrite">
         <?=$title?>
       </div>
+      <div class="rmin less-768"></div>
     </div>
 
   </div>

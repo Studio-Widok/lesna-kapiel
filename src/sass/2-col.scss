@@ -17,7 +17,10 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 5em;
+      font-size: 6em;
+      right: auto;
+      top: auto;
+      text-align: center;
     }
   }
 }
@@ -49,6 +52,12 @@
 
     @media (max-width: 1200px) {
       font-size: 5em;
+    }
+    @media (max-width: 768px) {
+      font-size: 6em;
+      left: auto !important;
+      text-align: center;
+      margin-bottom: 0;
     }
   }
 
