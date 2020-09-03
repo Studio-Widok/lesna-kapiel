@@ -5,7 +5,7 @@
 ?>
 
 <div class="content col-2-no-pic">
-  <div class="flex">
+  <div class="flex flex-768 flex-column-reverse-768">
     <div class="col2 column">
       <div class="text">
         <?=$text?>

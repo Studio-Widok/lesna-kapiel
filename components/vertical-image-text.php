@@ -1,8 +1,13 @@
 <?php
-  $content = $content ?? [];
+  $content  = $content ?? [];
+  $iterator = $iterator ?? 0;
 ?>
 
-<div class="col3 column-inner vertical-image-text">
+<div class="col3 column-inner vertical-image-text
+<?php if ($iterator === 2) {
+    echo 'more-1050';
+}
+?>">
   <div class="image-wrapper-full-width">
     <div class="cake cake-3-4"
       style="background-image: url(<?=$content['image']['sizes']['large']?>)">
@@ -48,5 +53,5 @@
     </a>
   </div>
   <?php }?>
-
+  <div class="r less-768"></div>
 </div>

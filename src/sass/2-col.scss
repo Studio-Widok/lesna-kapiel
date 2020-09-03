@@ -54,6 +54,9 @@
 
   .text {
     max-width: 25em;
+    @media (max-width: 768px) {
+      max-width: none;
+    }
   }
 
   .pic-right {

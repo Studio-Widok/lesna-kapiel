@@ -12,14 +12,14 @@
 </div>
 <div class=" <?=get_field("colors", $archive)?>-set">
   <div class="<?=get_field("colors", $archive)?>-wrapper">
-    <div class="column-double content title-container">
+    <div class="column content title-container">
       <div class="big-title handwrite"><?=$archive->name?></div>
     </div>
     <div>Tutaj Pasek z rezerwacją</div>
     <div class="rsep"></div>
     <?php get_part('text-full', array('text' => get_field('top_text', $archive)));?>
     <div class="rsep"></div>
-    <div class="content flex column">
+    <div class="content flex flex-768">
       <?php
         while (have_posts()):
           the_post();
@@ -52,13 +52,14 @@
           ],
         ));
       ?>
-      <div class="title-container column-double content">
+      <div class="title-container column content">
         <div class="rsep"></div>
         <div class="big-title handwrite text-right">premium<br />rooms</div>
-        <div class="col3"><?php pll_e("premium_text");?></div>
+        <div class="r less-768"></div>
+        <div class="premium-text"><?php pll_e("premium_text");?></div>
       </div>
       <div class="rsep"></div>
-      <div class="column-double content">
+      <div class="content flex flex-768">
         <?php foreach ($premiumApartments as $apartment):
             $images = get_field('slider', $apartment->ID)['gallery'];
             get_component('single-apartment', [
@@ -95,7 +96,6 @@
 
     <?php get_part('featured-links', ['links' => $featured_links]);?>
 
-    <div class="rsep"></div>
     <div class="rsep"></div>
   </div>
 </div>

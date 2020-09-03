@@ -18,4 +18,5 @@
       <div class="text-center">from <?=$price?>,-</div>
     </div>
   </a>
+  <div class="r less-768"></div>
 </div>

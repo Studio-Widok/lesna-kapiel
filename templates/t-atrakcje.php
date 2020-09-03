@@ -44,7 +44,6 @@
   ?>
 
   <div class="rsep"></div>
-  <div class="rsep"></div>
 </div>
 <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 <div class="green-wrapper">
