@@ -38,7 +38,7 @@
   </div>
 
   <?php get_component('slider-arrows', [
-      'next_arrow_text' => 'kolejna kolekcja',
+      'next_arrow_text' => pll__('next_collection'),
   ]);?>
 
 </div>

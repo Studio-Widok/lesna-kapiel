@@ -40,7 +40,7 @@
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="content">
-    <?php get_component('title', ['title' => 'a co w villi?']);?>
+    <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
   </div>
 
   <div class="rsep"></div>

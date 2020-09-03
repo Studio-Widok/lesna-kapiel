@@ -15,11 +15,9 @@
     <div class="column-double content title-container">
       <div class="big-title handwrite"><?=$archive->name?></div>
     </div>
-    <div><?php pll_e('Tutaj Pasek z rezerwacją')?></div>
+    <div>Tutaj Pasek z rezerwacją</div>
     <div class="rsep"></div>
-    <?php get_part('text-full', array('text' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore
-  fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet velit
-  ipsa vel aliquid! Qui natus iusto odit?', ));?>
+    <?php get_part('text-full', array('text' => get_field('top_text', $archive)));?>
     <div class="rsep"></div>
     <div class="content flex column">
       <?php
@@ -57,11 +55,7 @@
       <div class="title-container column-double content">
         <div class="rsep"></div>
         <div class="big-title handwrite text-right">premium<br />rooms</div>
-        <div class="col3">Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Voluptas dolore
-          fuga a iure, debitis sint magnam harum, nihil illum unde enim eveniet
-          velit
-          ipsa vel aliquid! Qui natus iusto odit?</div>
+        <div class="col3"><?php pll_e("premium_text");?></div>
       </div>
       <div class="rsep"></div>
       <div class="column-double content">
@@ -94,7 +88,7 @@
     <div class="rsep"></div>
 
     <div class="content">
-      <?php get_component('title', ['title' => 'a co w villi?']);?>
+      <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
     </div>
 
     <div class="rsep"></div>
