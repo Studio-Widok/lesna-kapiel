@@ -31,6 +31,22 @@ hr {
   }
 }
 
+.grey-set .section-container {
+  .vertical-image-text .text-link svg path {
+    fill: $dark-green;
+    stroke: $dark-green;
+  }
+
+  .small-title::after {
+    background-color: $dark-green;
+  }
+
+  button {
+    border-color: $dark-green;
+    color: $dark-green;
+  }
+}
+
 @mixin colors-set(
   $name,
   $bg,
