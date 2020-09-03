@@ -5,7 +5,6 @@
   $featured_links = get_field('featured_links');
   $slider         = get_field('slider');
   $footer         = get_field('footer');
-
   get_part('nav');
   get_part('top', array(
     'show_logo' => true,
@@ -28,9 +27,9 @@
     ])?>
     <div class="rsep"></div>
   </div>
-  <div class=" fixed-link-container">
-    <?php $term = get_term_by('slug', 'villa', 'tags');
-    get_component('fixed-link', array('text' => 'see_apartments', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
+  <div class="fixed-link-container">
+    <?php $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
+    get_component('fixed-link', array('text' => pll__('see_apartments'), 'link' => get_tag_link($termId)));?>
     <div class="rsep"></div>
     <?php for ($i = 0; $i < count($sections); $i++) {?>
     <?php get_part('2-col-with-pic', [
@@ -83,6 +82,5 @@
 <?php get_part('map-block');?>
 <div class="green-wrapper green-wrapper-footer">
   <div class="rmin"></div>
-</div>
 </div>
 <?php get_footer();?>

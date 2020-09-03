@@ -27,7 +27,7 @@
 
   <div class="rsep"></div>
   <div class="content">
-    <?php get_component('title', ['title' => 'a co na miejscu?']);?>
+    <?php get_component('title', ['title' => pll__('what_in_spot')]);?>
   </div>
   <div class="rsep"></div>
   <?php

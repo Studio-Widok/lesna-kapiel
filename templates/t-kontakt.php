@@ -1,6 +1,5 @@
 <?php /*Template Name: kontakt*/
   get_header();
-
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
@@ -18,10 +17,6 @@
   </div>
   <div class="rsep"></div>
   <?php get_part('contact-images');?>
-</div>
-<div class="fixed-link-container">
-  <?php $term = get_term_by('slug', 'villa', 'tags');
-  get_component('fixed-link', array('text' => 'nasze apartamenty', 'link' => get_tag_link(pll_get_term($term->term_id)))); /*pll_('see_apartments')*/?>
   <?php get_part('map-block');?>
 </div>
 
