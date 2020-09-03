@@ -3,15 +3,28 @@
 
   .slider-sizer {
     width: 37.5%;
+
+    @media (max-width: 1050px) {
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   .single-slide {
     margin-left: 3em;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
 
     .single-slide-content {
       margin-left: -3em;
       width: 100%;
       overflow: hidden;
+      @media (max-width: 768px) {
+        margin: 0;
+      }
     }
 
     .cake {
@@ -25,6 +38,9 @@
 
     &.active .cake {
       padding-bottom: 150%;
+      @media (max-width: 768px) {
+        padding-bottom: 100%;
+      }
     }
   }
 }
@@ -34,6 +50,16 @@
 }
 
 .slider-arrows-container {
+  margin-top: -5%;
+
+  @media (max-width: 1050px) {
+    margin-top: -16%;
+    margin-right: 5%;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
   .slider-arrows {
     position: static;
     margin: 0;
@@ -60,7 +86,13 @@
 .slider-content-wrap {
   .slider-content {
     width: 62.5%;
-    margin-top: -14%;
+    @media (max-width: 1050px) {
+      width: 100%;
+      margin-top: 20%;
+    }
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 }
 
