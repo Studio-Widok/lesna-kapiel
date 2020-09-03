@@ -3,6 +3,7 @@ hr {
   border-style: solid;
   color: inherit;
   background-color: inherit;
+  border-bottom: 1px;
 }
 
 .archive-top {
@@ -28,6 +29,13 @@ hr {
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+.premium-text {
+  width: 33.3333%;
+  @media (max-width: 768px) {
+    width: 100%;
   }
 }
 

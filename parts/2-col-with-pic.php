@@ -8,7 +8,8 @@
 ?>
 
 <div class="content col-2-with-pic <?=$alt_layout ? 'alt-layout' : ''?>">
-  <div class="flex <?=$pic_right ? 'pic-right' : ''?>">
+  <div
+    class="flex flex-768 <?=$pic_right ? 'pic-right flex-column-reverse-768' : ''?>">
 
     <div class="col2 column">
       <div class="image-wrapper">

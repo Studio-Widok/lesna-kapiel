@@ -22,7 +22,7 @@
   </div>
   <?php }?>
 
-  <div class="arrow">
+  <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
       <path d="M5 0L5 17" stroke-width="1.5" stroke="#fff" />
       <path d="M5 27L1.5 17L8.5 17z" stroke-width="0" fill="#fff" />
