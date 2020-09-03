@@ -169,11 +169,4 @@ function viewport_meta() {?>
       'slug'       => $termSlug,
       'lang'       => 'pl',
     ])[0]->term_id;
-
-    // polylang translations
-    pll_register_string('see_apartments', 'Zobacz apartamenty');
-    pll_register_string('what_in_villa', 'a co w villi?');
-    pll_register_string('have_question', 'masz pytanie?');
-    pll_register_string('next_collection', 'kolejna kolekcja');
-    pll_register_string('what_in_spot', 'co na miejscu?');
 }
