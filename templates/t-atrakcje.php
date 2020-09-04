@@ -12,12 +12,21 @@
 <div class="green-wrapper">
   <div class="rsep"></div>
 
-  <div class="content flex">
+  <div class="content">
     <?php
       get_part('featured-links', [
-        'links' => $nearby,
+        'links'            => $nearby,
+        'isMobileHide768'  => true,
+        'isMobileHide1050' => false,
       ]);
     ?>
+    <div class="text-center less-768">
+      <button id='atrraction-more' data-more="<?php pll_e('more')?>"
+        data-less="<?php pll_e('less')?>">
+        <?php pll_e('more')?>
+      </button>
+    </div>
+    <div class="r less-768"></div>
   </div>
 
   <div class="rsep"></div>
@@ -42,7 +51,16 @@
   <?php
     }
   ?>
-
+  <?php
+  $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
+?>
+  <div class="text-center">
+    <a href="<?=get_tag_link($termId)?>">
+      <button>
+        <?=pll__('see_apartments')?>
+      </button>
+    </a>
+  </div>
   <div class="rsep"></div>
 </div>
 <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>

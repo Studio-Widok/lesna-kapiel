@@ -1,4 +1,7 @@
 .vertical-image-text {
+  &.more-768.show-more {
+    display: block;
+  }
   .text-link {
     .additional-link-icon {
       width: 2em;
