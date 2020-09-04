@@ -1,6 +1,12 @@
 .slider-with-bullets {
   position: relative;
 
+  .single-slide-desc {
+    @media (max-width: 1050px) {
+      width: 100%;
+    }
+  }
+
   .slide-icon {
     width: 2.5em;
     margin-right: 2em;
@@ -18,6 +24,11 @@
     width: 50%;
     z-index: 1;
 
+    @media (max-width: 768px) {
+      position: relative;
+      width: 100%;
+    }
+
     .bullets-container {
       .bullet {
         margin-bottom: 0.5em;
@@ -25,6 +36,7 @@
 
         .bullet-title {
           position: relative;
+          margin-right: 2em;
 
           &:after {
             content: '';
