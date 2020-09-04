@@ -23,7 +23,7 @@
       <?php if ($title): ?>
       <div class="big-title handwrite"><?=$title?></div>
       <?php endif;?>
-      <div class="rmin"></div>
+      <div class="rmin more-768"></div>
       <div class="rmin"></div>
       <div class="text">
         <p><?=$text?></p>
@@ -33,11 +33,13 @@
         if ($button) {
         ?>
       <div class="r"></div>
-      <a href="<?=$button['link']?>">
-        <button>
-          <?=$button['text']?>
-        </button>
-      </a>
+      <div class="button-container">
+        <a href="<?=$button['link']?>">
+          <button>
+            <?=$button['text']?>
+          </button>
+        </a>
+      </div>
       <?php }?>
     </div>
 

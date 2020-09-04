@@ -47,6 +47,8 @@
     <div class="rsep"></div>
     <?php }?>
   </div>
+  <div class="rsep less-768"></div>
+  <div class="rsep less-768"></div>
 </div>
 
 <div class="grey-wrapper">
