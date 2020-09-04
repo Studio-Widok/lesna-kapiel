@@ -52,7 +52,7 @@
 
     <?php }?>
   </div>
-  <div class="r"></div>
+  <div class="r more-768"></div>
   <?php }?>
 
   <?php if (isset($content['button_link']) && !empty($content['button_link']['text'])) {?>
