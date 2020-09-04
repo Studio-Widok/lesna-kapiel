@@ -10,17 +10,19 @@
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <?php
-      }
-      get_component('nav-link', array(
-        'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
-      ));
-      get_component('nav-link', [
-        'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
-      ]);
-      get_component('nav-link', array('page' => pll_get_post(48)));
-      get_component('nav-link', array('page' => pll_get_post(25)));
-    ?>
+    <div class="more-768">
+      <?php
+        }
+        get_component('nav-link', array(
+          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
+        ));
+        get_component('nav-link', [
+          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+        ]);
+        get_component('nav-link', array('page' => pll_get_post(48)));
+        get_component('nav-link', array('page' => pll_get_post(25)));
+      ?>
+    </div>
   </div>
   <div id="burger">
     <div></div>
