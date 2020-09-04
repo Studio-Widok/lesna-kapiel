@@ -14,7 +14,7 @@
       echo ' more-1050';
     }
     if ($isMobileHide768) {
-      echo ' more-768';
+      echo ' vertical-image-more-768';
   }
 }?>">
   <div class="image-wrapper-full-width">

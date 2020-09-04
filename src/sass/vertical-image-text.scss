@@ -1,6 +1,13 @@
 .vertical-image-text {
-  &.more-768.show-more {
-    display: block;
+  transition: height 0.5s;
+  @media (max-width: 768px) {
+    &.vertical-image-more-768 {
+      height: 0;
+      overflow: hidden;
+    }
+    &.vertical-image-more-768.show-more {
+      overflow: visible;
+    }
   }
   .text-link {
     .additional-link-icon {
