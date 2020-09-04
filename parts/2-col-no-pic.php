@@ -12,11 +12,13 @@
       </div>
       <div class="rmin"></div>
       <div class="rmin"></div>
-      <a href="<?=$button['link']?>">
-        <button>
-          <?=$button['text']?>
-        </button>
-      </a>
+      <div class="button-container">
+        <a href="<?=$button['link']?>">
+          <button>
+            <?=$button['text']?>
+          </button>
+        </a>
+      </div>
     </div>
     <div class="col2 column">
       <div class="big-title handwrite">

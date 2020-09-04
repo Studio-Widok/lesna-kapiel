@@ -33,11 +33,13 @@
         if ($button) {
         ?>
       <div class="r"></div>
-      <a href="<?=$button['link']?>">
-        <button>
-          <?=$button['text']?>
-        </button>
-      </a>
+      <div class="button-container">
+        <a href="<?=$button['link']?>">
+          <button>
+            <?=$button['text']?>
+          </button>
+        </a>
+      </div>
       <?php }?>
     </div>
 
