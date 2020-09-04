@@ -43,20 +43,10 @@
   .slider-arrows {
     top: 12em;
     margin-top: 0;
+
     @media (max-width: 768px) {
-      top: 84%;
-    }
-    @media (max-width: 650px) {
-      top: 80%;
-    }
-    @media (max-width: 550px) {
-      top: 75%;
-    }
-    @media (max-width: 450px) {
-      top: 72%;
-    }
-    @media (max-width: 400px) {
-      top: 68%;
+      top: 4em;
+      margin-top: 135%;
     }
 
     .arrow-left,
