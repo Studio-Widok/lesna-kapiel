@@ -1,13 +1,22 @@
 <?php
   $content  = $content ?? [];
-  $iterator = $iterator ?? 0;
+  $iterator = $iterator ?? '';
+  /*
+  $isMobileHide1050 - default true
+  $isMobileHide768 - default false
+   */
 ?>
 
 <div class="col3 column-inner vertical-image-text
-<?php if ($iterator === 2) {
-    echo 'more-1050';
-}
-?>">
+<?php
+  if ($iterator > 1) {
+    if ($isMobileHide1050) {
+      echo ' more-1050';
+    }
+    if ($isMobileHide768) {
+      echo ' vertical-image-more-768';
+  }
+}?>">
   <div class="image-wrapper-full-width">
     <div class="cake cake-3-4"
       style="background-image: url(<?=$content['image']['sizes']['large']?>)">
@@ -43,7 +52,7 @@
 
     <?php }?>
   </div>
-  <div class="r"></div>
+  <div class="r more-768"></div>
   <?php }?>
 
   <?php if (isset($content['button_link']) && !empty($content['button_link']['text'])) {?>

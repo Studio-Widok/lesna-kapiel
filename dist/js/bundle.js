@@ -4142,6 +4142,40 @@ return Outlayer;
 
 },{}],10:[function(require,module,exports){
 const $ = require('cash-dom');
+
+const moreButton = $('#atrraction-more');
+const verticalImageTextMore768 = $(
+  '.vertical-image-text.vertical-image-more-768'
+);
+let isMore = false;
+
+moreButton.on('click', function () {
+  verticalImageTextMore768.toggleClass('show-more');
+  if (!isMore) {
+    moreButton.html(moreButton.data('less'));
+    verticalImageTextMore768.each((index, element) => {
+      $(element).css({ height: element.scrollHeight });
+    });
+    isMore = true;
+  } else {
+    moreButton.html(moreButton.data('more'));
+    verticalImageTextMore768.css({ height: 0 });
+    isMore = false;
+  }
+});
+
+window.addEventListener('afterLayoutChange', function () {
+  if (isMore) {
+    verticalImageTextMore768.each((index, element) => {
+      $(element).css({ height: element.scrollHeight });
+    });
+  } else {
+    verticalImageTextMore768.css({ height: 0 });
+  }
+});
+
+},{"cash-dom":1}],11:[function(require,module,exports){
+const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem');
 const widok = require('./widok');
 
@@ -4164,7 +4198,7 @@ $('.cake-frame').each((index, element) => {
   });
 });
 
-},{"./widok":23,"./widok-scrollItem":20,"cash-dom":1}],11:[function(require,module,exports){
+},{"./widok":24,"./widok-scrollItem":21,"cash-dom":1}],12:[function(require,module,exports){
 const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem.js');
 const widok = require('./widok.js');
@@ -4228,7 +4262,7 @@ $.each(fixedLinkContainer, (index, e) => {
   };
 });
 
-},{"./widok-scrollItem.js":20,"./widok.js":23,"cash-dom":1}],12:[function(require,module,exports){
+},{"./widok-scrollItem.js":21,"./widok.js":24,"cash-dom":1}],13:[function(require,module,exports){
 const videoOverlay = document.getElementById('footer-video-overlay');
 const video = document.getElementById('footer-video');
 
@@ -4244,19 +4278,21 @@ if (video) {
   });
 }
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 const $ = require('cash-dom');
 require('./widok');
 require('./nav');
 require('./footer');
 require('./sliders');
 require('./cake-frame');
+const bodyElement = $('body');
 
 if ($('.fixed-link').length > 0) require('./fixed-link');
 if ($('#top').length > 0) require('./top');
 if ($('.slider-gallery').length > 0) require('./slider-gallery');
+if (bodyElement.hasClass('page-template-t-atrakcje')) require('./attractions');
 
-},{"./cake-frame":10,"./fixed-link":11,"./footer":12,"./nav":14,"./slider-gallery":15,"./sliders":16,"./top":17,"./widok":23,"cash-dom":1}],14:[function(require,module,exports){
+},{"./attractions":10,"./cake-frame":11,"./fixed-link":12,"./footer":13,"./nav":15,"./slider-gallery":16,"./sliders":17,"./top":18,"./widok":24,"cash-dom":1}],15:[function(require,module,exports){
 const $ = require('cash-dom');
 
 $('#burger').on('click', () => {
@@ -4264,7 +4300,7 @@ $('#burger').on('click', () => {
   $('body').toggleClass('nav-opened');
 });
 
-},{"cash-dom":1}],15:[function(require,module,exports){
+},{"cash-dom":1}],16:[function(require,module,exports){
 const $ = require('cash-dom');
 const widok = require('./widok');
 const createSlider = require('./widok-slider');
@@ -4388,7 +4424,7 @@ $('#lb-container-masonry .lb').on('click', function (event) {
   }
 });
 
-},{"./widok":23,"./widok-lightbox":19,"./widok-slider":21,"cash-dom":1,"masonry-layout":6}],16:[function(require,module,exports){
+},{"./widok":24,"./widok-lightbox":20,"./widok-slider":22,"cash-dom":1,"masonry-layout":6}],17:[function(require,module,exports){
 const $ = require('cash-dom');
 const createSlider = require('./widok-slider');
 
@@ -4414,7 +4450,7 @@ createSlider({
   arrowNext: `.collections-slider .arrow-right`,
 });
 
-},{"./widok-slider":21,"cash-dom":1}],17:[function(require,module,exports){
+},{"./widok-slider":22,"cash-dom":1}],18:[function(require,module,exports){
 const $ = require('cash-dom');
 const smoothscroll = require('smoothscroll-polyfill');
 
@@ -4425,7 +4461,7 @@ $('#top .arrow').on('click', () => {
   window.scrollTo({ top: topHeight, behavior: 'smooth' });
 });
 
-},{"cash-dom":1,"smoothscroll-polyfill":9}],18:[function(require,module,exports){
+},{"cash-dom":1,"smoothscroll-polyfill":9}],19:[function(require,module,exports){
 const $ = require('cash-dom');
 
 const createHoverable = (function () {
@@ -4473,7 +4509,7 @@ const createHoverable = (function () {
 
 if (typeof module !== 'undefined') module.exports = createHoverable;
 
-},{"cash-dom":1}],19:[function(require,module,exports){
+},{"cash-dom":1}],20:[function(require,module,exports){
 /**
  * add new Lightbox
  * @param {object} options extra options
@@ -4692,7 +4728,7 @@ const createLightbox = (function () {
 
 if (typeof module !== 'undefined') module.exports = createLightbox;
 
-},{"cash-dom":1}],20:[function(require,module,exports){
+},{"cash-dom":1}],21:[function(require,module,exports){
 /**
  * create new scroll item
  * @param {selector} element element to scroll
@@ -4810,7 +4846,7 @@ const createScrollItem = (function () {
 
 if (typeof module !== 'undefined') module.exports = createScrollItem;
 
-},{"./widok":23,"cash-dom":1}],21:[function(require,module,exports){
+},{"./widok":24,"cash-dom":1}],22:[function(require,module,exports){
 /**
  * Create a slider. Vertical slider might not work yet.
  * @param {object} optionsextra options
@@ -5545,7 +5581,7 @@ const createSlider = (function () {
 
 if (typeof module !== 'undefined') module.exports = createSlider;
 
-},{"./widok-hoverable":18,"cash-dom":1}],22:[function(require,module,exports){
+},{"./widok-hoverable":19,"cash-dom":1}],23:[function(require,module,exports){
 function throttle(ms, callback) {
   let lastCall = 0;
   let timeout;
@@ -5563,7 +5599,7 @@ function throttle(ms, callback) {
 
 if (typeof module !== 'undefined') module.exports = throttle;
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 const $ = require('cash-dom');
 const throttle = require('./widok-throttle');
 
@@ -5595,6 +5631,6 @@ $(document).on('ready', widok.sizeCheck);
 
 if (typeof module !== 'undefined') module.exports = widok;
 
-},{"./widok-throttle":22,"cash-dom":1}]},{},[13])
+},{"./widok-throttle":23,"cash-dom":1}]},{},[14])
 
 //# sourceMappingURL=bundle.js.map
