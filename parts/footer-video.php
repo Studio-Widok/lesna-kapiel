@@ -5,7 +5,8 @@
         <div id="footer-video-overlay"
           class="video-overlay flex flex-align-center flex-justify-center">
           <div class="play-button flex">
-            <div class="uppercase flex flex-align-center"><?php pll_e('Play Video')?></div>
+            <div class="uppercase flex flex-align-center">
+              <?php pll_e('Play Video')?></div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
               <path d="M10 20L90 50L10 80z" />
             </svg>
@@ -14,7 +15,6 @@
         <video id="footer-video" data-paused="true" src="<?=$source['url']?>"
           loop></video>
       </div>
-
     </div>
     <div class="full-width column">
       <div class="big-title handwrite">
