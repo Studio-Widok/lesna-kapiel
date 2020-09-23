@@ -63,13 +63,19 @@
 .single-collection {
   .collection-image-column {
     width: 60%;
+    @media (max-width: 900px) {
+      width: 50%;
+    }
   }
 
   .collection-description-column {
     position: relative;
     width: 40%;
-    padding-top: 18em;
     padding-right: 6em;
+    padding-top: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     @media (max-width: 768px) {
       padding-top: 0;
     }
@@ -77,6 +83,9 @@
     .collection-number {
       text-transform: uppercase;
       letter-spacing: $letter-spacing;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
 
     .collection-title {

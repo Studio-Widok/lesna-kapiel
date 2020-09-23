@@ -89,9 +89,11 @@
     @media (max-width: 1050px) {
       width: 100%;
       margin-top: 20%;
+      padding-right: 3em;
     }
     @media (max-width: 768px) {
       margin: 0;
+      padding-right: 0;
     }
   }
 }

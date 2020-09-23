@@ -2,16 +2,9 @@
   get_part('nav');
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
-  $top            = get_field('top')['top'];
-  get_part('top', array(
-    'show_title' => true,
-    'bg'         => $top['top_image'],
-    'text_align' => $top['align'],
-  ));
 ?>
 <div class="green-wrapper">
   <div class="rsep"></div>
-  <?php get_part('text-full', array('text' => $top['text']));?>
   <div class="rsep"></div>
   <?php
     $slider = get_field('slider');
@@ -30,11 +23,18 @@
       'image'      => $facilities['image']['sizes']['medium'],
       'link'       => $facilities['link'],
     ]);
-    $collections = get_the_terms($post, 'collections');
-    if (!empty($collections)) {
-    ?>
+  ?>
+  <?php
+  $collections = get_the_terms($post, 'collections');
+  if (!empty($collections)) {
+  ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
+</div>
+
+<div class="<?=get_field("colors", $collections[0])?>-wrapper">
+  <div class="r"></div>
+  <div class="overlap"></div>
   <div class="content">
     <?php
       get_component('single-collection', [
@@ -61,10 +61,10 @@
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
-    get_part('footer-video', array(
-      'source' => $footer['video'],
-      'text'   => $footer['text']));
+    get_part('full-width-handwrite', array(
+      'text' => $footer['text']));
   ?>
+  <div class="rsep"></div>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>

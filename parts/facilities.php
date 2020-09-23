@@ -34,7 +34,7 @@
       </div>
     </div>
   </div>
-  <?php if (!empty($link)) {?>
+  <?php if (!empty($link['text'])) {?>
   <div class="rsep"></div>
   <div class="text-center">
     <a href="<?=get_link_url($link)?>">

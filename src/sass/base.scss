@@ -407,6 +407,9 @@ button {
 
 .overlap {
   margin-top: -12em;
+  @media (max-width: 900px) {
+    margin-top: -8em;
+  }
 }
 
 // components
@@ -415,6 +418,7 @@ button {
 @import 'vertical-image-text.scss';
 @import 'lightbox.scss';
 @import 'cake-frame.scss';
+@import 'full-width-handwrite.scss';
 
 // parts
 @import 'nav.scss';
