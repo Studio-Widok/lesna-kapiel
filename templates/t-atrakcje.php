@@ -1,12 +1,15 @@
 <?php /*Template Name: atrakcje*/
   get_header();
+  $top    = get_field('top')['top'];
+  $nearby = get_field('nearby');
+  $footer = get_field('footer', 2);
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
-    'bg'         => get_field('top_image'),
+    'bg'         => $top['top_image'],
+    'text_align' => $top['align'],
+    'title'      => $top['title'],
   ));
-  $nearby = get_field('nearby');
-  $footer = get_field('footer', 2);
 ?>
 
 <div class="green-wrapper">
@@ -16,8 +19,8 @@
     <?php
       get_part('featured-links', [
         'links'            => $nearby,
-        'isMobileHide768'  => true,
         'isMobileHide1050' => false,
+        'isMobileHide768'  => true,
       ]);
     ?>
     <div class="text-center less-768">
