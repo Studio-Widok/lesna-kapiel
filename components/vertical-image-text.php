@@ -1,10 +1,6 @@
 <?php
   $content  = $content ?? [];
   $iterator = $iterator ?? '';
-  /*
-  $isMobileHide1050 - default true
-  $isMobileHide768 - default false
-   */
 ?>
 
 <div class="col3 column-inner vertical-image-text

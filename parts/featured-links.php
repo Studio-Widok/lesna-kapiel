@@ -8,10 +8,10 @@
   <?php
     for ($i = 0; $i < count($links); $i++) {
       get_component('vertical-image-text', [
-        'content'           => $links[$i],
-        'iterator'          => $i,
-        'isMobileHide1050 ' => $isMobileHide1050,
-        'isMobileHide768'   => $isMobileHide768,
+        'content'          => $links[$i],
+        'iterator'         => $i,
+        'isMobileHide1050' => $isMobileHide1050,
+        'isMobileHide768'  => $isMobileHide768,
       ]);
     }
   ?>

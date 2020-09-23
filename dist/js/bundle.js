@@ -4142,6 +4142,7 @@ return Outlayer;
 
 },{}],10:[function(require,module,exports){
 const $ = require('cash-dom');
+const widok = require('./widok');
 
 const moreButton = $('#atrraction-more');
 const verticalImageTextMore768 = $(
@@ -4165,16 +4166,18 @@ moreButton.on('click', function () {
 });
 
 window.addEventListener('afterLayoutChange', function () {
-  if (isMore) {
-    verticalImageTextMore768.each((index, element) => {
-      $(element).css({ height: element.scrollHeight });
-    });
-  } else {
-    verticalImageTextMore768.css({ height: 0 });
+  if (widok.w < 768) {
+    if (isMore) {
+      verticalImageTextMore768.each((index, element) => {
+        $(element).css({ height: element.scrollHeight });
+      });
+    } else {
+      verticalImageTextMore768.css({ height: 0 });
+    }
   }
 });
 
-},{"cash-dom":1}],11:[function(require,module,exports){
+},{"./widok":24,"cash-dom":1}],11:[function(require,module,exports){
 const $ = require('cash-dom');
 const createScrollItem = require('./widok-scrollItem');
 const widok = require('./widok');
