@@ -2,7 +2,7 @@
   get_header();
 
   $sections = get_field('sections');
-  $top      = get_field('top');
+  $top      = get_field('top')['top'];
   $footer   = get_field('footer', 2);
 
   get_part('nav');
@@ -10,6 +10,7 @@
     'show_title' => true,
     'bg'         => $top['top_image'],
     'text_align' => $top['align'],
+    'title'      => $top['title'],
   ));
 ?>
 
