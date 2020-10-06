@@ -13,6 +13,9 @@
     left: 0;
     background-position: center;
     background-size: cover;
+    &.bg-fixed {
+      background-attachment: fixed;
+    }
   }
 
   #top-logo-wrap {
@@ -25,7 +28,7 @@
     }
 
     #top-logo-img {
-      width: 7em;
+      width: 6em;
       margin-bottom: 1em;
       margin-left: -0.8em;
     }
@@ -74,7 +77,7 @@
     svg {
       position: relative;
       top: 0;
-      height: 3em;
+      height: 2em;
       transition: 0.3s;
     }
 
