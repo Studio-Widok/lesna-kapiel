@@ -1,8 +1,9 @@
 <?php
+  $isDark  = $isDark ?? false;
   $nav_img = get_field('nav_image', 2);
 ?>
 
-<nav id="nav">
+<nav id="nav" class="<?php if ($isDark) {echo 'dark';}?>">
 
   <div id="nav-links">
     <?php if (!is_page(2)) {?>
@@ -67,7 +68,7 @@
       ?>
       <div class="rmin"></div>
     </div>
-    <div id="nav-book"><span><?php pll_e('rezerwuj')?></span></div>
+    <!-- <div id="nav-book"><span><?php pll_e('rezerwuj')?></span></div> -->
     <div id="nav-foot-mobile"
       class="flex flex-column flex-justify-center less-768">
       <div>

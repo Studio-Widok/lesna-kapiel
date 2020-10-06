@@ -11,7 +11,6 @@ body.nav-opened {
   right: 6em;
   left: 6em;
   z-index: 21;
-  font-size: 1.2em;
 
   @media (max-width: 1200px) {
     right: 3em;
@@ -59,7 +58,7 @@ body.nav-opened {
     &.current,
     &:hover {
       span:after {
-        width: 100%;
+        width: 80%;
       }
       .nav-link-icon svg path {
         fill: $color-beige;
@@ -111,13 +110,14 @@ body.nav-opened {
   #nav-overlay {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    opacity: 0;
     width: 100%;
     height: 100vh;
     background-color: #333;
     background-position: center;
     background-size: cover;
-    transition: right 0.6s;
+    transition: opacity 0.6s;
     z-index: 21;
     display: flex;
     flex-direction: column;
@@ -125,6 +125,7 @@ body.nav-opened {
     justify-content: space-between;
     padding: 3em 6em;
     overflow: auto;
+    pointer-events: none;
 
     @media (max-width: 1200px) {
       padding: 3em;
@@ -182,7 +183,7 @@ body.nav-opened {
     #nav-book {
       background-color: $color-beige;
       border: 1px solid #fff;
-      padding: 1.5em 3em;
+      padding: 0.75em 2em;
       margin-bottom: 1.5em;
       transition: 0.3s;
       cursor: pointer;
@@ -191,6 +192,7 @@ body.nav-opened {
         text-transform: uppercase;
         letter-spacing: $letter-spacing;
         padding-left: $letter-spacing;
+        font-size: 0.9em;
       }
 
       &:hover {
@@ -296,7 +298,31 @@ body.nav-opened {
     }
 
     #nav-overlay {
-      right: 0;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+#nav.dark:not(.opened) {
+  color: $dark;
+  .nav-link {
+    span {
+      &::after {
+        background-color: $dark;
+      }
+    }
+  }
+  .nav-link-icon {
+    svg {
+      path {
+        fill: $dark;
+      }
+    }
+  }
+  #burger {
+    > div {
+      background-color: $dark;
     }
   }
 }
