@@ -131,3 +131,12 @@ hr {
   $grey-background,
   #fff
 );
+@include colors-set(
+  'beige-brown',
+  $color-beige,
+  $brown,
+  $brown,
+  #fff,
+  $grey-background,
+  #fff
+);
