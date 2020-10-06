@@ -9,6 +9,7 @@
   get_part('top', array(
     'show_logo' => true,
     'bg'        => get_field('top_image'),
+    'isBgFixed' => true,
   ));
 ?>
 
@@ -47,6 +48,8 @@
     <div class="rsep"></div>
     <?php }?>
   </div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
   <div class="rsep less-768"></div>
   <div class="rsep less-768"></div>
 </div>
@@ -58,9 +61,6 @@
     get_part('collections-slider');
   ?>
   <div class="rsep"></div>
-
-  <div class="rsep"></div>
-
   <?php get_part('featured-links', [
       'links' => $featured_links,
   ]);?>
