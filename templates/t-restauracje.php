@@ -7,6 +7,7 @@
     'show_title' => true,
     'bg'         => $top['top_image'],
     'text_align' => $top['align'],
+    'title'      => $top['title'],
   ));
 ?>
 <div class="green-wrapper">
@@ -31,10 +32,7 @@
       'link'       => $facilities['link'],
     ]);
   ?>
-  <div class="rsep"></div>
-  <div class="rsep"></div>
 </div>
-
 <?php
   $footer = get_field('footer', 2);
   get_part('full-width-image', [
