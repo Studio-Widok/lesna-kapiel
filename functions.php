@@ -169,4 +169,13 @@ function viewport_meta() {?>
       'slug'       => $termSlug,
       'lang'       => 'pl',
     ])[0]->term_id;
+  }
+
+  function get_collection_id($collectionSlug) {
+    return get_terms([
+      'taxonomy'   => 'collections',
+      'hide_empty' => false,
+      'slug'       => $collectionSlug,
+      'lang'       => 'pl',
+    ])[0]->term_id;
 }
