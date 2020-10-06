@@ -2,6 +2,7 @@
   get_header();
   $top    = get_field('top')['top'];
   $nearby = get_field('nearby');
+  $link   = get_field('link')['link'];
   $footer = get_field('footer', 2);
   get_part('nav');
   get_part('top', array(
@@ -13,6 +14,8 @@
 ?>
 
 <div class="green-wrapper">
+  <div class="rsep"></div>
+  <?php get_part('text-full', array('text' => $top['text']));?>
   <div class="rsep"></div>
 
   <div class="content">
@@ -40,28 +43,26 @@
   <div class="rsep"></div>
   <div class="content">
     <?php get_component('title', ['title' => pll__('what_in_spot')]);?>
+    <div class="rsep"></div>
+    <?php get_part('text-full', array('text' => get_field('on_the_spot_text')));?>
   </div>
   <div class="rsep"></div>
   <?php
     $on_the_spot = get_field('on_the_spot');
     for ($i = 0; $i < count($on_the_spot); $i++) {
       get_part('slider-with-bullets', [
-        'slides' => $on_the_spot[$i]['slides'],
-        'title'  => $on_the_spot[$i]['title'],
+        'slides'    => $on_the_spot[$i]['slides'],
+        'title'     => $on_the_spot[$i]['title'],
+        'pic_right' => $i % 2,
       ]);
     ?>
   <div class="rsep"></div>
   <?php
     }
   ?>
-  <?php
-  $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
-?>
   <div class="text-center">
-    <a href="<?=get_tag_link($termId)?>">
-      <button>
-        <?=pll__('see_apartments')?>
-      </button>
+    <a href="<?=get_link_url($link)?>">
+      <button><?=$link['text']?></button>
     </a>
   </div>
   <div class="rsep"></div>
