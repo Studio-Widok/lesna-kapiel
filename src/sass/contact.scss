@@ -13,27 +13,27 @@
 
     &::-webkit-input-placeholder {
       color: #fff;
-      opacity: 0;
+      opacity: 0.3;
       transition: 0.3s;
     }
     &::-moz-placeholder {
       color: #fff;
-      opacity: 0;
+      opacity: 0.3;
       transition: 0.3s;
     }
     &:-ms-input-placeholder {
       color: #fff;
-      opacity: 0;
+      opacity: 0.3;
       transition: 0.3s;
     }
     &:-moz-placeholder {
       color: #fff;
-      opacity: 0;
+      opacity: 0.3;
       transition: 0.3s;
     }
     &::placeholder {
       color: #fff;
-      opacity: 0;
+      opacity: 0.3;
       transition: 0.3s;
     }
 
@@ -81,8 +81,11 @@
   display: flex;
 
   .social-icon {
-    width: 1.8em;
-    margin: 0 0.2em;
+    width: 1.5em;
+    margin: 0;
+    &:nth-child(1) {
+      margin-right: 1em;
+    }
     svg {
       display: block;
 
