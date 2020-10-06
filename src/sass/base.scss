@@ -1,9 +1,10 @@
 $letter-spacing: 0.15em;
-$color-beige: #af9e70;
+$color-beige: #c8baa9;
 $dark-green: #1e352a;
 $dark: #122218;
 $white-grey: #78857f;
 $grey-background: #8a9992;
+$brown: #654824;
 $green-overlay: rgba(51, 105, 80, 0.7);
 
 @font-face {
@@ -371,7 +372,7 @@ button {
     left: 0;
     height: 1px;
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
   }
 }
 .text-center > .small-title {
@@ -406,9 +407,9 @@ button {
 }
 
 .overlap {
-  margin-top: -12em;
+  margin-top: -14em;
   @media (max-width: 900px) {
-    margin-top: -8em;
+    margin-top: -18em;
   }
 }
 
