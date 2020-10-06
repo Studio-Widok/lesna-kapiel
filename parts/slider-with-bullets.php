@@ -1,17 +1,18 @@
 <?php
-  $slides = $slides ?? [];
-  $title  = $title ?? '';
+  $slides    = $slides ?? [];
+  $title     = $title ?? '';
+  $pic_right = $pic_right ?? false;
 ?>
 
 <?php if (!empty($slides)) {?>
 <div class="slider-with-bullets" id="slider-with-bullets-<?=$__index?>">
   <div class="content">
-    <div class="slider-bullets column-768">
+    <div class="slider-bullets column-768 <?=$pic_right ? 'pic-right' : ''?>">
       <div class="small-title"><?=$title?></div>
       <div class="rmin"></div>
       <div class="bullets-container flex">
         <?php for ($i = 0; $i < count($slides); $i++) {?>
-        <div class="bullet col-2">
+        <div class="bullet col2">
           <div class="flex flex-align-center">
             <img src="<?=$slides[$i]['icon']['sizes']['medium']?>"
               class="slide-icon">
@@ -25,7 +26,8 @@
     <div class="slider">
       <?php for ($i = 0; $i < count($slides); $i++) {?>
       <div class="single-slide">
-        <div class="flex flex-wrap flex-768 flex-align-end">
+        <div
+          class="flex flex-wrap flex-768 flex-align-end <?=$pic_right ? 'pic-right flex-justify-end' : ''?>">
           <div class="col2 column">
             <div class="cake cake-3-4"
               style="background-image: url('<?=$slides[$i]['image']['sizes']['medium']?>');">
