@@ -2,10 +2,11 @@
   $gallery = $gallery ?? [];
   $text    = $text ?? '';
   $title   = $title ?? '';
+  $nav_img = get_field('nav_image', 2);
 ?>
 
 <div id="lb-container-image" class="lb-container hidden"
-  style="background-image: url('<?=$gallery[0]['sizes']['large']?>');">
+  style="background-image: url('<?=$nav_img['sizes']['large']?>');">
   <div class='close-lb'>
     <div></div>
     <div></div>
@@ -18,7 +19,7 @@
 </div>
 
 <div id="lb-container-masonry" class="lb-container hidden"
-  style="background-image: url('<?=$gallery[0]['sizes']['large']?>');">
+  style="background-image: url('<?=$nav_img['sizes']['large']?>');">
   <div class="lb">
     <div class="rsep"></div>
     <div class="masonry">
@@ -49,7 +50,7 @@
       data-width="<?=$gallery[$i]['width']?>"
       data-height="<?=$gallery[$i]['height']?>">
       <div class="cake"
-        style="background-image: url('<?=$gallery[$i]['sizes']['medium']?>');">
+        style="background-image: url('<?=$gallery[$i]['sizes']['large']?>');">
       </div>
     </div>
     <?php }?>
