@@ -30,7 +30,7 @@
       </div>
 
       <?php
-        if ($button) {
+        if ($button && $button['link'] && $button['text']) {
         ?>
       <div class="r"></div>
       <div class="button-container">
