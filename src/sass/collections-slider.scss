@@ -60,6 +60,15 @@
   }
 }
 
+.collection-others-title-mobile {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: $letter-spacing;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 auto;
+}
+
 .single-collection {
   .collection-image-column {
     width: 60%;
@@ -86,6 +95,14 @@
       @media (max-width: 768px) {
         text-align: center;
       }
+    }
+
+    .collection-others-title {
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: $letter-spacing;
+      position: absolute;
+      top: 3em;
     }
 
     .collection-title {

@@ -1,6 +1,7 @@
 <?php
   get_header();
-  get_part('nav');
+  $isDark = is_tax('collections', pll_get_term(get_collection_id('polna')));
+  get_part('nav', ['isDark' => $isDark]);
   $archive        = get_queried_object();
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
@@ -15,7 +16,6 @@
     <div class="column content title-container">
       <div class="big-title handwrite"><?=$archive->name?></div>
     </div>
-    <div>Tutaj Pasek z rezerwacją</div>
     <div class="rsep"></div>
     <?php get_part('text-full', array('text' => get_field('top_text', $archive)));?>
     <div class="rsep"></div>
@@ -74,14 +74,21 @@
       <div class="rsep"></div>
     </div>
     <?php endif;?>
+    <?php if (is_tax('collections')): ?>
+    <div class="rsep"></div>
+    <div class="rsep less-768"></div>
+    <div class="rsep less-768"></div>
+    <?php endif;?>
   </div>
   <div class="section-container">
-    <?php
-      if (is_tax('collections')):
-        get_part('collections-slider', [
-          'exclude' => $archive->term_id,
-        ]);
-      ?>
+    <?php if (is_tax('collections')): ?>
+    <div class="r"></div>
+    <div class="overlap"></div>
+    <?php get_part('collections-slider', [
+        'exclude'       => $archive->term_id,
+        'isOthersTitle' => true,
+      ]);
+    ?>
     <?php endif;?>
 
 

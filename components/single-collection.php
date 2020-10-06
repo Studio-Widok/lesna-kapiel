@@ -2,12 +2,18 @@
   if (!isset($collection)) {
     return;
   }
-  $is_current = $is_current ?? false;
+  $is_current    = $is_current ?? false;
+  $isOthersTitle = $isOthersTitle ?? false;
 
   $img = get_field('image', $collection);
 ?>
-
 <div class="flex single-collection flex-768">
+  <?php if ($isOthersTitle): ?>
+  <div class="collection-others-title-mobile less-768">
+    <?php pll_e('zobacz inne kolekcje')?>
+    <div class="rmin"></div>
+  </div>
+  <?php endif;?>
   <div class="col2 column collection-image-column">
     <div class="cake cake-3-4"
       style="background-image: url('<?=$img['sizes']['large']?>');">
@@ -15,6 +21,11 @@
     </div>
   </div>
   <div class="col2 column collection-description-column">
+    <?php if ($isOthersTitle): ?>
+    <div class="collection-others-title more-768">
+      <?php pll_e('zobacz inne kolekcje')?>
+    </div>
+    <?php endif;?>
     <div class="collection-title handwrite less-768"><?=$collection->name?>
     </div>
     <div class="r less-768"></div>

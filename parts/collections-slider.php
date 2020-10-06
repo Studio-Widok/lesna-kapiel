@@ -1,5 +1,6 @@
 <?php
-  $exclude = $exclude ?? [];
+  $exclude       = $exclude ?? [];
+  $isOthersTitle = $isOthersTitle ?? false;
 
   $collections = get_categories([
     'taxonomy' => 'collections',
@@ -17,7 +18,8 @@
       <div class="single-slide">
         <?php
           get_component('single-collection', [
-              'collection' => $collections[$i],
+              'collection'    => $collections[$i],
+              'isOthersTitle' => $isOthersTitle,
             ]);
           ?>
       </div>
