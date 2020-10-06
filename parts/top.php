@@ -1,5 +1,6 @@
 <?php
   $bg         = $bg ?? '';
+  $isBgFixed  = $isBgFixed ?? false;
   $show_logo  = $show_logo ?? false;
   $show_title = $show_title ?? false;
   $text_align = $text_align ?? 'text-center';
@@ -7,7 +8,8 @@
 ?>
 
 <div id="top">
-  <div id="top-bg" style="background-image: url('<?=$bg['sizes']['large']?>')">
+  <div id="top-bg" class="<?php if ($isBgFixed) {echo 'bg-fixed';}?>"
+    style="background-image: url('<?=$bg['sizes']['large']?>')">
   </div>
   <?php if ($show_logo) {?>
   <div id="top-logo-wrap">
