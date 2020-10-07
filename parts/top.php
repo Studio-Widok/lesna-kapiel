@@ -1,10 +1,11 @@
 <?php
-  $bg         = $bg ?? '';
-  $isBgFixed  = $isBgFixed ?? false;
-  $show_logo  = $show_logo ?? false;
-  $show_title = $show_title ?? false;
-  $text_align = $text_align ?? 'text-center';
-  $title      = $title ?? get_the_title();
+  $bg                = $bg ?? '';
+  $isBgFixed         = $isBgFixed ?? false;
+  $show_logo         = $show_logo ?? false;
+  $show_title        = $show_title ?? false;
+  $isShowReservation = $isShowReservation ?? false;
+  $text_align        = $text_align ?? 'text-center';
+  $title             = $title ?? get_the_title();
 ?>
 
 <div id="top">
@@ -22,6 +23,10 @@
   <div id="top-title" class="content column-double <?=$text_align?>">
     <span><?=$title?></span>
   </div>
+  <?php }?>
+  <?php if ($isShowReservation) {?>
+  <div class="rsep"></div>
+  <?php get_component('reservation');?>
   <?php }?>
 
   <div class="arrow more-768">
