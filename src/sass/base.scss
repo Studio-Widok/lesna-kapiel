@@ -324,6 +324,17 @@ p {
 @include wrapper('.grey-wrapper', $grey-background);
 @include wrapper('.beige-wrapper', $color-beige);
 
+.beige-wrapper {
+  button {
+    border-color: $dark-green;
+    color: $dark-green;
+    &:hover {
+      background-color: $dark-green;
+      color: #fff;
+    }
+  }
+}
+
 button {
   letter-spacing: $letter-spacing;
   padding-left: $letter-spacing;
@@ -370,9 +381,9 @@ button {
     top: 100%;
     right: 0;
     left: 0;
-    height: 1px;
+    height: 0.5px;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
   }
 }
 .text-center > .small-title {
@@ -400,6 +411,13 @@ button {
   }
 }
 
+// fix problem with background-position: center on chrome
+.full-width-image {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    background-position: 50.001% 0;
+  }
+}
+
 .full-width-image-contact {
   position: absolute;
   bottom: 4em;
@@ -420,6 +438,7 @@ button {
 @import 'lightbox.scss';
 @import 'cake-frame.scss';
 @import 'full-width-handwrite.scss';
+@import 'reservation.scss';
 
 // parts
 @import 'nav.scss';
