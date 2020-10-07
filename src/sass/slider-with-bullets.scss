@@ -40,7 +40,7 @@
     &.pic-right {
       left: 3em;
       right: auto;
-      @media (max-width: 1050px) {
+      @media (max-width: 768px) {
         left: 0;
       }
     }
@@ -66,7 +66,7 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 0.5px;
             background-color: #fff;
             transition: 0.3s;
             margin: 0 auto;
