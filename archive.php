@@ -16,6 +16,7 @@
     <div class="column content title-container">
       <div class="big-title handwrite"><?=$archive->name?></div>
     </div>
+    <?php get_component('reservation')?>
     <div class="rsep"></div>
     <?php get_part('text-full', array('text' => get_field('top_text', $archive)));?>
     <div class="rsep"></div>

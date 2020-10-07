@@ -7,9 +7,10 @@
   $footer         = get_field('footer');
   get_part('nav');
   get_part('top', array(
-    'show_logo' => true,
-    'bg'        => get_field('top_image'),
-    'isBgFixed' => true,
+    'show_logo'         => true,
+    'bg'                => get_field('top_image'),
+    'isBgFixed'         => true,
+    'isShowReservation' => true,
   ));
 ?>
 
@@ -34,15 +35,16 @@
     <div class="rsep"></div>
     <?php for ($i = 0; $i < count($sections); $i++) {?>
     <?php get_part('2-col-with-pic', [
-    'image'      => $sections[$i]['image'],
-    'title'      => $sections[$i]['title'],
-    'text'       => $sections[$i]['text'],
-    'button'     => array(
+    'image'         => $sections[$i]['image'],
+    'title'         => $sections[$i]['title'],
+    'text'          => $sections[$i]['text'],
+    'button'        => array(
       'text' => $sections[$i]['link']['text'],
       'link' => get_link_url($sections[$i]['link']),
     ),
-    'alt_layout' => true,
-    'pic_right'  => $i % 2,
+    'alt_layout'    => true,
+    'pic_right'     => $i % 2,
+    'isTextOverlap' => $i === 1,
 ]);?>
     <div class="rsep"></div>
     <div class="rsep"></div>
@@ -64,12 +66,10 @@
   <?php get_part('featured-links', [
       'links' => $featured_links,
   ]);?>
-
   <div class="rsep"></div>
-
+  <?php get_component('reservation')?>
+  <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 </div>
-
-<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
