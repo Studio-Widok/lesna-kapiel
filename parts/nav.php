@@ -11,9 +11,9 @@
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
+    <?php }?>
     <div class="more-768">
       <?php
-        }
         get_component('nav-link', array(
           'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
         ));
@@ -82,13 +82,11 @@
     <div id="nav-foot" class="flex more-768">
       <div class="nav-foot-col flex flex-wrap flex-align-center">
         <div>+48 897 978 857</div>
-        <div class="rmin less-1050"></div>
         <div>kontakt@lesnakapiel.com</div>
       </div>
       <div class="nav-foot-col empty"></div>
       <div class="nav-foot-col flex flex-wrap flex-align-center">
         <div class="text-right">ul. Karpacka 1, Karpaty</div>
-        <div class="rmik less-1050"></div>
         <div>
           <?php get_component('social-links');?>
         </div>
