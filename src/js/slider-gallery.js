@@ -28,7 +28,6 @@ function onImageChange() {
 function onImageActivate() {
   onImageResize.call(this);
   onImageChange.call(this);
-  onActive();
 }
 
 function onImageResize() {
@@ -94,6 +93,7 @@ const singleLb = createLightbox({
   onActivate: onImageActivate,
   onResize: onImageResize,
   onDeactivate: onDeactivate,
+  onChange: onImageActivate,
   hasArrows: true,
   hasExit: true,
   exitClass: '#lb-container-image .close-lb',
