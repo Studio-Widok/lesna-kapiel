@@ -218,26 +218,16 @@ body.nav-opened {
     #nav-foot {
       width: 100%;
 
-      @media (max-width: 768px) {
-      }
-
       .nav-foot-col {
         min-width: 33.3333%;
         flex-shrink: 0;
         flex-grow: 1;
-        padding: 0 0.5em;
+        @media (max-width: 1050px) {
+          min-width: 45%;
+        }
 
         > div {
           width: 50%;
-          @media (max-width: 1050px) {
-            width: 100%;
-          }
-
-          &.text-right {
-            @media (min-width: 1050px) {
-              text-align: initial;
-            }
-          }
         }
 
         &.empty {
