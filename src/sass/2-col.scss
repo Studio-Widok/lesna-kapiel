@@ -28,6 +28,12 @@
 .col-2-with-pic {
   color: #fff;
 
+  .column-overlap {
+    @media (min-width: 768px) {
+      padding-top: 10em;
+    }
+  }
+
   .image-wrapper {
     width: 100%;
     height: 100%;

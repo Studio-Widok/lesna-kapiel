@@ -1,10 +1,11 @@
 <?php
-  $title      = $title ?? '';
-  $text       = $text ?? '';
-  $image      = $image ?? false;
-  $button     = $button ?? false;
-  $pic_right  = $pic_right ?? false;
-  $alt_layout = $alt_layout ?? false;
+  $title         = $title ?? '';
+  $text          = $text ?? '';
+  $image         = $image ?? false;
+  $button        = $button ?? false;
+  $pic_right     = $pic_right ?? false;
+  $alt_layout    = $alt_layout ?? false;
+  $isTextOverlap = $isTextOverlap ?? false;
 ?>
 
 <div class="content col-2-with-pic <?=$alt_layout ? 'alt-layout' : ''?>">
@@ -19,7 +20,8 @@
         </div>
       </div>
     </div>
-    <div class="col2 column">
+    <div class="col2 column
+      <?php if ($isTextOverlap) {echo 'column-overlap';}?>">
       <?php if ($title): ?>
       <div class="big-title handwrite"><?=$title?></div>
       <?php endif;?>
