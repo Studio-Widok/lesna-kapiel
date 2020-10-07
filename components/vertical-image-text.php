@@ -48,7 +48,7 @@
 
     <?php }?>
   </div>
-  <div class="r more-768"></div>
+  <div class="rmin"></div>
   <?php }?>
 
   <?php if (isset($content['button_link']) && !empty($content['button_link']['text'])) {?>
