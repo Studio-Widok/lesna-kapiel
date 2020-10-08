@@ -18,7 +18,7 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
       currentFixedLink.removeClass('fixed');
       if (scrollItem.offset + scrollItem.height < widok.s + widok.h) {
         currentFixedLink.css({
-          top: scrollItem.height - currentFixedLinkW - widok.em,
+          top: scrollItem.height - currentFixedLinkW - widok.em * 2,
           bottom: 'auto',
         });
       } else if (
@@ -27,7 +27,7 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
       ) {
         currentFixedLink.css({
           bottom: 'auto',
-          top: currentFixedLinkH - currentFixedLinkW + widok.em,
+          top: currentFixedLinkH - currentFixedLinkW + widok.em + 2,
         });
       }
     }
@@ -36,7 +36,7 @@ const fixedOrAbs = (scrollItem, isLayoutChange = false) => {
       scrollItem.options.isFixed = true;
       currentFixedLink.addClass('fixed');
       currentFixedLink.css({
-        bottom: '1em',
+        bottom: '2em',
         top: 'auto',
       });
     }
