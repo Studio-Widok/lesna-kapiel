@@ -46,10 +46,10 @@
     'pic_right'     => $i % 2,
     'isTextOverlap' => $i === 1,
 ]);?>
-    <div class="rsep"></div>
-    <div class="rsep"></div>
+    <div class="rsep less-768"></div>
     <?php }?>
   </div>
+  <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep less-768"></div>
