@@ -1,6 +1,6 @@
 <?php
   $bg                = $bg ?? '';
-  $isBgFixed         = $isBgFixed ?? false;
+  $isBgFixed         = $isBgFixed ?? true;
   $show_logo         = $show_logo ?? false;
   $show_title        = $show_title ?? false;
   $isShowReservation = $isShowReservation ?? false;
@@ -24,10 +24,10 @@
     <span><?=$title?></span>
   </div>
   <?php }?>
-  <?php if ($isShowReservation) {?>
+<?php if ($isShowReservation) {?>
   <div class="rsep"></div>
   <?php get_component('reservation');?>
-  <?php }?>
+<?php }?>
 
   <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">

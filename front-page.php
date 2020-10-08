@@ -9,7 +9,6 @@
   get_part('top', array(
     'show_logo'         => true,
     'bg'                => get_field('top_image'),
-    'isBgFixed'         => true,
     'isShowReservation' => true,
   ));
 ?>
