@@ -39,53 +39,10 @@ hr {
   }
 }
 
-.grey-set .section-container {
-  .vertical-image-text .text-link svg path {
-    fill: $dark-green;
-    stroke: $dark-green;
-  }
-
-  .small-title::after {
-    background-color: $dark-green;
-  }
-
-  button {
-    border-color: $dark-green;
-    color: $dark-green;
-  }
-}
-
-@mixin colors-set(
-  $name,
-  $bg,
-  $text,
-  $bgPremium,
-  $textPremium,
-  $bgSection,
-  $textSection
-) {
-  .#{$name}-set {
-    @include colors($bg, $text);
-    .premium-container {
-      @include sectionWrapper($bgPremium);
-      @include colors($bgPremium, $textPremium);
-    }
-    .section-container {
-      @include sectionWrapper($bgSection);
-      @include colors($bgSection, $textSection);
-    }
-  }
-}
-
-@mixin colors($bg, $text) {
-  background-color: $bg;
-  color: $text;
-  border-color: $text;
-}
-
-@mixin sectionWrapper($color) {
+@mixin sectionWrapper($bgColor, $color) {
   position: relative;
-  background-color: $color;
+  background-color: $bgColor;
+  color: $color;
 
   &:before {
     content: '';
@@ -96,47 +53,31 @@ hr {
     width: 100%;
     margin-bottom: -1em;
     padding-bottom: 7.3404%;
-    background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$color}, 2)}');
+    background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
   }
 
   .cake-frame .drawing path {
-    stroke: $color;
+    stroke: $bgColor;
   }
 }
 
-@include colors-set(
-  'green',
-  $dark-green,
-  #fff,
-  $color-beige,
-  $dark-green,
-  $grey-background,
-  #fff
-);
-@include colors-set(
-  'grey',
-  $grey-background,
-  #fff,
-  $dark-green,
-  #fff,
-  $color-beige,
-  $dark-green
-);
-@include colors-set(
-  'beige',
-  $color-beige,
-  $dark-green,
-  $dark-green,
-  #fff,
-  $grey-background,
-  #fff
-);
-@include colors-set(
-  'beige-brown',
-  $color-beige,
-  $brown,
-  $brown,
-  #fff,
-  $grey-background,
-  #fff
-);
+.green-wrapper {
+  .premium-container {
+    @include sectionWrapper($color-beige, $dark-green);
+  }
+}
+.dark-wrapper {
+  .premium-container {
+    @include sectionWrapper($grey-background, #fff);
+  }
+}
+.grey-wrapper {
+  .premium-container {
+    @include sectionWrapper($color-beige, $dark-green);
+  }
+}
+.beige-wrapper {
+  .premium-container {
+    @include sectionWrapper($dark-green, #fff);
+  }
+}

@@ -24,10 +24,11 @@
       'link'       => $facilities['link'],
     ]);
   ?>
-  <?php
+<?php
   $collections = get_the_terms($post, 'collections');
   if (!empty($collections)) {
   ?>
+  <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
