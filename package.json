@@ -21,6 +21,7 @@
   "dependencies": {
     "cash-dom": "^8.0.0",
     "masonry-layout": "^4.2.2",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "widok-fade-queue": "git+https://github.com/weterynarzfred/widok-fade-queue.git"
   }
 }

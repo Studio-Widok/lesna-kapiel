@@ -13,7 +13,7 @@
 </div>
 <div class="<?=get_field("colors", $archive)?>-wrapper">
   <div class="column content title-container">
-    <div class="big-title handwrite"><?=$archive->name?></div>
+    <div class="big-title handwrite fade"><?=$archive->name?></div>
   </div>
   <?php get_component('reservation')?>
   <div class="rsep"></div>
@@ -52,7 +52,7 @@
         ],
       ));
     ?>
-    <div class="title-container column content">
+    <div class="title-container column content fade">
       <div class="rsep"></div>
       <div class="big-title handwrite text-right">premium<br />rooms</div>
       <div class="r less-768"></div>
@@ -74,7 +74,7 @@
     <div class="rsep"></div>
   </div>
   <?php endif;?>
-  <?php if (is_tax('collections')): ?>
+<?php if (is_tax('collections')): ?>
   <div class="rsep"></div>
   <div class="rsep less-768"></div>
   <div class="rsep less-768"></div>

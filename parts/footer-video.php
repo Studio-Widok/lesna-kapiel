@@ -1,4 +1,4 @@
-<div class="footer-video-section content">
+<div class="footer-video-section content fade">
   <div class="flex flex-column flex-justify-center flex-align-center">
     <div class="column">
       <div class="video-wrapper rel">

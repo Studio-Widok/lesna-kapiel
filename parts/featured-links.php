@@ -4,7 +4,7 @@
   $isMobileHide768  = $isMobileHide768 ?? false;
 ?>
 
-<div class="content column-outer flex flex-1050-50 flex-768 flex-wrap">
+<div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
   <?php
     for ($i = 0; $i < count($links); $i++) {
       get_component('vertical-image-text', [

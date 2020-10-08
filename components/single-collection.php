@@ -7,7 +7,7 @@
 
   $img = get_field('image', $collection);
 ?>
-<div class="flex single-collection flex-768">
+<div class="flex single-collection flex-768 fade">
   <?php if ($isOthersTitle): ?>
   <div class="collection-others-title-mobile less-768">
     <?php pll_e('zobacz inne kolekcje')?>
