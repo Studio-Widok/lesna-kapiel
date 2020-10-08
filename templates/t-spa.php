@@ -15,7 +15,7 @@
   ));
 ?>
 
-<div class="beige-wrapper">
+<div class="beige-brown-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', array('text' => $top['text']));?>
 

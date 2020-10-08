@@ -296,10 +296,11 @@ p {
 
 //adding to the base
 
-@mixin wrapper($selector, $color) {
+@mixin wrapper($selector, $bgColor, $color) {
   #{$selector} {
     position: relative;
-    background-color: $color;
+    background-color: $bgColor;
+    color: $color;
 
     &:before {
       content: '';
@@ -310,19 +311,20 @@ p {
       width: 100%;
       margin-bottom: -1em;
       padding-bottom: 7.3404%;
-      background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$color}, 2)}');
+      background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
     }
 
     .cake-frame .drawing path {
-      stroke: $color;
+      stroke: $bgColor;
     }
   }
 }
 
-@include wrapper('.green-wrapper', $dark-green);
-@include wrapper('.dark-wrapper', $dark);
-@include wrapper('.grey-wrapper', $grey-background);
-@include wrapper('.beige-wrapper', $color-beige);
+@include wrapper('.green-wrapper', $dark-green, #fff);
+@include wrapper('.dark-wrapper', $dark, #fff);
+@include wrapper('.grey-wrapper', $grey-background, #fff);
+@include wrapper('.beige-wrapper', $color-beige, $dark-green);
+@include wrapper('.beige-brown-wrapper', $color-beige, $brown);
 
 .beige-wrapper {
   button {
@@ -330,6 +332,17 @@ p {
     color: $dark-green;
     &:hover {
       background-color: $dark-green;
+      color: #fff;
+    }
+  }
+}
+
+.beige-brown-wrapper {
+  button {
+    border-color: $brown;
+    color: $brown;
+    &:hover {
+      background-color: $brown;
       color: #fff;
     }
   }
