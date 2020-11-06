@@ -39,45 +39,23 @@ hr {
   }
 }
 
-@mixin sectionWrapper($bgColor, $color) {
-  position: relative;
-  background-color: $bgColor;
-  color: $color;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    margin-bottom: -1em;
-    padding-bottom: 7.3404%;
-    background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
-  }
-
-  .cake-frame .drawing path {
-    stroke: $bgColor;
-  }
-}
-
 .green-wrapper {
   .premium-container {
-    @include sectionWrapper($color-beige, $dark-green);
+    @include wrapper($color-beige, $dark-green, #fff);
   }
 }
 .dark-wrapper {
   .premium-container {
-    @include sectionWrapper($grey-background, #fff);
+    @include wrapper($grey-background, #fff, $dark-green);
   }
 }
 .grey-wrapper {
   .premium-container {
-    @include sectionWrapper($color-beige, $dark-green);
+    @include wrapper($color-beige, $dark-green, #fff);
   }
 }
 .beige-wrapper {
   .premium-container {
-    @include sectionWrapper($dark-green, #fff);
+    @include wrapper($dark-green, #fff, $dark-green);
   }
 }
