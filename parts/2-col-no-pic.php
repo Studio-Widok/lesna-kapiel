@@ -4,7 +4,7 @@
   $button = $button ?? false;
 ?>
 
-<div class="content col-2-no-pic">
+<div class="content col-2-no-pic fade">
   <div class="flex flex-768 flex-column-reverse-768">
     <div class="col2 column">
       <div class="text">

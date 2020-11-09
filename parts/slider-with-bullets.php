@@ -5,7 +5,7 @@
 ?>
 
 <?php if (!empty($slides)) {?>
-<div class="slider-with-bullets" id="slider-with-bullets-<?=$__index?>">
+<div class="slider-with-bullets fade" id="slider-with-bullets-<?=$__index?>">
   <div class="content">
     <div class="slider-bullets column-768 <?=$pic_right ? 'pic-right' : ''?>">
       <div class="small-title"><?=$title?></div>

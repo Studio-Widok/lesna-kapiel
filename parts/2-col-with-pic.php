@@ -9,7 +9,7 @@
   $isTextOverlap = $isTextOverlap ?? false;
 ?>
 
-<div class="content col-2-with-pic <?=$alt_layout ? 'alt-layout' : ''?>">
+<div class="content col-2-with-pic fade <?=$alt_layout ? 'alt-layout' : ''?>">
   <div
     class="flex flex-768 <?=$pic_right ? 'pic-right flex-column-reverse-768' : ''?>">
 

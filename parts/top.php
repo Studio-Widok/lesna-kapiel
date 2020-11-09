@@ -13,14 +13,14 @@
     style="background-image: url('<?=$bg['sizes']['large']?>')">
   </div>
   <?php if ($show_logo) {?>
-  <div id="top-logo-wrap">
+  <div id="top-logo-wrap" class="fade">
     <img src="<?=get_template_directory_uri()?>/media/logo.svg" alt="logo"
       id="top-logo-img">
     <div id="top-logo-text">leśna kąpiel</div>
     <div id="top-logo-subtitle">slow life apartments</div>
   </div>
   <?php }if ($show_title) {?>
-  <div id="top-title" class="content column-double <?=$text_align?>">
+  <div id="top-title" class="content column-double fade <?=$text_align?>">
     <span><?=$title?></span>
   </div>
   <?php }?>
