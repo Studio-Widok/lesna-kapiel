@@ -11,14 +11,9 @@
     <div class="col2 column">
       <div class="small-title"><?=$title?></div>
       <div class="r"></div>
-      <div class="facilities-icons-container">
-        <?php for ($i = 0; $i < count($facilities); $i++) {?>
-        <div class="flex flex-align-center facilities-icon-single">
-          <img src="<?=$facilities[$i]['icon']['sizes']['medium']?>" />
-          <?=$facilities[$i]['text']?>
-        </div>
-        <?php }?>
-      </div>
+
+      <?php get_component('facilities-icons', ['facilities' => $facilities]);?>
+
       <div class="r"></div>
       <div class="r"></div>
       <?php for ($i = 0; $i < count($meals); $i++) {?>

@@ -7,17 +7,17 @@
   $footer   = get_field('footer', 2);
 
   get_part('nav');
-  get_part('top', array(
+  get_part('top', [
     'show_title' => true,
     'bg'         => $top['top_image'],
     'text_align' => $top['align'],
     'title'      => $top['title'],
-  ));
+  ]);
 ?>
 
 <div class="beige-brown-wrapper">
   <div class="rsep"></div>
-  <?php get_part('text-full', array('text' => $top['text']));?>
+  <?php get_part('text-full', ['text' => $top['text']]);?>
 
   <?php for ($i = 0; $i < count($sections) - 1; $i++) {?>
 
@@ -25,16 +25,17 @@
 
   <?php
     $term = get_term_by('slug', 'sauna', 'tags');
-      get_part('2-col-with-pic', array(
-        'title'     => $sections[$i]['title'],
-        'text'      => $sections[$i]['text'],
-        'image'     => $sections[$i]['image'],
-        'button'    => array(
+      get_part('2-col-with-pic', [
+        'facilities' => $sections[$i]['list'],
+        'title'      => $sections[$i]['title'],
+        'text'       => $sections[$i]['text'],
+        'image'      => $sections[$i]['image'],
+        'button'     => [
           'text' => $sections[$i]['link']['text'],
           'link' => get_link_url($sections[$i]['link']),
-        ),
-        'pic_right' => $i % 2,
-      ));
+        ],
+        'pic_right'  => $i % 2,
+      ]);
   }?>
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -50,16 +51,17 @@
     <?php
       $term = get_term_by('slug', 'sauna', 'tags');
       $last = count($sections) - 1;
-      get_part('2-col-with-pic', array(
-        'title'     => $sections[$last]['title'],
-        'text'      => $sections[$last]['text'],
-        'image'     => $sections[$last]['image'],
-        'button'    => array(
+      get_part('2-col-with-pic', [
+        'facilities' => $sections[$last]['list'],
+        'title'      => $sections[$last]['title'],
+        'text'       => $sections[$last]['text'],
+        'image'      => $sections[$last]['image'],
+        'button'     => [
           'text' => $sections[$last]['link']['text'],
           'link' => get_link_url($sections[$last]['link']),
-        ),
-        'pic_right' => $last % 2,
-      ));
+        ],
+        'pic_right'  => $last % 2,
+      ]);
     ?>
   </div>
   <div class="rsep"></div>
@@ -74,9 +76,9 @@
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
-    get_part('footer-video', array(
+    get_part('footer-video', [
       'source' => $footer['video'],
-      'text'   => $footer['text']));
+      'text'   => $footer['text']]);
   ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>

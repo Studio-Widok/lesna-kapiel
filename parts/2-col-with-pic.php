@@ -1,4 +1,5 @@
 <?php
+  $facilities    = $facilities ?? [];
   $title         = $title ?? '';
   $text          = $text ?? '';
   $image         = $image ?? false;
@@ -20,13 +21,17 @@
         </div>
       </div>
     </div>
+
     <div class="col2 column
       <?php if ($isTextOverlap) {echo 'column-overlap';}?>">
       <?php if ($title): ?>
       <div class="big-title handwrite"><?=$title?></div>
       <?php endif;?>
+
       <div class="rmin more-768"></div>
       <div class="rmin"></div>
+      <?php get_component('facilities-icons', ['facilities' => $facilities]);?>
+
       <div class="text">
         <p><?=$text?></p>
       </div>
