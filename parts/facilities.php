@@ -6,7 +6,7 @@
   $link       = $link ?? '';
 ?>
 
-<div class="content facilities-container">
+<div class="content facilities-container fade">
   <div class="flex flex-1050">
     <div class="col2 column">
       <div class="small-title"><?=$title?></div>

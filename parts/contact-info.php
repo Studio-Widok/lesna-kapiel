@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content fade">
   <div class="flex flex-align-end">
     <div class="col2 column">
       <div class="uppercase"><?php pll_e('leśna kąpiel')?></div>

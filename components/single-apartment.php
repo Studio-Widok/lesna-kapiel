@@ -5,7 +5,7 @@
   $price = $price ?? '';
 ?>
 
-<div class="col2 column">
+<div class="col2 column fade">
   <a href="<?=$link?>" class="flex flex-column flex-align-center">
     <div class="single-apartment-container image-wrapper-full-width">
       <div class="cake cake-3-4" style="background-image: url(<?=$image?>)">
