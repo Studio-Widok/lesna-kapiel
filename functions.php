@@ -184,7 +184,5 @@ function viewport_meta() {?>
     echo "<style> .term-description-wrap { display:none; } </style>";
   }
 
-  add_action("collections_edit_form", 'hide_description_row');
-  add_action("collections_add_form", 'hide_description_row');
   add_action("tags_edit_form", 'hide_description_row');
 add_action("tags_add_form", 'hide_description_row');
