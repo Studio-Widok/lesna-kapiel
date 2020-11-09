@@ -33,7 +33,7 @@
     get_component('fixed-link', array('text' => pll__('see_apartments'), 'link' => get_tag_link($termId)));?>
     <div class="rsep"></div>
     <?php for ($i = 0; $i < count($sections); $i++) {?>
-<?php get_part('2-col-with-pic', [
+    <?php get_part('2-col-with-pic', [
     'image'         => $sections[$i]['image'],
     'title'         => $sections[$i]['title'],
     'text'          => $sections[$i]['text'],
@@ -64,8 +64,8 @@
       'links' => $featured_links,
   ]);?>
   <div class="rsep"></div>
-  <?php get_component('reservation')?>
-<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
+  <?php get_component('reservation', ['title' => 'wybierz termin', 'text' => 'lorem ipsum lorem ipsum, lorem ipsum'])?>
+  <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 </div>
 <div class="green-wrapper">
   <?php

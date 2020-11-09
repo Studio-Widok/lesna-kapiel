@@ -74,7 +74,7 @@
     <div class="rsep"></div>
   </div>
   <?php endif;?>
-<?php if (is_tax('collections')): ?>
+  <?php if (is_tax('collections')): ?>
   <div class="rsep"></div>
   <div class="rsep less-768"></div>
   <div class="rsep less-768"></div>
@@ -95,12 +95,10 @@
   <div class="content">
     <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
   </div>
-
   <div class="rsep"></div>
-
   <?php get_part('featured-links', ['links' => $featured_links]);?>
-
   <div class="rsep"></div>
+  <?php get_component('reservation', ['title' => 'wybierz termin', 'text' => 'lorem ipsum lorem ipsum, lorem ipsum'])?>
   <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 </div>
 <div class="green-wrapper">

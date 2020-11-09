@@ -3,8 +3,14 @@
   $text  = $text ?? '';
 ?>
 
-<div class="reservation-container-out fade">
-  <div class="reservation-container">
+<div class="text-center fade">
+  <div class="big-title handwrite"><?=$title?></div>
+  <div class="r"></div>
+  <div class="reservation-container-out">
+    <div class="reservation-container">
+    </div>
+    <button class="reservation-button">REZERWUJ</button>
   </div>
-  <button class="reservation-button">REZERWUJ</button>
+  <div class="rmin"></div>
+  <div class="uppercase"><?=$text?></div>
 </div>
