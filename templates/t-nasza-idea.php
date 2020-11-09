@@ -1,7 +1,7 @@
 <?php /*Template Name: nasza idea*/
   get_header();
-  $footer = get_field('footer', 2);
-  $top    = get_field('top')['top'];
+  $video = get_field('video');
+  $top   = get_field('top')['top'];
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
@@ -20,8 +20,8 @@
 <div class="green-wrapper">
   <?php
     get_part('footer-video', array(
-      'source' => $footer['video'],
-      'text'   => $footer['text']));
+      'source' => $video['video'],
+      'text'   => $video['text']));
   ?>
   <div class="rsep"></div>
   <?php $section = get_field('section');
