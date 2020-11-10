@@ -14,8 +14,10 @@
         <?php for ($i = 0; $i < count($slides); $i++) {?>
         <div class="bullet col2">
           <div class="flex flex-align-center">
+            <?php if (!empty($slides[$i]['icon'])) {?>
             <img src="<?=$slides[$i]['icon']['sizes']['medium']?>"
               class="slide-icon">
+            <?php }?>
             <div class="bullet-title"><?=$slides[$i]['title']?></div>
           </div>
         </div>
@@ -37,8 +39,10 @@
           <div class="col2 column single-slide-desc">
             <div class="r less-1050"></div>
             <div class="flex flex-align-center">
+              <?php if (!empty($slides[$i]['icon'])) {?>
               <img src="<?=$slides[$i]['icon']['sizes']['medium']?>"
                 class="slide-icon">
+              <?php }?>
               <div class="slide-title"><?=$slides[$i]['title']?></div>
             </div>
             <div class="rmik"></div>
