@@ -14,8 +14,12 @@
     <div class="col2">
       <div class="rmin"></div>
       <div class="uppercase text-center text-bold"><?=$title?></div>
+      <?php
+        if (!empty($price)) {
+        ?>
       <hr />
-      <div class="text-center">from <?=$price?>,-</div>
+      <div class="text-center"><?=pll__('od')?><?=$price?>,-</div>
+      <?php }?>
     </div>
   </a>
   <div class="r less-768"></div>

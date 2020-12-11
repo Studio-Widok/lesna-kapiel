@@ -16,18 +16,19 @@
   <div id="top-logo-wrap" class="fade">
     <img src="<?=get_template_directory_uri()?>/media/logo.svg" alt="logo"
       id="top-logo-img">
-    <div id="top-logo-text">leśna kąpiel</div>
-    <div id="top-logo-subtitle">slow life apartments</div>
+    <div id="top-logo-text"><?=get_field('title', pll_get_post(2))?></div>
+    <div id="top-logo-subtitle"><?=get_field('subtitle', pll_get_post(2))?>
+    </div>
   </div>
   <?php }if ($show_title) {?>
   <div id="top-title" class="content column-double fade <?=$text_align?>">
     <span><?=$title?></span>
   </div>
   <?php }?>
-<?php if ($isShowReservation) {?>
+  <?php if ($isShowReservation) {?>
   <div class="rsep"></div>
   <?php get_component('reservation');?>
-<?php }?>
+  <?php }?>
 
   <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">

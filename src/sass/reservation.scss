@@ -1,9 +1,10 @@
 .reservation-container-out {
   width: 600px;
-  max-width: 65%;
+  max-width: 65vw;
   margin: 0 auto;
   position: relative;
   display: flex;
+
   @media (max-width: 1050px) {
     flex-wrap: wrap;
   }
@@ -12,6 +13,7 @@
     width: 500px;
     border: 1px solid #fff;
     border-right: none;
+
     @media (max-width: 1050px) {
       width: 100%;
       border-bottom: none;
@@ -21,6 +23,8 @@
 
   .reservation-button {
     position: relative;
+    text-transform: uppercase;
+
     @media (max-width: 1050px) {
       width: 100%;
       padding: 1.5em;

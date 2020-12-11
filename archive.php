@@ -17,7 +17,7 @@
   </div>
   <?php get_component('reservation')?>
   <div class="rsep"></div>
-  <?php get_part('text-full', array('text' => get_field('top_text', $archive)));?>
+  <?php get_part('text-full', ['text' => get_field('top_text', $archive)]);?>
   <div class="rsep"></div>
   <div class="content flex flex-768">
     <?php
@@ -39,7 +39,7 @@
   <?php if (is_tax('tags')): ?>
   <div class="premium-container">
     <?php
-      $premiumApartments = get_posts(array(
+      $premiumApartments = get_posts([
         'numberposts' => -1,
         'post_type'   => 'apartment',
         'order'       => 'DSC',
@@ -50,11 +50,12 @@
             'terms'    => 'premium',
           ],
         ],
-      ));
+      ]);
     ?>
     <div class="title-container column content fade">
       <div class="rsep"></div>
-      <div class="big-title handwrite text-right">premium<br />rooms</div>
+      <div class="big-title handwrite text-right">
+        <?=pll__('premium')?><br /><?=pll__('rooms')?></div>
       <div class="r less-768"></div>
       <div class="premium-text"><?php pll_e("premium_text");?></div>
     </div>

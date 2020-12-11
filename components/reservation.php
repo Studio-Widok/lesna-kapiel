@@ -9,7 +9,7 @@
   <div class="reservation-container-out">
     <div class="reservation-container">
     </div>
-    <button class="reservation-button">REZERWUJ</button>
+    <button class="reservation-button"><?=pll__('rezerwuj')?></button>
   </div>
   <div class="rmin"></div>
   <div class="uppercase"><?=$text?></div>
