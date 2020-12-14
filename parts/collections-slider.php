@@ -8,7 +8,7 @@
   ]);
 ?>
 
-<div class="collections-slider fade">
+<div class="collections-slider">
 
   <div class="slider">
     <?php
