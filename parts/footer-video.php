@@ -13,7 +13,7 @@
           </div>
         </div>
         <video id="footer-video" data-paused="true" src="<?=$source['url']?>"
-          loop></video>
+          loop autoplay muted></video>
       </div>
     </div>
     <div class="full-width column">
