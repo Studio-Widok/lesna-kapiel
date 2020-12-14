@@ -69,10 +69,13 @@
               "visibility": "on"
             },
             {
-              "hue": "#69ff00"
+              "hue": "#243e1a"
             },
             {
               "saturation": "-63"
+            },
+            {
+              "gamma": "0.6"
             }
           ]
         },
@@ -224,7 +227,7 @@
           "featureType": "road.local",
           "elementType": "geometry",
           "stylers": [{
-              "color": "#293d31"
+              "color": "#3b5d49"
             },
             {
               "lightness": "3"

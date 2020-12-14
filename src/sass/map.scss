@@ -1,15 +1,6 @@
 #map-wrapper {
   position: relative;
 
-  .overlay {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    background-color: $green-overlay;
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
   #gmap {
     z-index: 2;
     min-height: 85vh;
