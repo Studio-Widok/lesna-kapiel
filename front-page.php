@@ -13,7 +13,7 @@
   ]);
 ?>
 
-<div class="green-wrapper">
+<div class=" green-wrapper">
   <div class="fixed-link-container">
     <?php get_component('fixed-link', ['text' => get_the_title(pll_get_post(100)), 'link' => get_the_permalink(pll_get_post(100))]);?>
     <div class="rsep"></div>
