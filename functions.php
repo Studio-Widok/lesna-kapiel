@@ -180,6 +180,15 @@ function viewport_meta() {?>
     ])[0]->term_id;
   }
 
+  function get_mask_color($maskColor) {
+    $colors = [
+      'green' => '1e352a',
+      'beige' => 'c8baa9',
+      'grey'  => '8a9992',
+    ];
+    return $colors[$maskColor];
+  }
+
   function hide_description_row() {
     echo "<style> .term-description-wrap { display:none; } </style>";
   }

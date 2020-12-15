@@ -22,9 +22,10 @@
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
       'link'       => $facilities['link'],
+      'maskColor'  => get_mask_color("green"),
     ]);
   ?>
-<?php
+  <?php
   $collections = get_the_terms($post, 'collections');
   if (!empty($collections)) {
   ?>
@@ -41,6 +42,7 @@
       get_component('single-collection', [
           'collection' => $collections[0],
           'is_current' => true,
+          'maskColor'  => get_mask_color(get_field("colors", $collections[0])),
         ]);
       ?>
   </div>
@@ -53,7 +55,10 @@
 
   <div class="rsep"></div>
 
-  <?php get_part('featured-links', ['links' => $featured_links]);?>
+  <?php get_part('featured-links', [
+      'links'     => $featured_links,
+      'maskColor' => get_mask_color('green'),
+  ]);?>
 
   <div class="rsep"></div>
   <div class="rsep"></div>

@@ -97,7 +97,10 @@
     <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
   </div>
   <div class="rsep"></div>
-  <?php get_part('featured-links', ['links' => $featured_links]);?>
+  <?php get_part('featured-links', [
+      'links'     => $featured_links,
+      'maskColor' => get_mask_color("grey"),
+  ]);?>
   <div class="rsep"></div>
   <?php get_component('reservation', ['title' => 'wybierz termin', 'text' => 'lorem ipsum lorem ipsum, lorem ipsum'])?>
   <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>

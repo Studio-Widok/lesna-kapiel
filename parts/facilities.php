@@ -4,6 +4,7 @@
   $meals      = $meals ?? [];
   $image      = $image ?? '';
   $link       = $link ?? '';
+  $maskColor  = $maskColor ?? '1e352a';
 ?>
 
 <div class="content facilities-container fade">
@@ -25,7 +26,7 @@
     </div>
     <div class="col2 column more-1050">
       <div class="cake cake-3-4" style="background-image: url(<?=$image?>)">
-        <?php get_component('cake-frame');?>
+        <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
       </div>
     </div>
   </div>

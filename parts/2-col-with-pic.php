@@ -7,6 +7,7 @@
   $pic_right     = $pic_right ?? false;
   $alt_layout    = $alt_layout ?? false;
   $isTextOverlap = $isTextOverlap ?? false;
+  $maskColor     = $maskColor ?? '1e352a';
 ?>
 
 <div class="content col-2-with-pic fade <?=$alt_layout ? 'alt-layout' : ''?>">
@@ -17,7 +18,7 @@
       <div class="image-wrapper">
         <div class="cake cake-3-4"
           style="background-image: url(<?=$image['sizes']['large']?>)">
-          <?php get_component('cake-frame');?>
+          <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
         </div>
       </div>
     </div>

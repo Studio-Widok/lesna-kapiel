@@ -30,6 +30,7 @@
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
       'link'       => $facilities['link'],
+      'maskColor'  => get_mask_color("green"),
     ]);
   ?>
 </div>

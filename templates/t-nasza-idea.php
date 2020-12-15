@@ -29,6 +29,7 @@
       'image'      => $section['image'],
       'text'       => $section['text'],
       'alt_layout' => true,
+      'maskColor'  => get_mask_color('green'),
   ]);?>
   <div class="rsep"></div>
 </div>

@@ -24,6 +24,7 @@
         'links'            => $nearby,
         'isMobileHide1050' => false,
         'isMobileHide768'  => true,
+        'maskColor'        => get_mask_color('green'),
       ]);
     ?>
     <div class="text-center less-768">
@@ -54,6 +55,7 @@
         'slides'    => $on_the_spot[$i]['slides'],
         'title'     => $on_the_spot[$i]['title'],
         'pic_right' => $i % 2,
+        'maskColor' => get_mask_color("grey"),
       ]);
     ?>
   <div class="rsep"></div>

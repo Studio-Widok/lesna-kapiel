@@ -35,6 +35,7 @@
           'link' => get_link_url($sections[$i]['link']),
         ],
         'pic_right'  => $i % 2,
+        'maskColor'  => get_mask_color('beige'),
       ]);
   }?>
   <div class="rsep"></div>
@@ -61,6 +62,7 @@
           'link' => get_link_url($sections[$last]['link']),
         ],
         'pic_right'  => $last % 2,
+        'maskColor'  => get_mask_color('grey'),
       ]);
     ?>
   </div>

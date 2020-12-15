@@ -44,6 +44,7 @@
     'alt_layout'    => true,
     'pic_right'     => $i % 2,
     'isTextOverlap' => $i === 1,
+    'maskColor'     => get_mask_color('green'),
 ]);?>
     <div class="rsep less-768"></div>
     <?php }?>
@@ -61,7 +62,8 @@
 <div class="grey-wrapper">
   <div class="rsep"></div>
   <?php get_part('featured-links', [
-      'links' => $featured_links,
+      'links'     => $featured_links,
+      'maskColor' => get_mask_color("grey"),
   ]);?>
   <div class="rsep"></div>
   <?php get_component('reservation', ['title' => 'wybierz termin', 'text' => 'lorem ipsum lorem ipsum, lorem ipsum'])?>

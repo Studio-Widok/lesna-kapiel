@@ -1,6 +1,7 @@
 <?php
   $content  = $content ?? [];
   $iterator = $iterator ?? '';
+  $maskColor = $maskColor ?? '1e352a';
 ?>
 
 <div class="col3 column-inner vertical-image-text
@@ -16,7 +17,7 @@
   <div class="image-wrapper-full-width">
     <div class="cake cake-3-4"
       style="background-image: url(<?=$content['image']['sizes']['large']?>)">
-      <?php get_component('cake-frame');?>
+      <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
     </div>
   </div>
   <div class="r"></div>

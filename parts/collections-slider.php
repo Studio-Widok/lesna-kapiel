@@ -24,6 +24,7 @@
             get_component('single-collection', [
                 'collection'    => $collections[$i],
                 'isOthersTitle' => $isOthersTitle,
+                'maskColor'     => get_mask_color($color),
               ]);
             ?>
         </div>

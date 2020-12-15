@@ -2,6 +2,7 @@
   $slides    = $slides ?? [];
   $title     = $title ?? '';
   $pic_right = $pic_right ?? false;
+  $maskColor = $maskColor ?? '1e352a';
 ?>
 
 <?php if (!empty($slides)) {?>
@@ -33,7 +34,7 @@
           <div class="col2 column">
             <div class="cake cake-3-4"
               style="background-image: url('<?=$slides[$i]['image']['sizes']['medium']?>');">
-              <?php get_component('cake-frame');?>
+              <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
             </div>
           </div>
           <div class="col2 column single-slide-desc">
