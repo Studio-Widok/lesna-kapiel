@@ -28,13 +28,14 @@
   <?php
   $collections = get_the_terms($post, 'collections');
   if (!empty($collections)) {
+    $color = get_field("colors", $collections[0]);
   ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
 
-<div class="<?=get_field("colors", $collections[0])?>-wrapper">
+<div class="<?=$color?>-wrapper">
   <div class="r"></div>
   <div class="overlap"></div>
   <div class="content">
@@ -42,7 +43,7 @@
       get_component('single-collection', [
           'collection' => $collections[0],
           'is_current' => true,
-          'maskColor'  => get_mask_color(get_field("colors", $collections[0])),
+          'maskColor'  => get_mask_color($color),
         ]);
       ?>
   </div>
@@ -57,7 +58,7 @@
 
   <?php get_part('featured-links', [
       'links'     => $featured_links,
-      'maskColor' => get_mask_color('green'),
+      'maskColor' => get_mask_color($color),
   ]);?>
 
   <div class="rsep"></div>
