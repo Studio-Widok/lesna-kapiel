@@ -63,6 +63,7 @@
         ],
         'pic_right'  => $last % 2,
         'maskColor'  => get_mask_color('grey'),
+        'isOverlap'  => true,
       ]);
     ?>
   </div>
