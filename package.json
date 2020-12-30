@@ -4,22 +4,22 @@
   "description": "",
   "main": "index.php",
   "scripts": {
-    "watch": "./node_modules/.bin/gulp"
+    "watch": "cd node_modules/.bin && gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^1.2.0",
-    "browserify": "^16.5.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "cash-dom": "^8.0.0",
+    "cash-dom": "^8.1.0",
     "masonry-layout": "^4.2.2",
     "smoothscroll-polyfill": "^0.4.4",
     "widok-fade-queue": "git+https://github.com/weterynarzfred/widok-fade-queue.git"

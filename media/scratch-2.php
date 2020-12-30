@@ -14,12 +14,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
   preserveAspectRatio="none">
   <defs>
-    <style type="text/css">
-    .f {
-      fill: #fff
-    }
-
-    </style>
     <mask id="scratch">
       <image href="<?=$url?>/maska<?=$_GET['mask']?>.jpg" width="100"
         height="100" preserveAspectRatio="none" />
