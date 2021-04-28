@@ -54,6 +54,10 @@
       margin-top: 125%;
     }
 
+    @media (max-width: 450px) {
+      margin-top: 112%;
+    }
+
     .arrow-left,
     .arrow-right {
       transition: 0.3s;
