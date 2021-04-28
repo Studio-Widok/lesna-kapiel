@@ -1,7 +1,8 @@
 <?php /*Template Name: nasza idea*/
   get_header();
-  $video = get_field('video');
-  $top   = get_field('top')['top'];
+  $video  = get_field('video');
+  $top    = get_field('top')['top'];
+  $footer = get_field('footer', 2);
   get_part('nav');
   get_part('top', array(
     'show_title' => true,
