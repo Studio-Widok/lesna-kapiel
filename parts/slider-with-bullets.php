@@ -31,7 +31,7 @@
       <div class="single-slide">
         <div
           class="flex flex-wrap flex-768 flex-align-end <?=$pic_right ? 'pic-right flex-justify-end' : ''?>">
-          <div class="col2 column">
+          <div class="col2 column single-slide-img">
             <div class="cake cake-3-4"
               style="background-image: url('<?=$slides[$i]['image']['sizes']['medium']?>');">
               <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>

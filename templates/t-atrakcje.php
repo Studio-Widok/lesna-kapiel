@@ -5,17 +5,17 @@
   $link   = get_field('link')['link'];
   $footer = get_field('footer', 2);
   get_part('nav');
-  get_part('top', array(
+  get_part('top', [
     'show_title' => true,
     'bg'         => $top['top_image'],
     'text_align' => $top['align'],
     'title'      => $top['title'],
-  ));
+  ]);
 ?>
 
 <div class="green-wrapper">
   <div class="rsep"></div>
-  <?php get_part('text-full', array('text' => $top['text']));?>
+  <?php get_part('text-full', ['text' => $top['text']]);?>
   <div class="rsep"></div>
 
   <div class="content">
@@ -45,7 +45,7 @@
   <div class="content">
     <?php get_component('title', ['title' => pll__('what_in_spot')]);?>
     <div class="rsep"></div>
-    <?php get_part('text-full', array('text' => get_field('on_the_spot_text')));?>
+    <?php get_part('text-full', ['text' => get_field('on_the_spot_text')]);?>
   </div>
   <div class="rsep"></div>
   <?php
@@ -72,17 +72,14 @@
 <?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
 <div class="green-wrapper">
   <?php
-    get_part('footer-video', array(
+    get_part('footer-video', [
       'source' => $footer['video'],
-      'text'   => $footer['text']));
+      'text'   => $footer['text']]);
   ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
 <?php get_part('map-block');?>
-<div class="green-wrapper green-wrapper-footer">
-  <div class="rmin"></div>
-</div>
 
 <?php get_footer();?>

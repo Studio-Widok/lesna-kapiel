@@ -80,8 +80,7 @@
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
+
 <?php get_part('map-block');?>
-<div class="green-wrapper green-wrapper-footer">
-  <div class="rmin"></div>
-</div>
+
 <?php get_footer();?>

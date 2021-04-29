@@ -7,6 +7,13 @@
     }
   }
 
+  .single-slide-img {
+    @media (max-width: 768px) {
+      max-width: 30em;
+      margin: 0 auto;
+    }
+  }
+
   .slide-icon {
     width: 3.5em;
     margin-right: 2em;
@@ -37,9 +44,11 @@
     right: 0;
     width: 50%;
     z-index: 1;
+
     &.pic-right {
       left: 3em;
       right: auto;
+
       @media (max-width: 768px) {
         left: 0;
       }
@@ -62,6 +71,7 @@
 
           &:after {
             content: '';
+            position: absolute;
             display: block;
             bottom: -4px;
             left: 0;

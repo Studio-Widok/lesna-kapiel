@@ -1,14 +1,22 @@
 .vertical-image-text {
   transition: height 0.5s;
+
   @media (max-width: 768px) {
+    .image-wrapper-full-width {
+      max-width: 30em;
+      margin: 0 auto;
+    }
+
     &.vertical-image-more-768 {
       height: 0;
       overflow: hidden;
     }
+
     &.vertical-image-more-768.show-more {
       overflow: visible;
     }
   }
+
   .text-link {
     .additional-link-icon {
       width: 2em;

@@ -9,6 +9,7 @@ hr {
 .archive-top {
   position: relative;
   min-height: 70vh;
+
   .archive-top-bg {
     position: absolute;
     top: 0;
@@ -23,6 +24,7 @@ hr {
 .single-apartment-container {
   overflow: hidden;
   cursor: pointer;
+
   .cake {
     transition: transform 0.3s;
 
@@ -30,10 +32,18 @@ hr {
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: 768px) {
+    &.image-wrapper-full-width {
+      max-width: 30em;
+      margin: 0 auto;
+    }
+  }
 }
 
 .premium-text {
   width: 33.3333%;
+
   @media (max-width: 768px) {
     width: 100%;
   }
