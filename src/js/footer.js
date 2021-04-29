@@ -5,9 +5,11 @@ const videoOverlay = $('#footer-video-overlay');
 const video = document.getElementById('footer-video');
 let isPaused = false;
 let isMuted = true;
+let isInteracted = false;
 
 if (video) {
   videoOverlay.on('click', () => {
+    isInteracted = true;
     if (video.paused) {
       isPaused = false;
       video.play();
@@ -26,9 +28,10 @@ if (video) {
 
   createScrollItem(videoOverlay, {
     onScroll: scrollItem => {
-      if (scrollItem.isOnScreen && !isPaused) {
+      if (scrollItem.isOnScreen && !isInteracted) {
         video.play();
         videoOverlay.addClass('non-active');
+        isInitialized = true;
       } else {
         video.pause();
         videoOverlay.removeClass('non-active');
