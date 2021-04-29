@@ -45,14 +45,13 @@
         for ($i = 0; $i < count($collections); $i++) {
         ?>
     <div class="slider-bullet"><?=($i + 1)?></div>
-    <?php
-      }
-      }
-    ?>
+    <?php }}?>
   </div>
 
-  <?php get_component('slider-arrows', [
+  <?php
+    get_component('slider-arrows', [
       'next_arrow_text' => pll__('next_collection'),
-  ]);?>
+    ]);
+  ?>
 
 </div>

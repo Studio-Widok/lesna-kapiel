@@ -9,9 +9,11 @@
 ?>
 
 <div id="top">
-  <div id="top-bg" class="<?php if ($isBgFixed) {echo 'bg-fixed';}?>"
+
+  <div id="top-bg" class="<?=$isBgFixed ? 'bg-fixed' : ''?>"
     style="background-image: url('<?=$bg['sizes']['large']?>')">
   </div>
+
   <?php if ($show_logo) {?>
   <div id="top-logo-wrap" class="fade">
     <img src="<?=get_template_directory_uri()?>/media/logo.svg" alt="logo"
@@ -24,17 +26,18 @@
   <div id="top-title" class="content column-double fade <?=$text_align?>">
     <span><?=$title?></span>
   </div>
-  <?php }?>
-  <?php if ($isShowReservation) {?>
+  <?php }if ($isShowReservation) {?>
   <div class="rsep"></div>
-  <?php get_component('reservation');?>
-  <?php }?>
+  <?php
+    get_component('reservation');
+    }
+  ?>
 
   <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
       <path d="M5 0L5 17" stroke-width="1.5" stroke="#fff" />
       <path d="M5 27L1.5 17L8.5 17z" stroke-width="0" fill="#fff" />
     </svg>
-
   </div>
+
 </div>

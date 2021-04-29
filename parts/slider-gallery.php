@@ -27,8 +27,10 @@
       <?php for ($i = 0; $i < count($gallery); $i++) {?>
       <div class="gallery-item column">
         <div class="gallery-item-in" data-iterator="<?=$i?>">
-          <div class="cake"
-            style="padding-bottom: <?=$gallery[$i]['height'] / $gallery[$i]['width'] * 100?>%; background-image: url('<?=$gallery[$i]['sizes']['medium']?>');">
+          <div class="cake" style="
+              padding-bottom: <?=$gallery[$i]['height'] / $gallery[$i]['width'] * 100?>%;
+              background-image: url('<?=$gallery[$i]['sizes']['medium']?>');
+            ">
           </div>
         </div>
       </div>

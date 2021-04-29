@@ -7,7 +7,7 @@
   $mail      = get_field('contact_mail', pll_get_post(25));
 ?>
 
-<nav id="nav" class="<?php if ($isDark) {echo 'dark';}?>">
+<nav id="nav" class="<?=$isDark ? 'dark' : ''?>">
 
   <div id="nav-links">
     <?php if (!is_page(2)) {?>
@@ -47,12 +47,10 @@
         foreach ($langs as $lang) {
         ?>
       <a href="<?=$lang['url']?>" class="lang-link"><?=$lang['slug']?></a>
-      <?php
-        }
-      ?>
+      <?php }?>
     </div>
 
-    <div class=""></div>
+    <div></div>
     <div id="nav-o-links">
       <?php
         if (!is_page(2)) {
@@ -97,4 +95,5 @@
       </div>
     </div>
   </div>
+
 </nav>

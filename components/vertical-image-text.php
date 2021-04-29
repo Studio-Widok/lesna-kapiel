@@ -1,6 +1,6 @@
 <?php
-  $content  = $content ?? [];
-  $iterator = $iterator ?? '';
+  $content   = $content ?? [];
+  $iterator  = $iterator ?? '';
   $maskColor = $maskColor ?? '1e352a';
 ?>
 

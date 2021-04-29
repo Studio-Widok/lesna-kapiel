@@ -3,7 +3,6 @@
   if (empty($facilities)) {
     return;
   }
-
 ?>
 
 <div class="facilities-icons-container">

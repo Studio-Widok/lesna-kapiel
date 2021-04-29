@@ -17,12 +17,11 @@
 
 <div class="beige-brown-wrapper">
   <div class="rsep"></div>
-  <?php get_part('text-full', ['text' => $top['text']]);?>
-
-  <?php for ($i = 0; $i < count($sections) - 1; $i++) {?>
-
+  <?php
+    get_part('text-full', ['text' => $top['text']]);
+    for ($i = 0; $i < count($sections) - 1; $i++) {
+    ?>
   <div class="rsep"></div>
-
   <?php
     $term = get_term_by('slug', 'sauna', 'tags');
       get_part('2-col-with-pic', [
@@ -37,7 +36,8 @@
         'pic_right'  => $i % 2,
         'maskColor'  => get_mask_color('beige'),
       ]);
-  }?>
+    }
+  ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -45,6 +45,7 @@
   <div class="rsep less-768"></div>
   <div class="rsep less-768"></div>
 </div>
+
 <div class="grey-wrapper">
   <div class="r"></div>
   <div class="overlap"></div>
@@ -75,7 +76,13 @@
   </div>
   <div class="rmik"></div>
 </div>
-<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
+
+<?php
+  get_part('full-width-image', [
+    'image' => $footer['image'], 'ratio' => 16 / 9,
+  ]);
+?>
+
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
@@ -87,7 +94,8 @@
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
-<?php get_part('map-block');?>
 
-<?php get_footer();
+<?php
+  get_part('map-block');
+  get_footer();
 ?>

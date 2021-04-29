@@ -1,9 +1,11 @@
 <?php /*Template Name: atrakcje*/
   get_header();
+
   $top    = get_field('top')['top'];
   $nearby = get_field('nearby');
   $link   = get_field('link')['link'];
   $footer = get_field('footer', 2);
+
   get_part('nav');
   get_part('top', [
     'show_title' => true,
@@ -59,9 +61,7 @@
       ]);
     ?>
   <div class="rsep"></div>
-  <?php
-    }
-  ?>
+  <?php }?>
   <div class="text-center">
     <a href="<?=get_link_url($link)?>">
       <button><?=$link['text']?></button>
@@ -69,7 +69,11 @@
   </div>
   <div class="rsep"></div>
 </div>
-<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
+<?php
+  get_part('full-width-image', [
+    'image' => $footer['image'], 'ratio' => 16 / 9,
+  ]);
+?>
 <div class="green-wrapper">
   <?php
     get_part('footer-video', [
@@ -80,6 +84,8 @@
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
-<?php get_part('map-block');?>
 
-<?php get_footer();?>
+<?php
+  get_part('map-block');
+  get_footer();
+?>

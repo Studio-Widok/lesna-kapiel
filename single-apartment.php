@@ -1,8 +1,11 @@
 <?php get_header();
-  get_part('nav');
+
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
+
+  get_part('nav');
 ?>
+
 <div class="green-wrapper">
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -12,7 +15,8 @@
       'title'   => get_the_title(),
       'text'    => $slider['text'],
       'gallery' => $slider['gallery'],
-  ]);?>
+    ]);
+  ?>
   <div class="rsep"></div>
   <?php
     $facilities = get_field('facilities');
@@ -24,12 +28,10 @@
       'link'       => $facilities['link'],
       'maskColor'  => get_mask_color("green"),
     ]);
-  ?>
-  <?php
-  $collections = get_the_terms($post, 'collections');
-  if (!empty($collections)) {
-    $color = get_field("colors", $collections[0]);
-  ?>
+    $collections = get_the_terms($post, 'collections');
+    if (!empty($collections)) {
+      $color = get_field("colors", $collections[0]);
+    ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -56,28 +58,36 @@
 
   <div class="rsep"></div>
 
-  <?php get_part('featured-links', [
+  <?php
+    get_part('featured-links', [
       'links'     => $featured_links,
       'maskColor' => get_mask_color($color),
-  ]);?>
+    ]);
+  ?>
 
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>
-<?php get_part('full-width-image', ['image' => $footer['image'], 'ratio' => 16 / 9]);?>
+
+<?php
+  get_part('full-width-image', [
+    'image' => $footer['image'], 'ratio' => 16 / 9,
+  ]);
+?>
+
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
-    get_part('full-width-handwrite', array(
-      'text' => $footer['text']));
+    get_part('full-width-handwrite', [
+      'text' => $footer['text']]);
   ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
-<?php get_part('map-block');?>
-<div class="green-wrapper green-wrapper-footer">
-  <div class="rmin"></div>
-</div>
-<?php get_footer();?>
+
+<?php
+  get_part('map-block');
+  get_footer();
+?>

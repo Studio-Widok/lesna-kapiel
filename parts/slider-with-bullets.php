@@ -3,9 +3,12 @@
   $title     = $title ?? '';
   $pic_right = $pic_right ?? false;
   $maskColor = $maskColor ?? '1e352a';
+
+  if (empty($slides)) {
+    return;
+  }
 ?>
 
-<?php if (!empty($slides)) {?>
 <div class="slider-with-bullets fade" id="slider-with-bullets-<?=$__index?>">
   <div class="content">
     <div class="slider-bullets column-768 <?=$pic_right ? 'pic-right' : ''?>">
@@ -56,5 +59,3 @@
   </div>
   <?php get_component('slider-arrows');?>
 </div>
-
-<?php }?>
