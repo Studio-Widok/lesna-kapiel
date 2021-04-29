@@ -1,11 +1,4 @@
-$letter-spacing: 0.15em;
-$color-beige: #c8baa9;
-$dark-green: #1e352a;
-$dark: #122218;
-$white-grey: #78857f;
-$grey-background: #8a9992;
-$brown: #654824;
-$green-overlay: #53ac82;
+@use "sass:string";
 
 @font-face {
   font-family: 'Belluga';
@@ -311,7 +304,7 @@ p {
       width: 100%;
       margin-bottom: -1em;
       padding-bottom: 7.3404%;
-      background-image: url('../../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
+      background-image: url('../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
       background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -454,33 +447,6 @@ button {
   opacity: 0;
   transition: 1s;
 }
-
-// components
-@import 'fixed-link.scss';
-@import 'slider-arrows.scss';
-@import 'vertical-image-text.scss';
-@import 'lightbox.scss';
-@import 'cake-frame.scss';
-@import 'full-width-handwrite.scss';
-@import 'reservation.scss';
-
-// parts
-@import 'nav.scss';
-@import 'top.scss';
-@import 'atrakcje.scss';
-@import '2-col.scss';
-@import 'map.scss';
-@import 'text-full.scss';
-@import 'collections-slider.scss';
-@import 'slider-with-bullets.scss';
-@import 'slider-gallery.scss';
-@import 'facilities.scss';
-
-// general
-@import 'contact.scss';
-@import 'archive.scss';
-@import 'footer.scss';
-@import '_mobile.scss';
 
 .cake-frame {
   width: 10em;

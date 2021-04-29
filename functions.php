@@ -31,7 +31,7 @@ function viewport_meta() {?>
     if (!is_admin() && isset($scripts->registered['jquery'])) {
       $script = $scripts->registered['jquery'];
       if ($script->deps) {
-        $script->deps = array_diff($script->deps, array('jquery-migrate'));
+        $script->deps = array_diff($script->deps, ['jquery-migrate']);
       }
     }
   });
@@ -39,41 +39,40 @@ function viewport_meta() {?>
 
   // custom post types and taxonomies
   add_action('init', function () {
-    register_post_type('apartment', array(
+    register_post_type('apartment', [
       'public'      => true,
       'label'       => 'Apartamenty',
       'has_archive' => true,
-      'supports'    => array('title'),
-    ));
+      'supports'    => ['title'],
+    ]);
 
     register_taxonomy(
       'collections',
       'apartment',
-      array(
+      [
         'label'             => 'Kolekcje',
         'hierarchical'      => true,
         'show_admin_column' => true,
         'show_in_menu'      => true,
-      )
+      ]
     );
 
     register_taxonomy(
       'tags',
       'apartment',
-      array(
+      [
         'label'             => 'Tagi',
         'hierarchical'      => false,
         'show_admin_column' => true,
         'show_in_menu'      => true,
-      )
+      ]
     );
   });
 
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
-    wp_enqueue_style('style', $url . '../style.css', 1.0);
-    wp_enqueue_style('base', $url . 'css/base.css', array('style'), 1.0);
-    wp_enqueue_script('bundle', $url . 'js/bundle.js', array(), 1.0, true);
+    wp_enqueue_style('base', $url . 'main.css', [], 1.0);
+    wp_enqueue_script('bundle', $url . 'main.js', [], 1.0, true);
   });
 
   // dev - start
