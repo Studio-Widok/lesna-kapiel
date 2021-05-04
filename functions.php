@@ -197,4 +197,46 @@ function viewport_meta() {?>
   }
 
   add_action("tags_edit_form", 'hide_description_row');
-add_action("tags_add_form", 'hide_description_row');
+  add_action("tags_add_form", 'hide_description_row');
+
+  // contact form
+  add_filter('wpcf7_autop_or_not', '__return_false');
+
+  add_action("wpcf7_before_send_mail", function ($wpcf7_data) {
+    if ($wpcf7_data->id() !== 463) {
+      return;
+    }
+
+    $submission = WPCF7_Submission::get_instance();
+    $data       = $submission->get_posted_data();
+    $mail       = $wpcf7_data->prop('mail');
+
+    $body = $mail['body'];
+    ob_start();
+    include __DIR__ . '/parts/mail_template.php';
+    $mail['body'] = ob_get_clean();
+
+    $wpcf7_data->set_properties([
+      'mail' => $mail,
+    ]);
+
+  }, 10, 1);
+
+  add_action("wpcf7_submit", function ($wpcf7_data, $result) {
+    if ($wpcf7_data->id() !== 463) {
+      return;
+    }
+
+    $submission = WPCF7_Submission::get_instance();
+    $data       = $submission->get_posted_data();
+    $messages   = $wpcf7_data->prop('messages');
+    foreach ($messages as $key => $message) {
+      $messages[$key] = pll_translate_string($message, $data['page-language']);
+    }
+
+    $wpcf7_data->set_properties([
+      'messages' => $messages,
+    ]);
+
+    return $wpcf7_data;
+}, 10, 2);
