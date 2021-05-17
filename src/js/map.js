@@ -7,12 +7,12 @@ module.exports = (lat, lng) => {
 
   script.addEventListener('load', () => {
     const myLatLng = {
-      lat: 50.8027153,
-      lng: 15.6555119,
+      lat: 50.7714079,
+      lng: 15.7803477,
     };
     const options = {
       center: myLatLng,
-      zoom: 15,
+      zoom: 14,
       disableDefaultUI: true,
       zoomControl: true,
       gestureHandling: 'cooperative',
@@ -295,8 +295,8 @@ module.exports = (lat, lng) => {
       map: map,
       icon: {
         url: image,
-        scaledSize: new google.maps.Size(32, 45),
-        anchor: new google.maps.Point(16, 45),
+        scaledSize: new google.maps.Size(26, 50),
+        anchor: new google.maps.Point(13, 50),
       },
     });
   });
