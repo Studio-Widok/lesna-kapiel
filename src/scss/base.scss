@@ -313,6 +313,11 @@ p {
     .cake-frame .drawing path {
       stroke: $bgColor;
     }
+
+    button {
+      color: $color;
+      border-color: $color;
+    }
   }
 }
 
