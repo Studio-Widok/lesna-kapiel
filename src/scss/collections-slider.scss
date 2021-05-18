@@ -35,14 +35,6 @@
       transition: 0.3s;
       cursor: pointer;
       pointer-events: all;
-
-      &.hovered {
-        border-color: #fff5;
-      }
-
-      &.active {
-        border-color: #fff;
-      }
     }
   }
 
@@ -66,12 +58,53 @@
     .arrow-left,
     .arrow-right {
       transition: 0.3s;
+
       svg {
         background-color: transparent;
+
+        path {
+          transition: 0.3s;
+        }
       }
     }
   }
 }
+
+@mixin collectionsColor($color, $text) {
+  .collections-slider.slide-color-#{$color} {
+    .slider-bullet {
+      color: $text;
+
+      &.hovered,
+      &.active {
+        border-color: $text;
+      }
+    }
+
+    .slider-arrows {
+      color: $text;
+
+      svg {
+        border-color: $text;
+
+        path {
+          &:nth-child(1) {
+            stroke: $text;
+          }
+          &:nth-child(2) {
+            fill: $text;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include collectionsColor("light-green", #fff);
+@include collectionsColor("green", #fff);
+@include collectionsColor("beige", $dark);
+@include collectionsColor("gray", $dark);
+@include collectionsColor("pale", #fff);
 
 .collection-others-title-mobile {
   text-transform: uppercase;

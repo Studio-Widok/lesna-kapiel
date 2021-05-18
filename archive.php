@@ -96,7 +96,7 @@
   }
 ?>
 
-<div class="grey-wrapper">
+<div class="gray-wrapper">
   <div class="rsep"></div>
   <div class="rsep"></div>
 
@@ -107,7 +107,7 @@
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,
-      'maskColor' => get_mask_color("grey"),
+      'maskColor' => get_mask_color("gray"),
     ]);
   ?>
   <div class="rsep"></div>

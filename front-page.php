@@ -69,12 +69,12 @@
 </div>
 
 <?php get_part('collections-slider');?>
-<div class="grey-wrapper">
+<div class="light-green-wrapper">
   <div class="rsep"></div>
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,
-      'maskColor' => get_mask_color("grey"),
+      'maskColor' => get_mask_color("gray"),
     ]);
   ?>
   <div class="rsep"></div>
@@ -83,6 +83,9 @@
       'title' => 'wybierz termin',
       'text'  => 'lorem ipsum lorem ipsum, lorem ipsum',
     ]);
+  ?>
+  <div class="rsep"></div>
+  <?php
     get_part('full-width-image', [
       'image' => $footer['image'], 'ratio' => 16 / 9,
     ]);

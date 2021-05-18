@@ -1,37 +1,39 @@
 $letter-spacing: 0.15em;
-$color-beige: #c8baa9;
-$dark-green: #1e352a;
 $dark: #122218;
-$white-grey: #78857f;
-$grey-background: #8a9992;
+$white-gray: #78857f;
 $brown: #654824;
-$green-overlay: #53ac82;
 
-@import 'base';
+$light-green-wrapper: #8a9992;
+$green-wrapper: #23382c;
+$beige-wrapper: #cabaaa;
+$pale-wrapper: #94a7a6;
+$gray-wrapper: #c3c2c8;
+
+@import "base";
 
 // components
-@import 'fixed-link';
-@import 'slider-arrows';
-@import 'vertical-image-text';
-@import 'lightbox';
-@import 'cake-frame';
-@import 'full-width-handwrite';
-@import 'reservation';
+@import "fixed-link";
+@import "slider-arrows";
+@import "vertical-image-text";
+@import "lightbox";
+@import "cake-frame";
+@import "full-width-handwrite";
+@import "reservation";
 
 // parts
-@import 'nav';
-@import 'top';
-@import 'atrakcje';
-@import '2-col';
-@import 'map';
-@import 'text-full';
-@import 'collections-slider';
-@import 'slider-with-bullets';
-@import 'slider-gallery';
-@import 'facilities';
+@import "nav";
+@import "top";
+@import "atrakcje";
+@import "2-col";
+@import "map";
+@import "text-full";
+@import "collections-slider";
+@import "slider-with-bullets";
+@import "slider-gallery";
+@import "facilities";
 
 // general
-@import 'contact';
-@import 'archive';
-@import 'footer';
-@import '_mobile';
+@import "contact";
+@import "archive";
+@import "footer";
+@import "_mobile";

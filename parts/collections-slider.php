@@ -15,7 +15,7 @@
       for ($i = 0; $i < count($collections); $i++) {
         $color = get_field('colors', $collections[$i]);
       ?>
-    <div class="single-slide">
+    <div class="single-slide" data-color="<?=$color?>">
       <div class="<?=$color?>-wrapper">
         <div class="r"></div>
         <div class="overlap"></div>

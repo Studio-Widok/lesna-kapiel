@@ -185,9 +185,11 @@ function viewport_meta() {?>
 
   function get_mask_color($maskColor) {
     $colors = [
-      'green' => '1e352a',
-      'beige' => 'c8baa9',
-      'grey'  => '8a9992',
+      'light-green' => '8a9992',
+      'green'       => '23382c',
+      'beige'       => 'cabaaa',
+      'pale'        => '94a7a6',
+      'gray'        => 'c3c2c8',
     ];
     return $colors[$maskColor];
   }

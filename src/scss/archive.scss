@@ -49,36 +49,18 @@ hr {
   }
 }
 
-// .green-wrapper {
-//   .premium-container {
-//     @include wrapper($color-beige, $dark-green, #fff);
-//   }
-// }
-// .dark-wrapper {
-//   .premium-container {
-//     @include wrapper($grey-background, #fff, $dark-green);
-//   }
-// }
-// .grey-wrapper {
-//   .premium-container {
-//     @include wrapper($color-beige, $dark-green, #fff);
-//   }
-// }
-// .beige-wrapper {
-//   .premium-container {
-//     @include wrapper($dark-green, #fff, $dark-green);
-//   }
-// }
-
 .green-wrapper {
-  @include wrapper('.premium-container', $dark-green, $color-beige);
+  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
 }
 .dark-wrapper {
-  @include wrapper('.premium-container', $grey-background, $dark-green);
+  @include wrapper(".premium-container", $pale-wrapper, $green-wrapper);
 }
-.grey-wrapper {
-  @include wrapper('.premium-container', $dark-green, $color-beige);
+.gray-wrapper {
+  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
+}
+.pale-wrapper {
+  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
 }
 .beige-wrapper {
-  @include wrapper('.premium-container', $color-beige, $dark-green);
+  @include wrapper(".premium-container", $beige-wrapper, $green-wrapper);
 }
