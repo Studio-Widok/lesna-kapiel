@@ -295,8 +295,8 @@ module.exports = (lat, lng) => {
       map: map,
       icon: {
         url: image,
-        scaledSize: new google.maps.Size(26, 50),
-        anchor: new google.maps.Point(13, 50),
+        scaledSize: new google.maps.Size(45, 50),
+        anchor: new google.maps.Point(22, 50),
       },
     });
   });
