@@ -7,6 +7,7 @@
   right: 6em;
   left: 6em;
   z-index: 21;
+  pointer-events: none;
 
   @media (max-width: 1200px) {
     right: 3em;
@@ -65,6 +66,7 @@
   #nav-links {
     display: flex;
     align-items: center;
+    pointer-events: auto;
   }
 
   #burger {
@@ -73,6 +75,7 @@
     height: 32px;
     cursor: pointer;
     z-index: 22;
+    pointer-events: auto;
 
     > div {
       position: absolute;
