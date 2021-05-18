@@ -98,6 +98,7 @@ function viewport_meta() {?>
   add_action('wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_node('new-content');
   });
   function remove_menus() {
     remove_menu_page('edit.php'); //Posts
