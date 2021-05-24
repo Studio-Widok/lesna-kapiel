@@ -58,7 +58,7 @@
     <?php }?>
   </div>
 </div>
-<div class="r less-768"></div>
+<div class="rmin less-768"></div>
 <div
   class="content column flex flex-align-center flex-justify-end slider-arrows-container fade">
   <?php get_component('slider-arrows')?>
