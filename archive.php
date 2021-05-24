@@ -124,9 +124,9 @@
 </div>
 
 <div class="green-wrapper">
-  <div class="rsep"></div>
-  <?php get_part('contact-info');?>
-  <div class="rsep"></div>
+  <div class="r"></div>
+  <?php get_part('contact-info', ['isOverlap' => true]);?>
+  <div class="r"></div>
 </div>
 
 <?php get_footer();?>

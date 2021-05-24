@@ -1,11 +1,13 @@
 <?php
+  $isOverlap = $isOverlap ?? false;
   $address   = get_field('address', pll_get_post(25));
   $phone     = get_field('contact_phone', pll_get_post(25));
   $phone_raw = str_replace(' ', '', $phone);
   $mail      = get_field('contact_mail', pll_get_post(25));
 ?>
 
-<div class="content fade">
+<div class="content fade
+<?php if ($isOverlap) {echo 'contect-info-overlap';}?>">
   <div class="flex flex-align-end">
     <div class="col2 column">
       <div class="uppercase"><?php pll_e('leśna kąpiel')?></div>
