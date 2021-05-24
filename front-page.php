@@ -69,12 +69,12 @@
 </div>
 
 <?php get_part('collections-slider');?>
-<div class="light-green-wrapper">
+<div class="pale-wrapper">
   <div class="rsep"></div>
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,
-      'maskColor' => get_mask_color("gray"),
+      'maskColor' => get_mask_color("pale"),
     ]);
   ?>
   <div class="rsep"></div>
@@ -97,9 +97,8 @@
     get_part('footer-video', [
       'source' => $footer['video'],
       'text'   => $footer['text']]);
+    get_part('contact-info');
   ?>
-  <div class="rsep"></div>
-  <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
 

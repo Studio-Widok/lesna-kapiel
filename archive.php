@@ -23,7 +23,7 @@
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => get_field('top_text', $archive)]);?>
   <div class="rsep"></div>
-  <div class="content flex flex-768">
+  <div class="content flex flex-768 flex-wrap">
     <?php
       while (have_posts()):
         the_post();

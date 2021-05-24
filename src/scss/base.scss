@@ -321,7 +321,6 @@ p {
   }
 }
 
-@include wrapper(".light-green-wrapper", $light-green-wrapper, #fff);
 @include wrapper(".green-wrapper", $green-wrapper, #fff);
 @include wrapper(".beige-wrapper", $beige-wrapper, $dark);
 @include wrapper(".gray-wrapper", $gray-wrapper, $dark);

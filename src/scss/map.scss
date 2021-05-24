@@ -5,5 +5,9 @@
   #gmap {
     z-index: 2;
     min-height: 85vh;
+
+    > div {
+      background-color: #23352a !important;
+    }
   }
 }

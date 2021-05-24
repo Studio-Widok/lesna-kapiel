@@ -10,6 +10,13 @@ module.exports = (lat, lng) => {
       lat: 50.7714079,
       lng: 15.7803477,
     };
+    const colors = {
+      dark: '#294133',
+      light: '#33583c',
+      labelStroke: '#419d8c',
+      label: '#8a9992',
+      roads: '#3b5d49',
+    };
     const options = {
       center: myLatLng,
       zoom: 14,
@@ -26,7 +33,7 @@ module.exports = (lat, lng) => {
               saturation: 36,
             },
             {
-              color: '#4e5c49',
+              color: colors.label,
             },
             {
               lightness: '-43',
@@ -41,7 +48,7 @@ module.exports = (lat, lng) => {
               visibility: 'on',
             },
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-70',
@@ -71,10 +78,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry.fill',
           stylers: [
             {
-              color: '#293d31',
-            },
-            {
-              lightness: '-17',
+              color: colors.dark,
             },
           ],
         },
@@ -83,7 +87,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry.stroke',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-66',
@@ -110,7 +114,7 @@ module.exports = (lat, lng) => {
               lightness: '43',
             },
             {
-              color: '#4e5c49',
+              color: colors.label,
             },
           ],
         },
@@ -119,7 +123,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.stroke',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-69',
@@ -131,7 +135,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#335942',
+              color: colors.light,
             },
             {
               lightness: '-15',
@@ -143,7 +147,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#293d31',
+              color: colors.dark,
             },
             {
               lightness: '-13',
@@ -158,7 +162,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.fill',
           stylers: [
             {
-              color: '#4e5c49',
+              color: colors.label,
             },
           ],
         },
@@ -167,7 +171,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.fill',
           stylers: [
             {
-              color: '#4e5c49',
+              color: colors.label,
             },
             {
               lightness: '13',
@@ -179,7 +183,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.stroke',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-66',
@@ -191,7 +195,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry.fill',
           stylers: [
             {
-              color: '#293d31',
+              color: colors.dark,
             },
             {
               lightness: '14',
@@ -203,7 +207,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry.stroke',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-70',
@@ -218,7 +222,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#293d31',
+              color: colors.dark,
             },
             {
               lightness: '0',
@@ -230,7 +234,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#3b5d49',
+              color: colors.roads,
             },
             {
               lightness: '3',
@@ -242,7 +246,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#293d31',
+              color: colors.dark,
             },
             {
               lightness: '-59',
@@ -254,7 +258,7 @@ module.exports = (lat, lng) => {
           elementType: 'geometry',
           stylers: [
             {
-              color: '#293d31',
+              color: colors.dark,
             },
             {
               lightness: '6',
@@ -266,7 +270,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.fill',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-45',
@@ -278,7 +282,7 @@ module.exports = (lat, lng) => {
           elementType: 'labels.text.stroke',
           stylers: [
             {
-              color: '#419d8c',
+              color: colors.labelStroke,
             },
             {
               lightness: '-62',
