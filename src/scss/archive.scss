@@ -50,17 +50,19 @@ hr {
 }
 
 .green-wrapper {
-  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
-}
-.dark-wrapper {
-  @include wrapper(".premium-container", $pale-wrapper, $green-wrapper);
-}
-.gray-wrapper {
-  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
-}
-.pale-wrapper {
-  @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
-}
-.beige-wrapper {
   @include wrapper(".premium-container", $beige-wrapper, $green-wrapper);
 }
+
+/* those are not used anymore */
+// .dark-wrapper {
+//   @include wrapper(".premium-container", $pale-wrapper, $green-wrapper);
+// }
+// .gray-wrapper {
+//   @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
+// }
+// .pale-wrapper {
+//   @include wrapper(".premium-container", $green-wrapper, $beige-wrapper);
+// }
+// .beige-wrapper {
+//   @include wrapper(".premium-container", $beige-wrapper, $green-wrapper);
+// }
