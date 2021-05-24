@@ -330,6 +330,15 @@ p {
       color: #fff;
     }
   }
+
+  .small-title::after {
+    background-color: $dark;
+  }
+
+  .additional-links svg path {
+    stroke: $dark;
+    fill: $dark;
+  }
 }
 
 .beige-brown-wrapper {
