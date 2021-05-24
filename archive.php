@@ -25,8 +25,19 @@
   <div class="rsep"></div>
   <div class="content flex flex-768 flex-wrap">
     <?php
-      while (have_posts()):
+      $premiumApartments = [];
+      $isVilla           = is_tax('tags') && get_queried_object()->slug === 'villa';
+      while (have_posts()) {
         the_post();
+        $tagSlugs = array_map(
+          function ($e) {return $e->slug;},
+          get_the_terms($post, 'tags')
+        );
+        if ($isVilla && in_array('premium', $tagSlugs)) {
+          $premiumApartments[] = $post;
+          continue;
+        }
+
         $slider = get_field('slider');
         $images = isset($slider['gallery']) ? $slider['gallery'] : null;
         get_component('single-apartment', [
@@ -35,27 +46,13 @@
           'title' => get_the_title(),
           'price' => get_field('price'),
         ]);
-      endwhile;
+      }
     ?>
   </div>
   <div class="rsep"></div>
   <div class="rsep"></div>
-  <?php if (is_tax('tags')) {?>
+  <?php if ($isVilla) {?>
   <div class="premium-container">
-    <?php
-      $premiumApartments = get_posts([
-        'numberposts' => -1,
-        'post_type'   => 'apartment',
-        'order'       => 'DSC',
-        'tax_query'   => [
-          [
-            'taxonomy' => 'tags',
-            'field'    => 'slug',
-            'terms'    => 'premium',
-          ],
-        ],
-      ]);
-      ?>
     <div class="title-container column content fade">
       <div class="rsep"></div>
       <div class="big-title handwrite text-right">
@@ -64,17 +61,17 @@
       <div class="premium-text"><?php pll_e("premium_text");?></div>
     </div>
     <div class="rsep"></div>
-    <div class="content flex flex-768">
+    <div class="content flex flex-768 flex-wrap">
       <?php
         foreach ($premiumApartments as $apartment) {
-            $images = get_field('slider', $apartment->ID)['gallery'];
-            get_component('single-apartment', [
-              'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
-              'link'  => get_permalink($apartment->ID),
-              'title' => get_the_title($apartment->ID),
-              'price' => get_field('price', $apartment->ID),
-            ]);
-          }
+          $images = get_field('slider', $apartment->ID)['gallery'];
+          get_component('single-apartment', [
+            'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
+            'link'  => get_permalink($apartment->ID),
+            'title' => get_the_title($apartment->ID),
+            'price' => get_field('price', $apartment->ID),
+          ]);
+        }
         ?>
     </div>
     <div class="rsep"></div>

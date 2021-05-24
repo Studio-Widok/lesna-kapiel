@@ -9,26 +9,14 @@
 
 @font-face {
   font-family: 'GT America';
-  src: url('./../../media/GT-America-Condensed-Ultra-Light.ttf');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT America';
-  src: url('./../../media/GT-America-Condensed-Thin.ttf');
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT America';
   src: url('./../../media/GT-America-Condensed-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'GT America';
-  src: url('./../../media/GT-America-Condensed-Medium.ttf');
-  font-weight: 600;
+  src: url('./../../media/GT-America-Condensed-Bold.ttf');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -41,7 +29,7 @@ body {
   background-color: #555;
   font-family: 'GT America', sans-serif;
   color: #fff;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 a {
@@ -82,7 +70,7 @@ h4,
 h5,
 h6,
 p {
-  font-weight: 200;
+  font-weight: 400;
   margin: 0;
   padding: 0.33em 0;
 }
@@ -271,10 +259,13 @@ p {
   font-family: 'Belluga', serif;
   line-height: 0.8;
 }
+
 .uppercase {
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
+  font-weight: 700;
 }
+
 .text {
   font-size: 1.2em;
 
@@ -387,6 +378,7 @@ button {
   display: inline-block;
   text-transform: uppercase;
   font-size: 1.2em;
+  font-weight: 700;
   letter-spacing: $letter-spacing;
   padding-bottom: 0.4em;
 

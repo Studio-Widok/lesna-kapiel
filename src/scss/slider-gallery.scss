@@ -50,7 +50,11 @@
 }
 
 .slider-arrows-container {
-  margin-top: -5%;
+  margin-top: -9em;
+
+  @media (max-width: 1200px) {
+    margin-top: -12%;
+  }
 
   @media (max-width: 1050px) {
     margin-top: -16%;
@@ -68,7 +72,7 @@
     .arrow-left,
     .arrow-right {
       position: static;
-      margin-right: 0.5em;
+      margin-left: 0.5em;
 
       svg {
         width: 2em;
@@ -86,14 +90,21 @@
 .slider-content-wrap {
   .slider-content {
     width: 62.5%;
+    padding-left: 2em;
+
     @media (max-width: 1050px) {
       width: 100%;
-      margin-top: 20%;
+      margin-top: 18%;
       padding-right: 3em;
     }
+
     @media (max-width: 768px) {
       margin: 0;
       padding-right: 0;
+    }
+
+    @media (max-width: 450px) {
+      padding-left: 0;
     }
   }
 }
@@ -102,6 +113,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-left: 0.5em;
 
   svg {
     width: 2em;
