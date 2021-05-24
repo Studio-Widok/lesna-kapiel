@@ -21,7 +21,7 @@
 
   .slide-title {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @media (min-width: 1050px) {
@@ -70,7 +70,7 @@
           margin-right: 2em;
 
           &:after {
-            content: '';
+            content: "";
             position: absolute;
             display: block;
             bottom: -4px;

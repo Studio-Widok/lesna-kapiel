@@ -50,7 +50,11 @@
 }
 
 .slider-arrows-container {
-  margin-top: -5%;
+  margin-top: -9em;
+
+  @media (max-width: 1200px) {
+    margin-top: -12%;
+  }
 
   @media (max-width: 1050px) {
     margin-top: -16%;
