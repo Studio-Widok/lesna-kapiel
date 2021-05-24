@@ -120,3 +120,52 @@
     }
   }
 }
+
+@mixin iconsColor($selector, $color, $hover) {
+  #{$selector} {
+    .masonry-icon {
+      svg rect {
+        stroke: $color;
+      }
+      &:hover {
+        rect {
+          fill: $hover;
+        }
+      }
+    }
+
+    .slider-arrows {
+      svg {
+        border-color: $color;
+
+        path {
+          &:nth-child(1) {
+            stroke: $color;
+          }
+          &:nth-child(2) {
+            fill: $color;
+          }
+        }
+
+        @if $color != #fff {
+          &:hover {
+            path {
+              &:nth-child(1) {
+                stroke: $hover;
+              }
+              &:nth-child(2) {
+                fill: $hover;
+              }
+            }
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iconsColor('.green-wrapper', #fff, $beige-wrapper);
+@include iconsColor('.beige-wrapper', $dark, #fff);
+@include iconsColor('.gray-wrapper', $dark, #fff);
+@include iconsColor('.pale-wrapper', #fff, $beige-wrapper);

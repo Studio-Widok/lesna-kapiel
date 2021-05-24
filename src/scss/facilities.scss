@@ -16,3 +16,10 @@
     }
   }
 }
+
+.beige-wrapper,
+.gray-wrapper {
+  .small-title::after {
+    background-color: $dark;
+  }
+}
