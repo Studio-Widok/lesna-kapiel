@@ -2,11 +2,12 @@
 
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
+  $color          = get_field('colors');
 
   get_part('nav');
 ?>
 
-<div class="green-wrapper">
+<div class="<?=$color?>-wrapper">
   <div class="rsep"></div>
   <div class="rsep"></div>
   <?php
@@ -26,8 +27,15 @@
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
       'link'       => $facilities['link'],
-      'maskColor'  => get_mask_color("green"),
+      'maskColor'  => get_mask_color($color),
     ]);
+  ?>
+  <div class="rsep"></div>
+  <?php get_component('date-picker', ['title' => 'wybierz termin'])?>
+  <div class="rsep less-768"></div>
+  <div class="rsep less-768"></div>
+  <div class="rsep less-768"></div>
+  <?php
     $collections = get_the_terms($post, 'collections');
     if (!empty($collections)) {
       $color = get_field("colors", $collections[0]);
@@ -51,29 +59,21 @@
   </div>
   <?php }?>
   <div class="rsep"></div>
-  <div class="rsep"></div>
-  <div class="content">
-    <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
-  </div>
-
+</div>
+<div class="pale-wrapper">
   <div class="rsep"></div>
 
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,
-      'maskColor' => get_mask_color($color),
+      'maskColor' => get_mask_color('pale'),
     ]);
   ?>
 
   <div class="rsep"></div>
   <div class="rsep"></div>
+  <div class="rsep"></div>
 </div>
-
-<?php
-  get_part('full-width-image', [
-    'image' => $footer['image'], 'ratio' => 16 / 9,
-  ]);
-?>
 
 <div class="green-wrapper">
   <?php

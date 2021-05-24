@@ -1,8 +1,9 @@
 <?php
-  $image = $image ?? '';
-  $link  = $link ?? '';
-  $title = $title ?? '';
-  $price = $price ?? '';
+  $image     = $image ?? '';
+  $link      = $link ?? '';
+  $title     = $title ?? '';
+  $price     = $price ?? '';
+  $occupancy = $occupancy ?? '';
 ?>
 
 <div class="col2 column fade">
@@ -14,13 +15,18 @@
     <div class="col2">
       <div class="rmin"></div>
       <div class="uppercase text-center text-bold"><?=$title?></div>
+      <hr />
       <?php
         if (!empty($price)) {
         ?>
-      <hr />
-      <div class="text-center"><?=pll__('od')?><?=$price?>,-</div>
+      <div class="text-center"><?=pll__('od')?> <?=$price?>,-</div>
+      <?php }?>
+<?php
+  if (!empty($occupancy)) {
+  ?>
+      <div class="text-center"><?=pll__('ilość osób')?>: <?=$occupancy?></div>
       <?php }?>
     </div>
   </a>
-  <div class="r less-768"></div>
+  <div class="rsep"></div>
 </div>

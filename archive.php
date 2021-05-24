@@ -41,10 +41,11 @@
         $slider = get_field('slider');
         $images = isset($slider['gallery']) ? $slider['gallery'] : null;
         get_component('single-apartment', [
-          'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
-          'link'  => get_permalink(),
-          'title' => get_the_title(),
-          'price' => get_field('price'),
+          'image'     => isset($images[0]) ? $images[0]['sizes']['large'] : null,
+          'link'      => get_permalink(),
+          'title'     => get_the_title(),
+          'price'     => get_field('price'),
+          'occupancy' => get_field('occupancy'),
         ]);
       }
     ?>
@@ -113,6 +114,9 @@
       'title' => 'wybierz termin',
       'text'  => 'lorem ipsum lorem ipsum, lorem ipsum',
     ]);
+  ?>
+  <div class="rsep"></div>
+  <?php
     get_part('full-width-image', [
       'image' => $footer['image'], 'ratio' => 16 / 9,
     ]);

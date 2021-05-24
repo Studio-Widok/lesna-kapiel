@@ -1,0 +1,15 @@
+#date-picker {
+  .date-picker-container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    margin: 0 auto;
+  }
+
+  .date-picker-title {
+    font-size: 5em;
+    @media (max-width: 450px) {
+      font-size: 4em;
+    }
+  }
+}
