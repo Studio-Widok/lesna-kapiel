@@ -116,6 +116,9 @@
       'title' => 'wybierz termin',
       'text'  => 'lorem ipsum lorem ipsum, lorem ipsum',
     ]);
+  ?>
+  <div class="rsep"></div>
+  <?php
     get_part('full-width-image', [
       'image' => $footer['image'], 'ratio' => 16 / 9,
     ]);

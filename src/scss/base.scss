@@ -1,33 +1,33 @@
 @use "sass:string";
 
 @font-face {
-  font-family: "Belluga";
-  src: url("./../../media/Belluga.otf");
+  font-family: 'Belluga';
+  src: url('./../../media/Belluga.otf');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Ultra-Light.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Ultra-Light.ttf');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Thin.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Thin.ttf');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Regular.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Medium.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Medium.ttf');
   font-weight: 600;
   font-style: normal;
 }
@@ -39,7 +39,7 @@
 body {
   margin: 0;
   background-color: #555;
-  font-family: "GT America", sans-serif;
+  font-family: 'GT America', sans-serif;
   color: #fff;
   font-weight: 200;
 }
@@ -268,7 +268,7 @@ p {
 }
 
 .handwrite {
-  font-family: "Belluga", serif;
+  font-family: 'Belluga', serif;
   line-height: 0.8;
 }
 .uppercase {
@@ -296,7 +296,7 @@ p {
     color: $color;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 100%;
@@ -304,7 +304,7 @@ p {
       width: 100%;
       margin-bottom: -1em;
       padding-bottom: 7.3404%;
-      background-image: url("../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}");
+      background-image: url('../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
       background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -321,15 +321,16 @@ p {
   }
 }
 
-@include wrapper(".green-wrapper", $green-wrapper, #fff);
-@include wrapper(".beige-wrapper", $beige-wrapper, $dark);
-@include wrapper(".gray-wrapper", $gray-wrapper, $dark);
-@include wrapper(".pale-wrapper", $pale-wrapper, #fff);
+@include wrapper('.green-wrapper', $green-wrapper, #fff);
+@include wrapper('.beige-wrapper', $beige-wrapper, $dark);
+@include wrapper('.gray-wrapper', $gray-wrapper, $dark);
+@include wrapper('.pale-wrapper', $pale-wrapper, #fff);
 
-@include wrapper(".dark-wrapper", $dark, #fff);
-@include wrapper(".beige-brown-wrapper", $beige-wrapper, $brown);
+@include wrapper('.dark-wrapper', $dark, #fff);
+@include wrapper('.beige-brown-wrapper', $beige-wrapper, $brown);
 
-.beige-wrapper {
+.beige-wrapper,
+.gray-wrapper {
   button {
     border-color: $green-wrapper;
     color: $green-wrapper;
@@ -390,7 +391,7 @@ button {
   padding-bottom: 0.4em;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     background-color: #fff;
