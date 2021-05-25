@@ -498,3 +498,11 @@ button {
 .contect-info-overlap {
   margin-top: -8em;
 }
+
+#cookie-notice {
+  .cn-button {
+    background-color: $pale-wrapper;
+    color: #fff;
+    border-radius: 0;
+  }
+}

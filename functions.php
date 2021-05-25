@@ -71,7 +71,7 @@ function viewport_meta() {?>
 
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
-    wp_enqueue_style('base', $url . 'main.css', [], 1.0);
+    wp_enqueue_style('base', $url . 'main.css', [], 1.1);
     wp_enqueue_script('bundle', $url . 'main.js', [], 1.0, true);
   });
 
@@ -91,7 +91,7 @@ function viewport_meta() {?>
     10, 3
   );
   add_filter('get_attached_file', function ($file) {
-    return str_replace('/lesnakapiel_3/', '/lesnakapiel/', $file);
+    return str_replace('/lesnakapiel_2/', '/lesnakapiel/', $file);
   }, 10, 2);
   // dev - end
 
