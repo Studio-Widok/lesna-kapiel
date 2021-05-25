@@ -46,7 +46,7 @@
   <div class="rsep less-768"></div>
 </div>
 
-<div class="gray-wrapper">
+<div class="pale-wrapper">
   <div class="r"></div>
   <div class="overlap"></div>
   <div class="rel">
@@ -63,7 +63,7 @@
           'link' => get_link_url($sections[$last]['link']),
         ],
         'pic_right'  => $last % 2,
-        'maskColor'  => get_mask_color('gray'),
+        'maskColor'  => get_mask_color('pale'),
         'isOverlap'  => true,
       ]);
     ?>

@@ -41,7 +41,7 @@
   <div class="rsep"></div>
 </div>
 
-<div class="gray-wrapper">
+<div class="pale-wrapper">
 
   <div class="rsep"></div>
   <div class="content">
@@ -57,7 +57,7 @@
         'slides'    => $on_the_spot[$i]['slides'],
         'title'     => $on_the_spot[$i]['title'],
         'pic_right' => $i % 2,
-        'maskColor' => get_mask_color("gray"),
+        'maskColor' => get_mask_color("pale"),
       ]);
     ?>
   <div class="rsep"></div>

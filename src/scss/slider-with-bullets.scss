@@ -70,7 +70,7 @@
           margin-right: 2em;
 
           &:after {
-            content: "";
+            content: '';
             position: absolute;
             display: block;
             bottom: -4px;
@@ -91,6 +91,19 @@
           }
         }
       }
+    }
+  }
+}
+
+.beige-wrapper,
+.gray-wrapper {
+  .slider-with-bullets
+    .slider-bullets
+    .bullets-container
+    .bullet
+    .bullet-title {
+    &:after {
+      background-color: $green-wrapper;
     }
   }
 }

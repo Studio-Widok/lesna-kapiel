@@ -83,12 +83,11 @@
       'title' => 'wybierz termin',
     ]);
   ?>
-  <div class="rsep"></div>
-  <?php
-    get_part('full-width-image', [
-      'image' => $footer['image'], 'ratio' => 16 / 9,
-    ]);
-  ?>
+<?php
+  get_part('full-width-image', [
+    'image' => $footer['image'], 'ratio' => 16 / 9,
+  ]);
+?>
 </div>
 <div class="green-wrapper">
   <?php
