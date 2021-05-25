@@ -39,13 +39,17 @@
     ]);
   ?>
   <div class="rsep"></div>
+
+  <?php
+    get_part('full-width-image', [
+      'image'             => $footer['image_with_overlay'],
+      'useContactInfo'    => true,
+      'useNegativeMargin' => true,
+    ]);
+  ?>
 </div>
 
 <?php
-  get_part('full-width-image', [
-    'image'         => $footer['image_with_overlay'],
-    'isContactInfo' => true,
-  ]);
   get_part('map-block');
   get_footer();
 ?>
