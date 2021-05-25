@@ -18,7 +18,7 @@ if ($('.slider-gallery').length > 0) require('./slider-gallery');
 if (bodyElement.hasClass('page-template-t-atrakcje')) require('./attractions');
 
 if ($('.fade').length > 0) {
-  fadeQueueStart({ delay: 400 });
+  fadeQueueStart({ delay: 0 });
 }
 
 if ($('#gmap').length > 0) {
