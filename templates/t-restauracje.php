@@ -41,8 +41,8 @@
 <?php
   $footer = get_field('footer', 2);
   get_part('full-width-image', [
-    'image'         => $footer['image_with_overlay'],
-    'isContactInfo' => true,
+    'image'          => $footer['image_with_overlay'],
+    'useContactInfo' => true,
   ]);
 
   get_footer();

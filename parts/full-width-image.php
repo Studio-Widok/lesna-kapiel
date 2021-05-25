@@ -4,15 +4,18 @@
     return;
   }
 
-  $isContactInfo = $isContactInfo ?? false;
-  $ratio         = $ratio ?? $image['width'] / $image['height'];
+  $ratio             = $ratio ?? $image['width'] / $image['height'];
+  $useContactInfo    = $useContactInfo ?? false;
+  $useNegativeMargin = $useNegativeMargin ?? false;
 ?>
 
-<div class="full-width-image cake" style="
+<div
+  class="full-width-image cake <?=$useNegativeMargin ? 'full-width-image-negative' : ''?>"
+  style="
     background-image: url('<?=$image['sizes']['large']?>');
     padding-bottom: <?=100 / $ratio?>%;
   ">
-  <?php if ($isContactInfo) {?>
+  <?php if ($useContactInfo) {?>
   <div class='full-width-image-contact'>
     <?php get_part('contact-info');?>
   </div>

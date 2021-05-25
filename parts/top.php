@@ -16,11 +16,8 @@
 
   <?php if ($show_logo) {?>
   <div id="top-logo-wrap" class="fade">
-    <img src="<?=get_template_directory_uri()?>/media/logo.svg" alt="logo"
+    <img src="<?=get_template_directory_uri()?>/media/logo_full.svg" alt="logo"
       id="top-logo-img">
-    <div id="top-logo-text"><?=get_field('title', pll_get_post(2))?></div>
-    <div id="top-logo-subtitle"><?=get_field('subtitle', pll_get_post(2))?>
-    </div>
   </div>
   <?php }if ($show_title) {?>
   <div id="top-title" class="content column-double fade <?=$text_align?>">
