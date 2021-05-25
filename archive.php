@@ -59,7 +59,9 @@
       <div class="big-title handwrite text-right">
         <?=pll__('premium')?><br /><?=pll__('rooms')?></div>
       <div class="r less-768"></div>
-      <div class="premium-text"><?php pll_e("premium_text");?></div>
+      <div class="premium-text">
+        <?=get_field('top_text', get_term(11))?>
+      </div>
     </div>
     <div class="rsep"></div>
     <div class="content flex flex-768 flex-wrap">
@@ -112,7 +114,6 @@
   <?php
     get_component('reservation', [
       'title' => 'wybierz termin',
-      'text'  => 'lorem ipsum lorem ipsum, lorem ipsum',
     ]);
   ?>
   <div class="rsep"></div>

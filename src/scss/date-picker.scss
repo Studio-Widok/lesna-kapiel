@@ -13,3 +13,12 @@
     }
   }
 }
+
+.beige-wrapper,
+.gray-wrapper {
+  #date-picker {
+    .date-picker-container {
+      border-color: $green-wrapper;
+    }
+  }
+}

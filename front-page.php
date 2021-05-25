@@ -81,7 +81,6 @@
   <?php
     get_component('reservation', [
       'title' => 'wybierz termin',
-      'text'  => 'lorem ipsum lorem ipsum, lorem ipsum',
     ]);
   ?>
   <div class="rsep"></div>
