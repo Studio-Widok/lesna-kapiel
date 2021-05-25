@@ -47,10 +47,11 @@
       <div class="r"></div>
       <div class="button-container rel">
         <a href="<?=$button['link']?>">
-          <button <?=$button['isDisabled'] ? 'disabled' : ''?>>
+          <button
+            <?=isset($button['isDisabled']) && $button['isDisabled'] ? 'disabled' : ''?>>
             <?=$button['text']?>
           </button>
-          <?php if ($button['isDisabled']) {?>
+          <?php if (isset($button['isDisabled'])) {?>
           <div class="tooltip"><?=pll__("maintenance_page")?></div>
           <?php }?>
         </a>
