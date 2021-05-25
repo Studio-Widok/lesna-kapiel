@@ -45,11 +45,14 @@
         if ($button && $button['link'] && $button['text']) {
         ?>
       <div class="r"></div>
-      <div class="button-container">
+      <div class="button-container rel">
         <a href="<?=$button['link']?>">
-          <button>
+          <button <?=$button['isDisabled'] ? 'disabled' : ''?>>
             <?=$button['text']?>
           </button>
+          <?php if ($button['isDisabled']) {?>
+          <div class="tooltip"><?=pll__("maintenance_page")?></div>
+          <?php }?>
         </a>
       </div>
       <?php }?>

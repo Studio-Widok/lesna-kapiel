@@ -22,7 +22,8 @@
           'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
         ]);
         get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+          'tag'        => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+          'isDisabled' => true,
         ]);
         get_component('nav-link', ['page' => pll_get_post(48)]);
         get_component('nav-link', ['page' => pll_get_post(25)]);
@@ -61,7 +62,8 @@
           'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
         ]);
         get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+          'tag'        => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+          'isDisabled' => true,
         ]);
         get_component('nav-link', ['page' => pll_get_post(48)]);
         get_component('nav-link', ['page' => pll_get_post(109)]);

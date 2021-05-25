@@ -49,8 +49,9 @@
           'title'         => $sections[$i]['title'],
           'text'          => $sections[$i]['text'],
           'button'        => [
-            'text' => $sections[$i]['link']['text'],
-            'link' => get_link_url($sections[$i]['link']),
+            'text'       => $sections[$i]['link']['text'],
+            'link'       => get_link_url($sections[$i]['link']),
+            'isDisabled' => $sections[$i]['title'] === 'domki' || $sections[$i]['title'] === 'houses',
           ],
           'alt_layout'    => true,
           'pic_right'     => $i % 2,

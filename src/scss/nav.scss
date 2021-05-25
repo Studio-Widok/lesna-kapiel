@@ -19,13 +19,20 @@
     padding: 0 1em;
     cursor: pointer;
 
+    /*diabled houses*/
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      color: #acacac;
+    }
+
     span {
       position: relative;
       padding-bottom: 0.5em;
       font-weight: 200;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         bottom: 0;
@@ -158,7 +165,7 @@
         margin-right: 0.5em;
 
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           right: 0;
           bottom: 0;
