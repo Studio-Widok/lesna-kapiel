@@ -14,7 +14,8 @@
     background-position: bottom center;
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 4;
+    z-index: 3;
+    overflow: hidden;
   }
 
   &::before {
