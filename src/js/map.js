@@ -19,7 +19,7 @@ module.exports = (lat, lng) => {
     };
     const options = {
       center: myLatLng,
-      zoom: 14,
+      zoom: 15,
       disableDefaultUI: true,
       zoomControl: true,
       gestureHandling: 'cooperative',
