@@ -16,14 +16,32 @@
   }
 
   .nav-link {
+    position: relative;
     padding: 0 1em;
     cursor: pointer;
 
     /*diabled houses*/
     &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
+      cursor: default;
       color: #acacac;
+
+      .tooltip {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 14em;
+        font-size: 0.8em;
+        background-color: $pale-wrapper;
+        color: #fff;
+        padding: 0.5rem 0.75rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+
+      &:hover .tooltip {
+        opacity: 1;
+      }
     }
 
     span {
@@ -32,7 +50,7 @@
       font-weight: 200;
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         right: 0;
         bottom: 0;
@@ -165,7 +183,7 @@
         margin-right: 0.5em;
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           right: 0;
           bottom: 0;

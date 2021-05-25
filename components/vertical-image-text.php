@@ -52,12 +52,19 @@
   <div class="rmin"></div>
   <?php }?>
 
-  <?php if (isset($content['button_link']) && !empty($content['button_link']['text'])) {?>
+  <?php
+    if (
+      isset($content['button_link']) &&
+      !empty($content['button_link']['text'])
+    ) {
+      $link = get_link_url($content['button_link']);
+      if (!empty($link)) {
+      ?>
   <div class="text-center">
-    <a href="<?=get_link_url($content['button_link'])?>">
+    <a href="<?=$link?>">
       <button><?=$content['button_link']['text']?></button>
     </a>
   </div>
-  <?php }?>
+  <?php }}?>
   <div class="r less-768"></div>
 </div>

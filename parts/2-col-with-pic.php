@@ -51,7 +51,7 @@
             <?=isset($button['isDisabled']) && $button['isDisabled'] ? 'disabled' : ''?>>
             <?=$button['text']?>
           </button>
-          <?php if (isset($button['isDisabled'])) {?>
+          <?php if (isset($button['isDisabled']) && $button['isDisabled']) {?>
           <div class="tooltip"><?=pll__("maintenance_page")?></div>
           <?php }?>
         </a>

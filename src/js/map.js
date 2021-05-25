@@ -2,7 +2,7 @@ module.exports = (lat, lng) => {
   const script = document.createElement('script');
   script.type = 'text/javascript';
   script.src =
-    'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh1cBvGlHA4BwCGsecfiBhgEdi80meJYM';
+    'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDXMpRObII3oqqVm11NwzmtbDRwYOZPVY8';
   document.head.appendChild(script);
 
   script.addEventListener('load', () => {
