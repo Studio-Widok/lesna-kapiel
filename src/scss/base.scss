@@ -1,23 +1,26 @@
 @use "sass:string";
 
 @font-face {
-  font-family: "Belluga";
-  src: url("./../../media/Belluga.otf");
+  font-family: 'Belluga';
+  src: url('./../../media/Belluga.otf');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Regular.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Regular.ttf');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "GT America";
-  src: url("./../../media/GT-America-Condensed-Bold.ttf");
+  font-family: 'GT America';
+  src: url('./../../media/GT-America-Condensed-Bold.ttf');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -27,7 +30,7 @@
 body {
   margin: 0;
   background-color: #555;
-  font-family: "GT America", sans-serif;
+  font-family: 'GT America', sans-serif;
   color: #fff;
   font-weight: 400;
 }
@@ -256,7 +259,7 @@ p {
 }
 
 .handwrite {
-  font-family: "Belluga", serif;
+  font-family: 'Belluga', serif;
   line-height: 0.8;
 }
 
@@ -288,7 +291,7 @@ p {
     z-index: 1;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 100%;
@@ -296,7 +299,7 @@ p {
       width: 100%;
       margin-bottom: -1em;
       padding-bottom: 7.3404%;
-      background-image: url("../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}");
+      background-image: url('../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}');
       background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -313,13 +316,13 @@ p {
   }
 }
 
-@include wrapper(".green-wrapper", $green-wrapper, #fff);
-@include wrapper(".beige-wrapper", $beige-wrapper, $dark);
-@include wrapper(".gray-wrapper", $gray-wrapper, $dark);
-@include wrapper(".pale-wrapper", $pale-wrapper, #fff);
+@include wrapper('.green-wrapper', $green-wrapper, #fff);
+@include wrapper('.beige-wrapper', $beige-wrapper, $dark);
+@include wrapper('.gray-wrapper', $gray-wrapper, $dark);
+@include wrapper('.pale-wrapper', $pale-wrapper, #fff);
 
-@include wrapper(".dark-wrapper", $dark, #fff);
-@include wrapper(".beige-brown-wrapper", $beige-wrapper, $brown);
+@include wrapper('.dark-wrapper', $dark, #fff);
+@include wrapper('.beige-brown-wrapper', $beige-wrapper, $brown);
 
 .beige-wrapper,
 .gray-wrapper {
@@ -422,7 +425,7 @@ button {
   padding-bottom: 0.4em;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     background-color: #fff;
