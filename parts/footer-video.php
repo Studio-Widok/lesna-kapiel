@@ -1,6 +1,6 @@
 <div class="footer-video-section content fade">
   <div class="flex flex-column flex-justify-center flex-align-center">
-    <div class="column">
+    <div class="column nocolumn-768">
       <div class="video-wrapper rel">
         <div id="footer-video-overlay"
           class="video-overlay flex flex-align-center flex-justify-center">

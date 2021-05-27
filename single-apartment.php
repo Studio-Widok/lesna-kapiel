@@ -1,4 +1,5 @@
-<?php get_header();
+<?php
+  get_header();
 
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
@@ -26,29 +27,28 @@
       'facilities' => $facilities['facilities'],
       'meals'      => $facilities['meals'],
       'image'      => $facilities['image']['sizes']['medium'],
-      'link'       => $facilities['link'],
       'maskColor'  => get_mask_color($color),
     ]);
   ?>
   <div class="rsep"></div>
   <?php get_component('date-picker', ['title' => 'wybierz termin'])?>
-  <div class="rsep less-768"></div>
-  <div class="rsep less-768"></div>
-  <div class="rsep less-768"></div>
   <?php
-    $collections = get_the_terms($post, 'collections');
-    if (!empty($collections)) {
-      $color = get_field("colors", $collections[0]);
-    ?>
+  $collections = get_the_terms($post, 'collections');
+  if (!empty($collections)) {
+    $color = get_field("colors", $collections[0]);
+  ?>
   <div class="rsep"></div>
-  <div class="rsep"></div>
-  <div class="rsep"></div>
+  <div class="rsep more-768"></div>
+  <div class="rsep more-768"></div>
 </div>
 
 <div class="<?=$color?>-wrapper">
   <div class="r"></div>
-  <div class="overlap"></div>
+  <div class="overlap more-768"></div>
   <div class="content">
+    <div class="collection-number small less-768">
+      <?=pll_e('ten apartament jest z kolekcji')?>
+    </div>
     <?php
       get_component('single-collection', [
           'collection' => $collections[0],
