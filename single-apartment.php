@@ -48,6 +48,7 @@
   <div class="content">
     <div class="collection-number small less-768">
       <?=pll_e('ten apartament jest z kolekcji')?>
+      <div class="r"></div>
     </div>
     <?php
       get_component('single-collection', [

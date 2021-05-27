@@ -32,17 +32,19 @@
     <?php endif;?>
     <div class="collection-title handwrite less-768"><?=$collection->name?>
     </div>
-    <div class="r less-768"></div>
-    <div class="r less-768"></div>
-    <div class="collection-number small">
-      <?php
-        if ($is_current) {
-          pll_e('ten apartament jest z kolekcji');
-        } else {
-          pll_e('kolekcja #');
-          echo ($__index + 1);
-        }
-      ?>
+    <div class="<?=$is_current ? 'more-768' : ''?>">
+      <div class="r less-768"></div>
+      <div class="r less-768"></div>
+      <div class="collection-number small">
+        <?php
+          if ($is_current) {
+            pll_e('ten apartament jest z kolekcji');
+          } else {
+            pll_e('kolekcja #');
+            echo ($__index + 1);
+          }
+        ?>
+      </div>
     </div>
     <div class="r"></div>
     <div class="collection-title handwrite more-768"><?=$collection->name?>
