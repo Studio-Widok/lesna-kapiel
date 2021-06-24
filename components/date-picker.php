@@ -1,5 +1,9 @@
 <?php
   $title = $title ?? '';
+  if (!isset($id) || empty($id)) {
+    return;
+  }
+
 ?>
 
 <div id="date-picker" class="text-center fade content">
@@ -15,7 +19,7 @@
     <script>
     createHotres({
       'action': 'roomreservations',
-      'id': '33912',
+      'id': <?=$id?>,
       'auth': '91798cedd41744caa6e76f8476c427e7',
       'lang': 'pl'
     });

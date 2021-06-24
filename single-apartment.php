@@ -35,7 +35,12 @@
 
 <div class="green-wrapper">
   <div class="rsep"></div>
-  <?php get_component('date-picker', ['title' => 'wybierz termin'])?>
+  <?php
+    get_component('date-picker', [
+      'title' => 'wybierz termin',
+      'id'    => get_field('hotres_id'),
+    ]);
+  ?>
   <?php
   $collections = get_the_terms($post, 'collections');
   if (!empty($collections)) {
