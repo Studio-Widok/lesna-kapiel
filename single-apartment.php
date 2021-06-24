@@ -31,6 +31,10 @@
     ]);
   ?>
   <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper">
+  <div class="rsep"></div>
   <?php get_component('date-picker', ['title' => 'wybierz termin'])?>
   <?php
   $collections = get_the_terms($post, 'collections');
@@ -61,6 +65,7 @@
   <?php }?>
   <div class="rsep"></div>
 </div>
+
 <div class="pale-wrapper">
   <div class="rsep"></div>
 

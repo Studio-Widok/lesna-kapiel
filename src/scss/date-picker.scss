@@ -1,24 +1,81 @@
 #date-picker {
-  .date-picker-container {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #fff;
-    margin: 0 auto;
-  }
-
   .date-picker-title {
     font-size: 5em;
+
     @media (max-width: 450px) {
       font-size: 4em;
     }
   }
 }
 
-.beige-wrapper,
-.gray-wrapper {
-  #date-picker {
-    .date-picker-container {
-      border-color: $green-wrapper;
-    }
-  }
+#hotresWrapper {
+  min-height: 0;
+}
+
+#hotresWrapper {
+  min-height: 0;
+}
+
+.calendarMonthTitle,
+.calendar {
+  color: #fff;
+}
+
+.activeDate,
+.arrivalDate:after,
+.departureDate:after {
+  background-color: #23382c;
+}
+
+.calendar a,
+.calendar span {
+  border-color: #fff;
+  color: #fff;
+}
+
+.calendar > :nth-child(8n + 2) {
+  border-left: 1px solid #fff;
+}
+
+.calendarContainer .calendar > :nth-child(2),
+.calendarContainer .calendar > :nth-child(3),
+.calendarContainer .calendar > :nth-child(4),
+.calendarContainer .calendar > :nth-child(5),
+.calendarContainer .calendar > :nth-child(6),
+.calendarContainer .calendar > :nth-child(7),
+.calendarContainer .calendar > :nth-child(8) {
+  border-top: 1px solid #fff;
+}
+
+div.activeDate,
+div.activeDate:hover {
+  background-color: #23382c !important;
+  border: 1px solid #fff;
+}
+
+div.disabled {
+  border: none !important;
+}
+
+a.activeDate:hover {
+  background-color: #87ac9b !important;
+}
+
+.disabled,
+.arrivalDate,
+.departureDate {
+  background-color: #fff5 !important;
+  color: #aaa !important;
+}
+
+.tinybutton {
+  color: #fff;
+  border: 1px solid #fff;
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.tinybutton:hover {
+  background-color: #87ac9b;
+  border: 1px solid #fff;
 }
