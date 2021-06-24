@@ -66,18 +66,17 @@
     right: 0;
     max-width: 33rem;
     margin-left: auto;
+    font-size: 7em;
     text-align: right;
     color: #fff;
     z-index: 4;
+
+    @media (max-width: 768px) {
+      font-size: 8vw;
+    }
   }
 }
 
 .green-wrapper-footer {
   z-index: 10;
-}
-
-@media (max-width: 768px) {
-  .big-title {
-    font-size: 8vw;
-  }
 }
