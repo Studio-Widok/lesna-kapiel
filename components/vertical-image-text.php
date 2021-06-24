@@ -57,14 +57,21 @@
       isset($content['button_link']) &&
       !empty($content['button_link']['text'])
     ) {
-      $link = get_link_url($content['button_link']);
-      if (!empty($link)) {
-      ?>
-  <div class="text-center">
-    <a href="<?=$link?>">
-      <button><?=$content['button_link']['text']?></button>
-    </a>
+      $link       = get_link_url($content['button_link']);
+      $isDisabled = empty($link);
+    ?>
+  <div class="flex flex-justify-center">
+    <div class="button-container rel">
+      <a href="<?=$link?>">
+        <button <?=$isDisabled ? 'disabled' : ''?>>
+          <?=$content['button_link']['text']?>
+        </button>
+        <?php if ($isDisabled) {?>
+        <div class="tooltip"><?=pll__("page_in_construction")?></div>
+        <?php }?>
+      </a>
+    </div>
   </div>
-  <?php }}?>
+  <?php }?>
   <div class="r less-768"></div>
 </div>

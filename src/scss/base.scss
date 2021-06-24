@@ -379,9 +379,14 @@ button {
     padding: 0.5rem 0.75rem;
     position: absolute;
     top: -2.5rem;
+    min-width: 10em;
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+
+    @at-root .pale-wrapper & {
+      background-color: $green-wrapper;
+    }
 
     @media (max-width: 768px) {
       left: 50%;
