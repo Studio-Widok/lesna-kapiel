@@ -241,12 +241,4 @@ function viewport_meta() {?>
     ]);
 
     return $wpcf7_data;
-  }, 10, 2);
-
-  add_action('template_redirect', function () {
-    if (!is_user_logged_in()) {
-      include ABSPATH . 'landing.php';
-      wp_redirect('/landing');
-      exit();
-    }
-});
+}, 10, 2);
