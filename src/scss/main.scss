@@ -8,32 +8,33 @@ $beige-wrapper: #cabaaa;
 $pale-wrapper: #8a9992;
 $gray-wrapper: #c3c2c8;
 
-@import 'base';
+@import "base";
 
 // components
-@import 'fixed-link';
-@import 'slider-arrows';
-@import 'vertical-image-text';
-@import 'lightbox';
-@import 'cake-frame';
-@import 'full-width-handwrite';
-@import 'reservation';
-@import 'date-picker';
+@import "fixed-link";
+@import "slider-arrows";
+@import "vertical-image-text";
+@import "lightbox";
+@import "cake-frame";
+@import "full-width-handwrite";
+@import "reservation";
+@import "date-picker";
+@import "hotres";
 
 // parts
-@import 'nav';
-@import 'top';
-@import 'atrakcje';
-@import '2-col';
-@import 'map';
-@import 'text-full';
-@import 'collections-slider';
-@import 'slider-with-bullets';
-@import 'slider-gallery';
-@import 'facilities';
+@import "nav";
+@import "top";
+@import "atrakcje";
+@import "2-col";
+@import "map";
+@import "text-full";
+@import "collections-slider";
+@import "slider-with-bullets";
+@import "slider-gallery";
+@import "facilities";
 
 // general
-@import 'contact';
-@import 'archive';
-@import 'footer';
-@import '_mobile';
+@import "contact";
+@import "archive";
+@import "footer";
+@import "_mobile";

@@ -79,14 +79,16 @@
     ]);
   ?>
   <div class="rsep"></div>
+  <div class="rsep"></div>
   <?php
     get_component('reservation', [
       'title' => 'wybierz termin',
     ]);
   ?>
-<?php
+  <?php
   get_part('full-width-image', [
-    'image' => $footer['image'], 'ratio' => 16 / 9,
+    'image'             => $footer['image'], 'ratio' => 16 / 9,
+    'useNegativeMargin' => true,
   ]);
 ?>
 </div>
