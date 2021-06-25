@@ -71,29 +71,9 @@ function viewport_meta() {?>
 
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
-    wp_enqueue_style('base', $url . 'main.css', [], 1.2);
+    wp_enqueue_style('base', $url . 'main.css', [], 1.3);
     wp_enqueue_script('bundle', $url . 'main.js', [], 1.0, true);
   });
-
-  // // dev - start
-  // function change_url($value, $option) {
-  //   include __DIR__ . '/config.php';
-  //   return $url;
-  // }
-  // add_filter('option_siteurl', 'change_url', 10, 2);
-  // add_filter('option_home', 'change_url', 10, 2);
-  // add_filter(
-  //   'template_directory_uri',
-  //   function ($template_dir_uri, $template, $theme_root_uri) {
-  //     include __DIR__ . '/config.php';
-  //     return $url . '/wp-content/themes/' . $template;
-  //   },
-  //   10, 3
-  // );
-  // add_filter('get_attached_file', function ($file) {
-  //   return str_replace('/lesnakapiel_2/', '/lesnakapiel/', $file);
-  // }, 10, 2);
-  // // dev - end
 
   add_action('wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
