@@ -50,7 +50,11 @@
 }
 
 .slider-arrows-container {
-  margin-top: -9em;
+  margin-top: -15em;
+
+  @media (max-width: 1800px) {
+    margin-top: calc(-15% + 3em);
+  }
 
   @media (max-width: 1200px) {
     margin-top: -12%;
@@ -88,6 +92,12 @@
 }
 
 .slider-content-wrap {
+  padding-bottom: 2%;
+
+  @media (max-width: 1200px) {
+    padding-bottom: 0;
+  }
+
   .slider-content {
     width: 62.5%;
     padding-left: 2em;
@@ -177,7 +187,7 @@
   }
 }
 
-@include iconsColor('.green-wrapper', #fff, $beige-wrapper);
-@include iconsColor('.beige-wrapper', $dark, #fff);
-@include iconsColor('.gray-wrapper', $dark, #fff);
-@include iconsColor('.pale-wrapper', #fff, $beige-wrapper);
+@include iconsColor(".green-wrapper", #fff, $beige-wrapper);
+@include iconsColor(".beige-wrapper", $dark, #fff);
+@include iconsColor(".gray-wrapper", $dark, #fff);
+@include iconsColor(".pale-wrapper", #fff, $beige-wrapper);

@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<div class="content column">
+<div class="content-wide column">
   <div class="slider-gallery fade">
     <?php for ($i = 0; $i < count($gallery); $i++) {?>
     <div class="single-slide"
@@ -58,9 +58,11 @@
     <?php }?>
   </div>
 </div>
+
 <div class="rmin less-768"></div>
+
 <div
-  class="content column flex flex-align-center flex-justify-end slider-arrows-container fade">
+  class="content-wide column flex flex-align-center flex-justify-end slider-arrows-container fade">
   <?php get_component('slider-arrows')?>
   <div class="masonry-icon more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0 0 44 44">
@@ -76,6 +78,7 @@
     </svg>
   </div>
 </div>
+
 <div class="slider-content-wrap content column flex flex-justify-end fade">
   <div class="slider-content">
     <div class="uppercase"><?=$title?></div>

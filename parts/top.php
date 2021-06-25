@@ -15,12 +15,12 @@
   </div>
 
   <?php if ($show_logo) {?>
-  <div id="top-logo-wrap" class="fade">
+  <div id="top-logo-wrap" class="">
     <img src="<?=get_template_directory_uri()?>/media/logo_full.svg" alt="logo"
       id="top-logo-img">
   </div>
   <?php }if ($show_title) {?>
-  <div id="top-title" class="content column-double fade <?=$text_align?>">
+  <div id="top-title" class="content column-double <?=$text_align?>">
     <span><?=$title?></span>
   </div>
   <?php }if ($isShowReservation) {?>

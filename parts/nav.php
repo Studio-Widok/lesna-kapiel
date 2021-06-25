@@ -1,10 +1,18 @@
 <?php
-  $isDark    = $isDark ?? false;
   $nav_img   = get_field('nav_image', 2);
   $address   = get_field('address_short', pll_get_post(25));
   $phone     = get_field('contact_phone', pll_get_post(25));
   $phone_raw = str_replace(' ', '', $phone);
   $mail      = get_field('contact_mail', pll_get_post(25));
+
+  if (!isset($isDark)) {
+    $top = get_field('top');
+    if (empty($top)) {
+      $isDark = get_field('menu_color');
+    } else {
+      $isDark = $top['top']['menu_color'];
+    }
+  }
 ?>
 
 <nav id="nav" class="<?=$isDark ? 'dark' : ''?>">
