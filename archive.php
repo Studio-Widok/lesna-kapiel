@@ -15,8 +15,50 @@
   </div>
 </div>
 
-<div class="<?=get_field("colors", $archive)?>-wrapper">
+<?php
+  $premiumApartments  = [];
+  $deluxeApartments   = [];
+  $standardApartments = [];
+  $isVilla            = is_tax('tags') && get_queried_object()->slug === 'villa';
+  while (have_posts()) {
+    the_post();
+    $tagSlugs = array_map(
+      function ($e) {return $e->slug;},
+      get_the_terms($post, 'tags')
+    );
+    if ($isVilla && in_array('premium', $tagSlugs)) {
+      $premiumApartments[] = $post;
+    } elseif ($isVilla && in_array('deluxe', $tagSlugs)) {
+      $deluxeApartments[] = $post;
+    } else {
+      $standardApartments[] = $post;
+    }
+  }
+?>
 
+<?php
+  if ($isVilla) {
+    get_part(
+      'archive-villa-additional-apartments',
+      [
+        'apartments' => $deluxeApartments,
+        'term'       => pll_get_term(54),
+        'name'       => pll__('rooms') . '<br />' . pll__('deluxe'),
+      ]
+    );
+    get_part(
+      'archive-villa-additional-apartments',
+      [
+        'apartments' => $premiumApartments,
+        'term'       => pll_get_term(11),
+        'name'       => pll__('premium') . '<br />' . pll__('rooms'),
+      ]
+    );
+  }
+?>
+
+<div class="<?=get_field("colors", $archive)?>-wrapper">
+  <div class="rsep"></div>
   <div class="column content title-container">
     <div class="big-title handwrite fade"><?=$archive->name?></div>
   </div>
@@ -24,65 +66,24 @@
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => get_field('top_text', $archive)]);?>
   <div class="rsep"></div>
-
   <div class="content flex flex-768 flex-wrap">
     <?php
-      $premiumApartments = [];
-      $deluxeApartments  = [];
-      $isVilla           = is_tax('tags') && get_queried_object()->slug === 'villa';
-      while (have_posts()) {
-        the_post();
-        $tagSlugs = array_map(
-          function ($e) {return $e->slug;},
-          get_the_terms($post, 'tags')
-        );
-        if ($isVilla && in_array('premium', $tagSlugs)) {
-          $premiumApartments[] = $post;
-          continue;
-        }
-        if ($isVilla && in_array('deluxe', $tagSlugs)) {
-          $deluxeApartments[] = $post;
-          continue;
-        }
-
-        $slider = get_field('slider');
-        $images = isset($slider['gallery']) ? $slider['gallery'] : null;
+      foreach ($standardApartments as $apartment) {
+        $images = get_field('slider', $apartment->ID)['gallery'];
         get_component('single-apartment', [
           'image'     => isset($images[0]) ? $images[0]['sizes']['large'] : null,
-          'link'      => get_permalink(),
-          'title'     => get_the_title(),
-          'price'     => get_field('price'),
-          'occupancy' => get_field('occupancy'),
+          'link'      => get_permalink($apartment->ID),
+          'title'     => get_the_title($apartment->ID),
+          'price'     => get_field('price', $apartment->ID),
+          'occupancy' => get_field('occupancy', $apartment->ID),
         ]);
       }
     ?>
   </div>
 
   <div class="rsep"></div>
-  <div class="rsep"></div>
 
-  <?php
-    if ($isVilla) {
-      get_part(
-        'archive-villa-additional-apartments',
-        [
-          'apartments' => $deluxeApartments,
-          'term'       => pll_get_term(54),
-          'name'       => pll__('rooms') . '<br />' . pll__('deluxe'),
-        ]
-      );
-      get_part(
-        'archive-villa-additional-apartments',
-        [
-          'apartments' => $premiumApartments,
-          'term'       => pll_get_term(11),
-          'name'       => pll__('premium') . '<br />' . pll__('rooms'),
-        ]
-      );
-    }
-
-    if (is_tax('collections')) {
-    ?>
+  <?php if (is_tax('collections')) {?>
   <div class="rsep"></div>
   <div class="rsep less-768"></div>
   <div class="rsep less-768"></div>

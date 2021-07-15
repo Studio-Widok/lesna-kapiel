@@ -8,7 +8,7 @@
   $color      = get_field('colors', $termObject);
 ?>
 
-<div class="premium-container <?=$color?>-wrapper">
+<div class="<?=$color?>-wrapper">
   <div class="title-container column content fade">
     <div class="rsep"></div>
     <div class="big-title handwrite text-right">
@@ -24,10 +24,11 @@
       foreach ($apartments as $apartment) {
         $images = get_field('slider', $apartment->ID)['gallery'];
         get_component('single-apartment', [
-          'image' => isset($images[0]) ? $images[0]['sizes']['large'] : null,
-          'link'  => get_permalink($apartment->ID),
-          'title' => get_the_title($apartment->ID),
-          'price' => get_field('price', $apartment->ID),
+          'image'     => isset($images[0]) ? $images[0]['sizes']['large'] : null,
+          'link'      => get_permalink($apartment->ID),
+          'title'     => get_the_title($apartment->ID),
+          'price'     => get_field('price', $apartment->ID),
+          'occupancy' => get_field('occupancy', $apartment->ID),
         ]);
       }
     ?>
