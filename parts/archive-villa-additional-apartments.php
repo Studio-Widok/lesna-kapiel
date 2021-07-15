@@ -3,22 +3,30 @@
     return;
   }
 
-  $termObject = get_term($term);
-  $name       = $name ?? '';
-  $color      = get_field('colors', $termObject);
+  $termObject  = get_term($term);
+  $name        = $name ?? '';
+  $color       = get_field('colors', $termObject);
+  $skipWrapper = $skipWrapper ?? false;
+  $skipTitle   = $skipTitle ?? false;
 ?>
 
+<?php if (!$skipWrapper) {?>
 <div class="<?=$color?>-wrapper">
+  <?php }?>
+
+  <?php if (!$skipTitle) {?>
   <div class="title-container column content fade">
     <div class="rsep"></div>
     <div class="big-title handwrite text-right">
       <?=$name?></div>
+    <div class="r"></div>
     <div class="r less-768"></div>
     <div class="premium-text">
       <?=get_field('top_text', $termObject)?>
     </div>
   </div>
   <div class="rsep"></div>
+  <?php }?>
   <div class="content flex flex-768 flex-wrap">
     <?php
       foreach ($apartments as $apartment) {
@@ -34,5 +42,8 @@
     ?>
   </div>
   <div class="rsep"></div>
+
+  <?php if (!$skipWrapper) {?>
   <div class="rsep"></div>
 </div>
+<?php }?>
