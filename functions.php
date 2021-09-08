@@ -71,7 +71,7 @@ function viewport_meta() {?>
 
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
-    wp_enqueue_style('base', $url . 'main.css', [], 1.4);
+    wp_enqueue_style('base', $url . 'main.css', [], 1.5);
     wp_enqueue_script('bundle', $url . 'main.js', [], 1.0, true);
   });
 
@@ -221,4 +221,28 @@ function viewport_meta() {?>
     ]);
 
     return $wpcf7_data;
-}, 10, 2);
+  }, 10, 2);
+
+  // orphans
+  add_filter('acf/format_value/type=wysiwyg', function ($value, $post_id, $field) {
+    if (empty($value)) {
+      return '';
+    }
+    $value = '<div class="wysiwyg">' . $value . '</div>';
+    return iworks_orphan($value);
+  }, 11, 3);
+  add_filter('acf/format_value/type=text', function ($value, $post_id, $field) {
+    return iworks_orphan($value);
+  }, 10, 3);
+  add_filter('acf/format_value/type=textarea', function ($value, $post_id, $field) {
+    return iworks_orphan($value);
+  }, 10, 3);
+
+  function iworks_orphan($content) {
+    if (!class_exists('iWorks_Orphan')) {
+      return $content;
+    }
+
+    $orphan = new iWorks_Orphan();
+    return $orphan->replace($content);
+}

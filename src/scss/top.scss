@@ -1,10 +1,14 @@
 #top {
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  &.top-full-height {
+    min-height: 100vh;
+  }
 
   #top-bg {
     position: absolute;

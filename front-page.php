@@ -12,10 +12,12 @@
     'show_logo'         => true,
     'bg'                => get_field('top_image'),
     'isShowReservation' => true,
+    'isFullHeight'      => true,
   ]);
 ?>
 
 <div class=" green-wrapper">
+
   <div class="fixed-link-container">
     <?php
       get_component('fixed-link', [
@@ -36,6 +38,7 @@
     ])?>
     <div class="rsep"></div>
   </div>
+
   <div class="fixed-link-container">
     <?php
       $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
@@ -49,9 +52,9 @@
           'title'         => $sections[$i]['title'],
           'text'          => $sections[$i]['text'],
           'button'        => [
-            'text'       => $sections[$i]['link']['text'],
-            'link'       => get_link_url($sections[$i]['link']),
-            'isDisabled' => $sections[$i]['title'] === 'domki' || $sections[$i]['title'] === 'houses',
+            'text' => $sections[$i]['link']['text'],
+            'link' => get_link_url($sections[$i]['link']),
+            // 'isDisabled' => $sections[$i]['title'] === 'domki' || $sections[$i]['title'] === 'houses',
           ],
           'alt_layout'    => true,
           'pic_right'     => $i % 2,
@@ -62,6 +65,7 @@
     <div class="rsep less-768"></div>
     <?php }?>
   </div>
+
   <div class="rsep"></div>
   <div class="rsep"></div>
   <div class="rsep"></div>

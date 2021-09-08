@@ -101,6 +101,7 @@
   .slider-content {
     width: 62.5%;
     padding-left: 2em;
+    min-height: 6em;
 
     @media (max-width: 1050px) {
       width: 100%;

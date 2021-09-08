@@ -6,9 +6,10 @@
   $isShowReservation = $isShowReservation ?? false;
   $text_align        = $text_align ?? 'text-center';
   $title             = $title ?? get_the_title();
+  $isFullHeight      = $isFullHeight ?? false;
 ?>
 
-<div id="top">
+<div id="top" class="<?=$isFullHeight ? 'top-full-height' : ''?>">
 
   <div id="top-bg" class="<?=$isBgFixed ? 'bg-fixed' : ''?>"
     style="background-image: url('<?=$bg['sizes']['large']?>')">

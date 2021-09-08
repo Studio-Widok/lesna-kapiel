@@ -30,8 +30,8 @@
           'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
         ]);
         get_component('nav-link', [
-          'tag'        => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
-          'isDisabled' => true,
+          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
+          // 'isDisabled' => true,
         ]);
         get_component('nav-link', ['page' => pll_get_post(48)]);
         get_component('nav-link', ['page' => pll_get_post(25)]);
@@ -47,17 +47,22 @@
   <div id="nav-overlay"
     style="background-image: url('<?=$nav_img['sizes']['large']?>');">
 
+    <?php
+      // TEMP: disable the language switcher
+      if (false) {
+      ?>
     <div class="language-switcher">
       <?php
         $langs = pll_the_languages([
-          'raw'          => true,
-          'hide_current' => true,
-        ]);
-        foreach ($langs as $lang) {
-        ?>
+            'raw'          => true,
+            'hide_current' => true,
+          ]);
+          foreach ($langs as $lang) {
+          ?>
       <a href="<?=$lang['url']?>" class="lang-link"><?=$lang['slug']?></a>
       <?php }?>
     </div>
+    <?php }?>
 
     <div></div>
     <div id="nav-o-links">

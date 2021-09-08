@@ -1,4 +1,7 @@
 <?php
+  // TEMP: disable all collection sliders
+  return;
+
   $exclude       = $exclude ?? [];
   $isOthersTitle = $isOthersTitle ?? false;
 

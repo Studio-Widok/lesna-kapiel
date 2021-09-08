@@ -25,8 +25,9 @@
       <?=get_field('top_text', $termObject)?>
     </div>
   </div>
-  <div class="rsep"></div>
   <?php }?>
+
+  <div class="rsep"></div>
   <div class="content flex flex-768 flex-wrap">
     <?php
       foreach ($apartments as $apartment) {

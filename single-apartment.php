@@ -40,12 +40,13 @@
       'title' => 'wybierz termin',
       'id'    => get_field('hotres_id'),
     ]);
-  ?>
-  <?php
-  $collections = get_the_terms($post, 'collections');
-  if (!empty($collections)) {
-    $color = get_field("colors", $collections[0]);
-  ?>
+
+    // TEMP: disable all collections
+    if (false) {
+      $collections = get_the_terms($post, 'collections');
+      if (!empty($collections)) {
+        $color = get_field("colors", $collections[0]);
+      ?>
   <div class="rsep"></div>
   <div class="rsep more-768"></div>
   <div class="rsep more-768"></div>
@@ -61,13 +62,14 @@
     </div>
     <?php
       get_component('single-collection', [
-          'collection' => $collections[0],
-          'is_current' => true,
-          'maskColor'  => get_mask_color($color),
-        ]);
-      ?>
+            'collection' => $collections[0],
+            'is_current' => true,
+            'maskColor'  => get_mask_color($color),
+          ]);
+        ?>
   </div>
-  <?php }?>
+  <?php }}?>
+
   <div class="rsep"></div>
 </div>
 

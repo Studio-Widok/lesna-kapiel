@@ -275,13 +275,15 @@ p {
   @media (max-width: 1200px) {
     font-size: 1em;
   }
+
+  a {
+    text-decoration: underline;
+  }
 }
 
 .text-bold {
   font-weight: bold;
 }
-
-//adding to the base
 
 @mixin wrapper($selector, $bgColor, $color) {
   #{$selector} {
@@ -312,6 +314,16 @@ p {
     button {
       color: $color;
       border-color: $color;
+    }
+
+    .hotresChooser div input,
+    .hotresChooser div select {
+      border: 1px solid $color;
+      color: $color;
+    }
+
+    .hotresChooser div button {
+      color: $color;
     }
   }
 }

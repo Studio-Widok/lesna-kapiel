@@ -26,6 +26,11 @@
   }
 
   get_part('nav', ['isDark' => $isDark]);
+
+  $title = get_field('alt_title', $archive);
+  if (empty($title)) {
+    $title = $archive->name;
+  }
 ?>
 
 <div class="archive-top">
@@ -37,7 +42,8 @@
 <div class="<?=get_field("colors", $archive)?>-wrapper">
   <div class="rsep"></div>
   <div class="column content title-container">
-    <div class="big-title handwrite fade"><?=$archive->name?></div>
+    <div class="big-title handwrite fade"><?=$title?>
+    </div>
   </div>
   <div class="r"></div>
   <?php get_component('reservation')?>
@@ -106,8 +112,8 @@
     ?>
   <div class="rsep"></div>
   <?php
-        }
-      ?>
+    }
+  ?>
 
   <div class="content">
     <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
