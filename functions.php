@@ -1,4 +1,6 @@
 <?php
+  // cSpell:ignore staticize
+
   add_theme_support("title-tag");
   if (!isset($content_width)) {$content_width = 900;}
   add_filter('show_admin_bar', '__return_false');

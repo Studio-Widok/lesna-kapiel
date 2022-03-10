@@ -19,7 +19,7 @@ $gray-wrapper: #c3c2c8;
 @import "full-width-handwrite";
 @import "reservation";
 @import "date-picker";
-@import "hotres";
+// @import "hotres";
 
 // parts
 @import "nav";
@@ -38,3 +38,9 @@ $gray-wrapper: #c3c2c8;
 @import "archive";
 @import "footer";
 @import "_mobile";
+
+// temp hotres
+#hotresChooser {
+  position: relative;
+  color: #000;
+}
