@@ -26,7 +26,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: url => !url.includes('.php'),
+              url: { filter: url => !url.includes('.php') },
             },
           },
           {
@@ -67,12 +67,6 @@ module.exports = {
             ],
             presets: ['@babel/preset-env'],
           },
-        },
-      },
-      {
-        test: /\.(eot|otf|ttf|woff|woff2|jpg|png|gif|svg|php)$/,
-        use: {
-          loader: 'file-loader',
         },
       },
     ],
