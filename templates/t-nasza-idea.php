@@ -24,9 +24,9 @@
 
 <div class="green-wrapper">
   <?php
-    get_part('footer-video', [
-      'source' => $video['video'],
-      'text'   => $video['text']]);
+    // get_part('footer-video', [
+    //   'source' => $video['video'],
+    //   'text'   => $video['text']]);
   ?>
   <div class="rsep"></div>
   <?php

@@ -76,9 +76,9 @@
 ?>
 <div class="green-wrapper">
   <?php
-    get_part('footer-video', [
-      'source' => $footer['video'],
-      'text'   => $footer['text']]);
+    // get_part('footer-video', [
+    //   'source' => $footer['video'],
+    //   'text'   => $footer['text']]);
   ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
