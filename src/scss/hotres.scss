@@ -5,6 +5,7 @@
   font-weight: 700;
   font-size: 1.25em;
   margin: 0 auto;
+  min-width: none;
 
   * {
     font-size: 1em;
@@ -13,8 +14,18 @@
   .hotresRangeChooser {
     background: none;
     box-shadow: none;
+    width: auto;
     height: auto;
     display: flex;
+
+    #hotresArrivalWrap {
+      &::before {
+        position: static;
+        border: none;
+        transform: none;
+        opacity: 1;
+      }
+    }
 
     #hotresArrivalWrap,
     #hotresDepartureWrap {
@@ -25,11 +36,17 @@
       justify-content: center;
       align-items: center;
       text-transform: lowercase;
-    }
+      padding: 0 1em;
 
-    #hotresArrivalWrap {
       &::before {
-        display: none;
+        content: "";
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 0.5em;
+        background-image: url("../../media/logo.svg");
+        background-position: center;
+        background-repeat: no-repeat;
       }
     }
 
@@ -43,7 +60,7 @@
     }
 
     .hotresDate {
-      padding-right: 0.5em;
+      padding-right: 0.25em;
     }
 
     .hotresYear {
@@ -52,21 +69,40 @@
   }
 
   .hotresAdultsChooser {
+    position: relative;
     background: none;
     box-shadow: none;
     height: auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    width: auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1.5em;
+      height: 1.5em;
+      margin-left: 1em;
+      background-image: url("../../media/logo.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
 
     #hotresAdultsSelect {
-      border: 2px solid #fff;
       border-right: none;
       background: none;
       height: 100%;
+      width: auto;
       color: #fff;
       font-weight: 700;
       font-size: 1em;
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none;
+      padding: 0 1em 0 3em;
 
       &::-ms-expand {
         display: none;
