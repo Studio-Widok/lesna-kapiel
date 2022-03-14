@@ -19,10 +19,12 @@
       <div class="image-wrapper">
         <div class="cake cake-3-4"
           style="background-image: url(<?=$image['sizes']['large']?>)">
-          <?php get_component('cake-frame', [
-              'maskColor' => $maskColor,
-              'isOverlap' => $isOverlap,
-          ]);?>
+          <?php
+            // get_component('cake-frame', [
+            //     'maskColor' => $maskColor,
+            //     'isOverlap' => $isOverlap,
+            // ]);
+          ?>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@
     </div>
     <div class="col2 column">
       <div class="cake cake-3-4" style="background-image: url(<?=$image?>)">
-        <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
+        <?php // get_component('cake-frame', ['maskColor' => $maskColor]);?>
       </div>
     </div>
   </div>

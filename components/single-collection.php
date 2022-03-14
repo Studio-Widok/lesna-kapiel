@@ -18,10 +18,12 @@
   <div class="col2 column collection-image-column">
     <div class="cake cake-3-4"
       style="background-image: url('<?=$img['sizes']['large']?>');">
-      <?php get_component('cake-frame', [
-          'maskColor' => $maskColor,
-          'isOverlap' => true,
-      ]);?>
+      <?php
+        //  get_component('cake-frame', [
+        //     'maskColor' => $maskColor,
+        //     'isOverlap' => true,
+        // ]);
+      ?>
     </div>
   </div>
   <div class="col2 column collection-description-column">

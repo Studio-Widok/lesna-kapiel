@@ -17,7 +17,7 @@
   <div class="image-wrapper-full-width">
     <div class="cake cake-3-4"
       style="background-image: url(<?=$content['image']['sizes']['large']?>)">
-      <?php get_component('cake-frame', ['maskColor' => $maskColor]);?>
+      <?php // get_component('cake-frame', ['maskColor' => $maskColor]);?>
     </div>
   </div>
   <div class="r"></div>
