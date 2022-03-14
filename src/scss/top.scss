@@ -3,8 +3,9 @@
   min-height: 70vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  padding: 3em 0 12em 0;
 
   &.top-full-height {
     min-height: 100vh;
@@ -37,7 +38,7 @@
     text-align: center;
     line-height: 1.1;
     width: 25%;
-    min-width: 30em;
+    min-width: 25em;
 
     @media (max-width: 1200px) {
       font-size: 0.8em;
@@ -49,6 +50,11 @@
 
     #top-logo-img {
       width: 100%;
+    }
+
+    .handwrite {
+      font-size: 3.2em;
+      margin-top: 0.5em;
     }
   }
 
@@ -75,9 +81,13 @@
     }
   }
 
+  #hotresChooser {
+    margin-top: 2em;
+  }
+
   .arrow {
     position: absolute;
-    bottom: 15%;
+    bottom: 5em;
     margin: 0 auto;
     cursor: pointer;
 

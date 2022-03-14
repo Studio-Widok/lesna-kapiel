@@ -15,21 +15,23 @@
     style="background-image: url('<?=$bg['sizes']['large']?>')">
   </div>
 
+  <div class="r full"></div>
+
   <?php if ($show_logo) {?>
   <div id="top-logo-wrap" class="">
-    <img src="<?=get_template_directory_uri()?>/media/logo_full.svg" alt="logo"
+    <img src="<?=get_template_directory_uri()?>/media/logo_text.svg" alt="logo"
       id="top-logo-img">
+    <div class="handwrite"><?=get_field('subtitle')?></div>
   </div>
   <?php }if ($show_title) {?>
   <div id="top-title" class="content column-double <?=$text_align?>">
     <span><?=$title?></span>
   </div>
   <?php }if ($isShowReservation) {?>
-  <div class="rsep"></div>
   <?php
-    get_component('reservation');
-    }
-  ?>
+  get_component('reservation');
+  }
+?>
 
   <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
