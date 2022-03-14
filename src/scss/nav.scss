@@ -3,22 +3,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 3em;
-  right: 6em;
-  left: 6em;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1.5em 6em;
   z-index: 21;
   pointer-events: none;
+  background-color: $nav-green;
 
   @media (max-width: 1200px) {
-    right: 3em;
-    left: 3em;
+    padding: 1.5em 3em;
     font-size: 1em;
   }
 
   .nav-link {
     position: relative;
-    padding: 0 1em;
+    padding: 0 2em;
     cursor: pointer;
+
+    @media (max-width: 1200px) {
+      padding: 0 1em;
+    }
 
     &.disabled {
       cursor: default;
