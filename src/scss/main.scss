@@ -3,6 +3,8 @@ $dark: #122218;
 $white-gray: #78857f;
 $brown: #654824;
 
+$beige: #af9f71;
+
 $green-wrapper: #23382c;
 $beige-wrapper: #cabaaa;
 $pale-wrapper: #8a9992;
@@ -19,7 +21,7 @@ $gray-wrapper: #c3c2c8;
 @import "full-width-handwrite";
 @import "reservation";
 @import "date-picker";
-// @import "hotres";
+@import "hotres";
 
 // parts
 @import "nav";
@@ -38,9 +40,3 @@ $gray-wrapper: #c3c2c8;
 @import "archive";
 @import "footer";
 @import "_mobile";
-
-// temp hotres
-#hotresChooser {
-  position: relative;
-  color: #000;
-}

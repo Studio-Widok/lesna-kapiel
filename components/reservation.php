@@ -1,6 +1,10 @@
 <?php
   $title = $title ?? '';
   $text  = $text ?? '';
+  if ($__index) {
+    return;
+  }
+
 ?>
 
 <?php if (!empty($title)) {?>
@@ -29,9 +33,6 @@ window.addEventListener('load', (event) => {
 });
 </script>
 <?php }?>
-<?php if (!$__index) {?>
-<script src="https://panel.hotres.pl/public/api/hotres_v4_chooser.js"></script>
-<?php }?>
 
 <form action="https://panel.hotres.pl/v4_step1" target="_blank"
   class="hotresChooser" id="hotresChooser" method="get"><input type="hidden"
@@ -47,11 +48,15 @@ window.addEventListener('load', (event) => {
       name="adults" id="hotresAdultsSelect"></select></div>
   <div class="hotresSubmit"><button id="hotresButtonChooser"></button></div>
 </form>
+
+<?php if (!$__index) {?>
+<script src="https://panel.hotres.pl/public/api/hotres_v4_chooser.js"></script>
 <script>
 window.addEventListener('load', (event) => {
   new hotresChooser({});
 });
 </script>
+<?php }?>
 
 <?php if (!empty($text)) {?>
 <div class="text-center fade">
