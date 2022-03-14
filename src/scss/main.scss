@@ -1,10 +1,11 @@
 $letter-spacing: 0.15em;
-$dark: #122218;
+$dark: #20372c; // changed
 $white-gray: #78857f;
 $brown: #654824;
 
-$beige: #af9f71;
-$nav-green: #9aa485;
+$beige: #af9f71; // new
+$nav-green: #9aa485; // new
+$pale-green: #d8dbd0; // new
 
 $green-wrapper: #23382c;
 $beige-wrapper: #cabaaa;
@@ -12,6 +13,7 @@ $pale-wrapper: #8a9992;
 $gray-wrapper: #c3c2c8;
 
 @import "base";
+@import "front-page";
 
 // components
 @import "fixed-link";

@@ -332,6 +332,7 @@ p {
 @include wrapper(".beige-wrapper", $beige-wrapper, $dark);
 @include wrapper(".gray-wrapper", $gray-wrapper, $dark);
 @include wrapper(".pale-wrapper", $pale-wrapper, #fff);
+@include wrapper(".pale-green-wrapper", $pale-green, $dark);
 
 @include wrapper(".dark-wrapper", $dark, #fff);
 @include wrapper(".beige-brown-wrapper", $beige-wrapper, $brown);
@@ -341,6 +342,7 @@ p {
   button {
     border-color: $green-wrapper;
     color: $green-wrapper;
+
     &:hover {
       background-color: $green-wrapper;
       color: #fff;

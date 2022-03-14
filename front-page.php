@@ -16,7 +16,7 @@
   ]);
 ?>
 
-<div class=" green-wrapper">
+<div class="pale-green-wrapper">
 
   <div class="fixed-link-container">
     <?php
@@ -28,14 +28,28 @@
     <div class="rsep"></div>
     <div class="rsep more-1200"></div>
     <?php
-      get_part('2-col-no-pic', [
-        'title'  => $firstSection['title'],
-        'text'   => $firstSection['text'],
-        'button' => [
-          'text' => $firstSection['link']['text'],
-          'link' => get_link_url($firstSection['link']),
-        ],
-    ])?>
+      // get_part('2-col-no-pic', [
+      //   'title'  => $firstSection['title'],
+      //   'text'   => $firstSection['text'],
+      //   'button' => [
+      //     'text' => $firstSection['link']['text'],
+      //     'link' => get_link_url($firstSection['link']),
+      //   ],
+      // ]);
+    ?>
+    <div class="content fade" id="front-intro">
+      <img src="<?=get_template_directory_uri()?>/media/logo_green.svg" alt="">
+      <h2 class="uppercase"><?=$firstSection['title']?></h2>
+      <div class="text"><?=$firstSection['text']?></div>
+      <div class="r"></div>
+      <div class="button-container text-center">
+        <a href="<?=get_link_url($firstSection['link'])?>">
+          <button>
+            <?=$firstSection['link']['text']?>
+          </button>
+        </a>
+      </div>
+    </div>
     <div class="rsep"></div>
   </div>
 
