@@ -13,7 +13,8 @@ $pale-wrapper: #8a9992;
 $gray-wrapper: #c3c2c8;
 
 @import "base";
-@import "front-page";
+@import "wrappers";
+@import "page";
 
 // components
 @import "fixed-link";
@@ -32,7 +33,6 @@ $gray-wrapper: #c3c2c8;
 @import "atrakcje";
 @import "2-col";
 @import "map";
-@import "text-full";
 @import "collections-slider";
 @import "slider-with-bullets";
 @import "slider-gallery";

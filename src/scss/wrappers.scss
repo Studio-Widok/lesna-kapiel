@@ -1,0 +1,81 @@
+@mixin wrapper($selector, $bgColor, $color) {
+  #{$selector} {
+    position: relative;
+    background-color: $bgColor;
+    color: $color;
+    z-index: 1;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      margin-bottom: -1em;
+      padding-bottom: 7.3404%;
+      background-image: url("../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}");
+      background-position: bottom center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .cake-frame .drawing path {
+      stroke: $bgColor;
+    }
+
+    button {
+      color: $color;
+      border-color: $color;
+    }
+
+    .heading-logo {
+      path {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@include wrapper(".green-wrapper", $green-wrapper, #fff);
+@include wrapper(".beige-wrapper", $beige-wrapper, $dark);
+@include wrapper(".gray-wrapper", $gray-wrapper, $dark);
+@include wrapper(".pale-wrapper", $pale-wrapper, #fff);
+@include wrapper(".pale-green-wrapper", $pale-green, $dark);
+
+@include wrapper(".dark-wrapper", $dark, #fff);
+@include wrapper(".beige-brown-wrapper", $beige-wrapper, $brown);
+@include wrapper(".white-wrapper", #fff, $dark);
+
+.beige-wrapper,
+.gray-wrapper {
+  button {
+    border-color: $green-wrapper;
+    color: $green-wrapper;
+
+    &:hover {
+      background-color: $green-wrapper;
+      color: #fff;
+    }
+  }
+
+  .small-title::after {
+    background-color: $dark;
+  }
+
+  .additional-links svg path {
+    stroke: $dark;
+    fill: $dark;
+  }
+}
+
+.beige-brown-wrapper {
+  button {
+    border-color: $brown;
+    color: $brown;
+    &:hover {
+      background-color: $brown;
+      color: #fff;
+    }
+  }
+}

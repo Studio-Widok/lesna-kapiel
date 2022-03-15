@@ -27,20 +27,11 @@
     ?>
     <div class="rsep"></div>
     <div class="rsep more-1200"></div>
-    <?php
-      // get_part('2-col-no-pic', [
-      //   'title'  => $firstSection['title'],
-      //   'text'   => $firstSection['text'],
-      //   'button' => [
-      //     'text' => $firstSection['link']['text'],
-      //     'link' => get_link_url($firstSection['link']),
-      //   ],
-      // ]);
-    ?>
-    <div class="content fade" id="front-intro">
-      <img src="<?=get_template_directory_uri()?>/media/logo_green.svg" alt="">
-      <h2 class="uppercase"><?=$firstSection['title']?></h2>
-      <div class="text"><?=$firstSection['text']?></div>
+
+    <div class="content fade column" id="front-intro">
+      <?php get_component('heading-logo');?>
+      <h2 class="uppercase heading"><?=$firstSection['title']?></h2>
+      <div class="text limited-width"><?=$firstSection['text']?></div>
       <div class="r"></div>
       <div class="button-container text-center">
         <a href="<?=get_link_url($firstSection['link'])?>">
@@ -50,9 +41,40 @@
         </a>
       </div>
     </div>
+
+    <div class="rsep"></div>
+
+    <div class="content icons-full-width column-outer flex flex-768-50">
+      <?php
+        $icons = get_field('icons');
+        for ($i = 0; $i < count($icons); $i++) {
+        ?>
+      <div class="icon col3 column-inner">
+        <img src="<?=$icons[$i]['icon']['sizes']['medium']?>" alt=""
+          class="icon-img">
+        <div class="icon-text uppercase"><?=$icons[$i]['text']?></div>
+      </div>
+      <?php }?>
+    </div>
+
+    <div class="r"></div>
+  </div>
+</div>
+
+<div class="white-wrapper">
+  <div class="fixed-link-container">
+    <?php $recommended = get_field('recommended');?>
+    <div class="rsep"></div>
+    <div class="content column">
+      <?php get_component('heading-logo');?>
+      <h2 class="uppercase heading"><?=$recommended['title']?></h2>
+      <div class="text limited-width"><?=$recommended['text']?></div>
+    </div>
     <div class="rsep"></div>
   </div>
+</div>
 
+<div class="pale-green-wrapper">
   <div class="fixed-link-container">
     <?php
       $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
@@ -68,7 +90,6 @@
           'button'        => [
             'text' => $sections[$i]['link']['text'],
             'link' => get_link_url($sections[$i]['link']),
-            // 'isDisabled' => $sections[$i]['title'] === 'domki' || $sections[$i]['title'] === 'houses',
           ],
           'alt_layout'    => true,
           'pic_right'     => $i % 2,
@@ -113,9 +134,6 @@
 <div class="green-wrapper">
   <?php
     $footer = get_field('footer', 2);
-    // get_part('footer-video', [
-    //   'source' => $footer['video'],
-    //   'text'   => $footer['text']]);
     get_part('contact-info');
   ?>
   <div class="rsep"></div>

@@ -1,0 +1,216 @@
+button {
+  letter-spacing: $letter-spacing;
+  padding-left: $letter-spacing;
+  background-color: unset;
+  color: #fff;
+  padding: 1em 1.5em;
+  transition: 0.3s all ease-in-out;
+  text-transform: uppercase;
+  border: 1px #fff solid;
+  font-size: 0.625em;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 0.75em;
+  }
+
+  & + .tooltip {
+    font-size: 0.8em;
+    background-color: $pale-wrapper;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    position: absolute;
+    top: -2.5rem;
+    min-width: 10em;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+
+    @at-root .pale-wrapper & {
+      background-color: $green-wrapper;
+    }
+
+    @media (max-width: 768px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $beige-wrapper;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: $gray-wrapper;
+    border-color: $gray-wrapper;
+    cursor: default;
+
+    &:hover {
+      & + .tooltip {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 5em;
+}
+
+.small-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: $letter-spacing;
+  padding-bottom: 0.4em;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 0.5px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+.text-center > .small-title {
+  padding-left: $letter-spacing;
+}
+
+.image-wrapper-full-width {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.big-title {
+  font-size: 8em;
+  @media (max-width: 1200px) {
+    font-size: 6.5em;
+  }
+  @media (max-width: 768px) {
+    font-size: 5em;
+  }
+  @media (max-width: 450px) {
+    font-size: 4em;
+  }
+}
+
+// fix problem with background-position: center on chrome
+.full-width-image {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    background-position: 50.001% 0;
+  }
+}
+
+.full-width-image-contact {
+  position: absolute;
+  bottom: 4em;
+  width: 100%;
+}
+
+.full-width-image-negative {
+  margin-top: -18%;
+  z-index: -1;
+
+  @media (max-width: 450px) {
+    height: auto;
+
+    .full-width-image-contact {
+      position: static;
+    }
+  }
+}
+
+.overlap {
+  margin-top: -14em;
+  @media (max-width: 900px) {
+    margin-top: -18em;
+  }
+}
+
+.fade.active {
+  opacity: 1;
+}
+.fade {
+  opacity: 0;
+  transition: 1s;
+}
+
+.cake-frame {
+  width: 10em;
+  display: block;
+}
+
+.contect-info-overlap {
+  margin-top: -8em;
+}
+
+#cookie-notice {
+  .cn-button {
+    background-color: $pale-wrapper;
+    color: #fff;
+    border-radius: 0;
+  }
+}
+
+.grecaptcha-badge {
+  right: -500px !important;
+}
+
+.text-full {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.text.limited-width {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.heading {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.icons-full-width {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 60em;
+
+  .icon {
+    margin-bottom: 4em;
+
+    .icon-img {
+      max-width: 9em;
+      display: block;
+      margin: 0 auto 1em auto;
+    }
+
+    .icon-text {
+      font-size: 0.8em;
+      max-width: 11em;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+.heading-logo {
+  width: 3em;
+  display: block;
+  margin: 0 auto 1em auto;
+}
