@@ -49,10 +49,10 @@
         $icons = get_field('icons');
         for ($i = 0; $i < count($icons); $i++) {
         ?>
-      <div class="icon col3 column-inner">
+      <div class="large-icon col3 column-inner">
         <img src="<?=$icons[$i]['icon']['sizes']['medium']?>" alt=""
-          class="icon-img">
-        <div class="icon-text uppercase"><?=$icons[$i]['text']?></div>
+          class="large-icon-img">
+        <div class="large-icon-text uppercase"><?=$icons[$i]['text']?></div>
       </div>
       <?php }?>
     </div>
@@ -61,16 +61,35 @@
   </div>
 </div>
 
+<?php
+  $recommended    = get_field('recommended');
+  $rec_apartments = get_posts([
+    'numberposts' => 3,
+    'post_type'   => 'apartment',
+  ]);
+?>
 <div class="white-wrapper">
   <div class="fixed-link-container">
-    <?php $recommended = get_field('recommended');?>
+
     <div class="rsep"></div>
+
     <div class="content column">
       <?php get_component('heading-logo');?>
       <h2 class="uppercase heading"><?=$recommended['title']?></h2>
       <div class="text limited-width"><?=$recommended['text']?></div>
+      <div class="r"></div>
     </div>
+
+    <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
+      <?php
+        for ($i = 0; $i < count($rec_apartments); $i++) {
+          get_component('apartment-link', ['apartment' => $rec_apartments[$i]]);
+        }
+      ?>
+    </div>
+
     <div class="rsep"></div>
+
   </div>
 </div>
 

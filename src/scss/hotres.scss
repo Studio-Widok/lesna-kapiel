@@ -2,10 +2,15 @@
   position: relative;
   color: #fff;
   align-items: stretch;
+  justify-content: center;
   font-weight: 700;
   font-size: 1.25em;
   margin: 0 auto;
-  min-width: none;
+  min-width: 0 !important;
+
+  @media (max-width: 600px) {
+    font-size: 0.9em;
+  }
 
   * {
     font-size: 1em;
@@ -113,13 +118,20 @@
         color: #000;
       }
     }
+
+    @media (max-width: 450px) {
+      display: none;
+    }
   }
 
   .hotresSubmit {
+    width: auto;
+
     button {
       background-color: $beige;
       border: 2px solid #fff;
       height: auto;
+      width: auto;
       font-weight: 700;
       font-size: 0.75em;
     }
