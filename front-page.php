@@ -57,7 +57,7 @@
       <?php }?>
     </div>
 
-    <div class="r"></div>
+    <div class="rsep"></div>
   </div>
 </div>
 
@@ -95,37 +95,33 @@
 </div>
 
 <div class="pale-green-wrapper">
-  <div class="fixed-link-container">
-    <?php
-      $termId = get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa')));
-      get_component('fixed-link', ['text' => pll__('see_apartments'), 'link' => get_tag_link($termId)]);
-    ?>
-    <div class="rsep"></div>
-    <?php
-      for ($i = 0; $i < count($sections); $i++) {
-        get_part('2-col-with-pic', [
-          'image'         => $sections[$i]['image'],
-          'title'         => $sections[$i]['title'],
-          'text'          => $sections[$i]['text'],
-          'button'        => [
-            'text' => $sections[$i]['link']['text'],
-            'link' => get_link_url($sections[$i]['link']),
-          ],
-          'alt_layout'    => true,
-          'pic_right'     => $i % 2,
-          'isTextOverlap' => $i === 1,
-          'maskColor'     => get_mask_color('green'),
-        ]);
-      ?>
-    <div class="rsep less-768"></div>
-    <?php }?>
-  </div>
+  <div class="content-wide">
 
-  <div class="rsep"></div>
-  <div class="rsep"></div>
-  <div class="rsep"></div>
-  <div class="rsep less-768"></div>
-  <div class="rsep less-768"></div>
+    <div class="chessboard">
+      <?php
+        for ($i = 0; $i < count($sections); $i++) {
+          $section = $sections[$i];
+        ?>
+      <div class="chessboard-row">
+        <div class="square-img"
+          style="background-image: url(<?=$section['image']['sizes']['medium']?>)">
+        </div>
+        <div class="square column">
+          <div class="big-title handwrite"><?=$section['title']?></div>
+          <div class="text"><?=$section['text']?></div>
+          <div class="r"></div>
+          <div class="button-container">
+            <a href="<?=get_link_url($section['link'])?>">
+              <button><?=$section['link']['text']?></button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <?php }?>
+    </div>
+    <div class="rsep"></div>
+    <div class="rsep"></div>
+  </div>
 </div>
 
 <?php get_part('collections-slider');?>

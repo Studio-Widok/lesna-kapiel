@@ -175,7 +175,7 @@ button {
 }
 
 .text.limited-width {
-  max-width: 60em;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
@@ -188,7 +188,7 @@ button {
 .icons-full-width {
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 60em;
+  max-width: 60rem;
 
   .large-icon {
     margin-bottom: 4em;
@@ -212,4 +212,45 @@ button {
   width: 3em;
   display: block;
   margin: 0 auto 1em auto;
+}
+
+// chessboard
+.chessboard {
+  .chessboard-row {
+    display: flex;
+    align-items: center;
+
+    .square-img {
+      width: 50%;
+      padding-bottom: 30%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .square {
+      width: 50%;
+      max-width: 40rem;
+      padding-top: 3em;
+      padding-bottom: 3em;
+
+      .handwrite {
+        padding-bottom: 0.4em;
+      }
+
+      .text {
+        max-width: 28rem;
+        margin-left: auto;
+      }
+    }
+
+    &:nth-child(2n) {
+      .square {
+        margin-left: auto;
+      }
+
+      .square-img {
+        order: 2;
+      }
+    }
+  }
 }
