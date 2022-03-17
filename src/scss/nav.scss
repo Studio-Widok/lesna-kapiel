@@ -16,6 +16,11 @@
     font-size: 1em;
   }
 
+  @media (max-width: 768px) {
+    left: auto;
+    padding: 1.5em;
+  }
+
   .nav-link {
     position: relative;
     padding: 0 2em;
@@ -108,6 +113,11 @@
     cursor: pointer;
     z-index: 22;
     pointer-events: auto;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
 
     > div {
       position: absolute;

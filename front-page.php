@@ -72,10 +72,10 @@
 
   <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
     <?php
-        for ($i = 0; $i < count($rec_apartments); $i++) {
-          get_component('apartment-link', ['apartment' => $rec_apartments[$i]]);
-        }
-      ?>
+      for ($i = 0; $i < count($rec_apartments); $i++) {
+        get_component('apartment-link', ['apartment' => $rec_apartments[$i]]);
+      }
+    ?>
   </div>
 
   <div class="rsep"></div>
@@ -148,15 +148,12 @@
   ]);
 ?>
 </div>
-<div class="green-wrapper">
-  <?php
-    $footer = get_field('footer', 2);
-    get_part('contact-info');
-  ?>
+
+<?php get_part('map-block');?>
+
+<div class="green-wrapper" style="z-index: 2;">
+  <?php get_part('contact-info');?>
   <div class="rsep"></div>
 </div>
 
-<?php
-  get_part('map-block');
-  get_footer();
-?>
+<?php get_footer();?>

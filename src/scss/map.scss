@@ -1,28 +1,6 @@
 #map-wrapper {
   position: relative;
-  margin-bottom: -1em;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    margin-bottom: -1em;
-    padding-bottom: 7.3404%;
-    background-image: url("../media/scratch-1.php?color=#{str-slice(#{$green-wrapper}, 2)}");
-    background-position: bottom center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 3;
-    overflow: hidden;
-  }
-
-  &::before {
-    bottom: 100%;
-    transform: rotate(180deg) translateY(-50%);
-  }
 
   #gmap {
     z-index: 2;
@@ -30,6 +8,19 @@
 
     > div {
       background-color: #23352a !important;
+    }
+
+    img[alt="Google"] {
+      top: -50px !important;
+    }
+
+    .gmnoprint,
+    .gm-style-cc {
+      bottom: 40px !important;
+    }
+
+    .gm-bundled-control-on-bottom {
+      bottom: 126px !important;
     }
   }
 }
