@@ -1,11 +1,14 @@
 .icon {
   width: 2em;
   height: 2em;
-  margin: 0 0.5em -0.2em 0.5em;
+  margin: 0 0.25em -0.2em 0.25em;
   display: inline-block;
   vertical-align: bottom;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("../../media/icons/jacuzzi.png");
+
+  &--person {
+    background-image: url(../../media/icons/ilosc-osob-green.png);
+  }
 }

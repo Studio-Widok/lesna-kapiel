@@ -17,48 +17,39 @@
 ?>
 
 <div class="pale-green-wrapper">
+  <div class="rsep"></div>
+  <div class="rsep more-1200"></div>
 
-  <div class="fixed-link-container">
-    <?php
-      get_component('fixed-link', [
-        'text' => get_the_title(pll_get_post(100)),
-        'link' => get_the_permalink(pll_get_post(100)),
-      ]);
-    ?>
-    <div class="rsep"></div>
-    <div class="rsep more-1200"></div>
-
-    <div class="content fade column" id="front-intro">
-      <?php get_component('heading-logo');?>
-      <h2 class="uppercase heading"><?=$firstSection['title']?></h2>
-      <div class="text limited-width"><?=$firstSection['text']?></div>
-      <div class="r"></div>
-      <div class="button-container text-center">
-        <a href="<?=get_link_url($firstSection['link'])?>">
-          <button>
-            <?=$firstSection['link']['text']?>
-          </button>
-        </a>
-      </div>
+  <div class="content fade column" id="front-intro">
+    <?php get_component('heading-logo');?>
+    <h2 class="uppercase heading"><?=$firstSection['title']?></h2>
+    <div class="text limited-width"><?=$firstSection['text']?></div>
+    <div class="r"></div>
+    <div class="button-container text-center">
+      <a href="<?=get_link_url($firstSection['link'])?>">
+        <button>
+          <?=$firstSection['link']['text']?>
+        </button>
+      </a>
     </div>
-
-    <div class="rsep"></div>
-
-    <div class="content icons-full-width column-outer flex flex-768-50">
-      <?php
-        $icons = get_field('icons');
-        for ($i = 0; $i < count($icons); $i++) {
-        ?>
-      <div class="large-icon col3 column-inner">
-        <img src="<?=$icons[$i]['icon']['sizes']['medium']?>" alt=""
-          class="large-icon-img">
-        <div class="large-icon-text uppercase"><?=$icons[$i]['text']?></div>
-      </div>
-      <?php }?>
-    </div>
-
-    <div class="rsep"></div>
   </div>
+
+  <div class="rsep"></div>
+
+  <div class="content icons-full-width column-outer flex flex-768-50">
+    <?php
+      $icons = get_field('icons');
+      for ($i = 0; $i < count($icons); $i++) {
+      ?>
+    <div class="large-icon col3 column-inner">
+      <img src="<?=$icons[$i]['icon']['sizes']['medium']?>" alt=""
+        class="large-icon-img">
+      <div class="large-icon-text uppercase"><?=$icons[$i]['text']?></div>
+    </div>
+    <?php }?>
+  </div>
+
+  <div class="rsep"></div>
 </div>
 
 <?php
@@ -69,29 +60,27 @@
   ]);
 ?>
 <div class="white-wrapper">
-  <div class="fixed-link-container">
 
-    <div class="rsep"></div>
+  <div class="rsep"></div>
 
-    <div class="content column">
-      <?php get_component('heading-logo');?>
-      <h2 class="uppercase heading"><?=$recommended['title']?></h2>
-      <div class="text limited-width"><?=$recommended['text']?></div>
-      <div class="r"></div>
-    </div>
+  <div class="content column">
+    <?php get_component('heading-logo');?>
+    <h2 class="uppercase heading"><?=$recommended['title']?></h2>
+    <div class="text limited-width"><?=$recommended['text']?></div>
+    <div class="r"></div>
+  </div>
 
-    <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
-      <?php
+  <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
+    <?php
         for ($i = 0; $i < count($rec_apartments); $i++) {
           get_component('apartment-link', ['apartment' => $rec_apartments[$i]]);
         }
       ?>
-    </div>
-
-    <div class="rsep"></div>
-    <div class="rsep"></div>
-
   </div>
+
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+
 </div>
 
 <div class="pale-green-wrapper">
@@ -119,14 +108,26 @@
       </div>
       <?php }?>
     </div>
-    <div class="rsep"></div>
-    <div class="rsep"></div>
+
+    <?php
+      $fixed_image = get_field('fixed_image');
+    ?>
+    <div class="fixed-image"
+      style="background-image:url(<?=$fixed_image['sizes']['large']?>);"></div>
   </div>
 </div>
 
-<?php get_part('collections-slider');?>
 <div class="pale-wrapper">
   <div class="rsep"></div>
+
+  <div class="content column">
+    <?php
+      $featured_links_title = get_field('featured_links_title');
+      get_component('heading-logo');
+    ?>
+    <h2 class="uppercase heading"><?=$featured_links_title?></h2>
+  </div>
+
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,

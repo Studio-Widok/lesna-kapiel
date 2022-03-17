@@ -153,7 +153,7 @@ button {
   display: block;
 }
 
-.contect-info-overlap {
+.contact-info-overlap {
   margin-top: -8em;
 }
 
@@ -238,7 +238,7 @@ button {
       }
 
       .text {
-        max-width: 28rem;
+        max-width: 29rem;
         margin-left: auto;
       }
     }
@@ -253,4 +253,12 @@ button {
       }
     }
   }
+}
+
+// fixed image
+.fixed-image {
+  padding-bottom: 75vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
