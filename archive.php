@@ -1,14 +1,22 @@
 <?php
   get_header();
 
-  $isDark         = is_tax('collections', pll_get_term(get_collection_id('polna')));
+  $isDark         = false;
   $archive        = get_queried_object();
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
 
-  $premiumApartments  = [];
+  $tags = [
+    get_term_by('term_taxonomy_id', get_term_id('deluxe')),
+    get_term_by('term_taxonomy_id', get_term_id('premium')),
+    get_term_by('term_taxonomy_id', get_term_id('standard')),
+    get_term_by('term_taxonomy_id', get_term_id('budget')),
+  ];
+
   $deluxeApartments   = [];
+  $premiumApartments  = [];
   $standardApartments = [];
+  $budgetApartments   = [];
   $isVilla            = is_tax('tags') && get_queried_object()->slug === 'villa';
   while (have_posts()) {
     the_post();
@@ -18,6 +26,8 @@
     );
     if ($isVilla && in_array('premium', $tagSlugs)) {
       $premiumApartments[] = $post;
+    } elseif ($isVilla && in_array('budget', $tagSlugs)) {
+      $budgetApartments[] = $post;
     } elseif ($isVilla && in_array('deluxe', $tagSlugs)) {
       $deluxeApartments[] = $post;
     } else {
@@ -127,20 +137,33 @@
 
   <div class="content column text-center">
     <?php get_component('heading-logo');?>
-    <h2 class="header uppercase">apartamenty leśnej kąpieli</h2> // TODO
+    <h2 class="header uppercase">apartamenty leśnej kąpieli</h2>
+
+    <div class="r"></div>
+    <div class="text limited-width">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+        aperiam a voluptas ipsam numquam quidem totam, sequi nesciunt nam, amet
+        voluptatem maiores modi. Harum voluptate excepturi soluta, delectus
+        similique obcaecati.</p>
+    </div>
+    <div class="rsep"></div>
 
     <div class="uppercase small">rodzaje apartamentów</div>
-    <pre class="text-left">
+
+    <div class="r"></div>
+
+    <div id="apartment-tags" class="limited-width">
       <?php
-        $categories = [
-          get_term_by('term_taxonomy_id', get_term_id('deluxe')),
-          get_term_by('term_taxonomy_id', get_term_id('premium')),
-          get_term_by('term_taxonomy_id', get_term_id('standard')),
-          get_term_by('term_taxonomy_id', get_term_id('budget')),
-        ];
-        var_dump($categories);
-      ?>
-    </pre>
+        foreach ($tags as $tag) {
+          $icon = get_field('icon', $tag);
+        ?>
+      <div class="apartment-tag-icon">
+        <img src="<?=$icon['sizes']['medium']?>" alt="">
+        <div class="uppercase"><?=$tag->name?></div>
+      </div>
+      <?php }?>
+    </div>
+
   </div>
   <div class="rsep"></div>
   <div class="rsep"></div>
@@ -166,7 +189,12 @@
       print_r($standardApartments);
     ?>
   </pre>
-  <div class="text-center">budget?</div>
+  <div class="text-center">budget</div>
+  <pre>
+    <?php
+      print_r($budgetApartments);
+    ?>
+  </pre>
   <div class="rsep"></div>
   <div class="rsep"></div>
 </div>

@@ -49,17 +49,6 @@ function viewport_meta() {?>
     ]);
 
     register_taxonomy(
-      'collections',
-      'apartment',
-      [
-        'label'             => 'Kolekcje',
-        'hierarchical'      => true,
-        'show_admin_column' => true,
-        'show_in_menu'      => true,
-      ]
-    );
-
-    register_taxonomy(
       'tags',
       'apartment',
       [

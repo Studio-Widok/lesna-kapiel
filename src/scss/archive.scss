@@ -48,3 +48,17 @@ hr {
     width: 100%;
   }
 }
+
+// apartment-tags
+#apartment-tags {
+  display: flex;
+
+  .apartment-tag-icon {
+    width: 25%;
+    align-items: center;
+
+    img {
+      max-width: 10em;
+    }
+  }
+}
