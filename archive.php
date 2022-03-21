@@ -1,4 +1,7 @@
 <?php
+
+  // TODO: template to be deleted
+
   get_header();
 
   $isDark         = false;

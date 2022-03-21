@@ -8,7 +8,17 @@
   background-repeat: no-repeat;
   background-size: contain;
 
+  &--bell {
+    background-image: url(../../media/icons/icon-rezerwuj.png);
+  }
+
   &--person {
     background-image: url(../../media/icons/ilosc-osob-green.png);
   }
+}
+
+button .icon {
+  margin: -1.2em 0 -0.8em -1em;
+  height: 3em;
+  width: 3em;
 }

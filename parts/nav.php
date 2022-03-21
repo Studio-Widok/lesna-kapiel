@@ -26,9 +26,7 @@
     <?php }?>
     <div class="more-768">
       <?php
-        get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
-        ]);
+        get_component('nav-link', ['page' => pll_get_post(884)]);
         get_component('nav-link', [
           'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
         ]);
