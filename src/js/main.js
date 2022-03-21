@@ -9,6 +9,8 @@ require('./cake-frame');
 
 const bodyElement = $('body');
 
+if (bodyElement.hasClass('page-template-apartments')) require('./archive');
+
 if ($('.fixed-link').length > 0) require('./fixed-link');
 
 if ($('#top').length > 0) require('./top');

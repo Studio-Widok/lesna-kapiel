@@ -11,6 +11,10 @@
     get_term_by('term_taxonomy_id', get_term_id('budget')),
   ];
 
+  for ($j = 0; $j < count($tags); $j++) {
+    $tags[$j]->apartments = [];
+  }
+
   $apartments = get_posts([
     'numberposts' => -1,
     'post_type'   => 'apartment',
@@ -23,24 +27,15 @@
     ],
   ]);
 
-  $deluxeApartments   = [];
-  $premiumApartments  = [];
-  $standardApartments = [];
-  $budgetApartments   = [];
-
   for ($i = 0; $i < count($apartments); $i++) {
     $tagSlugs = array_map(
       function ($e) {return $e->slug;},
       get_the_terms($apartments[$i], 'tags')
     );
-    if (in_array('premium', $tagSlugs)) {
-      $premiumApartments[] = $apartments[$i];
-    } elseif (in_array('budget', $tagSlugs)) {
-      $budgetApartments[] = $apartments[$i];
-    } elseif (in_array('deluxe', $tagSlugs)) {
-      $deluxeApartments[] = $apartments[$i];
-    } else {
-      $standardApartments[] = $apartments[$i];
+    for ($j = 0; $j < count($tags); $j++) {
+      if (in_array($tags[$j]->slug, $tagSlugs)) {
+        $tags[$j]->apartments[] = $apartments[$i];
+      }
     }
   }
 
@@ -75,9 +70,13 @@
     <div id="apartment-tags" class="limited-width">
       <?php
         foreach ($tags as $tag) {
+          if (count($tag->apartments) === 0) {
+            continue;
+          }
+
           $icon = get_field('icon', $tag);
         ?>
-      <div class="apartment-tag-icon">
+      <div class="apartment-tag-icon" data-tag="<?=$tag->slug?>">
         <img src="<?=$icon['sizes']['medium']?>" alt="">
         <div class="uppercase"><?=$tag->name?></div>
       </div>
@@ -96,21 +95,28 @@
   <div class="content-wide">
     <div class="chessboard">
       <?php
-        $tag = $tags[0];
-        for ($i = 0; $i < count($deluxeApartments); $i++) {
-          $apart     = $deluxeApartments[$i];
-          $slider    = get_field('slider', $apart);
-          $occupancy = get_field('occupancy', $apart);
-          $price     = preg_replace('/[^0-9.]/', '', get_field('price', $apart));
-          $size      = get_field('size', $apart);
-          $icons     = get_field('icons', $apart);
-        ?>
+        for ($k = 0; $k < count($tags); $k++) {
+          $tag = $tags[$k];
+          for ($i = 0; $i < count($tag->apartments); $i++) {
+            $apart     = $tag->apartments[$i];
+            $slider    = get_field('slider', $apart);
+            $occupancy = get_field('occupancy', $apart);
+            $price     = preg_replace('/[^0-9.]/', '', get_field('price', $apart));
+            $size      = get_field('size', $apart);
+            $icons     = get_field('icons', $apart);
+          ?>
       <div class="chessboard-row">
+
+        <?php if ($i === 0) {?>
+        <div class="apart-tag-title handwrite"
+          id="apart-tag-title-<?=$tag->slug?>"><?=$tag->name?></div>
+        <?php }?>
+
         <div class="square-img"
           style="background-image: url(<?=$slider['gallery'][0]['sizes']['medium']?>)">
         </div>
         <div class="square column">
-          <div class="uppercase">apartamenty typu deluxe<?=$tag->name?></div>
+          <div class="uppercase">apartamenty typu <?=$tag->name?></div>
           <div class="rmin"></div>
           <h2 class="heading uppercase text-left"><?=get_the_title($apart)?>
           </h2>
@@ -119,11 +125,11 @@
             <div class="icon icon--person"></div>
             <?=$occupancy?>
             <?php }
-    if (!empty($occupancy) && !empty($size)) {
-      echo ' | ';
-    }
-    if (!empty($size)) {
-    ?>
+      if (!empty($occupancy) && !empty($size)) {
+        echo ' | ';
+      }
+      if (!empty($size)) {
+      ?>
             <?=$size?> m<sup>2</sup>
             <?php }?>
           </div>
@@ -163,23 +169,11 @@
         </div>
       </div>
       <?php }?>
+      <?php }?>
     </div>
   </div>
 
-  <div class="content column">
-
-    <div class="rsep"></div>
-    <div class="r"></div>
-    <div class="text-full text">
-      <?php
-        echo '<pre>';
-        var_dump($apartments);
-        echo '</pre>';
-      ?>
-    </div>
-    <div class="rsep"></div>
-    <div class="rsep"></div>
-  </div>
+  <div class="rsep"></div>
 </div>
 
 <div class="pale-wrapper">
