@@ -8,13 +8,17 @@
   $img       = $slider['gallery'][0];
   $price     = get_field('price', $apartment->ID);
   $occupancy = get_field('occupancy', $apartment->ID);
+  $link      = 'https://panel.hotres.pl/v4_adjust?oid=2447&lang=pl&tid=' . get_field('hotres_id', $apartment) . '&template=standalone&tid_ontop=' . get_field('hotres_id', $apartment);
 ?>
 
 <div class="col3 column-inner vertical-image-text">
   <div class="image-wrapper-full-width">
-    <div class="cake cake-3-4"
-      style="background-image: url(<?=$img['sizes']['medium']?>)">
-    </div>
+    <a href="<?=$link?>" target="_blank" rel="noopener noreferrer"
+      class="cake-zoom-frame">
+      <div class="cake cake-3-4"
+        style="background-image: url(<?=$img['sizes']['medium']?>)">
+      </div>
+    </a>
   </div>
   <div class="rmin"></div>
   <div class="text-center">
@@ -31,7 +35,7 @@
   }
   if (!empty($price)) {
   ?>
-    cena: <?=$price?>
+    cena: <?=$price?> zł
     <?php }?>
   </div>
   <div class="rmin"></div>
@@ -41,8 +45,9 @@
   <div class="rmin"></div>
 
   <div class="button-container text-center">
-    <a href="https://panel.hotres.pl/v4_adjust?oid=2447&lang=pl&tid=<?=get_field('hotres_id', $apartment)?>&template=standalone&tid_ontop=<?=get_field('hotres_id', $apartment)?>"
-      target="_blank" rel="noopener noreferrer"><button>rezerwuj</button></a>
+    <a href="<?=$link?>" target="_blank" rel="noopener noreferrer">
+      <button>rezerwuj</button>
+    </a>
   </div>
   <div class="r less-768">
   </div>

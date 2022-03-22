@@ -54,10 +54,6 @@
 
 <?php
   $recommended    = get_field('recommended');
-  $rec_apartments = get_posts([
-    'numberposts' => 3,
-    'post_type'   => 'apartment',
-  ]);
 ?>
 <div class="white-wrapper">
 
@@ -72,8 +68,8 @@
 
   <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
     <?php
-      for ($i = 0; $i < count($rec_apartments); $i++) {
-        get_component('apartment-link', ['apartment' => $rec_apartments[$i]]);
+      for ($i = 0; $i < count($recommended['apartments']); $i++) {
+        get_component('apartment-link', ['apartment' => $recommended['apartments'][$i]]);
       }
     ?>
   </div>

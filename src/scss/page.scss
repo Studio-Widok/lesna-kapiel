@@ -153,6 +153,20 @@ button {
   display: block;
 }
 
+.cake-zoom-frame {
+  display: block;
+  overflow: hidden;
+
+  .cake {
+    transition: 0.5s;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
 .contact-info-overlap {
   margin-top: -8em;
 }
