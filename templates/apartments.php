@@ -51,13 +51,20 @@
 ?>
 
 <div class="archive-top">
-  <div class="archive-top-bg"
-    style="background-image: url('<?=get_field('top_image')['sizes']['large']?>')">
+  <div class="archive-top-bg slider">
+    <?php
+      $top_slider = get_field('top_image');
+      foreach ($top_slider as $image) {
+      ?>
+    <div class="single-slide"
+      style="background-image:url(<?=$image['sizes']['large']?>);"></div>
+    <?php }?>
   </div>
 </div>
 
 <div class="pale-green-wrapper wrapper--mask-after">
   <div class="content column text-center">
+    <div class="rmin"></div>
     <div class="uppercase"><?=get_field('top_text')?></div>
 
     <div class="rsep"></div>
@@ -106,6 +113,7 @@
   <div class="content-wide">
     <div class="chessboard">
       <?php
+        $index = 0;
         for ($k = 0; $k < count($tags); $k++) {
           $tag = $tags[$k];
           for ($i = 0; $i < count($tag->apartments); $i++) {
@@ -179,17 +187,21 @@
               </button></a>
             <?php for ($j = 0; $j < count($slider['gallery']); $j++) {?>
             <?php if ($j === 0) {?>
-            <button class="source-<?=$i?>"
+            <button class="source-<?=$index?>"
               data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">galeria</button>
             <?php } else {?>
-            <div class="source-<?=$i?>"
+            <div class="source-<?=$index?>"
               data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">
             </div>
             <?php }}?>
           </div>
         </div>
       </div>
-      <?php }}?>
+      <?php
+        $index++;
+          }
+        }
+      ?>
     </div>
   </div>
 
@@ -197,11 +209,12 @@
 </div>
 
 <?php
+  $index = 0;
   for ($k = 0; $k < count($tags); $k++) {
     $tag = $tags[$k];
     for ($i = 0; $i < count($tag->apartments); $i++) {
     ?>
-<div id="lightbox-<?=$i?>" class="lightbox">
+<div id="lightbox-<?=$index++?>" class="lightbox">
   <svg class="lightbox-close" viewBox="0 0 100 100">
     <path d="M10 10L90 90" />
     <path d="M90 10L10 90" />

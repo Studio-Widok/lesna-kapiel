@@ -6,21 +6,38 @@ hr {
   border-bottom: 1px;
 }
 
+// top slider
 .archive-top {
   position: relative;
-  min-height: calc(100vh - 3em);
+  min-height: calc(100vh - 4.5em);
 
-  .archive-top-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-position: center;
-    background-size: cover;
+  .slider {
+    .slider-bar {
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .single-slide {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: 0.5s;
+        background-position: center;
+        background-size: cover;
+
+        &.current-slide {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
+//
 .single-apartment-container {
   overflow: hidden;
   cursor: pointer;
