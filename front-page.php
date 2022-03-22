@@ -135,17 +135,13 @@
   ?>
   <?php
   get_part('full-width-image', [
-    'image'             => $footer['image'], 'ratio' => 16 / 9,
-    'useNegativeMargin' => true,
+    'image'          => $footer['image'], 'ratio' => 16 / 9,
+    'useContactInfo' => true,
   ]);
 ?>
 </div>
 
-<?php get_part('map-block');?>
-
-<div class="green-wrapper" style="z-index: 2;">
-  <?php get_part('contact-info');?>
-  <div class="rsep"></div>
-</div>
-
-<?php get_footer();?>
+<?php
+  get_part('map-block');
+  get_footer();
+?>
