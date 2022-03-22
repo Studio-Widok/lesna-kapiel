@@ -5,20 +5,41 @@
     color: $color;
     z-index: 1;
 
-    &:before {
+    &:not(.wrapper--no-mask-before)::before {
       content: "";
       display: block;
       position: absolute;
       bottom: 100%;
       left: 0;
       width: 100%;
-      margin-bottom: -1em;
+      margin-bottom: -2em;
       padding-bottom: 7.3404%;
       background-image: url("../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}");
       background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
+    }
+
+    &.wrapper--mask-after {
+      z-index: 2;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: -3em;
+        padding-top: 7.3404%;
+        transform: scale(1, -1);
+        background-image: url("../media/scratch-1.php?color=#{str-slice(#{$bgColor}, 2)}");
+        background-position: top center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
     }
 
     .cake-frame .drawing path {

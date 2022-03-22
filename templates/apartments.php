@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<div class="pale-green-wrapper">
+<div class="pale-green-wrapper wrapper--mask-after">
   <div class="content column text-center">
     <div class="uppercase"><?=get_field('top_text')?></div>
 
@@ -91,7 +91,7 @@
   <div class="rsep"></div>
 </div>
 
-<div class="white-wrapper">
+<div class="white-wrapper wrapper--no-mask-before">
   <div class="content-wide">
     <div class="chessboard">
       <?php

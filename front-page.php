@@ -52,11 +52,8 @@
   <div class="rsep"></div>
 </div>
 
-<?php
-  $recommended    = get_field('recommended');
-?>
-<div class="white-wrapper">
-
+<?php $recommended = get_field('recommended');?>
+<div class="white-wrapper wrapper--mask-after">
   <div class="rsep"></div>
 
   <div class="content column">
@@ -76,10 +73,9 @@
 
   <div class="rsep"></div>
   <div class="rsep"></div>
-
 </div>
 
-<div class="pale-green-wrapper">
+<div class="pale-green-wrapper wrapper--no-mask-before">
   <div class="content-wide">
 
     <div class="chessboard">
