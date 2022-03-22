@@ -3,17 +3,7 @@
 
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
-
-  $tags = [
-    get_term_by('term_taxonomy_id', get_term_id('deluxe')),
-    get_term_by('term_taxonomy_id', get_term_id('premium')),
-    get_term_by('term_taxonomy_id', get_term_id('standard')),
-    get_term_by('term_taxonomy_id', get_term_id('budget')),
-  ];
-
-  for ($j = 0; $j < count($tags); $j++) {
-    $tags[$j]->apartments = [];
-  }
+  $type           = get_field('type');
 
   $apartments = get_posts([
     'numberposts' => -1,
@@ -22,21 +12,39 @@
       [
         'taxonomy' => 'tags',
         'field'    => 'slug',
-        'terms'    => 'villa',
+        'terms'    => $type,
       ],
     ],
   ]);
 
-  for ($i = 0; $i < count($apartments); $i++) {
-    $tagSlugs = array_map(
-      function ($e) {return $e->slug;},
-      get_the_terms($apartments[$i], 'tags')
-    );
+  if ($type === 'villa') {
+    $tags = [
+      get_term_by('term_taxonomy_id', get_term_id('deluxe')),
+      get_term_by('term_taxonomy_id', get_term_id('premium')),
+      get_term_by('term_taxonomy_id', get_term_id('standard')),
+      get_term_by('term_taxonomy_id', get_term_id('budget')),
+    ];
+
     for ($j = 0; $j < count($tags); $j++) {
-      if (in_array($tags[$j]->slug, $tagSlugs)) {
-        $tags[$j]->apartments[] = $apartments[$i];
+      $tags[$j]->apartments = [];
+    }
+
+    for ($i = 0; $i < count($apartments); $i++) {
+      $tagSlugs = array_map(
+        function ($e) {return $e->slug;},
+        get_the_terms($apartments[$i], 'tags')
+      );
+      for ($j = 0; $j < count($tags); $j++) {
+        if (in_array($tags[$j]->slug, $tagSlugs)) {
+          $tags[$j]->apartments[] = $apartments[$i];
+        }
       }
     }
+  } else {
+    $tags = [
+      get_term_by('term_taxonomy_id', get_term_id('house')),
+    ];
+    $tags[0]->apartments = $apartments;
   }
 
   get_part('nav', ['isDark' => false]);
@@ -61,6 +69,8 @@
     <div class="text limited-width">
       <?=get_field('text')?>
     </div>
+
+    <?php if ($type === 'villa') {?>
     <div class="rsep"></div>
 
     <div class="uppercase"><?=get_field('apartment_types')?></div>
@@ -86,6 +96,7 @@
     <div class="r"></div>
 
     <?=get_field('info')?>
+    <?php }?>
   </div>
 
   <div class="rsep"></div>
@@ -107,7 +118,7 @@
           ?>
       <div class="chessboard-row">
 
-        <?php if ($i === 0) {?>
+        <?php if ($i === 0 && $type === 'villa') {?>
         <div class="apart-tag-title handwrite"
           id="apart-tag-title-<?=$tag->slug?>"><?=$tag->name?></div>
         <?php }?>
@@ -116,8 +127,10 @@
           style="background-image: url(<?=$slider['gallery'][0]['sizes']['medium']?>)">
         </div>
         <div class="square column">
+          <?php if ($type === 'villa') {?>
           <div class="uppercase">apartamenty typu <?=$tag->name?></div>
           <div class="rmin"></div>
+          <?php }?>
           <h2 class="heading uppercase text-left"><?=get_the_title($apart)?>
           </h2>
           <div>

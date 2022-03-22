@@ -14,7 +14,9 @@
     "masonry-layout": "^4.2.2",
     "smoothscroll-polyfill": "^0.4.4",
     "widok": "github:studio-widok/widok",
-    "widok-fade-queue": "github:studio-widok/widok-fade-queue"
+    "widok-fade-queue": "github:studio-widok/widok-fade-queue",
+    "widok-fade-slider": "github:studio-widok/widok-fade-slider",
+    "widok-lightbox": "github:studio-widok/widok-lightbox"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
