@@ -18,12 +18,10 @@
 <nav id="nav" class="<?=$isDark ? 'dark' : ''?>">
 
   <div id="nav-links">
-    <?php if (!is_page(2)) {?>
-    <a class="nav-link" href="<?=get_the_permalink(pll_get_post(2))?>">
+    <a class="nav-link more-768" href="<?=get_the_permalink(pll_get_post(2))?>">
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <?php }?>
     <div class="more-768">
       <?php
         get_component('nav-link', ['page' => pll_get_post(884)]);
