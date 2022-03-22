@@ -177,17 +177,46 @@
                 <div class="icon icon--bell"></div>
                 rezerwuj
               </button></a>
-            <button>galeria</button>
+            <?php for ($j = 0; $j < count($slider['gallery']); $j++) {?>
+            <?php if ($j === 0) {?>
+            <button class="source-<?=$i?>"
+              data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">galeria</button>
+            <?php } else {?>
+            <div class="source-<?=$i?>"
+              data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">
+            </div>
+            <?php }}?>
           </div>
         </div>
       </div>
-      <?php }?>
-      <?php }?>
+      <?php }}?>
     </div>
   </div>
 
   <div class="rsep"></div>
 </div>
+
+<?php
+  for ($k = 0; $k < count($tags); $k++) {
+    $tag = $tags[$k];
+    for ($i = 0; $i < count($tag->apartments); $i++) {
+    ?>
+<div id="lightbox-<?=$i?>" class="lightbox">
+  <svg class="lightbox-close" viewBox="0 0 100 100">
+    <path d="M10 10L90 90" />
+    <path d="M90 10L10 90" />
+  </svg>
+  <svg class="lightbox-prev" viewBox="0 0 100 100">
+    <path d="M70 10L30 50L70 90" />
+  </svg>
+  <svg class="lightbox-next" viewBox="0 0 100 100">
+    <path d="M30 10L70 50L30 90" />
+  </svg>
+  <svg class="lightbox-loading" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" />
+  </svg>
+</div>
+<?php }}?>
 
 <div class="pale-wrapper">
   <div class="rsep"></div>
