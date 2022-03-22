@@ -51,7 +51,7 @@
 ?>
 
 <div class="archive-top">
-  <div class="archive-top-bg slider">
+  <div id="archive-top-bg">
     <?php
       $top_slider = get_field('top_image');
       foreach ($top_slider as $image) {

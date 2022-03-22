@@ -11,7 +11,7 @@ $('.apartment-tag-icon').on('click', event => {
   window.scrollTo({ top: offset, behavior: 'smooth' });
 });
 
-$('.lightbox').each((index, element) => {
+$('.lightbox').each((index) => {
   createLightbox({
     wrap: `#lightbox-${index}`,
     close: `#lightbox-${index} .lightbox-close`,
@@ -23,7 +23,7 @@ $('.lightbox').each((index, element) => {
 });
 
 createFadeSlider({
-  wrap: '.archive-top-bg.slider',
+  wrap: '#archive-top-bg',
   slideSelector: '.single-slide',
   interval: 3000,
 });
