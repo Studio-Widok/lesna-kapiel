@@ -29,3 +29,12 @@ if ($('#gmap').length > 0) {
     map(50.051943855643344, 19.944472284656335);
   }, 1000);
 }
+
+// hotres custom
+$(window).on('load', () => {
+  $('.calendar-label-wrap').each((_index, DOMElement) => {
+    const element = $(DOMElement);
+    const label = element.data('label');
+    element.prepend(`<div class="calendar-label">${label}</div>`);
+  });
+});

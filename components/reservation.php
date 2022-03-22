@@ -41,11 +41,16 @@ window.addEventListener('load', (event) => {
     id="hotresArrival" /><input type="hidden" name="departure"
     id="hotresDeparture" />
   <div class="hotresRangeChooser" id="hotresRangeChooser">
-    <div id="hotresArrivalWrap"></div>
-    <div id="hotresDepartureWrap"></div>
+    <div id="hotresArrivalWrap" class="calendar-label-wrap"
+      data-label="przyjazd">
+    </div>
+    <div id="hotresDepartureWrap" class="calendar-label-wrap"
+      data-label="wyjazd">
+    </div>
   </div>
-  <div class="hotresAdultsChooser" id="hotresAdultsChooser"><select
-      name="adults" id="hotresAdultsSelect"></select></div>
+  <div class="hotresAdultsChooser calendar-label-wrap" id="hotresAdultsChooser"
+    data-label="liczba gości"><select name="adults"
+      id="hotresAdultsSelect"></select></div>
   <div class="hotresSubmit"><button id="hotresButtonChooser"></button></div>
 </form>
 
