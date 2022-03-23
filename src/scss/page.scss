@@ -301,3 +301,16 @@ button {
   background-size: cover;
   background-position: center;
 }
+
+// footer
+footer {
+  z-index: 2 !important;
+
+  > .flex {
+    .foot-link {
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
