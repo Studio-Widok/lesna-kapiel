@@ -1,6 +1,7 @@
 import $ from 'cash-dom';
 import createLightbox from 'widok-lightbox';
 import createFadeSlider from 'widok-fade-slider';
+import createSlider from 'widok-slider';
 
 $('.apartment-tag-icon').on('click', event => {
   const tag = $(event.currentTarget).data('tag');
@@ -26,4 +27,11 @@ createFadeSlider({
   wrap: '#archive-top-bg',
   slideSelector: '.single-slide',
   interval: 3000,
+});
+
+createSlider({
+  wrap: '#opinion-slider',
+  slideSelector: '.slide',
+  mouseDrag: true,
+  touchDrag: true,
 });

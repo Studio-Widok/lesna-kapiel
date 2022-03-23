@@ -144,3 +144,14 @@ hr {
   color: $pale-green;
   opacity: 0.5;
 }
+
+// apartment opinions
+#opinions-slider {
+  max-width: 30em;
+  margin: 0 auto;
+
+  .apartments-opinion {
+    font-size: 1.25em;
+    text-align: center;
+  }
+}

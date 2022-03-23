@@ -232,19 +232,39 @@
 </div>
 <?php }}?>
 
-<div class="pale-green-wrapper wrapper--mask-after">
+<div class="dark-wrapper wrapper--mask-after">
   <div class="rsep"></div>
   <?php get_component('heading-logo');?>
-  <h2 class="heading">wybierz termin</h2>
+  <h2 class="heading uppercase">wybierz termin</h2>
   <?php get_component('reservation');?>
   <div class="rsep"></div>
 </div>
 
 <div class="pale-wrapper wrapper--no-mask-before">
+  <?php
+    $opinions = get_field('opinions');
+    if (!empty($opinions)) {
+    ?>
+  <div class="content column">
+    <div class="rsep"></div>
+    <?php get_component('heading-logo');?>
+    <h2 class="heading uppercase">wasze opinie</h2>
+    <div id="opinion-slider">
+      <?php
+        for ($i = 0; $i < count($opinions); $i++) {
+          ?>
+      <div class="slide">
+        <div class="apartments-opinion"><?=$opinions[$i]['text']?></div>
+      </div>
+      <?php }?>
+    </div>
+  </div>
+  <?php }?>
+
   <div class="rsep"></div>
   <?php get_component('heading-logo');?>
-  <h2 class="heading">wasze opinie</h2>
-  <div class="rsep"></div>
+  <h2 class="heading uppercase">dowiedz się więcej</h2>
+
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,

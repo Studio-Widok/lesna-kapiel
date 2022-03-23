@@ -16,7 +16,8 @@
     "widok": "github:studio-widok/widok",
     "widok-fade-queue": "github:studio-widok/widok-fade-queue",
     "widok-fade-slider": "github:studio-widok/widok-fade-slider",
-    "widok-lightbox": "github:studio-widok/widok-lightbox"
+    "widok-lightbox": "github:studio-widok/widok-lightbox",
+    "widok-slider": "github:studio-widok/widok-slider"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
