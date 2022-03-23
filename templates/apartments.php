@@ -164,6 +164,7 @@
             <?php for ($j = 0; $j < count($icons); $j++) {?>
             <div class="apartment-icon"
               style="background-image: url(<?=$icons[$j]['sizes']['medium']?>);">
+              <div class="tooltip"><?=$icons[$j]['title'];?></div>
             </div>
             <?php }?>
           </div>
@@ -231,18 +232,23 @@
 </div>
 <?php }}?>
 
-<div class="pale-wrapper">
+<div class="pale-green-wrapper wrapper--mask-after">
+  <div class="rsep"></div>
+  <?php get_component('heading-logo');?>
+  <h2 class="heading">wybierz termin</h2>
+  <?php get_component('reservation');?>
+  <div class="rsep"></div>
+</div>
+
+<div class="pale-wrapper wrapper--no-mask-before">
+  <div class="rsep"></div>
+  <?php get_component('heading-logo');?>
+  <h2 class="heading">wasze opinie</h2>
   <div class="rsep"></div>
   <?php
     get_part('featured-links', [
       'links'     => $featured_links,
       'maskColor' => get_mask_color("pale"),
-    ]);
-  ?>
-  <div class="rsep"></div>
-  <?php
-    get_component('reservation', [
-      'title' => 'wybierz termin',
     ]);
   ?>
   <div class="rsep"></div>

@@ -107,10 +107,17 @@ button {
   }
 }
 
-// fix problem with background-position: center on chrome
 .full-width-image {
+  // fix problem with background-position: center on chrome
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     background-position: 50.001% 0;
+  }
+
+  //
+  .image-quote {
+    font-size: min(10vw, 10em);
+    text-align: center;
+    margin-bottom: 0.5em;
   }
 }
 

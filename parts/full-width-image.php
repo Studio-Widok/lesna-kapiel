@@ -17,6 +17,7 @@
   ">
   <?php if ($useContactInfo) {?>
   <div class='full-width-image-contact'>
+    <div class="image-quote handwrite">disconnect<br>to reconnect</div>
     <?php get_part('contact-info');?>
   </div>
   <div class="rsep"></div>
