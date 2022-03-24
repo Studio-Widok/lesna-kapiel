@@ -23,6 +23,10 @@
     &.bg-fixed {
       background-attachment: fixed;
 
+      @media (max-width: 912px) {
+        background-attachment: scroll;
+      }
+
       @media (max-width: 768px) {
         background-size: 100vw auto;
       }

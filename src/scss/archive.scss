@@ -28,6 +28,11 @@ hr {
         transition: 0.5s;
         background-position: center;
         background-size: cover;
+        background-attachment: fixed;
+
+        @media (max-width: 912px) {
+          background-attachment: scroll;
+        }
 
         &.current-slide {
           opacity: 1;

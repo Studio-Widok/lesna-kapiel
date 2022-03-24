@@ -95,16 +95,7 @@ button {
 }
 
 .big-title {
-  font-size: 8em;
-  @media (max-width: 1200px) {
-    font-size: 6.5em;
-  }
-  @media (max-width: 768px) {
-    font-size: 5em;
-  }
-  @media (max-width: 450px) {
-    font-size: 4em;
-  }
+  font-size: min(8em, 8vw);
 }
 
 .full-width-image {
@@ -307,6 +298,10 @@ button {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+
+  @media (max-width: 912px) {
+    background-attachment: scroll;
+  }
 }
 
 // footer
