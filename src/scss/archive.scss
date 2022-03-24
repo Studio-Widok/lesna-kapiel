@@ -146,12 +146,75 @@ hr {
 }
 
 // apartment opinions
-#opinions-slider {
-  max-width: 30em;
-  margin: 0 auto;
+#opinion-slider-wrap {
+  &::before,
+  &::after {
+    content: '"';
+    display: block;
+    position: absolute;
+    font-family: "Belluga", serif;
+    line-height: 0;
+    font-size: min(18em, 26vw);
+    opacity: 0.5;
+  }
 
-  .apartments-opinion {
-    font-size: 1.25em;
-    text-align: center;
+  &::before {
+    left: 0;
+    bottom: -0.6em;
+  }
+
+  &::after {
+    right: 0;
+    top: 0.6em;
+  }
+
+  #opinion-slider {
+    width: 65%;
+    max-width: 30em;
+    margin: 0 auto;
+
+    .apartments-opinion {
+      font-size: 1.5em;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  #opinion-prev,
+  #opinion-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.3em;
+    width: 2.6em;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+    padding: 0.3em;
+
+    path {
+      stroke: #fff;
+      stroke-width: 10;
+      fill: none;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:hover {
+      padding: 0.5em;
+    }
+  }
+
+  #opinion-prev {
+    left: -2em;
+  }
+
+  #opinion-next {
+    right: -2em;
   }
 }

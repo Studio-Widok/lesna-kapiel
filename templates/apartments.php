@@ -249,14 +249,22 @@
     <div class="rsep"></div>
     <?php get_component('heading-logo');?>
     <h2 class="heading uppercase">wasze opinie</h2>
-    <div id="opinion-slider">
-      <?php
-        for ($i = 0; $i < count($opinions); $i++) {
-          ?>
-      <div class="slide">
-        <div class="apartments-opinion"><?=$opinions[$i]['text']?></div>
+    <div class="rel" id="opinion-slider-wrap">
+      <div id="opinion-slider">
+        <?php
+          for ($i = 0; $i < count($opinions); $i++) {
+            ?>
+        <div class="slide">
+          <div class="apartments-opinion"><?=$opinions[$i]['text']?></div>
+        </div>
+        <?php }?>
       </div>
-      <?php }?>
+      <svg id="opinion-prev" viewBox="0 0 100 100">
+        <path d="M70 10L30 50L70 90" />
+      </svg>
+      <svg id="opinion-next" viewBox="0 0 100 100">
+        <path d="M30 10L70 50L30 90" />
+      </svg>
     </div>
   </div>
   <?php }?>
