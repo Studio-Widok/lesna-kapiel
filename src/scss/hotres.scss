@@ -1,6 +1,5 @@
 #hotresChooser {
   position: relative;
-  color: #fff;
   align-items: stretch;
   justify-content: center;
   font-weight: 700;
@@ -37,7 +36,7 @@
     #hotresArrivalWrap,
     #hotresDepartureWrap {
       float: none;
-      border: 2px solid #fff;
+      border: 2px solid;
       border-right: none;
       display: flex;
       justify-content: center;
@@ -83,7 +82,7 @@
     height: auto;
     display: flex;
     align-items: center;
-    border: 2px solid #fff;
+    border: 2px solid;
     border-right: none;
     width: auto;
 
@@ -106,7 +105,6 @@
       background: none;
       height: 100%;
       width: auto;
-      color: #fff;
       font-weight: 700;
       font-size: 1em;
       -moz-appearance: none;
@@ -135,25 +133,77 @@
 
     button {
       background-color: $beige;
-      border: 2px solid #fff;
+      border: 2px solid;
       height: 100%;
       width: auto;
       font-weight: 700;
       font-size: 0.75em;
+      padding: 0 2em;
+
+      @media (max-width: 768px) {
+        padding: 0 1em;
+      }
     }
   }
 
   .calendar-label-wrap {
     position: relative;
-    padding: 1em 1em 0.25em 1em !important;
+    padding: 1.25em 1.5em 0.75em 1.5em !important;
+
+    @media (max-width: 768px) {
+      padding: 1em 1em 0.25em 1em !important;
+    }
 
     .calendar-label {
       position: absolute;
       font-size: 0.6em;
       letter-spacing: 0.1em;
-      top: 0.1em;
-      left: 0.2em;
+      top: 0.2em;
+      left: 0.3em;
       text-transform: uppercase;
     }
+  }
+}
+
+#hotresChooser {
+  color: #fff;
+
+  #hotresArrivalWrap,
+  #hotresDepartureWrap,
+  .hotresAdultsChooser,
+  .hotresSubmit button {
+    border-color: #fff;
+  }
+
+  #hotresAdultsSelect {
+    color: #fff;
+  }
+}
+
+#hotresChooser.light-bg {
+  color: $dark;
+
+  .hotresRangeChooser #hotresArrivalWrap,
+  .hotresRangeChooser #hotresDepartureWrap,
+  .hotresAdultsChooser,
+  .hotresSubmit button {
+    border-color: $dark;
+  }
+
+  #hotresAdultsSelect {
+    color: $dark;
+  }
+
+  .hotresRangeChooser {
+    #hotresArrivalWrap,
+    #hotresDepartureWrap {
+      &::before {
+        background-image: url("../../media/icons/kalendarz-green.png");
+      }
+    }
+  }
+
+  .hotresAdultsChooser::before {
+    background-image: url("../../media/icons/ilosc-osob-green.png");
   }
 }

@@ -34,4 +34,6 @@ createSlider({
   slideSelector: '.slide',
   mouseDrag: true,
   touchDrag: true,
+  arrowPrev: '#opinion-prev',
+  arrowNext: '#opinion-next',
 });

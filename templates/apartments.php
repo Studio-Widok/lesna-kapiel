@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<div class="pale-green-wrapper wrapper--mask-after">
+<div class="pale-green-wrapper">
   <div class="content column text-center">
     <div class="rmin"></div>
     <div class="uppercase"><?=get_field('top_text')?></div>
@@ -131,8 +131,11 @@
           id="apart-tag-title-<?=$tag->slug?>"><?=$tag->name?></div>
         <?php }?>
 
-        <div class="square-img"
-          style="background-image: url(<?=$slider['gallery'][0]['sizes']['medium']?>)">
+        <div class="square-img cake-zoom-frame source-<?=$index?>"
+          data-full-src="<?=$slider['gallery'][0]['sizes']['large']?>">
+          <div class="cake"
+            style="background-image: url(<?=$slider['gallery'][0]['sizes']['medium']?>)">
+          </div>
         </div>
         <div class="square column">
           <?php if ($type === 'villa') {?>
@@ -186,8 +189,8 @@
                 <div class="icon icon--bell"></div>
                 rezerwuj
               </button></a>
-            <?php for ($j = 0; $j < count($slider['gallery']); $j++) {?>
-            <?php if ($j === 0) {?>
+            <?php for ($j = 1; $j < count($slider['gallery']); $j++) {?>
+            <?php if ($j === 1) {?>
             <button class="source-<?=$index?>"
               data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">galeria</button>
             <?php } else {?>
@@ -205,8 +208,6 @@
       ?>
     </div>
   </div>
-
-  <div class="rsep"></div>
 </div>
 
 <?php
@@ -232,11 +233,11 @@
 </div>
 <?php }}?>
 
-<div class="dark-wrapper wrapper--mask-after">
+<div class="pale-green-wrapper wrapper--mask-after wrapper--no-mask-before">
   <div class="rsep"></div>
   <?php get_component('heading-logo');?>
   <h2 class="heading uppercase">wybierz termin</h2>
-  <?php get_component('reservation');?>
+  <?php get_component('reservation', ['classes' => 'light-bg']);?>
   <div class="rsep"></div>
 </div>
 
@@ -246,6 +247,7 @@
     if (!empty($opinions)) {
     ?>
   <div class="content column">
+    <div class="rsep more-768"></div>
     <div class="rsep"></div>
     <?php get_component('heading-logo');?>
     <h2 class="heading uppercase">wasze opinie</h2>
@@ -266,6 +268,7 @@
         <path d="M30 10L70 50L30 90" />
       </svg>
     </div>
+    <div class="rsep more-768"></div>
   </div>
   <?php }?>
 

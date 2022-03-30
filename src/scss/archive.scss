@@ -94,8 +94,8 @@ hr {
 
   .apartment-icon {
     position: relative;
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -206,7 +206,7 @@ hr {
     }
 
     &.disabled {
-      opacity: 0.5;
+      opacity: 0.3;
       pointer-events: none;
     }
 

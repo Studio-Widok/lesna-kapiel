@@ -1,6 +1,7 @@
 <?php
-  $title = $title ?? '';
-  $text  = $text ?? '';
+  $title   = $title ?? '';
+  $text    = $text ?? '';
+  $classes = $classes ?? '';
   if ($__index) {
     return;
   }
@@ -35,9 +36,9 @@ window.addEventListener('load', (event) => {
 <?php }?>
 
 <form action="https://panel.hotres.pl/v4_step1" target="_blank"
-  class="hotresChooser" id="hotresChooser" method="get"><input type="hidden"
-    name="oid" id="hotresOid" value="2447" /><input type="hidden" name="lang"
-    id="hotresLang" value="" /> <input type="hidden" name="arrival"
+  class="hotresChooser <?=$classes?>" id="hotresChooser" method="get"><input
+    type="hidden" name="oid" id="hotresOid" value="2447" /><input type="hidden"
+    name="lang" id="hotresLang" value="" /> <input type="hidden" name="arrival"
     id="hotresArrival" /><input type="hidden" name="departure"
     id="hotresDeparture" />
   <div class="hotresRangeChooser" id="hotresRangeChooser">

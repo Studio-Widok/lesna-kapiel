@@ -53,13 +53,13 @@
 </div>
 
 <?php $recommended = get_field('recommended');?>
-<div class="white-wrapper wrapper--mask-after">
+<div class="white-wrapper">
   <div class="rsep"></div>
 
   <div class="content column">
     <?php get_component('heading-logo');?>
     <h2 class="uppercase heading"><?=$recommended['title']?></h2>
-    <div class="text limited-width"><?=$recommended['text']?></div>
+    <div class="text limited-width text-center"><?=$recommended['text']?></div>
     <div class="r"></div>
   </div>
 
@@ -104,10 +104,11 @@
     <?php
       $fixed_image = get_field('fixed_image');
     ?>
-    <div class="fixed-image"
-      style="background-image:url(<?=$fixed_image['sizes']['large']?>);"></div>
   </div>
 </div>
+
+<div class="fixed-image"
+  style="background-image:url(<?=$fixed_image['sizes']['large']?>);"></div>
 
 <div class="pale-wrapper">
   <div class="rsep"></div>

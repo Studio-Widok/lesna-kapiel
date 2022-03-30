@@ -8,6 +8,7 @@ button {
   text-transform: uppercase;
   border: 2px #fff solid;
   font-size: 0.625em;
+  font-weight: 700;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -37,7 +38,12 @@ button {
   }
 
   &:hover:not(:disabled) {
-    background-color: $beige-wrapper;
+    background-color: $dark;
+    color: #fff;
+
+    .icon {
+      filter: invert(1) saturate(0) contrast(1.5);
+    }
   }
 
   &:focus {
@@ -237,17 +243,32 @@ button {
 
     .square-img {
       width: 50%;
-      padding-bottom: 30%;
+      padding-bottom: 40%;
       background-position: center;
       background-size: cover;
+
+      &.cake-zoom-frame {
+        position: relative;
+        cursor: pointer;
+
+        .cake {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0;
+          height: auto;
+        }
+      }
     }
 
     .square {
       position: relative;
       width: 50%;
       max-width: 40rem;
-      padding-top: 3em;
-      padding-bottom: 3em;
+      padding-top: 5em;
+      padding-bottom: 5em;
       align-self: center;
 
       .handwrite {
@@ -276,6 +297,8 @@ button {
       .square {
         width: 100%;
         margin-bottom: 3em;
+        padding-top: 3em;
+        padding-bottom: 3em;
       }
 
       .square-img {
