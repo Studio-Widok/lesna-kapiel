@@ -1,5 +1,5 @@
 <?php
-  // cSpell:ignore staticize
+  // cSpell:ignore staticize wpcf autop iworks
 
   add_theme_support("title-tag");
   if (!isset($content_width)) {$content_width = 900;}
@@ -157,11 +157,14 @@ function viewport_meta() {?>
 
   function get_mask_color($maskColor) {
     $colors = [
+      /* cSpell:disable */
       'green' => '23382c',
       'beige' => 'cabaaa',
       'pale'  => '8a9992',
       'gray'  => 'c3c2c8',
+      /* cSpell:enable */
     ];
+
     return $colors[$maskColor];
   }
 
