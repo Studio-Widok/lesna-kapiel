@@ -2,11 +2,9 @@
   $gallery = $gallery ?? [];
   $text    = $text ?? '';
   $title   = $title ?? '';
-  $nav_img = get_field('nav_image', 2);
 ?>
 
-<div id="lb-container-image" class="lb-container hidden"
-  style="background-image: url('<?=$nav_img['sizes']['large']?>');">
+<div id="lb-container-image" class="lb-container hidden">
   <div class='close-lb'>
     <div></div>
     <div></div>

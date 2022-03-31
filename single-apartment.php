@@ -20,16 +20,6 @@
     ]);
   ?>
   <div class="rsep"></div>
-  <?php
-    $facilities = get_field('facilities');
-    get_part('facilities', [
-      'title'      => $facilities['title'],
-      'facilities' => $facilities['facilities'],
-      'meals'      => $facilities['meals'],
-      'image'      => $facilities['image']['sizes']['medium'],
-      'maskColor'  => get_mask_color($color),
-    ]);
-  ?>
   <div class="rsep"></div>
 </div>
 

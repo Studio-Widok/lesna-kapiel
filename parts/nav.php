@@ -1,5 +1,4 @@
 <?php
-  $nav_img   = get_field('nav_image', 2);
   $address   = get_field('address_short', pll_get_post(25));
   $phone     = get_field('contact_phone', pll_get_post(25));
   $phone_raw = str_replace(' ', '', $phone);
@@ -37,8 +36,7 @@
     <div></div>
   </div>
 
-  <div id="nav-overlay"
-    style="background-image: url('<?=$nav_img['sizes']['large']?>');">
+  <div id="nav-overlay">
 
     <?php
       // TEMP: disable the language switcher

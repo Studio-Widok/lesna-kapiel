@@ -25,23 +25,12 @@
     ]);
   ?>
   <div class="rsep"></div>
-  <?php
-    $facilities = get_field('facilities');
-    get_part('facilities', [
-      'title'      => $facilities['title'],
-      'facilities' => $facilities['facilities'],
-      'meals'      => $facilities['meals'],
-      'image'      => $facilities['image']['sizes']['medium'],
-      'link'       => $facilities['link'],
-      'maskColor'  => get_mask_color("green"),
-    ]);
-  ?>
 </div>
 
 <?php
   $footer = get_field('footer', 2);
   get_part('full-width-image', [
-    'image'          => $footer['image_with_overlay'],
+    'image'          => $footer['image'],
     'useContactInfo' => true,
   ]);
 
