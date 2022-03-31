@@ -262,11 +262,15 @@
         </div>
         <?php }?>
       </div>
-      <svg id="opinion-prev" viewBox="0 0 100 100">
-        <path d="M70 10L30 50L70 90" />
+      <svg id="opinion-prev" viewBox="0 0 100 20"
+        preserveAspectRatio="xMinYMid slice">
+        <path d="M0 10L100 10" />
+        <path d="M10 0A10 10 0 0 1 0 10A10 10 0 0 1 10 20" />
       </svg>
-      <svg id="opinion-next" viewBox="0 0 100 100">
-        <path d="M30 10L70 50L30 90" />
+      <svg id="opinion-next" viewBox="0 0 100 20"
+        preserveAspectRatio="xMaxYMid slice">
+        <path d="M0 10L100 10" />
+        <path d="M90 0A10 10 0 0 0 100 10A10 10 0 0 0 90 20" />
       </svg>
     </div>
     <div class="rsep more-768"></div>

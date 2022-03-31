@@ -192,8 +192,9 @@ hr {
   #opinion-next {
     position: absolute;
     top: 50%;
-    margin-top: -1.3em;
-    width: 2.6em;
+    margin-top: -0.8em;
+    width: 8em;
+    height: 1.6em;
     cursor: pointer;
     transition: 0.3s;
     z-index: 2;
@@ -201,7 +202,7 @@ hr {
 
     path {
       stroke: #fff;
-      stroke-width: 10;
+      stroke-width: 1;
       fill: none;
     }
 
@@ -210,16 +211,25 @@ hr {
       pointer-events: none;
     }
 
-    &:hover {
-      padding: 0.5em;
+    @media (max-width: 768px) {
+      height: 2em;
+      width: 4em;
     }
   }
 
   #opinion-prev {
-    left: -2em;
+    left: -1.5em;
+
+    &:hover {
+      left: -2em;
+    }
   }
 
   #opinion-next {
-    right: -2em;
+    right: -1.5em;
+
+    &:hover {
+      right: -2em;
+    }
   }
 }

@@ -1,6 +1,6 @@
 <footer class="dark-wrapper column-outer">
   <div class="rmin"></div>
-  <div class="flex rel uppercase">
+  <div class="flex flex-wrap rel uppercase">
     <a href="<?=get_the_permalink(3)?>">
       <div class="foot-link column-inner"><?=get_the_title(3)?></div>
     </a>
