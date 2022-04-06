@@ -1,7 +1,6 @@
 <?php /*Template Name: nasza idea*/
   get_header();
 
-  $video  = get_field('video');
   $top    = get_field('top')['top'];
   $footer = get_field('footer', 2);
 
@@ -23,11 +22,6 @@
 </div>
 
 <div class="green-wrapper">
-  <?php
-    // get_part('footer-video', [
-    //   'source' => $video['video'],
-    //   'text'   => $video['text']]);
-  ?>
   <div class="rsep"></div>
   <?php
     $section = get_field('section');
@@ -42,7 +36,7 @@
 
   <?php
     get_part('full-width-image', [
-      'image'             => $footer['image_with_overlay'],
+      'image'             => $footer['image'],
       'useContactInfo'    => true,
       'useNegativeMargin' => true,
     ]);

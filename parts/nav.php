@@ -1,5 +1,4 @@
 <?php
-  $nav_img   = get_field('nav_image', 2);
   $address   = get_field('address_short', pll_get_post(25));
   $phone     = get_field('contact_phone', pll_get_post(25));
   $phone_raw = str_replace(' ', '', $phone);
@@ -18,21 +17,14 @@
 <nav id="nav" class="<?=$isDark ? 'dark' : ''?>">
 
   <div id="nav-links">
-    <?php if (!is_page(2)) {?>
-    <a class="nav-link" href="<?=get_the_permalink(pll_get_post(2))?>">
+    <a class="nav-link more-768" href="<?=get_the_permalink(pll_get_post(2))?>">
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <?php }?>
     <div class="more-768">
       <?php
-        get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
-        ]);
-        get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
-          // 'isDisabled' => true,
-        ]);
+        get_component('nav-link', ['page' => pll_get_post(884)]);
+        get_component('nav-link', ['page' => pll_get_post(914)]);
         get_component('nav-link', ['page' => pll_get_post(48)]);
         get_component('nav-link', ['page' => pll_get_post(25)]);
       ?>
@@ -44,8 +36,7 @@
     <div></div>
   </div>
 
-  <div id="nav-overlay"
-    style="background-image: url('<?=$nav_img['sizes']['large']?>');">
+  <div id="nav-overlay">
 
     <?php
       // TEMP: disable the language switcher
@@ -71,13 +62,8 @@
           get_component('nav-link', ['page' => pll_get_post(2)]);
         }
         get_component('nav-link', ['page' => pll_get_post(100)]);
-        get_component('nav-link', [
-          'tag' => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('villa'))),
-        ]);
-        get_component('nav-link', [
-          'tag'        => get_term_by('term_taxonomy_id', pll_get_term(get_term_id('house'))),
-          'isDisabled' => true,
-        ]);
+        get_component('nav-link', ['page' => pll_get_post(884)]);
+        get_component('nav-link', ['page' => pll_get_post(914)]);
         get_component('nav-link', ['page' => pll_get_post(48)]);
         get_component('nav-link', ['page' => pll_get_post(109)]);
         get_component('nav-link', ['page' => pll_get_post(111)]);

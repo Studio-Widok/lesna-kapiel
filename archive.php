@@ -1,14 +1,25 @@
 <?php
+
+  // TODO: template to be deleted
+
   get_header();
 
-  $isDark         = is_tax('collections', pll_get_term(get_collection_id('polna')));
+  $isDark         = false;
   $archive        = get_queried_object();
   $featured_links = get_field('featured_links', 2);
   $footer         = get_field('footer', 2);
 
-  $premiumApartments  = [];
+  $tags = [
+    get_term_by('term_taxonomy_id', get_term_id('deluxe')),
+    get_term_by('term_taxonomy_id', get_term_id('premium')),
+    get_term_by('term_taxonomy_id', get_term_id('standard')),
+    get_term_by('term_taxonomy_id', get_term_id('budget')),
+  ];
+
   $deluxeApartments   = [];
+  $premiumApartments  = [];
   $standardApartments = [];
+  $budgetApartments   = [];
   $isVilla            = is_tax('tags') && get_queried_object()->slug === 'villa';
   while (have_posts()) {
     the_post();
@@ -18,6 +29,8 @@
     );
     if ($isVilla && in_array('premium', $tagSlugs)) {
       $premiumApartments[] = $post;
+    } elseif ($isVilla && in_array('budget', $tagSlugs)) {
+      $budgetApartments[] = $post;
     } elseif ($isVilla && in_array('deluxe', $tagSlugs)) {
       $deluxeApartments[] = $post;
     } else {
@@ -39,6 +52,7 @@
   </div>
 </div>
 
+<?php if (false) {?>
 <div class="<?=get_field("colors", $archive)?>-wrapper">
   <div class="rsep"></div>
   <div class="column content title-container">
@@ -73,51 +87,122 @@
         ]
       );
     }
-  ?>
+    ?>
 </div>
 
 <?php
   if ($isVilla) {
-    get_part(
-      'archive-villa-additional-apartments',
-      [
-        'apartments' => $premiumApartments,
-        'term'       => pll_get_term(11),
-        'name'       => pll__('premium rooms'),
-      ]
-    );
-  }
+      get_part(
+        'archive-villa-additional-apartments',
+        [
+          'apartments' => $premiumApartments,
+          'term'       => pll_get_term(11),
+          'name'       => pll__('premium rooms'),
+        ]
+      );
+    }
 
-  if (is_tax('collections')) {
-    get_part('collections-slider', [
-      'exclude'       => $archive->term_id,
-      'isOthersTitle' => true,
-    ]);
-  }
-?>
+    if (is_tax('collections')) {
+      get_part('collections-slider', [
+        'exclude'       => $archive->term_id,
+        'isOthersTitle' => true,
+      ]);
+    }
+  ?>
 
 <div class="pale-wrapper">
   <?php
     if ($isVilla) {
-      get_part(
-        'archive-villa-additional-apartments',
-        [
-          'apartments'  => $standardApartments,
-          'term'        => pll_get_term(60),
-          'name'        => pll__('standard rooms'),
-          'skipWrapper' => true,
-        ]
-      );
-    } else {
-    ?>
+        get_part(
+          'archive-villa-additional-apartments',
+          [
+            'apartments'  => $standardApartments,
+            'term'        => pll_get_term(60),
+            'name'        => pll__('standard rooms'),
+            'skipWrapper' => true,
+          ]
+        );
+      } else {
+      ?>
   <div class="rsep"></div>
   <?php
     }
-  ?>
+    ?>
 
   <div class="content">
     <?php get_component('title', ['title' => pll__('what_in_villa')]);?>
   </div>
+</div>
+<?php }?>
+
+<div class="pale-green-wrapper">
+  <div class="rsep"></div>
+
+  <div class="content column text-center">
+    <?php get_component('heading-logo');?>
+    <h2 class="header uppercase">apartamenty leśnej kąpieli</h2>
+
+    <div class="r"></div>
+    <div class="text limited-width">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+        aperiam a voluptas ipsam numquam quidem totam, sequi nesciunt nam, amet
+        voluptatem maiores modi. Harum voluptate excepturi soluta, delectus
+        similique obcaecati.</p>
+    </div>
+    <div class="rsep"></div>
+
+    <div class="uppercase small">rodzaje apartamentów</div>
+
+    <div class="r"></div>
+
+    <div id="apartment-tags" class="limited-width">
+      <?php
+        foreach ($tags as $tag) {
+          $icon = get_field('icon', $tag);
+        ?>
+      <div class="apartment-tag-icon">
+        <img src="<?=$icon['sizes']['medium']?>" alt="">
+        <div class="uppercase"><?=$tag->name?></div>
+      </div>
+      <?php }?>
+    </div>
+
+  </div>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="pale-green-wrapper">
+  <div class="rsep"></div>
+  <div class="text-center">deluxe</div>
+  <pre>
+    <?php
+      print_r($deluxeApartments);
+    ?>
+  </pre>
+  <div class="text-center">premium</div>
+  <pre>
+    <?php
+      print_r($premiumApartments);
+    ?>
+  </pre>
+  <div class="text-center">standard</div>
+  <pre>
+    <?php
+      print_r($standardApartments);
+    ?>
+  </pre>
+  <div class="text-center">budget</div>
+  <pre>
+    <?php
+      print_r($budgetApartments);
+    ?>
+  </pre>
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="green-wrapper">
   <div class="rsep"></div>
   <?php
     get_part('featured-links', [
@@ -137,9 +222,7 @@
       'image' => $footer['image'], 'ratio' => 16 / 9,
     ]);
   ?>
-</div>
 
-<div class="green-wrapper">
   <div class="r"></div>
   <?php get_part('contact-info', ['isOverlap' => true]);?>
   <div class="r"></div>

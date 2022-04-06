@@ -1,5 +1,4 @@
 <?php
-  $facilities    = $facilities ?? [];
   $title         = $title ?? '';
   $text          = $text ?? '';
   $image         = $image ?? false;
@@ -19,10 +18,6 @@
       <div class="image-wrapper">
         <div class="cake cake-3-4"
           style="background-image: url(<?=$image['sizes']['large']?>)">
-          <?php get_component('cake-frame', [
-              'maskColor' => $maskColor,
-              'isOverlap' => $isOverlap,
-          ]);?>
         </div>
       </div>
     </div>
@@ -35,7 +30,6 @@
 
       <div class="rmin more-768"></div>
       <div class="rmin"></div>
-      <?php get_component('facilities-icons', ['facilities' => $facilities]);?>
 
       <div class="text">
         <p><?=$text?></p>

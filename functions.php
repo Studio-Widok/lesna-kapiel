@@ -1,4 +1,6 @@
 <?php
+  // cSpell:ignore staticize wpcf autop iworks
+
   add_theme_support("title-tag");
   if (!isset($content_width)) {$content_width = 900;}
   add_filter('show_admin_bar', '__return_false');
@@ -47,17 +49,6 @@ function viewport_meta() {?>
     ]);
 
     register_taxonomy(
-      'collections',
-      'apartment',
-      [
-        'label'             => 'Kolekcje',
-        'hierarchical'      => true,
-        'show_admin_column' => true,
-        'show_in_menu'      => true,
-      ]
-    );
-
-    register_taxonomy(
       'tags',
       'apartment',
       [
@@ -71,7 +62,7 @@ function viewport_meta() {?>
 
   add_action('wp_enqueue_scripts', function () {
     $url = get_template_directory_uri() . '/dist/';
-    wp_enqueue_style('base', $url . 'main.css', [], 1.5);
+    wp_enqueue_style('base', $url . 'main.css', [], 1.6);
     wp_enqueue_script('bundle', $url . 'main.js', [], 1.0, true);
   });
 
@@ -166,11 +157,14 @@ function viewport_meta() {?>
 
   function get_mask_color($maskColor) {
     $colors = [
+      /* cSpell:disable */
       'green' => '23382c',
       'beige' => 'cabaaa',
       'pale'  => '8a9992',
       'gray'  => 'c3c2c8',
+      /* cSpell:enable */
     ];
+
     return $colors[$maskColor];
   }
 

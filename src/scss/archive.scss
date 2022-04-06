@@ -6,21 +6,43 @@ hr {
   border-bottom: 1px;
 }
 
+// top slider
 .archive-top {
   position: relative;
-  min-height: 70vh;
+  min-height: calc(100vh - 4.5em);
 
-  .archive-top-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-position: center;
-    background-size: cover;
+  #archive-top-bg {
+    .slider-bar {
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .single-slide {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: 0.5s;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        @media (max-width: 912px) {
+          background-attachment: scroll;
+        }
+
+        &.current-slide {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
+//
 .single-apartment-container {
   overflow: hidden;
   cursor: pointer;
@@ -46,5 +68,168 @@ hr {
 
   @media (max-width: 768px) {
     width: 100%;
+  }
+}
+
+// apartment tags
+#apartment-tags {
+  display: flex;
+  justify-content: center;
+
+  .apartment-tag-icon {
+    width: 25%;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      max-width: 10em;
+    }
+  }
+}
+
+// apartment icons
+.apartment-icons {
+  display: flex;
+  flex-wrap: wrap;
+
+  .apartment-icon {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0.4em;
+
+    .tooltip {
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      min-width: 4em;
+      padding: 0.25em 1em;
+      transform: translate(-50%, 0);
+      pointer-events: none;
+      background-color: $dark;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover .tooltip {
+      opacity: 1;
+    }
+  }
+}
+
+//
+.apartment-price {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+// apartament tag title
+.page-template-apartments {
+  .chessboard-row {
+    position: relative;
+  }
+}
+
+.apart-tag-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(20em, 20vw);
+  pointer-events: none;
+  color: $pale-green;
+  opacity: 0.5;
+}
+
+// apartment opinions
+#opinion-slider-wrap {
+  &::before,
+  &::after {
+    content: '"';
+    display: block;
+    position: absolute;
+    font-family: "Belluga", serif;
+    line-height: 0;
+    font-size: min(18em, 26vw);
+    opacity: 0.5;
+  }
+
+  &::before {
+    left: 0;
+    bottom: -0.6em;
+  }
+
+  &::after {
+    right: 0;
+    top: 0.6em;
+  }
+
+  #opinion-slider {
+    width: 65%;
+    max-width: 30em;
+    margin: 0 auto;
+
+    .apartments-opinion {
+      font-size: 1.5em;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  #opinion-prev,
+  #opinion-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.8em;
+    width: 8em;
+    height: 1.6em;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+    padding: 0.3em;
+
+    path {
+      stroke: #fff;
+      stroke-width: 1;
+      fill: none;
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      height: 2em;
+      width: 4em;
+    }
+  }
+
+  #opinion-prev {
+    left: -1.5em;
+
+    &:hover {
+      left: -2em;
+    }
+  }
+
+  #opinion-next {
+    right: -1.5em;
+
+    &:hover {
+      right: -2em;
+    }
   }
 }

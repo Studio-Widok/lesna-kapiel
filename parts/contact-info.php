@@ -7,7 +7,7 @@
 ?>
 
 <div class="content fade
-<?php if ($isOverlap) {echo 'contect-info-overlap';}?>">
+<?php if ($isOverlap) {echo 'contact-info-overlap';}?>">
   <div class="flex flex-align-end">
     <div class="col2 column-left">
       <div class="uppercase"><?php pll_e('leśna kąpiel')?></div>

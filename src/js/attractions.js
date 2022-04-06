@@ -1,7 +1,7 @@
 const $ = require('cash-dom');
 const widok = require('./widok');
 
-const moreButton = $('#atrraction-more');
+const moreButton = $('#attraction-more');
 const verticalImageTextMore768 = $(
   '.vertical-image-text.vertical-image-more-768'
 );

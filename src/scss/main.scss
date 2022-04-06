@@ -1,14 +1,20 @@
 $letter-spacing: 0.15em;
-$dark: #122218;
+$dark: #122219; // changed
 $white-gray: #78857f;
 $brown: #654824;
 
+$beige: #af9f71; // new
+$nav-green: #9aa485; // new
+$pale-green: #d8dbd0; // new
+
 $green-wrapper: #23382c;
 $beige-wrapper: #cabaaa;
-$pale-wrapper: #8a9992;
+$pale-wrapper: #8b917f;
 $gray-wrapper: #c3c2c8;
 
 @import "base";
+@import "wrappers";
+@import "page";
 
 // components
 @import "fixed-link";
@@ -20,6 +26,7 @@ $gray-wrapper: #c3c2c8;
 @import "reservation";
 @import "date-picker";
 @import "hotres";
+@import "widok-lightbox";
 
 // parts
 @import "nav";
@@ -27,13 +34,16 @@ $gray-wrapper: #c3c2c8;
 @import "atrakcje";
 @import "2-col";
 @import "map";
-@import "text-full";
 @import "collections-slider";
 @import "slider-with-bullets";
 @import "slider-gallery";
+
+// old
+@import "text-full";
 @import "facilities";
 
 // general
+@import "icons";
 @import "contact";
 @import "archive";
 @import "footer";

@@ -25,16 +25,15 @@
   <?php
     $term = get_term_by('slug', 'sauna', 'tags');
       get_part('2-col-with-pic', [
-        'facilities' => $sections[$i]['list'],
-        'title'      => $sections[$i]['title'],
-        'text'       => $sections[$i]['text'],
-        'image'      => $sections[$i]['image'],
-        'button'     => [
+        'title'     => $sections[$i]['title'],
+        'text'      => $sections[$i]['text'],
+        'image'     => $sections[$i]['image'],
+        'button'    => [
           'text' => $sections[$i]['link']['text'],
           'link' => get_link_url($sections[$i]['link']),
         ],
-        'pic_right'  => $i % 2,
-        'maskColor'  => get_mask_color('beige'),
+        'pic_right' => $i % 2,
+        'maskColor' => get_mask_color('beige'),
       ]);
     }
   ?>
@@ -54,17 +53,16 @@
       $term = get_term_by('slug', 'sauna', 'tags');
       $last = count($sections) - 1;
       get_part('2-col-with-pic', [
-        'facilities' => $sections[$last]['list'],
-        'title'      => $sections[$last]['title'],
-        'text'       => $sections[$last]['text'],
-        'image'      => $sections[$last]['image'],
-        'button'     => [
+        'title'     => $sections[$last]['title'],
+        'text'      => $sections[$last]['text'],
+        'image'     => $sections[$last]['image'],
+        'button'    => [
           'text' => $sections[$last]['link']['text'],
           'link' => get_link_url($sections[$last]['link']),
         ],
-        'pic_right'  => $last % 2,
-        'maskColor'  => get_mask_color('pale'),
-        'isOverlap'  => true,
+        'pic_right' => $last % 2,
+        'maskColor' => get_mask_color('pale'),
+        'isOverlap' => true,
       ]);
     ?>
   </div>
@@ -84,12 +82,6 @@
 ?>
 
 <div class="green-wrapper">
-  <?php
-    // $footer = get_field('footer', 2);
-    // get_part('footer-video', [
-    //   'source' => $footer['video'],
-    //   'text'   => $footer['text']]);
-  ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>

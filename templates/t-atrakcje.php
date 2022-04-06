@@ -30,7 +30,7 @@
       ]);
     ?>
     <div class="text-center less-768">
-      <button id='atrraction-more' data-more="<?php pll_e('more')?>"
+      <button id='attraction-more' data-more="<?php pll_e('more')?>"
         data-less="<?php pll_e('less')?>">
         <?php pll_e('more')?>
       </button>
@@ -75,11 +75,6 @@
   ]);
 ?>
 <div class="green-wrapper">
-  <?php
-    // get_part('footer-video', [
-    //   'source' => $footer['video'],
-    //   'text'   => $footer['text']]);
-  ?>
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>

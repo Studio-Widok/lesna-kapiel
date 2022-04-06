@@ -4,6 +4,10 @@
     return;
   }
 
+  // ----- FILE TEMPORARY DISABLED -----
+  return false;
+  // ----- FILE TEMPORARY DISABLED -----
+
 ?>
 
 <div id="date-picker" class="text-center fade content">
