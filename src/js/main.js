@@ -1,5 +1,9 @@
 import $ from 'cash-dom';
+import smoothscroll from 'smoothscroll-polyfill';
+
 import fadeQueueStart from 'widok-fade-queue';
+
+smoothscroll.polyfill();
 
 require('./widok');
 require('./nav');

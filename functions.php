@@ -5,7 +5,8 @@
   if (!isset($content_width)) {$content_width = 900;}
   add_filter('show_admin_bar', '__return_false');
 function viewport_meta() {?>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" /><?php }
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<?php }
   add_filter('wp_head', 'viewport_meta');
 
   // cleanup wordpress - start
@@ -239,4 +240,17 @@ function viewport_meta() {?>
 
     $orphan = new iWorks_Orphan();
     return $orphan->replace($content);
-}
+  }
+
+  // admin columns
+  add_filter('manage_apartment_posts_columns', function ($column) {
+    $column['hotres_id'] = 'Hotres ID';
+    return $column;
+  });
+
+  add_action('manage_apartment_posts_custom_column', function ($column_name) {
+    if ($column_name === 'hotres_id') {
+      $id = get_field('hotres_id');
+      echo '<a href="https://panel.hotres.pl/roomstypes/edit/id/' . $id . '" target="_blank" rel="noreferrer noopener">' . $id . '</a>';
+    }
+}, 10, 2);

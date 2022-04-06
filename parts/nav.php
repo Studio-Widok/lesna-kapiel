@@ -25,8 +25,9 @@
       <?php
         get_component('nav-link', ['page' => pll_get_post(884)]);
         get_component('nav-link', ['page' => pll_get_post(914)]);
-        get_component('nav-link', ['page' => pll_get_post(48)]);
-        get_component('nav-link', ['page' => pll_get_post(25)]);
+        // get_component('nav-link', ['page' => pll_get_post(48)]);
+        // get_component('nav-link', ['page' => pll_get_post(25)]);
+        get_component('nav-link', ['scroll' => '#contact', 'text' => pll__('kontakt')]);
       ?>
     </div>
   </div>
@@ -61,13 +62,14 @@
         if (!is_page(2)) {
           get_component('nav-link', ['page' => pll_get_post(2)]);
         }
-        get_component('nav-link', ['page' => pll_get_post(100)]);
+        // get_component('nav-link', ['page' => pll_get_post(100)]);
         get_component('nav-link', ['page' => pll_get_post(884)]);
         get_component('nav-link', ['page' => pll_get_post(914)]);
-        get_component('nav-link', ['page' => pll_get_post(48)]);
-        get_component('nav-link', ['page' => pll_get_post(109)]);
-        get_component('nav-link', ['page' => pll_get_post(111)]);
-        get_component('nav-link', ['page' => pll_get_post(25)]);
+        // get_component('nav-link', ['page' => pll_get_post(48)]);
+        // get_component('nav-link', ['page' => pll_get_post(109)]);
+        // get_component('nav-link', ['page' => pll_get_post(111)]);
+        // get_component('nav-link', ['page' => pll_get_post(25)]);
+        get_component('nav-link', ['scroll' => '#contact', 'text' => pll__('kontakt')]);
       ?>
       <div class="rmin"></div>
     </div>
