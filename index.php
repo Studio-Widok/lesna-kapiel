@@ -1,6 +1,7 @@
 <?php
   get_header();
-  $color = get_field('colors');
+  $color  = get_field('colors');
+  $footer = get_field('footer', 2);
 
   get_part('nav', [
     'isDark' => in_array($color, ['beige', 'pale']),
@@ -25,6 +26,15 @@
     <div class="rsep"></div>
     <div class="rsep"></div>
   </div>
+</div>
+
+<div class="pale-wrapper">
+  <?php
+    get_part('full-width-image', [
+      'image'          => $footer['image'], 'ratio' => 16 / 9,
+      'useContactInfo' => true,
+    ]);
+  ?>
 </div>
 
 <?php
