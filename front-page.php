@@ -52,6 +52,17 @@
   <div class="rsep"></div>
 </div>
 
+<?php if (false) {?>
+<div class="content column">
+  <div class="rsep"></div>
+  <iframe id="hotres_iframe"
+    style="background-color: #fff; width:100%; height: calc(100vh - 3em);"
+    src="https://panel.hotres.pl/v4_step1?oid=2447&lang=&arrival=2022-04-01&departure=2022-04-03&adults=3"
+    frameborder="0" scrolling="no" onload="setIframeHeight(this.id)"></iframe>
+  <div class="rsep"></div>
+</div>
+<?php }?>
+
 <?php $recommended = get_field('recommended');?>
 <div class="white-wrapper">
   <div class="rsep"></div>

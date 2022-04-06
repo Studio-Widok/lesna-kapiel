@@ -38,3 +38,17 @@ $(window).on('load', () => {
     element.prepend(`<div class="calendar-label">${label}</div>`);
   });
 });
+
+// iFrameResize({}, '#hotres_iframe');
+
+// $('#hotresChooser').on('submit', event => {
+//   event.preventDefault();
+
+//   const formData = new FormData(event.currentTarget);
+//   const data = [];
+//   for (const [name, value] of formData) {
+//     data[name] = value;
+//   }
+
+//   $('#hotres_iframe').attr({ src: `https://panel.hotres.pl/v4_step1?oid=2447&lang=&arrival=${data['arrival']}&departure=${data['departure']}&adults=${data['adults']}` });
+// });
