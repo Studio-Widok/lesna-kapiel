@@ -31,15 +31,15 @@ if ($('#gmap').length > 0) {
   }, 1000);
 }
 
-// custom hotres popup
-// $(window).on('load', () => {
-//   $('.calendar-label-wrap').each((_index, DOMElement) => {
-//     const element = $(DOMElement);
-//     const label = element.data('label');
-//     element.prepend(`<div class="calendar-label">${label}</div>`);
-//   });
-// });
+$(window).on('load', () => {
+  $('.calendar-label-wrap').each((_index, DOMElement) => {
+    const element = $(DOMElement);
+    const label = element.data('label');
+    element.prepend(`<div class="calendar-label">${label}</div>`);
+  });
+});
 
+// custom hotres popup
 // iFrameResize({}, '#hotres_iframe');
 
 // $('#hotresChooser').on('submit', event => {
