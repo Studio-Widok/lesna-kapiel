@@ -52,7 +52,7 @@
   <div class="rsep"></div>
 </div>
 
-<?php if (false) {?>
+<?php if (false) { // custom hotres popup?>
 <div class="content column">
   <div class="rsep"></div>
   <iframe id="hotres_iframe"
