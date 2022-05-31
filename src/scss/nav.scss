@@ -345,26 +345,3 @@
     }
   }
 }
-
-#nav.dark:not(.opened) {
-  color: $dark;
-  .nav-link {
-    span {
-      &::after {
-        background-color: $dark;
-      }
-    }
-  }
-  .nav-link-icon {
-    svg {
-      path {
-        fill: $dark;
-      }
-    }
-  }
-  #burger {
-    > div {
-      background-color: $dark;
-    }
-  }
-}

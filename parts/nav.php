@@ -4,17 +4,16 @@
   $phone_raw = str_replace(' ', '', $phone);
   $mail      = get_field('contact_mail', pll_get_post(25));
 
-  if (!isset($isDark)) {
-    $top = get_field('top');
-    if (empty($top)) {
-      $isDark = get_field('menu_color');
-    } else {
-      $isDark = $top['top']['menu_color'];
-    }
-  }
+  $pages = [884, 914, 100, 25];
+  $pages = array_map(function ($pageId) {
+    return get_post(pll_get_post($pageId));
+  }, $pages);
+  usort($pages, function ($a, $b) {
+    return $a->menu_order - $b->menu_order;
+  });
 ?>
 
-<nav id="nav" class="<?=$isDark ? 'dark' : ''?>">
+<nav id="nav" class="">
 
   <div id="nav-links">
     <a class="nav-link more-768" href="<?=get_the_permalink(pll_get_post(2))?>">
@@ -23,10 +22,9 @@
     </a>
     <div class="more-768">
       <?php
-        get_component('nav-link', ['page' => pll_get_post(884)]);
-        get_component('nav-link', ['page' => pll_get_post(914)]);
-        get_component('nav-link', ['page' => pll_get_post(48)]);
-        get_component('nav-link', ['page' => pll_get_post(25)]);
+        foreach ($pages as $page) {
+          get_component('nav-link', ['page' => $page]);
+        }
       ?>
     </div>
   </div>
@@ -61,13 +59,9 @@
         if (!is_page(2)) {
           get_component('nav-link', ['page' => pll_get_post(2)]);
         }
-        get_component('nav-link', ['page' => pll_get_post(100)]);
-        get_component('nav-link', ['page' => pll_get_post(884)]);
-        get_component('nav-link', ['page' => pll_get_post(914)]);
-        get_component('nav-link', ['page' => pll_get_post(48)]);
-        get_component('nav-link', ['page' => pll_get_post(109)]);
-        get_component('nav-link', ['page' => pll_get_post(111)]);
-        get_component('nav-link', ['page' => pll_get_post(25)]);
+        foreach ($pages as $page) {
+          get_component('nav-link', ['page' => $page]);
+        }
       ?>
       <div class="rmin"></div>
     </div>

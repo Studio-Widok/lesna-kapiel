@@ -1,4 +1,5 @@
 <?php /*Template Name: restauracje*/
+  // not in use
   get_header();
 
   $top = get_field('restauracja_top');

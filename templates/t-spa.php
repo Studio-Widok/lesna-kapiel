@@ -1,4 +1,5 @@
 <?php /*Template Name: spa*/
+  // not in use
   get_header();
 
   $sections = get_field('sections');

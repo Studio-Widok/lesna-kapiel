@@ -1,4 +1,4 @@
-<?php // Template Name: Apartamenty
+<?php // Template Name: apartamenty
   // cSpell:ignore ontop
   get_header();
 

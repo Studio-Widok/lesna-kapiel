@@ -1,6 +1,6 @@
 <?php
 
-  // TODO: template to be deleted
+  // TODO: template to be deleted, redirect to archive page
 
   get_header();
 
