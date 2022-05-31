@@ -12,28 +12,28 @@
     width: 100%;
 
     &::-webkit-input-placeholder {
-      color: #fff;
-      opacity: 0.3;
+      color: $dark;
+      opacity: 0.8;
       transition: 0.3s;
     }
     &::-moz-placeholder {
-      color: #fff;
-      opacity: 0.3;
+      color: $dark;
+      opacity: 0.8;
       transition: 0.3s;
     }
     &:-ms-input-placeholder {
-      color: #fff;
-      opacity: 0.3;
+      color: $dark;
+      opacity: 0.8;
       transition: 0.3s;
     }
     &:-moz-placeholder {
-      color: #fff;
-      opacity: 0.3;
+      color: $dark;
+      opacity: 0.8;
       transition: 0.3s;
     }
     &::placeholder {
-      color: #fff;
-      opacity: 0.3;
+      color: $dark;
+      opacity: 0.8;
       transition: 0.3s;
     }
 
@@ -42,30 +42,30 @@
       outline: none;
 
       &::-webkit-input-placeholder {
-        opacity: 0.5;
+        opacity: 0.9;
       }
       &::-moz-placeholder {
-        opacity: 0.5;
+        opacity: 0.9;
       }
       &:-ms-input-placeholder {
-        opacity: 0.5;
+        opacity: 0.9;
       }
       &:-moz-placeholder {
-        opacity: 0.5;
+        opacity: 0.9;
       }
       &::placeholder {
-        opacity: 0.5;
+        opacity: 0.9;
       }
     }
   }
 
   input {
-    border-bottom: 1px #fff solid;
+    border-bottom: 1px $dark solid;
     height: 2em;
   }
 
   textarea {
-    border: 1px solid #fff;
+    border: 1px solid $dark;
     margin-top: 5em;
     resize: vertical;
     min-height: 10em;
@@ -73,11 +73,11 @@
   }
 
   .wpcf7 form .wpcf7-response-output {
-    border-color: #fff;
+    border-color: $dark;
   }
 
   .wpcf7-not-valid-tip {
-    color: #fff;
+    color: $dark;
     font-size: 0.8em;
   }
 
@@ -114,7 +114,7 @@
 
         circle {
           fill: none;
-          stroke: #fff;
+          stroke: $dark;
           stroke-width: 10;
           stroke-linecap: round;
           stroke-linejoin: round;
@@ -140,15 +140,13 @@
   .social-icon {
     width: 1.5em;
     margin: 0;
+
     &:nth-child(1) {
       margin-right: 1em;
     }
+
     svg {
       display: block;
-
-      path {
-        fill: #fff;
-      }
     }
   }
 }

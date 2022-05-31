@@ -51,10 +51,12 @@
       border-color: $color;
     }
 
-    .heading-logo {
-      path {
-        fill: $color;
-      }
+    .heading-logo path {
+      fill: $color;
+    }
+
+    .social .social-icon svg path {
+      fill: $color;
     }
   }
 }

@@ -9,20 +9,23 @@
   ]);
 ?>
 
-<div class="green-wrapper">
-  <div class="fixed-link-container">
-    <?php
-      get_component('fixed-link', [
-        'text' => get_the_title(pll_get_post(100)),
-        'link' => get_the_permalink(pll_get_post(100)),
-      ]);
-    ?>
-    <div class="rsep"></div>
-    <?php get_part('contact-form');?>
-    <div class="rsep"></div>
-    <?php get_part('contact-info');?>
-  </div>
+<div class="pale-green-wrapper">
   <div class="rsep"></div>
+
+  <div class="flex flex-align-end flex-600 content column-outer-growing">
+    <div class="col5-3 column-inner-growing">
+      <?php get_part('contact-form');?>
+    </div>
+    <div class="col5-2 column-inner-growing">
+      <div class="rsep"></div>
+      <?php get_part('contact-info');?>
+      <div class="rsep"></div>
+    </div>
+  </div>
+
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+
   <?php
     get_part('contact-images');
     get_part('map-block');

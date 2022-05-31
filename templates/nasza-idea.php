@@ -35,9 +35,8 @@
 
   <?php
     get_part('full-width-image', [
-      'image'             => $footer['image'],
-      'useContactInfo'    => true,
-      'useNegativeMargin' => false,
+      'image'    => $footer['image'],
+      'useQuote' => true,
     ]);
   ?>
 </div>

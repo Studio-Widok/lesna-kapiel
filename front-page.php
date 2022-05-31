@@ -147,8 +147,8 @@
   ?>
   <?php
   get_part('full-width-image', [
-    'image'          => $footer['image'], 'ratio' => 16 / 9,
-    'useContactInfo' => true,
+    'image'    => $footer['image'], 'ratio' => 16 / 9,
+    'useQuote' => true,
   ]);
 ?>
 </div>

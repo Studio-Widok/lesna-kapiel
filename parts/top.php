@@ -23,15 +23,19 @@
       id="top-logo-img">
     <div class="handwrite"><?=get_field('subtitle')?></div>
   </div>
-  <?php }if ($show_title) {?>
-  <div id="top-title" class="content column-double <?=$text_align?>">
-    <span><?=$title?></span>
+  <?php }?>
+  <div>
+    <?php if ($show_title) {?>
+    <div id="top-title" class="content column-double <?=$text_align?>">
+      <span><?=$title?></span>
+    </div>
+    <?php
+      }
+      if ($isShowReservation) {
+        get_component('reservation');
+      }
+    ?>
   </div>
-  <?php }if ($isShowReservation) {?>
-  <?php
-  get_component('reservation');
-  }
-?>
 
   <div class="arrow more-768">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 27">
