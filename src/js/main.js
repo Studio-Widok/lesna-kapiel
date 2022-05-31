@@ -17,7 +17,7 @@ if ($('#top').length > 0) require('./top');
 
 if ($('.slider-gallery').length > 0) require('./slider-gallery');
 
-if (bodyElement.hasClass('page-template-t-atrakcje')) require('./attractions');
+if (bodyElement.hasClass('page-template-atrakcje')) require('./attractions');
 
 if ($('.fade').length > 0) {
   fadeQueueStart({ delay: 0 });
