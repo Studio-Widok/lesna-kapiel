@@ -256,11 +256,17 @@
     #nav-foot-mobile {
       > div {
         text-align: center;
+
         .social {
           justify-content: center;
+
           .social-icon {
             &:nth-child(1) {
               margin-right: 1em;
+            }
+
+            path {
+              fill: #fff;
             }
           }
         }

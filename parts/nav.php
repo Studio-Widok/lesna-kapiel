@@ -4,7 +4,7 @@
   $phone_raw = str_replace(' ', '', $phone);
   $mail      = get_field('contact_mail', pll_get_post(25));
 
-  $pages = [884, 914, 100, 25];
+  $pages = [884, 914, 100, 25, 111, 1149];
   $pages = array_map(function ($pageId) {
     return get_post(pll_get_post($pageId));
   }, $pages);
