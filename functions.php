@@ -18,16 +18,8 @@ function get_link_url($field) {
       return $field['url'];
     case 'in':
       return $field['link_page'];
-    case 'collections':
-      return get_category_link(pll_get_term($field['link_collections']));
-    case 'tags':
-      return get_tag_link(pll_get_term($field['link_tags']));
-    case 'dla_dzieci':
-      return get_the_permalink(pll_get_post(111)) . '#children';
-    case 'sauna':
-      return get_the_permalink(pll_get_post(48)) . '#sauna';
-    case 'basen':
-      return get_the_permalink(pll_get_post(48)) . '#pool';
+    case 'media':
+      return $field['url'];
   }
 }
 

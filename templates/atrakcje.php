@@ -2,9 +2,9 @@
   get_header();
 
   $top    = get_field('top')['top'];
-  $nearby = get_field('nearby');
-  $link   = get_field('link')['link'];
   $footer = get_field('footer', 2);
+
+  $plan = get_field('plan');
 
   get_part('nav');
   get_part('top', [
@@ -15,6 +15,11 @@
   ]);
 ?>
 
+<?php // old
+  if (false) {
+    $nearby = get_field('nearby');
+    $link   = get_field('link')['link'];
+  ?>
 <div class="pale-green-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => $top['text']]);?>
@@ -23,12 +28,12 @@
   <div class="content">
     <?php
       get_part('featured-links', [
-        'links'            => $nearby,
-        'isMobileHide1050' => false,
-        'isMobileHide768'  => true,
-        'maskColor'        => get_mask_color('green'),
-      ]);
-    ?>
+          'links'            => $nearby,
+          'isMobileHide1050' => false,
+          'isMobileHide768'  => true,
+          'maskColor'        => get_mask_color('green'),
+        ]);
+      ?>
     <div class="text-center less-768">
       <button id='attraction-more' data-more="<?php pll_e('more')?>"
         data-less="<?php pll_e('less')?>">
@@ -52,14 +57,14 @@
   <div class="rsep"></div>
   <?php
     $on_the_spot = get_field('on_the_spot');
-    for ($i = 0; $i < count($on_the_spot); $i++) {
-      get_part('slider-with-bullets', [
-        'slides'    => $on_the_spot[$i]['slides'],
-        'title'     => $on_the_spot[$i]['title'],
-        'pic_right' => $i % 2,
-        'maskColor' => get_mask_color("pale"),
-      ]);
-    ?>
+      for ($i = 0; $i < count($on_the_spot); $i++) {
+        get_part('slider-with-bullets', [
+          'slides'    => $on_the_spot[$i]['slides'],
+          'title'     => $on_the_spot[$i]['title'],
+          'pic_right' => $i % 2,
+          'maskColor' => get_mask_color("pale"),
+        ]);
+      ?>
   <div class="rsep"></div>
   <?php }?>
   <div class="text-center">
@@ -71,13 +76,46 @@
 </div>
 <?php
   get_part('full-width-image', [
-    'image' => $footer['image'], 'ratio' => 16 / 9,
-  ]);
-?>
+      'image' => $footer['image'], 'ratio' => 16 / 9,
+    ]);
+  ?>
 <div class="green-wrapper">
   <div class="rsep"></div>
   <?php get_part('contact-info');?>
   <div class="rsep"></div>
+</div>
+
+<?php }?>
+
+<div class="pale-green-wrapper">
+  <div class="rsep"></div>
+  <div class="column">
+    <div class="plan-intro text limited-width"><?=$top['text']?></div>
+  </div>
+  <div id="attractions-plan-wrap">
+    <div id="attractions-plan-scroll">
+      <div id="attractions-plan" style="
+        background-image: url(<?=$plan['background']['sizes']['large']?>);
+        padding-bottom: <?=$plan['background']['height'] * 100 / $plan['background']['width']?>%;
+        ">
+        <?php foreach ($plan['texts'] as $index => $text) {?>
+        <div class="plan-text" id="plan-text-<?=$index?>"><?=$text['text']?>
+        </div>
+        <?php }?>
+      </div>
+    </div>
+  </div>
+  <div class="rsep"></div>
+</div>
+
+<div class="pale-wrapper">
+  <?php
+    get_part('full-width-image', [
+      'image'    => $footer['image'],
+      'useQuote' => true,
+
+    ]);
+  ?>
 </div>
 
 <?php

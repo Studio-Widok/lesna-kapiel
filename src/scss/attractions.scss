@@ -1,0 +1,80 @@
+.plan-intro {
+  position: relative;
+  max-width: 40em;
+  margin-bottom: -11%;
+  background-color: $pale-green;
+  z-index: 1;
+}
+
+#attractions-plan-wrap {
+  max-width: 80em;
+  margin: 0 auto;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    cursor: grab;
+
+    &.grabbing {
+      cursor: grabbing;
+      user-select: none;
+    }
+  }
+
+  #attractions-plan-scroll {
+    min-width: 800px;
+
+    #attractions-plan {
+      position: relative;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      .plan-text {
+        position: absolute;
+        font-size: max(min(1em, 1.8vw), 0.9em);
+
+        &#plan-text-0 {
+          bottom: 73%;
+          left: 9%;
+          width: 21%;
+        }
+        &#plan-text-1 {
+          bottom: 66%;
+          left: 67%;
+          width: 21%;
+        }
+        &#plan-text-2 {
+          top: 62%;
+          left: 76%;
+          width: 22%;
+        }
+        &#plan-text-3 {
+          top: 70%;
+          left: 36%;
+          width: 21%;
+        }
+        &#plan-text-4 {
+          top: 74%;
+          left: 6%;
+          width: 26%;
+        }
+        &#plan-text-5 {
+          top: 79%;
+          left: 64%;
+          width: 34%;
+        }
+        &#plan-text-6 {
+          top: 88%;
+          left: 64%;
+          width: 34%;
+        }
+      }
+    }
+  }
+}
