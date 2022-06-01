@@ -12,8 +12,6 @@ const bodyElement = $('body');
 
 if (bodyElement.hasClass('page-template-apartments')) require('./archive');
 
-if ($('.fixed-link').length > 0) require('./fixed-link');
-
 if ($('#top').length > 0) require('./top');
 
 if ($('.slider-gallery').length > 0) require('./slider-gallery');

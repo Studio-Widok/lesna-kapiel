@@ -16,6 +16,7 @@
   <meta property="og:title" content="<?=$ogtitle?>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<?=wp_get_canonical_url()?>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png"
     href="<?=get_template_directory_uri()?>/media/favicon.png" />
   <link rel="preload" as="font" crossorigin="anonymous"

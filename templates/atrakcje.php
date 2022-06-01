@@ -15,7 +15,7 @@
   ]);
 ?>
 
-<div class="green-wrapper">
+<div class="pale-green-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => $top['text']]);?>
   <div class="rsep"></div>
