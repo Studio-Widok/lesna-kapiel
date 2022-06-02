@@ -4,7 +4,8 @@
   $top    = get_field('top')['top'];
   $footer = get_field('footer', 2);
 
-  $plan = get_field('plan');
+  $plan        = get_field('plan');
+  $attractions = get_field('attractions');
 
   get_part('nav');
   get_part('top', [
@@ -106,6 +107,25 @@
     </div>
   </div>
   <div class="rsep"></div>
+</div>
+
+<div class="white-wrapper wrapper--no-mask-before">
+  <div class="content-wide">
+    <div class="chessboard">
+      <?php
+        for ($i = 0; $i < count($attractions); $i++) {
+          get_part('chessboard-row', [
+            'image'   => $attractions[$i]['image'],
+            'icon'    => $attractions[$i]['icon'],
+            'title'   => $attractions[$i]['title'],
+            'content' => get_the_component('chessboard-row-attraction', [
+              'attraction' => $attractions[$i],
+            ]),
+          ]);
+        }
+      ?>
+    </div>
+  </div>
 </div>
 
 <div class="pale-wrapper">

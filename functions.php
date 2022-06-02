@@ -23,6 +23,20 @@ function get_link_url($field) {
   }
 }
 
+function get_link_attributes($field) {
+  $attribs         = [];
+  $attribs['href'] = get_link_url($field);
+
+  if ($field['target'] === 'out') {
+    $attribs['target'] = '_blank';
+    $attribs['rel']    = 'noopener noreferrer';
+  }
+
+  return array_reduce(array_keys($attribs), function ($previous, $key) use ($attribs) {
+    return $previous . $key . '="' . $attribs[$key] . '" ';
+  }, '');
+}
+
 function get_term_id($termSlug) {
   return get_terms([
     'taxonomy'   => 'tags',

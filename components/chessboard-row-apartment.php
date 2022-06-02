@@ -42,7 +42,7 @@
 
 <?php if (!empty($icons)) {?>
 <div class="rmin"></div>
-<div class="uppercase">udogodnienia</div>
+<div class="uppercase"><?=pll__('udogodnienia')?></div>
 <div class="apartment-icons">
   <?php for ($j = 0; $j < count($icons); $j++) {?>
   <div class="apartment-icon"
@@ -55,7 +55,7 @@
 
 <?php if (!empty($price)) {?>
 <div class="rmin"></div>
-<div class="uppercase">cena od</div>
+<div class="uppercase"><?=pll__('cena od')?></div>
 <div class="apartment-price">
   <?=$price?>,-
 </div>
@@ -67,12 +67,12 @@
   <a href="https://panel.hotres.pl/v4_adjust?oid=2447&lang=pl&tid=<?=get_field('hotres_id', $apart)?>&template=standalone&tid_ontop=<?=get_field('hotres_id', $apart)?>"
     target="_blank" rel="noopener noreferrer"><button>
       <div class="icon icon--bell"></div>
-      rezerwuj
+      <?=pll__('rezerwuj')?>
     </button></a>
   <?php for ($j = 1; $j < count($slider['gallery']); $j++) {?>
   <?php if ($j === 1) {?>
   <button class="source-<?=$index?>"
-    data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">galeria</button>
+    data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>"><?=pll__('galeria')?></button>
   <?php } else {?>
   <div class="source-<?=$index?>"
     data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">

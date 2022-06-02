@@ -11,6 +11,9 @@
   // ImageArray
   $image = $image ?? null;
 
+  // ImageArray
+  $icon = $icon ?? null;
+
   // string
   $category = $category ?? null;
 
@@ -33,10 +36,15 @@
       style="background-image: url(<?=$image['sizes']['medium']?>)">
     </div>
   </div>
+
   <div class="square column">
     <?php if (isset($category)) {?>
     <div class="uppercase"><?=$category?></div>
     <div class="rmin"></div>
+    <?php }?>
+
+    <?php if (isset($icon)) {?>
+    <img src="<?=$icon['sizes']['medium']?>" alt="" class="chessboard-icon">
     <?php }?>
 
     <h2 class="heading uppercase text-left"><?=$title?></h2>

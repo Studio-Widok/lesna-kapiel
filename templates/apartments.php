@@ -124,13 +124,12 @@
       <?php
   get_part('chessboard-row', [
         'handwrite' => ($i === 0 && $type === 'villa') ? $tag : null,
-        'gallery'   => $slider['gallery'],
         'index'     => $index,
         'id'        => 'apart-tag-title-' . $tag->slug,
         'image'     => $slider['gallery'][0],
         'category'  => $type === 'villa' ? 'apartamenty typu ' . $tag->name : null,
         'title'     => get_the_title($apart),
-        'content'   => get_the_component('chessboard-row-apartment-content', [
+        'content'   => get_the_component('chessboard-row-apartment', [
           'apart'  => $apart,
           'slider' => $slider,
           'index'  => $index,
