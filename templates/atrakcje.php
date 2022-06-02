@@ -128,6 +128,11 @@
   </div>
 </div>
 
+<div class="pale-green-wrapper">
+  <?php get_part('recommended');?>
+  <div class="rsep"></div>
+</div>
+
 <div class="pale-wrapper">
   <?php
     get_part('full-width-image', [

@@ -22,7 +22,8 @@
   </div>
   <div class="rmin"></div>
   <div class="text-center">
-    <div class="small-title"><?=get_the_title($apartment)?></div>
+    <div class="small-title small-title--no-underline">
+      <?=get_the_title($apartment)?></div>
   </div>
   <div class="rmik"></div>
   <div class="text-center">
