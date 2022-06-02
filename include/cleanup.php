@@ -98,6 +98,10 @@
   opacity: 1;
 }
 
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: min(500px, 75vh);
+}
+
 </style>
 <?php
   }

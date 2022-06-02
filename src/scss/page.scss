@@ -117,11 +117,15 @@ button {
     background-position: 50.001% 0;
   }
 
-  //
   .image-quote {
     font-size: min(10vw, 10em);
     text-align: center;
     margin-bottom: 0.5em;
+  }
+
+  &--with-content {
+    padding: 6em 0;
+    height: auto;
   }
 }
 
@@ -218,11 +222,13 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 60rem;
+  margin: 0 auto;
 
   .large-icon {
     margin-bottom: 4em;
 
     .large-icon-img {
+      width: 100%;
       max-width: 9em;
       display: block;
       margin: 0 auto 1em auto;

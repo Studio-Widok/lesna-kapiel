@@ -46,7 +46,15 @@
   <div class="rsep"></div>
 </div>
 
-<div class="pale-green-wrapper wrapper--no-mask-before">
+<?php
+  $on_site = get_field('on_site');
+  get_part('full-width-image', [
+    'image'   => $on_site['image'],
+    'content' => get_the_component('okolica-on-site', ['on-site' => $on_site]),
+  ]);
+?>
+
+<div class="pale-green-wrapper">
   <?php get_part('recommended');?>
   <div class="rsep"></div>
 </div>

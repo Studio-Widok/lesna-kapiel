@@ -120,19 +120,26 @@
       'maskColor' => get_mask_color("pale"),
     ]);
   ?>
+
+  <?php
+    // unavailable with new hotres form
+    if (false) {
+    ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <?php
     get_component('reservation', [
-      'title' => 'wybierz termin',
+        'title' => 'wybierz termin',
+      ]);
+    }
+  ?>
+
+  <?php
+    get_part('full-width-image', [
+      'image'    => $footer['image'], 'ratio' => 16 / 9,
+      'useQuote' => true,
     ]);
   ?>
-  <?php
-  get_part('full-width-image', [
-    'image'    => $footer['image'], 'ratio' => 16 / 9,
-    'useQuote' => true,
-  ]);
-?>
 </div>
 
 <?php
