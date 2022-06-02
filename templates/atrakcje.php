@@ -1,4 +1,4 @@
-<?php /*Template Name: atrakcje*/
+<?php // Template Name: atrakcje
   get_header();
 
   $top    = get_field('top')['top'];
