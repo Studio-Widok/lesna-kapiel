@@ -118,95 +118,30 @@
         for ($k = 0; $k < count($tags); $k++) {
           $tag = $tags[$k];
           for ($i = 0; $i < count($tag->apartments); $i++) {
-            $apart     = $tag->apartments[$i];
-            $slider    = get_field('slider', $apart);
-            $occupancy = get_field('occupancy', $apart);
-            $price     = preg_replace('/[^0-9.]/', '', get_field('price', $apart));
-            $size      = get_field('size', $apart);
-            $icons     = get_field('icons', $apart);
+            $apart  = $tag->apartments[$i];
+            $slider = get_field('slider', $apart);
           ?>
-      <div class="chessboard-row">
-
-        <?php if ($i === 0 && $type === 'villa') {?>
-        <div class="apart-tag-title handwrite"
-          id="apart-tag-title-<?=$tag->slug?>"><?=$tag->name?></div>
-        <?php }?>
-
-        <div class="square-img cake-zoom-frame source-<?=$index?>"
-          data-full-src="<?=$slider['gallery'][0]['sizes']['large']?>">
-          <div class="cake"
-            style="background-image: url(<?=$slider['gallery'][0]['sizes']['medium']?>)">
-          </div>
-        </div>
-        <div class="square column">
-          <?php if ($type === 'villa') {?>
-          <div class="uppercase">apartamenty typu <?=$tag->name?></div>
-          <div class="rmin"></div>
-          <?php }?>
-          <h2 class="heading uppercase text-left"><?=get_the_title($apart)?>
-          </h2>
-          <div>
-            <?php if (!empty($occupancy)) {?>
-            <div class="icon icon--person"></div>
-            <?=$occupancy?>
-            <?php }
-      if (!empty($occupancy) && !empty($size)) {
-        echo ' | ';
-      }
-      if (!empty($size)) {
-      ?>
-            <?=$size?> m<sup>2</sup>
-            <?php }?>
-          </div>
-          <div class="rmin"></div>
-          <div><?=$slider['text']?></div>
-
-          <?php if (!empty($icons)) {?>
-          <div class="rmin"></div>
-          <div class="uppercase">udogodnienia</div>
-          <div class="apartment-icons">
-            <?php for ($j = 0; $j < count($icons); $j++) {?>
-            <div class="apartment-icon"
-              style="background-image: url(<?=$icons[$j]['sizes']['medium']?>);">
-              <div class="tooltip"><?=$icons[$j]['title'];?></div>
-            </div>
-            <?php }?>
-          </div>
-          <?php }?>
-
-          <?php if (!empty($price)) {?>
-          <div class="rmin"></div>
-          <div class="uppercase">cena od</div>
-          <div class="apartment-price">
-            <?=$price?>,-
-          </div>
-          <?php }?>
-
-          <div class="rmin"></div>
-
-          <div class="button-container">
-            <a href="https://panel.hotres.pl/v4_adjust?oid=2447&lang=pl&tid=<?=get_field('hotres_id', $apart)?>&template=standalone&tid_ontop=<?=get_field('hotres_id', $apart)?>"
-              target="_blank" rel="noopener noreferrer"><button>
-                <div class="icon icon--bell"></div>
-                rezerwuj
-              </button></a>
-            <?php for ($j = 1; $j < count($slider['gallery']); $j++) {?>
-            <?php if ($j === 1) {?>
-            <button class="source-<?=$index?>"
-              data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">galeria</button>
-            <?php } else {?>
-            <div class="source-<?=$index?>"
-              data-full-src="<?=$slider['gallery'][$j]['sizes']['large']?>">
-            </div>
-            <?php }}?>
-          </div>
-        </div>
-      </div>
       <?php
-        $index++;
-          }
-        }
-      ?>
+  get_part('chessboard-row', [
+        'handwrite' => ($i === 0 && $type === 'villa') ? $tag : null,
+        'gallery'   => $slider['gallery'],
+        'index'     => $index,
+        'id'        => 'apart-tag-title-' . $tag->slug,
+        'image'     => $slider['gallery'][0],
+        'category'  => $type === 'villa' ? 'apartamenty typu ' . $tag->name : null,
+        'title'     => get_the_title($apart),
+        'content'   => get_the_component('chessboard-row-apartment-content', [
+          'apart'  => $apart,
+          'slider' => $slider,
+          'index'  => $index,
+        ]),
+      ]);
+    ?>
+      <?php
+  $index++;
+    }
+  }
+?>
     </div>
   </div>
 </div>
