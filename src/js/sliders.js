@@ -12,21 +12,3 @@ $('.slider-with-bullets').each((index, element) => {
     arrowNext: `#slider-with-bullets-${index} .arrow-right`,
   });
 });
-
-createSlider({
-  wrap: `.collections-slider .slider`,
-  useKeys: true,
-  touchDrag: true,
-  bulletContainer: '.collections-slider .bullets-container',
-  bulletSelector: '.collections-slider .bullets-container .slider-bullet',
-  arrowPrev: `.collections-slider .arrow-left`,
-  arrowNext: `.collections-slider .arrow-right`,
-  onActivate: (slide, slider) => {
-    const color = slide.element.data('color');
-    slider.wrap.parent('.collections-slider').addClass(`slide-color-${color}`);
-  },
-  onDeactivate: (slide, slider) => {
-    const color = slide.element.data('color');
-    slider.wrap.parent('.collections-slider').removeClass(`slide-color-${color}`);
-  },
-});

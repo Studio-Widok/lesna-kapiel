@@ -3,6 +3,7 @@
 
   $top    = get_field('top')['top'];
   $footer = get_field('footer', 2);
+  $nearby = get_field('nearby');
 
   get_part('nav');
   get_part('top', [
@@ -15,11 +16,39 @@
 ?>
 
 <div class="pale-green-wrapper">
-
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => $top['text']]);?>
   <div class="rsep"></div>
 
+  <div class="content">
+    <?php
+      get_part('featured-links', [
+        'links'            => $nearby,
+        'isMobileHide1050' => false,
+        'isMobileHide768'  => true,
+        'maskColor'        => get_mask_color('green'),
+      ]);
+    ?>
+    <div class="text-center less-768">
+      <button id='attraction-more' data-more="<?php pll_e('more')?>"
+        data-less="<?php pll_e('less')?>">
+        <?php pll_e('more')?>
+      </button>
+    </div>
+    <div class="r less-768"></div>
+  </div>
+
+  <div class="rsep"></div>
+</div>
+
+<div class="pale-wrapper wrapper--mask-after">
+  <div class="rsep"></div>
+  <div class="rsep"></div>
+</div>
+
+<div class="pale-green-wrapper wrapper--no-mask-before">
+  <?php get_part('recommended');?>
+  <div class="rsep"></div>
 </div>
 
 <div class="pale-wrapper">
@@ -27,7 +56,6 @@
     get_part('full-width-image', [
       'image'    => $footer['image'],
       'useQuote' => true,
-
     ]);
   ?>
 </div>

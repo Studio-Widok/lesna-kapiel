@@ -19,7 +19,7 @@ function get_link_url($field) {
     case 'in':
       return $field['link_page'];
     case 'media':
-      return $field['url'];
+      return empty($field['media']) ? '' : $field['media']['url'];
   }
 }
 
