@@ -6,7 +6,11 @@
 
   $classes = $classes ?? '';
 
-  $slider    = get_field('slider', $apartment->ID);
+  $slider = get_field('slider', $apartment->ID);
+  if (empty($slider['gallery'])) {
+    return;
+  }
+
   $img       = $slider['gallery'][0];
   $price     = get_field('price', $apartment->ID);
   $occupancy = get_field('occupancy', $apartment->ID);
