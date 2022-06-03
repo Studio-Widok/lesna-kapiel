@@ -6,16 +6,16 @@
   $nearby = get_field('nearby');
 
   get_part('nav');
-  get_part('top', [
-    'show_title'   => true,
-    'bg'           => $top['top_image'],
-    'text_align'   => $top['align'],
-    'title'        => $top['title'],
-    'isFullHeight' => true,
-  ]);
+  // get_part('top', [
+  //   'show_title'   => true,
+  //   'bg'           => $top['top_image'],
+  //   'text_align'   => $top['align'],
+  //   'title'        => $top['title'],
+  //   'isFullHeight' => true,
+  // ]);
 ?>
 
-<div class="pale-green-wrapper">
+<!-- <div class="pale-green-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => $top['text']]);?>
   <div class="rsep"></div>
@@ -23,10 +23,8 @@
   <div class="content">
     <?php
       get_part('featured-links', [
-        'links'            => $nearby,
-        'isMobileHide1050' => false,
-        'isMobileHide768'  => true,
-        'maskColor'        => get_mask_color('green'),
+        'links'     => $nearby,
+        'maskColor' => get_mask_color('green'),
       ]);
     ?>
     <div class="text-center less-768">
@@ -39,36 +37,42 @@
   </div>
 
   <div class="rsep"></div>
-</div>
+</div> -->
+
+<div class="rsep"></div>
+<div class="rsep"></div>
+<div class="rsep"></div>
 
 <div class="pale-wrapper wrapper--mask-after">
   <div class="rsep"></div>
+  <?php get_part('routes');?>
   <div class="rsep"></div>
 </div>
 
-<?php
-  $on_site = get_field('on_site');
-  get_part('full-width-image', [
-    'image'   => $on_site['image'],
-    'content' => get_the_component('okolica-on-site', ['on-site' => $on_site]),
+<!--
+  <?php
+    $on_site = get_field('on_site');
+    get_part('full-width-image', [
+      'image'   => $on_site['image'],
+      'content' => get_the_component('okolica-on-site', ['on-site' => $on_site]),
   ]);
-?>
+  ?> -->
 
-<div class="pale-green-wrapper">
+<!-- <div class="pale-green-wrapper">
   <?php get_part('recommended');?>
   <div class="rsep"></div>
-</div>
+</div> -->
 
-<div class="pale-wrapper">
+<!-- <div class="pale-wrapper">
   <?php
     get_part('full-width-image', [
       'image'    => $footer['image'],
       'useQuote' => true,
     ]);
   ?>
-</div>
+</div> -->
 
 <?php
-  get_part('map-block');
+  // get_part('map-block');
   get_footer();
 ?>
