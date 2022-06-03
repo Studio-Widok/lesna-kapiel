@@ -295,6 +295,12 @@ button {
       }
     }
 
+    .chessboard-icon {
+      width: 4em;
+      display: block;
+      margin-bottom: 1em;
+    }
+
     &:nth-child(2n) {
       .square {
         margin-left: auto;
