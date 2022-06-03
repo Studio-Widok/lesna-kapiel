@@ -14,7 +14,6 @@ if (bodyElement.hasClass('page-template-apartments')) require('./archive');
 
 if ($('#top').length > 0) require('./top');
 
-if ($('.slider-gallery').length > 0) require('./slider-gallery');
 
 if (bodyElement.hasClass('page-template-atrakcje')) require('./attractions');
 

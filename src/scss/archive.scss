@@ -42,27 +42,6 @@ hr {
   }
 }
 
-//
-.single-apartment-container {
-  overflow: hidden;
-  cursor: pointer;
-
-  .cake {
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  @media (max-width: 768px) {
-    &.image-wrapper-full-width {
-      max-width: 30em;
-      margin: 0 auto;
-    }
-  }
-}
-
 .premium-text {
   width: 33.3333%;
 
