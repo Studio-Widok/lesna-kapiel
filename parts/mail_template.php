@@ -5,6 +5,12 @@
   }
   $logo = get_field('logo', 2);
 ?>
+<style>
+a {
+  color: inherit;
+}
+
+</style>
 <div
   style="max-width: 40em; margin: 3em auto; padding: 3em; font-family: sans-serif; background-color: #1e352a; color: #fff;">
   <img src="<?=get_template_directory_uri()?>/media/favicon.png" alt="logo"
