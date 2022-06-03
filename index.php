@@ -31,7 +31,6 @@
     get_part('full-width-image', [
       'image'    => $footer['image'],
       'useQuote' => true,
-
     ]);
   ?>
 </div>

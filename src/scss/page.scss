@@ -359,3 +359,13 @@ footer {
     }
   }
 }
+
+// 404
+.title-404 span {
+  font-size: 6em;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
+}

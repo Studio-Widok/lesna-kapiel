@@ -140,3 +140,9 @@ function iworks_orphan($content) {
   $orphan = new iWorks_Orphan();
   return $orphan->replace($content);
 }
+
+function return_only_title($title) {
+  return "%s";
+}
+add_filter('private_title_format', 'return_only_title');
+add_filter('protected_title_format', 'return_only_title');

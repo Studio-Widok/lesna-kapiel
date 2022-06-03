@@ -64,29 +64,6 @@
     }
   }
 
-  #top-title {
-    position: relative;
-    width: 100%;
-
-    @media (max-width: 768px) {
-      font-size: 0.8em;
-    }
-
-    span {
-      font-size: 2em;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
-      padding-left: $letter-spacing;
-      text-shadow: 0 0 0.5em #0009;
-    }
-
-    &.title-404 span {
-      font-size: 6em;
-      font-weight: 700;
-    }
-  }
-
   #hotresChooser {
     margin-top: 2em;
   }

@@ -1,5 +1,10 @@
 <?php
   $isDisabled = $isDisabled ?? false;
+
+  if (!$isDisabled && isset($page) && get_post_status($page) !== 'publish') {
+    return;
+  }
+
 ?>
 
 <?php if (isset($page)) {?>
