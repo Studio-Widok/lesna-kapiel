@@ -3,6 +3,7 @@
   $phone     = get_field('contact_phone', pll_get_post(25));
   $phone_raw = str_replace(' ', '', $phone);
   $mail      = get_field('contact_mail', pll_get_post(25));
+  $book_link = get_field('book_link', pll_get_post(25));
 
   $pages = [884, 914, 100, 25, 111, 1149];
   $pages = array_map(function ($pageId) {
@@ -13,14 +14,15 @@
   });
 ?>
 
-<nav id="nav" class="">
+<nav id="nav">
 
   <div id="nav-links">
-    <a class="nav-link more-768" href="<?=get_the_permalink(pll_get_post(2))?>">
+    <a class="nav-link more-1050"
+      href="<?=get_the_permalink(pll_get_post(2))?>">
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <div class="more-768">
+    <div class="more-1050">
       <?php
         foreach ($pages as $page) {
           get_component('nav-link', ['page' => $page]);
@@ -28,6 +30,14 @@
       ?>
     </div>
   </div>
+
+  <div class="nav-contact more-1050">
+    <a href="<?=$book_link?>" target="_blank" rel="noopener noreferrer">
+      <button><?=pll__('rezerwuj')?></button>
+    </a>
+    <a href="tel:<?=$phone_raw?>"><?=$phone?></a>
+  </div>
+
   <div id="burger">
     <div></div>
     <div></div>
@@ -65,30 +75,26 @@
       ?>
       <div class="rmin"></div>
     </div>
-    <!-- <div id="nav-book"><span><?php pll_e('rezerwuj')?></span></div> -->
+
     <div id="nav-foot-mobile"
-      class="flex flex-column flex-justify-center less-768">
+      class="flex flex-column flex-justify-center less-1050">
       <div>
         <?php get_component('social-links');?>
       </div>
+      <div class="rmin"></div>
+
+      <div class="text-center">
+        <a href="<?=$book_link?>" target="_blank" rel="noopener noreferrer">
+          <button><?=pll__('rezerwuj')?></button>
+        </a>
+      </div>
+
       <div class="rmin"></div>
       <div><a href="tel:<?=$phone_raw?>"><?=$phone?></a><br></div>
       <div><a href="mailto:<?=$mail?>"><?=$mail?></a></div>
       <div class="text-right"><?=$address?></div>
     </div>
-    <div id="nav-foot" class="flex more-768">
-      <div class="nav-foot-col flex flex-wrap flex-align-center">
-        <div><a href="tel:<?=$phone_raw?>"><?=$phone?></a><br></div>
-        <div><a href="mailto:<?=$mail?>"><?=$mail?></a></div>
-      </div>
-      <div class="nav-foot-col empty"></div>
-      <div class="nav-foot-col flex flex-wrap flex-align-center">
-        <div class="text-right"><?=$address?></div>
-        <div>
-          <?php get_component('social-links');?>
-        </div>
-      </div>
-    </div>
+
   </div>
 
 </nav>
