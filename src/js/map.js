@@ -2,8 +2,8 @@ module.exports = () => {
   const script = document.createElement('script');
   script.type = 'text/javascript';
   script.src =
-    'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh1cBvGlHA4BwCGsecfiBhgEdi80meJYM'; // widok.studio
-  // 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDXMpRObII3oqqVm11NwzmtbDRwYOZPVY8'; // lesna-kapiel.com
+    // 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh1cBvGlHA4BwCGsecfiBhgEdi80meJYM'; // widok.studio
+    'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDXMpRObII3oqqVm11NwzmtbDRwYOZPVY8'; // lesna-kapiel.com
   document.head.appendChild(script);
 
   script.addEventListener('load', () => {
