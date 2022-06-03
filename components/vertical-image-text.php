@@ -1,19 +1,9 @@
 <?php
-  $content   = $content ?? [];
-  $iterator  = $iterator ?? '';
-  $maskColor = $maskColor ?? '1e352a';
+  $content  = $content ?? [];
+  $iterator = $iterator ?? '';
 ?>
 
-<div class="col3 column-inner vertical-image-text
-<?php
-  if ($iterator > 1) {
-    if ($isMobileHide1050) {
-      echo ' more-1050';
-    }
-    if ($isMobileHide768) {
-      echo ' vertical-image-more-768';
-  }
-}?>">
+<div class="col3 column-inner vertical-image-text">
   <div class="image-wrapper-full-width">
     <div class="cake cake-3-4"
       style="background-image: url(<?=$content['image']['sizes']['large']?>)">

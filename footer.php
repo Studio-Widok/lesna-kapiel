@@ -4,8 +4,8 @@
     <a href="<?=get_the_permalink(3)?>">
       <div class="foot-link column-inner"><?=get_the_title(3)?></div>
     </a>
-    <a href="<?=get_the_permalink(813)?>">
-      <div class="foot-link column-inner"><?=get_the_title(813)?></div>
+    <a href="<?=get_the_permalink(1199)?>">
+      <div class="foot-link column-inner"><?=get_the_title(1199)?></div>
     </a>
     <div class="foot-link column-inner">copyrights: leśna kąpiel</div>
   </div>

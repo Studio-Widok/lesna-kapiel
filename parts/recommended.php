@@ -14,7 +14,10 @@
 <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
   <?php
     for ($i = 0; $i < count($recommended['apartments']); $i++) {
-      get_component('apartment-link', ['apartment' => $recommended['apartments'][$i]]);
+      get_component('apartment-link', [
+        'apartment' => $recommended['apartments'][$i],
+        'classes'   => $i >= 2 ? 'more-1050' : '',
+      ]);
     }
   ?>
 </div>

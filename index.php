@@ -8,6 +8,8 @@
   <div class="content column">
     <div class="rsep"></div>
     <div class="rsep"></div>
+    <?php get_component('heading-logo');?>
+    <h2 class="uppercase heading"><?=get_the_title()?></h2>
     <div class="r"></div>
     <div class="text-full text">
       <?php
