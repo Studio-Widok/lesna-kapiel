@@ -75,17 +75,20 @@ button {
   letter-spacing: $letter-spacing;
   padding-bottom: 0.4em;
 
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
     background-color: #fff;
     top: 100%;
-    right: 0;
-    left: 0;
+    right: 10%;
+    left: 10%;
     height: 0.5px;
     margin: 0 auto;
-    width: 100%;
+  }
+
+  &--no-underline::after {
+    display: none;
   }
 }
 .text-center > .small-title {
@@ -104,17 +107,25 @@ button {
   font-size: min(8em, 8vw);
 }
 
+.text-link {
+  margin-bottom: 0.5em;
+}
+
 .full-width-image {
   // fix problem with background-position: center on chrome
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     background-position: 50.001% 0;
   }
 
-  //
   .image-quote {
     font-size: min(10vw, 10em);
     text-align: center;
     margin-bottom: 0.5em;
+  }
+
+  &--with-content {
+    padding: 6em 0;
+    height: auto;
   }
 }
 
@@ -211,11 +222,13 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 60rem;
+  margin: 0 auto;
 
   .large-icon {
     margin-bottom: 4em;
 
     .large-icon-img {
+      width: 100%;
       max-width: 9em;
       display: block;
       margin: 0 auto 1em auto;
@@ -270,7 +283,7 @@ button {
       padding-top: 5em;
       padding-bottom: 5em;
       align-self: center;
-      z-index: 1;
+      margin: 0 auto;
 
       .handwrite {
         padding-bottom: 0.4em;
@@ -280,6 +293,12 @@ button {
         max-width: 29rem;
         margin-left: auto;
       }
+    }
+
+    .chessboard-icon {
+      width: 4em;
+      display: block;
+      margin-bottom: 1em;
     }
 
     &:nth-child(2n) {

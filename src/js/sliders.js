@@ -1,32 +1,16 @@
-const $ = require('cash-dom');
-const createSlider = require('./widok-slider');
+import $ from 'cash-dom';
+import createSlider from 'widok-slider';
 
-$('.slider-with-bullets').each((index, element) => {
+if ($('#routes-wrap').length > 0) {
   createSlider({
-    wrap: `#slider-with-bullets-${index} .slider`,
-    bulletContainer: `#slider-with-bullets-${index} .bullets-container`,
-    bulletSelector: `#slider-with-bullets-${index} .bullet`,
-    useKeys: true,
+    wrap: '.route-slider',
+    slideSelector: '.slide',
+    bulletContainer: '.routes-list',
+    bulletSelector: '.route-link-title',
+    arrowPrev: '#routes-wrap .arrow-left',
+    arrowNext: '#routes-wrap .arrow-right',
+    mouseDrag: true,
     touchDrag: true,
-    arrowPrev: `#slider-with-bullets-${index} .arrow-left`,
-    arrowNext: `#slider-with-bullets-${index} .arrow-right`,
+    useKeys: true,
   });
-});
-
-createSlider({
-  wrap: `.collections-slider .slider`,
-  useKeys: true,
-  touchDrag: true,
-  bulletContainer: '.collections-slider .bullets-container',
-  bulletSelector: '.collections-slider .bullets-container .slider-bullet',
-  arrowPrev: `.collections-slider .arrow-left`,
-  arrowNext: `.collections-slider .arrow-right`,
-  onActivate: (slide, slider) => {
-    const color = slide.element.data('color');
-    slider.wrap.parent('.collections-slider').addClass(`slide-color-${color}`);
-  },
-  onDeactivate: (slide, slider) => {
-    const color = slide.element.data('color');
-    slider.wrap.parent('.collections-slider').removeClass(`slide-color-${color}`);
-  },
-});
+}

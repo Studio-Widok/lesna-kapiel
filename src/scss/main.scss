@@ -17,12 +17,10 @@ $gray-wrapper: #c3c2c8;
 @import "page";
 
 // components
-@import "fixed-link";
 @import "slider-arrows";
 @import "vertical-image-text";
 @import "lightbox";
 @import "cake-frame";
-@import "full-width-handwrite";
 @import "reservation";
 @import "date-picker";
 @import "hotres";
@@ -31,16 +29,12 @@ $gray-wrapper: #c3c2c8;
 // parts
 @import "nav";
 @import "top";
-@import "atrakcje";
 @import "2-col";
 @import "map";
-@import "collections-slider";
-@import "slider-with-bullets";
-@import "slider-gallery";
+@import "routes";
 
-// old
-@import "text-full";
-@import "facilities";
+// pages
+@import "attractions";
 
 // general
 @import "icons";

@@ -13,7 +13,7 @@
   ]);
 ?>
 
-<div class="green-wrapper">
+<div class="pale-green-wrapper">
   <div class="rsep"></div>
   <?php get_part('text-full', ['text' => $top['text']]);?>
   <div class="rsep"></div>
@@ -21,7 +21,7 @@
   <div class="rsep"></div>
 </div>
 
-<div class="green-wrapper">
+<div class="pale-wrapper">
   <div class="rsep"></div>
   <?php
     $section = get_field('section');
@@ -32,13 +32,11 @@
       'maskColor'  => get_mask_color('green'),
     ]);
   ?>
-  <div class="rsep"></div>
 
   <?php
     get_part('full-width-image', [
-      'image'             => $footer['image'],
-      'useContactInfo'    => true,
-      'useNegativeMargin' => true,
+      'image'    => $footer['image'],
+      'useQuote' => true,
     ]);
   ?>
 </div>

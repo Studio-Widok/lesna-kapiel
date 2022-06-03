@@ -1,4 +1,5 @@
 .vertical-image-text {
+  padding-bottom: 3em;
   transition: height 0.5s;
 
   @media (max-width: 768px) {
@@ -20,7 +21,8 @@
   .text-link {
     .additional-link-icon {
       width: 2em;
-      margin-right: 0.5em;
+      margin: -0.5em 0.5em -0.3em 0;
+      vertical-align: middle;
     }
 
     span {

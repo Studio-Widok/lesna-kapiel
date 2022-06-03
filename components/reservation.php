@@ -16,7 +16,7 @@
 </div>
 <?php }?>
 
-<?php if (false) {?>
+<?php if (false) { // custom hotres popup ?>
 <form action="https://panel.hotres.pl/v4_step1" target="_blank"
   class="hotresChooser <?=$classes?>" id="hotresChooser" method="get">
 

@@ -1,9 +1,6 @@
 import $ from 'cash-dom';
-import smoothscroll from 'smoothscroll-polyfill';
 
 import fadeQueueStart from 'widok-fade-queue';
-
-smoothscroll.polyfill();
 
 require('./widok');
 require('./nav');
@@ -15,13 +12,10 @@ const bodyElement = $('body');
 
 if (bodyElement.hasClass('page-template-apartments')) require('./archive');
 
-if ($('.fixed-link').length > 0) require('./fixed-link');
-
 if ($('#top').length > 0) require('./top');
 
-if ($('.slider-gallery').length > 0) require('./slider-gallery');
 
-if (bodyElement.hasClass('page-template-t-atrakcje')) require('./attractions');
+if (bodyElement.hasClass('page-template-atrakcje')) require('./attractions');
 
 if ($('.fade').length > 0) {
   fadeQueueStart({ delay: 0 });
@@ -34,7 +28,6 @@ if ($('#gmap').length > 0) {
   }, 1000);
 }
 
-// hotres custom
 $(window).on('load', () => {
   $('.calendar-label-wrap').each((_index, DOMElement) => {
     const element = $(DOMElement);
@@ -43,6 +36,7 @@ $(window).on('load', () => {
   });
 });
 
+// custom hotres popup
 // iFrameResize({}, '#hotres_iframe');
 
 // $('#hotresChooser').on('submit', event => {

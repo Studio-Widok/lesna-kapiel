@@ -5,7 +5,7 @@
 <?php if (isset($page)) {?>
 
 <<?=$isDisabled ? 'span' : 'a'?>
-  class="nav-link <?=is_page($page) ? 'current' : ''?> <?=$isDisabled ? 'disabled' : ''?>"
+  class="nav-link <?=is_page($page->ID) ? 'current' : ''?> <?=$isDisabled ? 'disabled' : ''?>"
   href="<?=get_the_permalink($page)?>">
   <span class="uppercase"><?=get_the_title($page)?></span>
   <?php if ($isDisabled) {?>

@@ -1,0 +1,75 @@
+#routes-wrap {
+  .routes-handwrite {
+    font-size: min(12vw, 6em);
+  }
+
+  .route-slider {
+    .slide {
+      position: relative;
+      height: min(60vw, 90vh, 45em);
+
+      .route-map {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .slider-arrows {
+    top: auto;
+    bottom: 0;
+  }
+
+  .routes-list {
+    .route-link {
+      padding: 1em 0;
+      border-bottom: 1px solid #fff;
+
+      .route-link-title {
+        cursor: pointer;
+
+        &.active {
+          font-weight: 700;
+        }
+      }
+
+      .route-link-out {
+        text-align: center;
+
+        img {
+          width: 2em;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    > .flex {
+      flex-wrap: wrap;
+
+      > .col5-3,
+      > .col5-2 {
+        width: 100%;
+      }
+
+      > .col5-3 {
+        order: 2;
+        margin-top: 3em;
+      }
+    }
+
+    .route-slider {
+      .slide {
+        height: min(160vw, 70vh);
+      }
+    }
+  }
+}

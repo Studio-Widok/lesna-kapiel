@@ -9,6 +9,8 @@
 
   &.top-full-height {
     min-height: 100vh;
+    justify-content: center;
+    padding: 3em 0 3em 0;
   }
 
   #top-bg {
@@ -116,5 +118,5 @@ body.home #top #top-bg::after {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #0007;
+  background-color: #0005;
 }

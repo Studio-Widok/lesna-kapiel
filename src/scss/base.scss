@@ -234,10 +234,12 @@ p {
 .column-right-half {
   padding-right: 1.5em;
 }
-.column-inner {
+.column-inner,
+.column-inner-growing {
   padding: 0 1em;
 }
-.column-outer {
+.column-outer,
+.column-outer-growing {
   padding: 0 2em;
 }
 .column-outer-right {
@@ -245,6 +247,15 @@ p {
 }
 .column-double {
   padding: 0 6em;
+}
+
+@media (min-width: 1280px) {
+  .column-inner-growing {
+    padding: 0 3em;
+  }
+  .column-outer-growing {
+    padding: 0;
+  }
 }
 
 .content {
@@ -267,7 +278,6 @@ p {
 .uppercase {
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  // font-weight: 700;
 }
 
 .text {
@@ -288,4 +298,8 @@ p {
 
 .text-bold {
   font-weight: bold;
+}
+
+.wp-call-button {
+  z-index: 20 !important;
 }

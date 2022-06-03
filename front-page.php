@@ -52,7 +52,7 @@
   <div class="rsep"></div>
 </div>
 
-<?php if (false) {?>
+<?php if (false) { // custom hotres popup?>
 <div class="content column">
   <div class="rsep"></div>
   <iframe id="hotres_iframe"
@@ -63,26 +63,8 @@
 </div>
 <?php }?>
 
-<?php $recommended = get_field('recommended');?>
 <div class="white-wrapper">
-  <div class="rsep"></div>
-
-  <div class="content column">
-    <?php get_component('heading-logo');?>
-    <h2 class="uppercase heading"><?=$recommended['title']?></h2>
-    <div class="text limited-width text-center"><?=$recommended['text']?></div>
-    <div class="r"></div>
-  </div>
-
-  <div class="content column-outer flex flex-1050-50 flex-768 flex-wrap fade">
-    <?php
-      for ($i = 0; $i < count($recommended['apartments']); $i++) {
-        get_component('apartment-link', ['apartment' => $recommended['apartments'][$i]]);
-      }
-    ?>
-  </div>
-
-  <div class="rsep"></div>
+  <?php get_part('recommended');?>
   <div class="rsep"></div>
 </div>
 
@@ -138,19 +120,26 @@
       'maskColor' => get_mask_color("pale"),
     ]);
   ?>
+
+  <?php
+    // unavailable with new hotres form
+    if (false) {
+    ?>
   <div class="rsep"></div>
   <div class="rsep"></div>
   <?php
     get_component('reservation', [
-      'title' => 'wybierz termin',
+        'title' => 'wybierz termin',
+      ]);
+    }
+  ?>
+
+  <?php
+    get_part('full-width-image', [
+      'image'    => $footer['image'], 'ratio' => 16 / 9,
+      'useQuote' => true,
     ]);
   ?>
-  <?php
-  get_part('full-width-image', [
-    'image'          => $footer['image'], 'ratio' => 16 / 9,
-    'useContactInfo' => true,
-  ]);
-?>
 </div>
 
 <?php
