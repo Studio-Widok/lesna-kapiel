@@ -39,10 +39,6 @@
   <div class="rsep"></div>
 </div>
 
-<div class="rsep"></div>
-<div class="rsep"></div>
-<div class="rsep"></div>
-
 <div class="pale-wrapper wrapper--mask-after">
   <div class="rsep"></div>
   <?php get_part('routes');?>
@@ -50,12 +46,12 @@
 </div>
 
 <?php
-    $on_site = get_field('on_site');
-    get_part('full-width-image', [
-      'image'   => $on_site['image'],
-      'content' => get_the_component('okolica-on-site', ['on-site' => $on_site]),
-    ]);
-  ?>
+  $on_site = get_field('on_site');
+  get_part('full-width-image', [
+    'image'   => $on_site['image'],
+    'content' => get_the_component('okolica-on-site', ['on-site' => $on_site]),
+  ]);
+?>
 
 <div class="pale-green-wrapper">
   <?php get_part('recommended');?>
