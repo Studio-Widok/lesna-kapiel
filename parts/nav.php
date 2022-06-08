@@ -98,3 +98,11 @@
   </div>
 
 </nav>
+
+<div class="less-1050">
+  <div id="mobile-nav-contact"
+    class="flex flex-align-center flex-justify-center">
+    <div class="contact-phone"><?=pll__('zadzwoń')?>: <a
+        href="tel:<?=$phone_raw?>"><?=$phone?></a></div>
+  </div>
+</div>
