@@ -18,7 +18,7 @@
         </div>
         <?php }?>
       </div>
-      <?php get_component('slider-arrows');?>
+      <?php // get_component('slider-arrows');?>
     </div>
     <div class="col5-2 column-inner-growing">
       <div class="handwrite routes-handwrite"><?=$routes['title']?></div>
@@ -37,7 +37,7 @@
             <img
               src="<?=get_template_directory_uri()?>/media/icons/icon-pin-white.png"
               alt="">
-            <span><?=pll__('map')?></span>
+            <span><?=pll__('mapa')?></span>
           </a>
           <?php }?>
         </div>

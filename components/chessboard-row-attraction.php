@@ -9,11 +9,10 @@
   $link      = $attraction['link'];
 ?>
 
-<div class="rmin"></div>
-
 <div><?=$text?></div>
 
 <div class="rmin"></div>
+<div class="rmik"></div>
 
 <div class="button-container">
   <?php if (!empty($book_link)) {?>

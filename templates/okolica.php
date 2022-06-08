@@ -58,7 +58,7 @@
   <div class="rsep"></div>
 </div>
 
-<div class="pale-wrapper">
+<div class="pale-wrapper wrapper--no-mask-before">
   <?php
     get_part('full-width-image', [
       'image'    => $footer['image'],
