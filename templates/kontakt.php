@@ -26,11 +26,10 @@
   <div class="rsep"></div>
   <div class="rsep"></div>
 
-  <?php
-    get_part('contact-images');
-    get_part('map-block');
-  ?>
+  <?php // get_part('contact-images');?>
 </div>
 
-<?php get_footer();
+<?php
+  get_part('map-block');
+  get_footer();
 ?>
