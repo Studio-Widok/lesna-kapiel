@@ -222,10 +222,14 @@
     ]);
   ?>
   <div class="rsep"></div>
+</div>
+
+<div class="footer-wrapper">
   <?php
     get_part('full-width-image', [
-      'image'    => $footer['image'], 'ratio' => 16 / 9,
-      'useQuote' => true,
+      'image'          => $footer['image'],
+      'useQuote'       => true,
+      'useContactInfo' => true,
     ]);
   ?>
 </div>

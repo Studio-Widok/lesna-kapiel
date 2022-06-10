@@ -42,10 +42,6 @@
       }
     }
 
-    .cake-frame .drawing path {
-      stroke: $bgColor;
-    }
-
     button {
       color: $color;
       border-color: $color;
@@ -69,3 +65,4 @@
 @include wrapper(".pale-wrapper", $pale-wrapper, #fff);
 @include wrapper(".pale-green-wrapper", $pale-green, $dark);
 @include wrapper(".white-wrapper", #fff, $dark);
+@include wrapper(".footer-wrapper", #798086, #fff);

@@ -6,7 +6,6 @@ require('./widok');
 require('./nav');
 require('./footer');
 require('./sliders');
-require('./cake-frame');
 
 const bodyElement = $('body');
 

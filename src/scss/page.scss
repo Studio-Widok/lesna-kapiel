@@ -117,6 +117,8 @@ button {
   //   background-position: 50.001% 0;
   // }
 
+  position: relative;
+
   .image-quote {
     font-size: min(10vw, 10em);
     text-align: center;
@@ -143,6 +145,20 @@ button {
   position: absolute;
   bottom: 10vw;
   width: 100%;
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+
+    > div:nth-child(2) {
+      display: flex;
+      align-items: flex-end;
+
+      .contact-social-tag {
+        margin-right: 1em;
+      }
+    }
+  }
 }
 
 .full-width-image-negative {
@@ -173,11 +189,6 @@ button {
   transition: 1s;
 }
 
-.cake-frame {
-  width: 10em;
-  display: block;
-}
-
 .cake-zoom-frame {
   display: block;
   overflow: hidden;
@@ -190,10 +201,6 @@ button {
       transform: scale(1.1);
     }
   }
-}
-
-.contact-info-overlap {
-  margin-top: -8em;
 }
 
 #cookie-notice {

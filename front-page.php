@@ -134,9 +134,12 @@
     }
   ?>
 
+</div>
+
+<div class="footer-wrapper">
   <?php
     get_part('full-width-image', [
-      'image'    => $footer['image'], 'ratio' => 16 / 9,
+      'image'    => $footer['image'],
       'useQuote' => true,
     ]);
   ?>

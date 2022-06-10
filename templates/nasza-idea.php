@@ -32,11 +32,14 @@
       'maskColor'  => get_mask_color('green'),
     ]);
   ?>
+</div>
 
+<div class="footer-wrapper">
   <?php
     get_part('full-width-image', [
-      'image'    => $footer['image'],
-      'useQuote' => true,
+      'image'          => $footer['image'],
+      'useQuote'       => true,
+      'useContactInfo' => true,
     ]);
   ?>
 </div>

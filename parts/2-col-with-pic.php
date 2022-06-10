@@ -7,7 +7,6 @@
   $alt_layout    = $alt_layout ?? false;
   $isTextOverlap = $isTextOverlap ?? false;
   $maskColor     = $maskColor ?? '1e352a';
-  $isOverlap     = $isOverlap ?? false;
 ?>
 
 <div class="content col-2-with-pic fade <?=$alt_layout ? 'alt-layout' : ''?>">

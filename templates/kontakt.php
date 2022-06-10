@@ -1,5 +1,6 @@
 <?php /*Template Name: kontakt*/
   get_header();
+  $footer = get_field('footer', 2);
 
   get_part('nav');
   get_part('top', [
@@ -27,6 +28,15 @@
   <div class="rsep"></div>
 
   <?php // get_part('contact-images');?>
+</div>
+
+<div class="footer-wrapper">
+  <?php
+    get_part('full-width-image', [
+      'image'    => $footer['image'],
+      'useQuote' => true,
+    ]);
+  ?>
 </div>
 
 <?php
