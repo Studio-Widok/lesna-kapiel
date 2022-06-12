@@ -13,6 +13,7 @@
     'title'        => $top['title'],
     'isFullHeight' => true,
   ]);
+  get_part('bike-popup');
 ?>
 
 <div class="pale-green-wrapper">

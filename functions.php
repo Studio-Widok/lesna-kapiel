@@ -79,9 +79,6 @@ add_action("tags_add_form", 'hide_description_row');
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 add_action("wpcf7_before_send_mail", function ($wpcf7_data) {
-  if ($wpcf7_data->id() !== 463) {
-    return;
-  }
 
   $submission = WPCF7_Submission::get_instance();
   $data       = $submission->get_posted_data();
@@ -99,9 +96,6 @@ add_action("wpcf7_before_send_mail", function ($wpcf7_data) {
 }, 10, 1);
 
 add_action("wpcf7_submit", function ($wpcf7_data, $result) {
-  if ($wpcf7_data->id() !== 463) {
-    return;
-  }
 
   $submission = WPCF7_Submission::get_instance();
   $data       = $submission->get_posted_data();

@@ -9,12 +9,11 @@ require('./sliders');
 
 const bodyElement = $('body');
 
-if (bodyElement.hasClass('page-template-apartments')) require('./archive');
-
 if ($('#top').length > 0) require('./top');
 
-
+if (bodyElement.hasClass('page-template-apartments')) require('./archive');
 if (bodyElement.hasClass('page-template-atrakcje')) require('./attractions');
+if (bodyElement.hasClass('page-template-okolica')) require('./nearby');
 
 if ($('.fade').length > 0) {
   fadeQueueStart({ delay: 0 });

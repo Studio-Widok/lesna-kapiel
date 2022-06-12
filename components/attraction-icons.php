@@ -24,8 +24,8 @@
   </a>
   <?php }?>
 
-  <?php if (!empty($attraction['bike_popup'])) {?>
-  <div class="text-link">
+  <?php if (!empty($attraction['bike_popup']) && isset($_GET['t'])) {?>
+  <div class="text-link bike-popup-open">
     <img src="<?=get_template_directory_uri()?>/media/icons/icon-bike.png"
       alt="" class="additional-link-icon">
     <span><?=pll__('dystans idealny na rower, wypożycz u nas')?></span>
