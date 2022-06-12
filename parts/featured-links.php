@@ -6,9 +6,10 @@
   <?php
     for ($i = 0; $i < count($links); $i++) {
       get_component('vertical-image-text', [
-        'content'   => $links[$i],
-        'iterator'  => $i,
-        'maskColor' => $maskColor,
+        'content'      => $links[$i],
+        'afterContent' => get_the_component('attraction-icons', [
+          'attraction' => $links[$i],
+        ]),
       ]);
     }
   ?>

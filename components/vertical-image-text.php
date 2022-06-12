@@ -1,6 +1,6 @@
 <?php
-  $content  = $content ?? [];
-  $iterator = $iterator ?? '';
+  $content      = $content ?? [];
+  $afterContent = $afterContent ?? null;
 ?>
 
 <div class="col3 column-inner vertical-image-text">
@@ -46,7 +46,6 @@
 
   <?php }?>
 </div>
-<div class="rmin"></div>
 <?php }?>
 
 <?php
@@ -57,6 +56,7 @@
     $link       = get_link_url($content['button_link']);
     $isDisabled = empty($link);
   ?>
+<div class="rmin"></div>
 <div class="flex flex-justify-center">
   <div class="button-container rel">
     <a href="<?=$link?>">
@@ -70,5 +70,12 @@
   </div>
 </div>
 <?php }?>
+
+<?php
+  if (isset($afterContent)) {
+    echo $afterContent;
+  }
+?>
+
 <div class="r less-768"></div>
 </div>
