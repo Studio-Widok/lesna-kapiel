@@ -62,7 +62,7 @@
 <div class="footer-wrapper wrapper--no-mask-before">
   <?php
     get_part('full-width-image', [
-      'image'          => $footer['image'],
+      'image'          => $footer['image_alt'],
       'useQuote'       => true,
       'useContactInfo' => true,
     ]);
