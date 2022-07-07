@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class="footer-wrapper">
+<div class="footer-wrapper wrapper--no-mask-before">
   <?php
     get_part('full-width-image', [
       'image'          => $footer['image'],

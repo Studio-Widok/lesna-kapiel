@@ -9,7 +9,7 @@ require('./sliders');
 
 const bodyElement = $('body');
 
-if ($('#top').length > 0) require('./top');
+if ($('#top, .archive-top').length > 0) require('./top');
 
 if (bodyElement.hasClass('page-template-apartments')) require('./archive');
 if (bodyElement.hasClass('page-template-atrakcje')) require('./attractions');

@@ -30,10 +30,16 @@
   <?php // get_part('contact-images');?>
 </div>
 
-<div class="footer-wrapper">
+<div class="footer-wrapper wrapper--no-mask-before">
   <?php
+    $kontakt_foot_img = get_field('footer_image');
+    if (!empty($kontakt_foot_img)) {
+      $foot_img = $kontakt_foot_img;
+    } else {
+      $foot_img = $footer['image'];
+    }
     get_part('full-width-image', [
-      'image'    => $footer['image'],
+      'image'    => $foot_img,
       'useQuote' => true,
     ]);
   ?>
