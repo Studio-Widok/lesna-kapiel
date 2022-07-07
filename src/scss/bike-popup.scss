@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0003;
   transition: 0.3s;
   z-index: -1;
 
@@ -19,7 +18,7 @@
 
 #bike-popup {
   position: relative;
-  background-color: $pale-wrapper;
+  background-color: $nav-green;
   padding-top: 2em;
   padding-bottom: 2em;
   max-height: calc(var(--vh, 1vh) * 100 - 2em);
@@ -27,7 +26,7 @@
   max-width: 60em;
   overflow: auto;
   color: $dark;
-  box-shadow: 0.25em 0.25em 0.5em #0003;
+  box-shadow: 0.25em 0.25em 0.6em #0006;
 
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -30,14 +30,14 @@
             'uwagi',
             'wyślij',
           ], $form);
-          $pattern = '/(<span class="wpcf7-form-control-wrap bike-models">[^<]*?<span[^>]*?>)'
+          $pattern = '/(<span class="wpcf7-form-control-wrap" data-name="bike-models">[^<]*?<span[^>]*?>)'
         .
         "(<" . "\\" . "/span>[^<]*?<" . "\\" . "/span>)/" ;
           $form=preg_replace($pattern, "$1" .
           get_the_component('bike-rental-models', ['popup'=> $popup]) . "$2",
           $form);
-          $pattern = '/(<span class="wpcf7-form-control-wrap accessories">[^
-            <]*?<span[^>]*?>)'
+          $pattern = '/(<span class="wpcf7-form-control-wrap"' .
+            ' data-name="accessories">[^<]*?<span[^>]*?>)'
               .
               "(<" . "\\" . "/span>[^<]*?<" . "\\" . "/span>)/" ;
                 $form=preg_replace($pattern, "$1" .
