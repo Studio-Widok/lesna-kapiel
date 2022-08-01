@@ -12,18 +12,18 @@
     'tax_query'   => [
       [
         'taxonomy' => 'tags',
-        'field'    => 'slug',
-        'terms'    => $type,
+        'field'    => 'term_id',
+        'terms'    => pll_get_term(get_term_id($type)),
       ],
     ],
   ]);
 
   if ($type === 'villa') {
     $tags = [
-      get_term_by('term_taxonomy_id', get_term_id('deluxe')),
-      get_term_by('term_taxonomy_id', get_term_id('premium')),
-      get_term_by('term_taxonomy_id', get_term_id('standard')),
-      get_term_by('term_taxonomy_id', get_term_id('budget')),
+      get_term_by('term_taxonomy_id', pll_get_term(get_term_id('deluxe'))),
+      get_term_by('term_taxonomy_id', pll_get_term(get_term_id('premium'))),
+      get_term_by('term_taxonomy_id', pll_get_term(get_term_id('standard'))),
+      get_term_by('term_taxonomy_id', pll_get_term(get_term_id('budget'))),
     ];
 
     for ($j = 0; $j < count($tags); $j++) {

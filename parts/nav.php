@@ -22,6 +22,7 @@
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
+    <?php get_part('language-switcher');?>
     <div class="more-1050">
       <?php
         foreach ($pages as $page) {
@@ -46,22 +47,7 @@
 
   <div id="nav-overlay">
 
-    <?php
-      // TEMP: disable the language switcher
-      if (false) {
-      ?>
-    <div class="language-switcher">
-      <?php
-        $langs = pll_the_languages([
-            'raw'          => true,
-            'hide_current' => true,
-          ]);
-          foreach ($langs as $lang) {
-          ?>
-      <a href="<?=$lang['url']?>" class="lang-link"><?=$lang['slug']?></a>
-      <?php }?>
-    </div>
-    <?php }?>
+    <?php get_part('language-switcher');?>
 
     <div></div>
     <div id="nav-o-links">
