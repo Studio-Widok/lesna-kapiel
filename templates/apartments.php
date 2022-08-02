@@ -2,8 +2,8 @@
   // cSpell:ignore ontop
   get_header();
 
-  $featured_links = get_field('featured_links', 2);
-  $footer         = get_field('footer', 2);
+  $featured_links = get_field('featured_links', pll_get_post(2));
+  $footer         = get_field('footer', pll_get_post(2));
   $type           = get_field('type');
 
   $apartments = get_posts([

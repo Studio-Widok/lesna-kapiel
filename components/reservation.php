@@ -5,7 +5,6 @@
   if ($__index) {
     return;
   }
-
 ?>
 
 <?php if (!empty($title)) {?>
@@ -808,11 +807,13 @@
 
             <div class="row">
               <div class="small-6 columns">
-                <div class="chooserBox datesBox" id="arrivalBox">Przyjazd</div>
+                <div class="chooserBox datesBox" id="arrivalBox">
+                  <?=pll__('Przyjazd')?></div>
 
               </div>
               <div class="small-6 columns">
-                <div class="chooserBox datesBox" id="departureBox">Wyjazd </div>
+                <div class="chooserBox datesBox" id="departureBox">
+                  <?=pll__('Wyjazd')?></div>
 
               </div>
             </div>
@@ -827,8 +828,8 @@
 
 
               <big id="cnt_adult_txt">2</big>
-              <p id="cnt_details_txt">Dorośli</p>
-              <span id="cnt_rooms_txt">bez dzieci</span>
+              <p id="cnt_details_txt"><?=pll__('Dorośli')?></p>
+              <span id="cnt_rooms_txt"><?=pll__('bez dzieci')?></span>
 
 
 
@@ -847,7 +848,7 @@
 
                       <div class="chooserPersonLabel">
                         <i class="fas fa-male" style="font-size:20px;"></i>
-                        Dorośli
+                        <?=pll__('Dorośli')?>
                       </div>
 
 
@@ -885,8 +886,8 @@
 
                       <div class="chooserPersonLabel">
                         <i class="fas fa-child"></i>
-                        <label>Wiek 0-1</label>
-                        <span> dziecko</span>
+                        <label><?=pll__('Wiek 0-1')?></label>
+                        <span> <?=pll__('dziecko')?></span>
 
                       </div>
                     </div>
@@ -915,8 +916,8 @@
 
                       <div class="chooserPersonLabel">
                         <i class="fas fa-child"></i>
-                        <label>Wiek 2-5</label>
-                        <span> dziecko</span>
+                        <label><?=pll__('Wiek 2-5')?></label>
+                        <span> <?=pll__('dziecko')?></span>
 
                       </div>
                     </div>
@@ -945,8 +946,8 @@
 
                       <div class="chooserPersonLabel">
                         <i class="fas fa-child"></i>
-                        <label>Wiek 6-17</label>
-                        <span> dziecko</span>
+                        <label><?=pll__('Wiek 6-17')?></label>
+                        <span> <?=pll__('dziecko')?></span>
 
                       </div>
                     </div>
@@ -974,7 +975,7 @@
 
                   <div class="button chooserPersonBtn"
                     onclick="$('.chooserBox').removeClass('disabled');$('.person_chooser_box').removeClass('person_chooser_box_show');">
-                    Wybierz</div>
+                    <?=pll__('Wybierz')?></div>
 
 
                 </div>
@@ -993,7 +994,7 @@
 
             <div onclick="$('#mainSearchForm').submit();"
               class="expand button_accept">
-              Rezerwacja
+              <?=pll__('Rezerwacja')?>
             </div>
 
           </div>
@@ -1037,12 +1038,14 @@
 
             <div class="row">
               <div class="columns small-4">
-                <div class="chooserClear"><i class="fas fa-times"></i> Wyczyść
+                <div class="chooserClear"><i class="fas fa-times"></i>
+                  <?=pll__('Wyczyść')?>
                 </div>
               </div>
 
               <div class="columns small-8 txt-right">
-                <div class="chooserInfo">Wybierz datę przyjazdu</div>
+                <div class="chooserInfo"><?=pll__('Wybierz datę przyjazdu')?>
+                </div>
 
               </div>
             </div>
@@ -2463,7 +2466,7 @@ function chooserPM() {
 
     $('#cnt_childs').val(childArr.length);
     $('#cnt_adult_txt').html($('#adults').val());
-    $('#cnt_details_txt').html('<strong>Dorośli</strong>');
+    $('#cnt_details_txt').html('<strong><?=pll__('Dorośli')?></strong>');
     $('#cnt_rooms_txt').html(childrenTxt);
 
     return false;
@@ -2510,12 +2513,14 @@ function calendar(year, month) {
   //month name label with year.
   final_html +=
     '<div class="chooserCalendarItemWrap"><div class="chooserCalendarMonth">' +
-    langArr["pl"]["monthNames"][month] + " " + year + "</div>";
+    langArr["<?=pll_current_language()?>"]["monthNames"][month] + " " + year +
+    "</div>";
   final_html += '<div class="chooserCalendar">';
 
   //fill names of days.
   for (let i = 1; i <= 7; i++) {
-    final_html += "<div class='chooserDayTitle'>" + langArr["pl"][
+    final_html += "<div class='chooserDayTitle'>" + langArr[
+      "<?=pll_current_language()?>"][
       "dayNamesShort"
     ][i % 7] + "</div>";
   }
@@ -2617,8 +2622,10 @@ function onloadJquery() {
     departureDiv.addClass('chDeparture');
 
 
-    arrivalDiv.append('<div class="chArrivalInfo">Przyjazd</div>');
-    departureDiv.append('<div class="chDepartureInfo">Wyjazd</div>');
+    arrivalDiv.append(
+      '<div class="chArrivalInfo"><?=pll__('Przyjazd')?></div>');
+    departureDiv.append(
+      '<div class="chDepartureInfo"><?=pll__('Wyjazd')?></div>');
 
     $('#arrival').val(arrival);
     $('#departure').val(departure);
@@ -2648,15 +2655,18 @@ function onloadJquery() {
         $('.chDepartureInfo').remove();
 
         $(this).addClass('chCalRangeSelect chArrival');
-        $(this).append('<div class="chArrivalInfo">Przyjazd</div>');
+        $(this).append(
+          '<div class="chArrivalInfo"><?=pll__('Przyjazd')?></div>');
 
         $('.chooserInfo').html('Wybierz datę wyjazdu');
-        dateToStr('#arrivalBox', startItem.data('date'), 'pl');
+        dateToStr('#arrivalBox', startItem.data('date'),
+          "<?=pll_current_language()?>");
         $('#departureBox').html('-');
 
       } else {
         $(this).addClass('chDeparture');
-        $(this).append('<div class="chDepartureInfo">Wyjazd</div>');
+        $(this).append(
+          '<div class="chDepartureInfo"><?=pll__('Wyjazd')?></div>');
 
         endItem = $(this);
 
@@ -2678,14 +2688,15 @@ function onloadJquery() {
           $('#nightBox').html('<b>' + night + '</b> nights');
 
 
-        dateToStr('#departureBox', endItem.data('date'), 'pl');
+        dateToStr('#departureBox', endItem.data('date'),
+          "<?=pll_current_language()?>");
 
         var time = calcTime(startItem.data('date'), endItem.data('date'));
 
         if (time <= 0) {
           $(".chooserCalendarWrap .rSel").removeClass(
             'chDeparture chArrival chCalRangeSelect');
-          $('.chooserInfo').html('Wybierz datę przyjazdu');
+          $('.chooserInfo').html('<?=pll__('Wybierz datę przyjazdu')?>');
 
           $('.chArrivalInfo').hide();
           $('.chDepartureInfo').hide();
@@ -2731,7 +2742,8 @@ function onloadJquery() {
         if (isSelectable) {
 
           rangeItems.addClass('chCalRangeSelect');
-          dateToStr('#arrivalBox', startItem.data('date'), 'pl');
+          dateToStr('#arrivalBox', startItem.data('date'),
+            "<?=pll_current_language()?>");
 
           var last = $('.chCalRangeSelect').last();
           $('.rSel').removeClass('chDeparture');

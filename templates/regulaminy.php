@@ -1,7 +1,7 @@
 <?php // Template Name: regulaminy
   get_header();
 
-  $footer = get_field('footer', 2);
+  $footer = get_field('footer', pll_get_post(2));
 
   $links = get_field('rules');
 
