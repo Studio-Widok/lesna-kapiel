@@ -2658,7 +2658,7 @@ function onloadJquery() {
         $(this).append(
           '<div class="chArrivalInfo"><?=pll__('Przyjazd')?></div>');
 
-        $('.chooserInfo').html('Wybierz datę wyjazdu');
+        $('.chooserInfo').html('<?=pll__('Wybierz datę wyjazdu')?>');
         dateToStr('#arrivalBox', startItem.data('date'),
           "<?=pll_current_language()?>");
         $('#departureBox').html('-');
@@ -2674,7 +2674,7 @@ function onloadJquery() {
 
         $('.chooserInfo').html('');
         $('.chooserInfo').html(
-          '<div class="button" onclick="$(\'.chooserBox\').removeClass(\'disabled\');$(\'.chooserCalendarBox\').removeClass(\'chooserCalendarBoxShow\');$(\'#mainSearchForm\'); $(\'.bg_wrap\').css(\'opacity\',\'1\');">Wybierz</div>'
+          '<div class="button" onclick="$(\'.chooserBox\').removeClass(\'disabled\');$(\'.chooserCalendarBox\').removeClass(\'chooserCalendarBoxShow\');$(\'#mainSearchForm\'); $(\'.bg_wrap\').css(\'opacity\',\'1\');"><?=pll__('Wybierz')?></div>'
         );
 
         var night = calcNights(startItem.data('date'), endItem.data(
@@ -2755,7 +2755,7 @@ function onloadJquery() {
         } else {
           setRange = false;
 
-          $('.chooserInfo').html('Wybierz datę wyjazdu');
+          $('.chooserInfo').html('<?=pll__('Wybierz datę wyjazdu')?>');
           $('.chooserInfo').fadeIn();
 
           $('.chArrivalInfo').remove();
@@ -2769,7 +2769,7 @@ function onloadJquery() {
     $(".chooserClear").click(function() {
       $(".chooserCalendarWrap .rSel").removeClass(
         'chDeparture chArrival chCalRangeSelect');
-      $('.chooserInfo').html('Wybierz datę przyjazdu');
+      $('.chooserInfo').html('<?=pll__('Wybierz datę przyjazdu')?>');
 
       $('.chArrivalInfo').hide();
       $('.chDepartureInfo').hide();

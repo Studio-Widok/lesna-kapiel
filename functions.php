@@ -140,3 +140,16 @@ function return_only_title($title) {
 }
 add_filter('private_title_format', 'return_only_title');
 add_filter('protected_title_format', 'return_only_title');
+
+// amenities
+pll__('balkon-lub-taras');
+pll__('deska-i-zelazko');
+pll__('kawa-i-herbata');
+pll__('kosmetyki');
+pll__('parking');
+pll__('sauna');
+pll__('sniadanie');
+pll__('suszarka');
+pll__('telewizor');
+pll__('wanna-z-hydromasazem');
+pll__('wi-fi');

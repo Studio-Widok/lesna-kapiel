@@ -134,7 +134,7 @@
         'index'     => $index,
         'id'        => 'apart-tag-title-' . $tag->slug,
         'image'     => $slider['gallery'][0],
-        'category'  => $type === 'villa' ? 'apartamenty typu ' . $tag->name : null,
+        'category'  => $type === 'villa' ? pll__('apartamenty typu') . ' ' . $tag->name : null,
         'title'     => get_the_title($apart),
         'content'   => get_the_component('chessboard-row-apartment', [
           'apart'  => $apart,

@@ -17,8 +17,9 @@
 
   $occupancy = get_field('occupancy', $apart);
   $size      = get_field('size', $apart);
-  $icons     = get_field('icons', $apart);
-  $price     = preg_replace('/[^0-9.]/', '', get_field('price', $apart));
+  $amenities = get_field('amenities', $apart);
+  // $icons     = get_field('icons', $apart);
+  $price = preg_replace('/[^0-9.]/', '', get_field('price', $apart));
 
 ?>
 
@@ -40,14 +41,14 @@
 
 <div><?=$slider['text']?></div>
 
-<?php if (!empty($icons)) {?>
+<?php if (!empty($amenities)) {?>
 <div class="rmin"></div>
 <div class="uppercase"><?=pll__('udogodnienia')?></div>
 <div class="apartment-icons">
-  <?php for ($j = 0; $j < count($icons); $j++) {?>
+  <?php for ($j = 0; $j < count($amenities); $j++) {?>
   <div class="apartment-icon"
-    style="background-image: url(<?=$icons[$j]['sizes']['medium']?>);">
-    <div class="tooltip"><?=$icons[$j]['title'];?></div>
+    style="background-image: url(<?=get_template_directory_uri() . '/media/amenities/icon-' . $amenities[$j] . '.png'?>);">
+    <div class="tooltip"><?=pll__($amenities[$j])?></div>
   </div>
   <?php }?>
 </div>

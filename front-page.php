@@ -129,7 +129,7 @@
   <div class="rsep"></div>
   <?php
     get_component('reservation', [
-        'title' => 'wybierz termin',
+        'title' => pll__('wybierz termin'),
       ]);
     }
   ?>
