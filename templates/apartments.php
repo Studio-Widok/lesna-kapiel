@@ -178,7 +178,7 @@
 <div class="pale-green-wrapper wrapper--mask-after wrapper--no-mask-before">
   <div class="rsep"></div>
   <?php get_component('heading-logo');?>
-  <h2 class="heading uppercase">wybierz termin</h2>
+  <h2 class="heading uppercase"><?=pll__('wybierz termin')?></h2>
   <?php get_component('reservation', ['classes' => 'light-bg']);?>
   <div class="rsep"></div>
 </div>
@@ -192,7 +192,7 @@
     <div class="rsep more-768"></div>
     <div class="rsep"></div>
     <?php get_component('heading-logo');?>
-    <h2 class="heading uppercase">wasze opinie</h2>
+    <h2 class="heading uppercase"><?=pll__('wasze opinie')?></h2>
     <div class="rel" id="opinion-slider-wrap">
       <div id="opinion-slider">
         <?php
@@ -220,7 +220,7 @@
 
   <div class="rsep"></div>
   <?php get_component('heading-logo');?>
-  <h2 class="heading uppercase">dowiedz się więcej</h2>
+  <h2 class="heading uppercase"><?=pll__('dowiedz się więcej')?></h2>
 
   <?php
     get_part('featured-links', [

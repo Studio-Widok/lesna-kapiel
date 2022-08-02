@@ -40,18 +40,6 @@
 
 
 
-#mainSearchField {
-  position: absolute;
-  bottom: 120px;
-  left: 0px;
-  width: 100%;
-  z-index: 9;
-  text-align: center;
-}
-
-
-
-
 #mainSearchField .button {
   height: 30px;
   line-height: 30px;

@@ -211,3 +211,12 @@
     background-image: url("../../media/icons/ilosc-osob-green.png");
   }
 }
+
+body.home #mainSearchField {
+  position: absolute;
+  bottom: 120px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+}

@@ -26,8 +26,10 @@
   <link rel="preload" as="font" crossorigin="anonymous"
     href="<?=esc_url(get_template_directory_uri())?>/dist/b479bff6b23cfa18129c.ttf">
 
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <?php wp_head();?>
+
+  <script>
+  const $ = jQuery;
   </script>
   <script type="text/javascript"
     src="https://panel.hotres.pl/public/api/hotres_v4.js"></script>
@@ -51,7 +53,6 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <?php wp_head();?>
 </head>
 
 <body <?php body_class();?>>
