@@ -15,20 +15,6 @@
 </div>
 <?php }?>
 
-<?php if (false) { // custom hotres popup ?>
-<form action="https://panel.hotres.pl/v4_step1" target="_blank"
-  class="hotresChooser <?=$classes?>" id="hotresChooser" method="get">
-
-  <input type="hidden" name="oid" id="hotresOid" value="2447" />
-  <input type="hidden" name="lang" id="hotresLang" value="" />
-  <input type="text" name="arrival" id="hotresArrival" value="2022-04-01" />
-  <input type="text" name="departure" id="hotresDeparture" value="2022-04-03" />
-  <input type="text" name="adults" value="2" />
-
-  <button id="hotresButtonChooser">submit</button>
-</form>
-<?php }?>
-
 <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"
   integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw=="
