@@ -1,5 +1,9 @@
 <?php
   $recommended = get_field('recommended', pll_get_post(get_option('page_on_front')));
+  if (empty($recommended['apartments'])) {
+    return;
+  }
+
 ?>
 
 <div class="rsep"></div>

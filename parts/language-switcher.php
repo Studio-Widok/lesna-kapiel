@@ -1,10 +1,4 @@
-<?php
-  // TEMP: disable the language switcher
-  if (!is_user_logged_in()) {
-    return;
-  }
-?>
-<div class="language-switcher">
+<span class="language-switcher nav-link">
   <?php
     $langs = pll_the_languages([
       'raw'          => true,
@@ -12,6 +6,8 @@
     ]);
     foreach ($langs as $lang) {
     ?>
-  <a href="<?=$lang['url']?>" class="lang-link"><?=$lang['slug']?></a>
+  <a href="<?=$lang['url']?>" class="lang-link uppercase">
+    <span><?=$lang['slug']?></span>
+  </a>
   <?php }?>
-</div>
+</span>

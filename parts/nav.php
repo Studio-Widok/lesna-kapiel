@@ -22,13 +22,13 @@
       <div class="nav-link-icon"><?php include __DIR__ . '/../media/logo.svg';?>
       </div>
     </a>
-    <?php get_part('language-switcher');?>
     <div class="more-1050">
       <?php
         foreach ($pages as $page) {
           get_component('nav-link', ['page' => $page]);
         }
       ?>
+      <?php get_part('language-switcher');?>
     </div>
   </div>
 
