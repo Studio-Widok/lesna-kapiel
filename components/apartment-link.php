@@ -42,7 +42,7 @@
   }
   if (!empty($price)) {
   ?>
-    cena: <?=$price?> zł
+    <?=pll__('cena')?>: <?=$price?> zł
     <?php }?>
   </div>
   <div class="rmin"></div>
@@ -53,7 +53,7 @@
 
   <div class="button-container text-center">
     <a href="<?=$link?>" target="_blank" rel="noopener noreferrer">
-      <button>rezerwuj</button>
+      <button><?=pll__('rezerwuj')?></button>
     </a>
   </div>
   <div class="r less-768">
