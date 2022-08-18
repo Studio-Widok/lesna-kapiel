@@ -27,7 +27,10 @@
     href="<?=esc_url(get_template_directory_uri())?>/dist/b479bff6b23cfa18129c.ttf">
 
   <?php wp_head();?>
-
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"
+    integrity="sha512-suUtSPkqYmFd5Ls30Nz6bjDX+TCcfEzhFfqjijfdggsaFZoylvTj+2odBzshs0TCwYrYZhQeCgHgJEkncb2YVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
   const $ = jQuery;
   </script>

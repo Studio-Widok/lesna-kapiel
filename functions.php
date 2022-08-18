@@ -117,13 +117,13 @@ add_filter('acf/format_value/type=wysiwyg', function ($value, $post_id, $field) 
     return '';
   }
   $value = '<div class="wysiwyg">' . $value . '</div>';
-  return iworks_orphan($value);
+  return iworks_orphan(lowercaseScharfesS($value));
 }, 11, 3);
 add_filter('acf/format_value/type=text', function ($value, $post_id, $field) {
-  return iworks_orphan($value);
+  return iworks_orphan(lowercaseScharfesS($value));
 }, 10, 3);
 add_filter('acf/format_value/type=textarea', function ($value, $post_id, $field) {
-  return iworks_orphan($value);
+  return iworks_orphan(lowercaseScharfesS($value));
 }, 10, 3);
 
 function iworks_orphan($content) {
@@ -135,6 +135,19 @@ function iworks_orphan($content) {
   return $orphan->replace($content);
 }
 
+// scharfes
+function lowercaseScharfesS($text) {
+  if (is_admin()) {
+    return $text;
+  }
+
+  return str_replace('ß', '<span class="no-uppercase">ß</span>', $text);
+}
+add_filter('the_title', function ($title, $id) {
+  return lowercaseScharfesS($title);
+}, 11, 2);
+
+//
 function return_only_title($title) {
   return "%s";
 }
