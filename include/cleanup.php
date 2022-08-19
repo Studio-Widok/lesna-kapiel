@@ -50,6 +50,11 @@
     wp_dequeue_style('global-styles');
   }, 10);
 
+  add_filter('site_status_tests', function ($tests) {
+    unset($tests['direct']['cookie_compliance_status']);
+    return $tests;
+  });
+
   function my_acf_admin_head() {
   ?>
 <style type="text/css">
