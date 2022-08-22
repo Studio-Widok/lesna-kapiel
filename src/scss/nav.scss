@@ -26,29 +26,12 @@
 
   .language-dropdown {
     position: relative;
-    display: inline-block;
     padding: 0 0.5em;
+    margin-right: 1em;
 
     .lang-title {
       padding: 0.4em;
       cursor: pointer;
-
-      &:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        width: 0;
-        margin: 0 auto;
-        background-color: #fff;
-        transition: 0.3s;
-      }
-
-      &:hover:after {
-        width: 80%;
-      }
     }
 
     .lang-list {
@@ -72,6 +55,13 @@
     &.open .lang-list {
       pointer-events: all;
       opacity: 1;
+    }
+
+    .lang-flag {
+      width: 2.5em;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
   }
 
@@ -169,6 +159,8 @@
   }
 
   .nav-contact {
+    display: flex;
+    align-items: center;
     pointer-events: auto;
 
     button {
@@ -290,6 +282,10 @@
       position: absolute;
       top: 3em;
       left: 3em;
+
+      .lang-list {
+        background-color: #333;
+      }
     }
 
     #nav-o-links {

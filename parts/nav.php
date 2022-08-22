@@ -28,15 +28,16 @@
           get_component('nav-link', ['page' => $page]);
         }
       ?>
-      <?php get_part('language-switcher');?>
     </div>
   </div>
 
-  <div class="nav-contact more-1050">
-    <a href="<?=$book_link?>" target="_blank" rel="noopener noreferrer">
+  <div class="nav-contact">
+    <div class="more-1050"><?php get_part('language-switcher');?></div>
+    <a href="<?=$book_link?>" target="_blank" rel="noopener noreferrer"
+      class="more-1050">
       <button><?=pll__('rezerwuj')?></button>
     </a>
-    <a href="tel:<?=$phone_raw?>"><?=$phone?></a>
+    <a href="tel:<?=$phone_raw?>" class="more-1050"><?=$phone?></a>
   </div>
 
   <div id="burger">

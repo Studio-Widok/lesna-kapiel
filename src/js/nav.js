@@ -30,6 +30,6 @@ $('.language-dropdown .lang-title').on('click', event => {
   }
 });
 
-langDropdownElement[0].addEventListener('click', event => {
+langDropdownElement.on('click', event => {
   event.fromLanguageDropdown = true;
 });
