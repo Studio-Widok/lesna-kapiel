@@ -279,12 +279,24 @@
     }
 
     .language-dropdown {
-      position: absolute;
-      top: 3em;
-      left: 3em;
+      width: 100%;
+      margin: 0;
+
+      .lang-title {
+        display: none;
+      }
 
       .lang-list {
-        background-color: #333;
+        opacity: 1;
+        pointer-events: all;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .lang-link {
+          margin: 0 0.5em;
+        }
       }
     }
 

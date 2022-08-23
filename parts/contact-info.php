@@ -5,7 +5,7 @@
   $mail      = get_field('contact_mail', pll_get_post(25));
 ?>
 
-<div class="contact-info content fade">
+<div class="contact-info content column fade">
   <div>
     <div class="uppercase"><?php pll_e('leśna kąpiel')?></div>
     <div class="rmin"></div>

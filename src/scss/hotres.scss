@@ -219,4 +219,14 @@
   width: 100%;
   z-index: 9;
   text-align: center;
+
+  @media (max-width: 700px) {
+    bottom: 47px;
+
+    .expand.button_accept {
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+  }
 }

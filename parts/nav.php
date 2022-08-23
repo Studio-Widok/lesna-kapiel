@@ -48,8 +48,6 @@
 
   <div id="nav-overlay">
 
-    <?php get_part('language-switcher');?>
-
     <div></div>
     <div id="nav-o-links">
       <?php
@@ -60,6 +58,7 @@
           get_component('nav-link', ['page' => $page]);
         }
       ?>
+      <?php get_part('language-switcher');?>
       <div class="rmin"></div>
     </div>
 

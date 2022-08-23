@@ -11,7 +11,8 @@
     </a>
     <div class="foot-link column-inner">copyrights: leśna kąpiel</div>
   </div>
-  <div class="r"></div>
+  <div class="r less-1050"></div>
+  <div class="rmin"></div>
 </footer>
 <script>
 const baseUrl = '<?=get_template_directory_uri()?>';
