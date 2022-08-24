@@ -5,9 +5,9 @@
 ?>
 <div class="language-dropdown">
   <div class="lang-title uppercase">
-    <img
-      src="<?=get_template_directory_uri() . '/media/icons/' . pll_current_language() . '.svg'?>"
-      alt="" class="lang-flag">
+    <?=pll_current_language()?><svg viewBox="0 0 100 100">
+      <path d="M10 40 L50 80 L90 40" />
+    </svg>
   </div>
   <div class="lang-list">
     <?php
@@ -17,9 +17,7 @@
         }
       ?>
     <a href="<?=$lang['url']?>" class="lang-link nav-link uppercase">
-      <img
-        src="<?=get_template_directory_uri() . '/media/icons/' . $slug . '.svg'?>"
-        alt="" class="lang-flag">
+      <?=$slug?>
     </a>
     <?php }?>
   </div>

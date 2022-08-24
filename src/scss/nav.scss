@@ -32,6 +32,19 @@
     .lang-title {
       padding: 0.4em;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 1em;
+        margin-left: 0.5em;
+
+        path {
+          stroke: #fff;
+          stroke-width: 10;
+          fill: none;
+        }
+      }
     }
 
     .lang-list {
@@ -55,13 +68,6 @@
     &.open .lang-list {
       pointer-events: all;
       opacity: 1;
-    }
-
-    .lang-flag {
-      width: 2.5em;
-      height: auto;
-      display: block;
-      margin: 0 auto;
     }
   }
 

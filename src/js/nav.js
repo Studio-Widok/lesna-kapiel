@@ -14,21 +14,31 @@ $('.nav-link-scroll').on('click', event => {
 
 // language switcher
 function langClose(event) {
-  if (event?.fromLanguageDropdown) return;
+  if (!isLangOpen || event?.fromLanguageDropdown) return;
   langDropdownElement.removeClass('open');
   document.removeEventListener('click', langClose);
+  isLangOpen = false;
+}
+
+function langOpen() {
+  if (isLangOpen) return;
+  langDropdownElement.addClass('open');
+  document.addEventListener('click', langClose);
+  isLangOpen = true;
+  lastLangOpen = new Date().getTime();
 }
 
 const langDropdownElement = $('.language-dropdown');
+let isLangOpen = false;
+let lastLangOpen = 0;
 
-$('.language-dropdown .lang-title').on('click', event => {
-  if (langDropdownElement.hasClass('open')) {
-    langClose();
-  } else {
-    langDropdownElement.addClass('open');
-    document.addEventListener('click', langClose);
-  }
+$('.language-dropdown .lang-title').on('mouseenter', langOpen);
+$('.language-dropdown .lang-title').on('touchstart', () => {
+  if (new Date().getTime() - lastLangOpen < 100) return;
+  if (isLangOpen) langClose();
+  else langOpen();
 });
+$('.language-dropdown').on('mouseleave', langClose);
 
 langDropdownElement.on('click', event => {
   event.fromLanguageDropdown = true;
