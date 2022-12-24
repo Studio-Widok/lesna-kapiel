@@ -52,7 +52,7 @@
     j.src =
       'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-P4PS862');
+  })(window, document, 'script', 'dataLayer', 'GTM-5HB6R8L');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -61,6 +61,6 @@
 <body <?php body_class();?>>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-P4PS862" height="0"
+      src="https://www.googletagmanager.com/ns.html?id=GTM-5HB6R8L" height="0"
       width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
